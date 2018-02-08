@@ -14,6 +14,7 @@ Web information system to be developed.
 It includes the goals of the project and lists the features that should be
 supported, together with the identified access groups.
 
+Entrega ate 14/02 13:00
 
 
-GROUP1823, 08/02/2018
+GROUP1823, 13/02/2018

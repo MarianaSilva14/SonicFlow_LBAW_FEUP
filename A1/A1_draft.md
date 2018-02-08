@@ -1,38 +1,20 @@
 # A1: Online Shop
 
-* Goals, Business Context and Environment
+#### Goals, Business Context and Environment
 
-* Motivation
+This project intends to specify, develop and promote an online shopping system. This shop specializes in electronic components and products. Its target users range from experts to people with little technological knowledge that still want to make an informed decision.
 
-* Main Features
+#### Motivation
 
-* User Profiles
+We think that, nowadays, with the increase in usage of technology there is a gap for a user friendly platform that can serve any type of person without any technological background requirements.
 
+#### Main Features
 
-> goals, business context and environment
-> motivatioctrl-sctrl-sn
-> main features
-> user profiles
- 
-***
+The platform will have a simple intuitive design allowing users to freely explore the content and at the same time customize their search parameters as to allow a comprehensive shopping experience regardless of the access device. To achieve this, the search engines will be fast and assertive, allowing users to easily search items and helpfull tools will be implemented to better model the user's purpose.
 
-dos slides:
+#### User Profiles
 
-This artefact introduces the context and motivation and briefly describes the
-Web information system to be developed.
-It includes the goals of the project and lists the features that should be
-supported, together with the identified access groups.
+Users are separated into groups with different permissions. There must be administration usage profiles, with all the privileges of access and modification. There also must be registered users to buy products that can see the content of the platform and moderators with privileges of access to enter new products and check commentaries to filter out unproper behaviour.  
 
-Entrega ate 14/02 13:00
-
-
- This project intends to specify, develop and promote an information system available through the web for the management of collections of books, films, music albums, slides and their users.
-
-We think that, nowadays, it would be useful to have an application that allows users to manage all items and their loans. Collections are physically distributed across multiple locations and the system will aggregate all items in a virtual library accessible to all users.
-
-The platform will have an adaptive design, allowing the user to have a pleasant browsing experience, regardless of the access device (desktop, tablet or smartphone). The technology used will also allow fluent usage in navigation and provide an excellent user experience. In this way, the search engines will be fast and assertive, allowing users to easily search items.
-
-Users are separated into groups with different permissions. There must be administration usage profiles, with all the privileges of access and modification. There also must be registered users usage profiles, with privileges to enter information, requests and returns of individual items, consult the information, register comments for the items and evaluate the items. 
-
-
-GROUP1823, 13/02/2018
+<br>
+######GROUP1823, 13/02/2018

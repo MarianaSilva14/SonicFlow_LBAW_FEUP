@@ -13,6 +13,8 @@ Users are separated into groups with different permissions. There must be admini
 
 <br>
 GROUP1723, 10/02/2018
+<br>
+<br>
 
 > Ana Cláudia Fonseca Santos, up200700742@fe.up.pt
 

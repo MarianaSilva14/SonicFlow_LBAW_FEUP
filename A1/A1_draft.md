@@ -1,4 +1,4 @@
-# A1: Online Shop
+# A1: Sonic Flow - Online Shop
 
 This project intends to specify, develop and promote an online shopping system. This shop specializes in electronic components and products. Its target users range from experts to people with little technological knowledge that still want to make an informed decision.
 

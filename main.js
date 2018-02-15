@@ -1,81 +1,55 @@
-$( document ).ready(function() {
-    // DOM ready
-
-    // Test data
-    /*
-     * To test the script you should discomment the function
-     * testLocalStorageData and refresh the page. The function
-     * will load some test data and the loadProfile
-     * will do the changes in the UI
-     */
-    // testLocalStorageData();
-    // Load profile if it exits
-    loadProfile();
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 120, density: { enable: true, value_area: 800 } },
+    color: { value: "#ffffff" },
+    shape: {
+      type: "circle",
+      stroke: { width: 0, color: "#000000" },
+      polygon: { nb_sides: 5 },
+      image: { src: "img/github.svg", width: 100, height: 100 }
+    },
+    opacity: {
+      value: 0.5,
+      random: false,
+      anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false }
+    },
+    size: {
+      value: 3,
+      random: true,
+      anim: { enable: false, speed: 40, size_min: 0.1, sync: false }
+    },
+    line_linked: {
+      enable: true,
+      distance: 150,
+      color: "#ffffff",
+      opacity: 0.4,
+      width: 1
+    },
+    move: {
+      enable: true,
+      speed: 6,
+      direction: "none",
+      random: false,
+      straight: false,
+      out_mode: "out",
+      bounce: false,
+      attract: { enable: false, rotateX: 600, rotateY: 1200 }
+    }
+  },
+  interactivity: {
+    detect_on: "canvas",
+    events: {
+      onhover: { enable: true, mode: "repulse" },
+      onclick: { enable: true, mode: "push" },
+      resize: true
+    },
+    modes: {
+      grab: { distance: 400, line_linked: { opacity: 1 } },
+      bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 },
+      repulse: { distance: 100, duration: 0.4 },
+      push: { particles_nb: 4 },
+      remove: { particles_nb: 2 }
+    }
+  },
+  retina_detect: true
 });
-
-/**
- * Function that gets the data of the profile in case
- * thar it has already saved in localstorage. Only the
- * UI will be update in case that all data is available
- *
- * A not existing key in localstorage return null
- *
- */
-function getLocalProfile(callback){
-    var profileImgSrc      = localStorage.getItem("PROFILE_IMG_SRC");
-    var profileName        = localStorage.getItem("PROFILE_NAME");
-    var profileReAuthEmail = localStorage.getItem("PROFILE_REAUTH_EMAIL");
-
-    if(profileName !== null
-            && profileReAuthEmail !== null
-            && profileImgSrc !== null) {
-        callback(profileImgSrc, profileName, profileReAuthEmail);
-    }
-}
-
-/**
- * Main function that load the profile if exists
- * in localstorage
- */
-function loadProfile() {
-    if(!supportsHTML5Storage()) { return false; }
-    // we have to provide to the callback the basic
-    // information to set the profile
-    getLocalProfile(function(profileImgSrc, profileName, profileReAuthEmail) {
-        //changes in the UI
-        $("#profile-img").attr("src",profileImgSrc);
-        $("#profile-name").html(profileName);
-        $("#reauth-email").html(profileReAuthEmail);
-        $("#inputEmail").hide();
-        $("#remember").hide();
-    });
-}
-
-/**
- * function that checks if the browser supports HTML5
- * local storage
- *
- * @returns {boolean}
- */
-function supportsHTML5Storage() {
-    try {
-        return 'localStorage' in window && window['localStorage'] !== null;
-    } catch (e) {
-        return false;
-    }
-}
-
-/**
- * Test data. This data will be safe by the web app
- * in the first successful login of a auth user.
- * To Test the scripts, delete the localstorage data
- * and comment this call.
- *
- * @returns {boolean}
- */
-function testLocalStorageData() {
-    if(!supportsHTML5Storage()) { return false; }
-    localStorage.setItem("PROFILE_IMG_SRC", "//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" );
-    localStorage.setItem("PROFILE_NAME", "César Izquierdo Tello");
-    localStorage.setItem("PROFILE_REAUTH_EMAIL", "oneaccount@gmail.com");
-}

@@ -2,13 +2,16 @@
  window.onscroll = function() {myFunction()};
 
 function myFunction() {
+  let className = "header-short";
     if (document.body.scrollTop >= 10 || document.documentElement.scrollTop >= 10){
-        //document.getElementById("logo").className = "slideUp";
-        document.getElementById("info").className = "slideUp2";
+        document.getElementById("info").classList.add(className);
+        document.querySelector("#info #logo-short").classList.add(className);
+        document.querySelector("#info #logo").classList.add(className);
     }
     else if(document.body.scrollTop < 10 || document.documentElement.scrollTop < 10){
-    	//document.getElementById("logo").className = "";
-    	document.getElementById("info").className = "";
+    	document.getElementById("info").classList.remove("header-short");
+      document.querySelector("#info #logo-short").classList.remove(className);
+      document.querySelector("#info #logo").classList.remove(className);
     }
 } </script>
 
@@ -30,12 +33,13 @@ function myFunction() {
   <body>
   <header>
     <div id="info">
-       <a href="./homepage.html">
-      <img id="logo" src="images/logo_2.png"> </a>
-
-              <a  href="#" id="cart">
-          <span class="glyphicon glyphicon-shopping-cart"></span>
-        </a>
+      <a href="./homepage.html">
+        <img id="logo" src="images/icon.png"/><!--Replace for the Big logo-->
+        <img id="logo-short" src="images/logo.png"/>
+      </a>
+      <a  href="#" id="cart">
+        <span class="glyphicon glyphicon-shopping-cart"></span>
+      </a>
     </div>
     </header>
 

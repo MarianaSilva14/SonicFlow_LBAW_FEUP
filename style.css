@@ -1,7 +1,7 @@
 /* ---- reset ---- */
 
 html {
-  background-image: linear-gradient(rgb(104,145,162),rgb(12,97,33));
+  background-image: linear-gradient(rgb(0,159,200),rgb(182, 189, 206));
   background-repeat: no-repeat;
   height: 100%;
   overflow: hidden;
@@ -178,7 +178,7 @@ canvas {
 .btn.btn-register:hover,
 .btn.btn-register:active,
 .btn.btn-register:focus {
-    background-color: rgb(12, 97, 33);
+    background-color: rgb(0,159,200);
 }
 
 .forgot-password {
@@ -188,5 +188,5 @@ canvas {
 .forgot-password:hover,
 .forgot-password:active,
 .forgot-password:focus{
-    color: rgb(12, 97, 33);
+    color: rgb(0,159,200);
 }

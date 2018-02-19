@@ -1,0 +1,16 @@
+header #info {
+	border: 1px solid red;
+	padding: 1em;
+	position: fixed;
+	height: 90px;
+	width: 100%;
+	transition: height 2s;
+}
+
+#info.slideUp2 { 
+	height: 75px; 
+}
+
+#logo {
+	height: 100%;
+}

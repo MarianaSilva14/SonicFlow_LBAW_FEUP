@@ -154,7 +154,7 @@ canvas {
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
 }
 
-.btn.btn-signin {
+.btn.btn-signin, .btn.btn-register{
     /*background-color: #4d90fe; */
     background-color: rgb(104, 145, 162);
     /* background-color: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
@@ -174,7 +174,10 @@ canvas {
 
 .btn.btn-signin:hover,
 .btn.btn-signin:active,
-.btn.btn-signin:focus {
+.btn.btn-signin:focus,
+.btn.btn-register:hover,
+.btn.btn-register:active,
+.btn.btn-register:focus {
     background-color: rgb(12, 97, 33);
 }
 

@@ -8,6 +8,8 @@ body.header-short {
 }
 
 header {
+	background-color: inherit;
+	z-index: 10;
 	border: 1px solid red;
 	padding: 1em;
 	position: fixed;

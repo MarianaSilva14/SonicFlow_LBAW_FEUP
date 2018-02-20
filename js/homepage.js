@@ -1,5 +1,6 @@
-function menuAction(){
+function menuAction(e){
   document.querySelector("#wrapper").classList.toggle("active");
-};
+  e.preventDefault();
+}
 
-document.querySelector("#sidebar_menu").onclick = menuAction;
+document.querySelector("#menu-toggle").onclick = menuAction;

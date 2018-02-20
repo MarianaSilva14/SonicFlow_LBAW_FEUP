@@ -1,37 +1,70 @@
- <script>
- window.onscroll = function() {myFunction()};
+<script>
+window.onscroll = function() {myFunction()};
 
 function myFunction() {
   let className = "header-short";
-    if (document.body.scrollTop >= 10 || document.documentElement.scrollTop >= 10){
-        document.getElementById("info").classList.add(className);
-        document.querySelector("#info #logo-short").classList.add(className);
-        document.querySelector("#info #logo").classList.add(className);
-    }
-    else if(document.body.scrollTop < 10 || document.documentElement.scrollTop < 10){
-    	document.getElementById("info").classList.remove("header-short");
-      document.querySelector("#info #logo-short").classList.remove(className);
-      document.querySelector("#info #logo").classList.remove(className);
-    }
+  if (document.body.scrollTop >= 10 || document.documentElement.scrollTop >= 10){
+    document.getElementById("info").classList.add(className);
+    document.querySelector("#info #logo-short").classList.add(className);
+    document.querySelector("#info #logo").classList.add(className);
+  }
+  else if(document.body.scrollTop < 10 || document.documentElement.scrollTop < 10){
+    document.getElementById("info").classList.remove("header-short");
+    document.querySelector("#info #logo-short").classList.remove(className);
+    document.querySelector("#info #logo").classList.remove(className);
+  }
 } </script>
 
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" type="image/png" href="resources/images/icon_2.png" sizes="16x16">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" type="image/png" href="resources/images/icon_2.png" sizes="16x16">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-     <link rel="stylesheet" href="css/homepage.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/homepage.css">
 
-    <title>Sonic Flow</title>
-  </head>
-  <body>
+  <title>Sonic Flow</title>
+</head>
+<body>
+
+  <nav class="navbar navbar-fixed-top default-navbar" style="background-color: #e3f2fd;">
+    <!-- Navbar content -->
+    <a class="navbar-brand" href="#">Sonic Flow</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+      </ul>
+      <span class="navbar-text">
+        Navbar text with an inline element
+      </span>
+    </div>
+
+
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </nav>
+
+
   <header>
+
     <div id="info">
       <a href="homepage.html">
         <img id="logo" src="resources/images/logo_b.png"/><!--Replace for the Big logo-->
@@ -41,70 +74,70 @@ function myFunction() {
         <span class="glyphicon glyphicon-shopping-cart"></span>
       </a>
     </div>
-    </header>
+  </header>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 
-   <ul>
-   	<li>a</li>
-   	<li>a</li>
-   	<li>a</li>
-   	<li>a</li>
-   	<li>a</li>
-   	<li>a</li>
-   	<li>a</li>
-   	<li>a</li>
-   	<li>a</li>
-   	<li>a</li>
-   	<li>a</li>
-   	<li>a</li>
-   	<li>a</li>
-   	<li>a</li>
-   	<li>a</li>
-   	<li>a</li>
-   	<li>a</li>
-   	<li>a</li>
-   	<li>a</li>
-   	<li>a</li>
-   	<li>a</li>
-   	<li>a</li>
-   	<li>a</li>
-   	<li>a</li>
-   	<li>a</li>
-   	<li>a</li>
-   	<li>a</li>
-   	<li>a</li>
-   	<li>a</li>
-   	<li>a</li>
-   	<li>a</li>
-   	<li>a</li>
-   	<li>a</li>
-   	<li>a</li>
-   	<li>a</li>
-   	<li>a</li>
-   	<li>a</li>
-   	<li>a</li>
-   	<li>a</li>
-   	<li>a</li>
-   	<li>a</li>
-   	<li>a</li>
-   	<li>a</li>
-   	<li>a</li>
-   	<li>a</li>
-   	<li>a</li>
-   	<li>a</li>
-   	<li>a</li>
-   	<li>a</li>
-   	<li>a</li>
-   	<li>a</li>
-   	<li>a</li>
-   	<li>a</li>
-   	<li>a</li>
-	</ul>
-  </body>
+  <ul>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+  </ul>
+</body>
 </html>

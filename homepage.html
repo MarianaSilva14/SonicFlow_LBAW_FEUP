@@ -3,17 +3,20 @@ window.onscroll = function() {myFunction()};
 
 function myFunction() {
   let className = "header-short";
-  if (document.body.scrollTop >= 10 || document.documentElement.scrollTop >= 10){
-    document.getElementById("info").classList.add(className);
-    document.querySelector("#info #logo-short").classList.add(className);
-    document.querySelector("#info #logo").classList.add(className);
+  if (document.body.scrollTop >= 60 || document.documentElement.scrollTop >= 60){
+    document.querySelector("header").classList.add(className);
+    document.querySelector("body").classList.add(className);
+    document.querySelector("#logo-short").classList.add(className);
+    document.querySelector("#logo").classList.add(className);
   }
-  else if(document.body.scrollTop < 10 || document.documentElement.scrollTop < 10){
-    document.getElementById("info").classList.remove("header-short");
-    document.querySelector("#info #logo-short").classList.remove(className);
-    document.querySelector("#info #logo").classList.remove(className);
+  else if(document.body.scrollTop < 60 || document.documentElement.scrollTop < 60){
+    document.querySelector("header").classList.remove(className);
+    document.querySelector("body").classList.remove(className);
+    document.querySelector("#logo-short").classList.remove(className);
+    document.querySelector("#logo").classList.remove(className);
   }
-} </script>
+};
+</script>
 
 
 <!DOCTYPE html>
@@ -23,58 +26,7 @@ function myFunction() {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="icon" type="image/png" href="resources/images/icon_2.png" sizes="16x16">
-
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/homepage.css">
-
-  <title>Sonic Flow</title>
-</head>
-<body>
-
-  <nav class="navbar navbar-fixed-top default-navbar" style="background-color: #e3f2fd;">
-    <!-- Navbar content -->
-    <a class="navbar-brand" href="#">Sonic Flow</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-      </ul>
-      <span class="navbar-text">
-        Navbar text with an inline element
-      </span>
-    </div>
-
-
-    <form class="form-inline">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </nav>
-
-
-  <header>
-
-    <div id="info">
-      <a href="homepage.html">
-        <img id="logo" src="resources/images/logo_b.png"/><!--Replace for the Big logo-->
-        <img id="logo-short" src="resources/images/logo.png"/>
-      </a>
-      <a  href="#" id="cart">
-        <span class="glyphicon glyphicon-shopping-cart"></span>
-      </a>
-    </div>
-  </header>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -82,62 +34,107 @@ function myFunction() {
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/homepage.css">
+  <script src="js/homepage.js" defer></script>
 
-  <ul>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-    <li>a</li>
-  </ul>
+  <title>Sonic Flow</title>
+</head>
+<body>
+
+  <header>
+    <a href="homepage.html">
+      <img id="logo" src="resources/images/logo_b.png"/>
+      <img id="logo-short" src="resources/images/logo.png"/>
+    </a>
+    <a href="#" id="cart">
+      <span class="glyphicon glyphicon-shopping-cart"></span>
+    </a>
+  </header>
+
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <ul id="sidebar_menu" class="sidebar-nav">
+           <li class="sidebar-brand"><a id="menu-toggle" href="#">Menu<span id="main_icon"><i class="fas fa-bars fa-lg"></i></span></a></li>
+        </ul>
+        <ul class="sidebar-nav" id="sidebar">
+          <li><a>Computers<span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span></a></li>
+          <li><a>Laptops<span class="sub_icon"><i class="fas fa-laptop fa-lg"></i></span></a></li>
+          <li><a>Mobile<span class="sub_icon"><i class="fas fa-mobile-alt fa-lg"></i></span></a></li>
+          <li><a>Components<span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span></a></li>
+          <li><a>Storage<span class="sub_icon"><i class="fas fa-hdd fa-lg"></i></span></a></li>
+          <li><a>Periferals<span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span></a></li>
+          <li><a>Image and Video<span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span></a></li>
+          <li><a>Network<span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span></a></li>
+          <li><a>Software<span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span></a></li>
+          <li><a>Configurator<span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span></a></li>
+        </ul>
+      </div>
+
+      <!-- Page content -->
+      <div id="page-content-wrapper">
+        <ul>
+          <li>a</li>
+          <li>a</li>
+          <li>a</li>
+          <li>a</li>
+          <li>a</li>
+          <li>a</li>
+          <li>a</li>
+          <li>a</li>
+          <li>a</li>
+          <li>a</li>
+          <li>a</li>
+          <li>a</li>
+          <li>a</li>
+          <li>a</li>
+          <li>a</li>
+          <li>a</li>
+          <li>a</li>
+          <li>a</li>
+          <li>a</li>
+          <li>a</li>
+          <li>a</li>
+          <li>a</li>
+          <li>a</li>
+          <li>a</li>
+          <li>a</li>
+          <li>a</li>
+          <li>a</li>
+          <li>a</li>
+          <li>a</li>
+          <li>a</li>
+          <li>a</li>
+          <li>a</li>
+          <li>a</li>
+          <li>a</li>
+          <li>a</li>
+          <li>a</li>
+          <li>a</li>
+          <li>a</li>
+          <li>a</li>
+          <li>a</li>
+          <li>a</li>
+          <li>a</li>
+          <li>a</li>
+          <li>a</li>
+          <li>a</li>
+          <li>a</li>
+          <li>a</li>
+          <li>a</li>
+          <li>a</li>
+          <li>a</li>
+          <li>a</li>
+          <li>a</li>
+          <li>a</li>
+          <li>a</li>
+        </ul>
+    </div>
+
+</div>
+
 </body>
 </html>

@@ -65,7 +65,7 @@ header.header-short {
     left: 70px;
     width: 300px;
 		overflow-y: scroll;
-    background: #222;
+    background: #b6bdce;
     position: fixed;
     height: 100%;
     z-index: 10000;
@@ -105,20 +105,18 @@ header.header-short {
 }
 
 #sidebar_menu li a, .sidebar-nav li a {
-    color: #999;
+    color: red;
     display: block;
     float: left;
     text-decoration: none;
     width: 300px;
-    background: #252525;
-    border-top: 1px solid #373737;
-    border-bottom: 1px solid #1A1A1A;
-    -webkit-transition: background .5s;
-    -moz-transition: background .5s;
-    -o-transition: background .5s;
-    -ms-transition: background .5s;
-    transition: background .5s;
+    background: #65768e;
+    border-top: 1px solid #65768e;
+    border-bottom: 1px solid #65768e;
+
+    text-align: center;
 }
+
 
 #sidebar-wrapper .sidebar_name {
     padding-top: 25px;
@@ -132,15 +130,17 @@ header.header-short {
 }
 
 #sidebar-wrapper .sidebar-nav li a {
-  color: #999999 !important;
+  color: white !important;
   display: block;
   text-decoration: none;
 }
 
 #sidebar-wrapper .sidebar-nav li a:hover {
-  color: #fff !important;
+  color: #65768e !important;
   background: rgba(255,255,255,0.2);
   text-decoration: none;
+  background: #009fc8;
+
 }
 
 #sidebar-wrapper .sidebar-nav li a:active, .sidebar-nav li a:focus {
@@ -169,9 +169,13 @@ header.header-short {
 }
 
 .sub_icon{
-  	float:right;
+  float:right;
    padding-right: 25px;
    padding-top:10px;
+}
+
+.sub_icon#mobile{
+padding-right: 30px;
 }
 
 .content-header {

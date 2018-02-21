@@ -1,12 +1,19 @@
 body {
   margin-top: 30px;
   background-color: #eee;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+
 }
 
 .list-group.help-group {
   margin-bottom: 20px;
   padding-left: 0;
   margin: 0;
+}
+
+#topics_help {
+  border-radius: 20px;
 }
 
 .list-group.help-group:hover {
@@ -16,7 +23,6 @@ body {
 .list-group.help-group .active {
   background-color: #f6f6f6;
   font-weight: 700;
-  color: rgba(0,0,0,.87);
 }
 
 .list-group.help-group:last-of-type {
@@ -44,14 +50,14 @@ body {
   border-bottom: 1px solid #ddd;
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
-  color: #616161;
+  color: #009fc8;
   transition: background-color .2s;
 
 }
 
 .list-group.help-group .faq-list .list-group-item i.mdi {
   margin-right: 5px;
-  font-size: 18px;
+  font-size: 17px;
   position: relative;
   top: 2px;
 }
@@ -64,42 +70,10 @@ body {
 .panel.panel-help {
   box-shadow: 0 1px 5px rgba(85, 85, 85, 0.15);
   padding-bottom: 0;
-  border-radius: 2px;
+  border-radius: 40px;
   overflow: hidden;
   background-color: #fff;
   margin: 0 0 16px;
-
-  .panel-heading {
-    background-color: #f6f6f6;
-    padding: 0 16px;
-    line-height: 48px;
-    border-top-right-radius: 2px;
-    border-top-left-radius: 2px;
-    color: rgba(0,0,0,.87);
-    h2 {
-      margin: 0;
-      padding: 14px 0 14px;
-      font-size: 18px;
-      font-weight: 400;
-      line-height: 20px;
-      letter-spacing: 0;
-      text-transform: none;
-    }
-  }
-  .panel-body {
-    background-color: #fff;
-    border-top: 1px solid #ddd;
-    border-radius: 2px;
-    border-top-right-radius: 0;
-    border-top-left-radius: 0;
-    margin-top: 0;
-    p {
-      margin: 0 0 16px;
-      &:last-of-type {
-        margin: 0;
-      }
-    }
-  }
 }
 
 .panel.panel-help a[href^="#"],
@@ -108,4 +82,42 @@ body {
   outline: none;
   cursor: pointer;
   text-decoration: none;
+}
+
+.panel.panel-help .panel-heading {
+  background-color: #f6f6f6;
+  padding: 0 16px;
+  line-height: 48px;
+  border-top-right-radius: 2px;
+  border-top-left-radius: 2px;
+  color: rgba(0,0,0,.87);
+}
+
+.panel.panel-help .panel-heading h2 {
+  margin: 0;
+  padding: 14px 0 14px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0;
+  text-transform: none;
+  color: #009fc8;
+  font-weight: bold;
+}
+
+.panel.panel-help .panel-body {
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+  border-radius: 2px;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  margin-top: 0;
+}
+
+.panel.panel-help .panel-body p {
+  margin: 0 0 16px;
+}
+
+.panel.panel-help .panel-body p:last-of-type {
+  margin: 0;
 }

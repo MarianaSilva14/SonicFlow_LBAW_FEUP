@@ -3,110 +3,148 @@
   <head>
     <meta charset="utf-8">
     <!-- Bootstrap CSS -->
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
     <link rel="stylesheet" href="css/faqpage.css">
-    <script src="js/faqpage.js" defer></script>
+    <link rel="stylesheet" href="css/homepage.css">
+    <script src="js/homepage.js" defer></script>
+    <!-- <script src="js/faqpage.js" defer></script> -->
     <title>FAQ page</title>
   </head>
   <body>
+
+    <header>
+      <a href="homepage.html">
+        <img id="logo" src="resources/images/logo_b.png"/>
+        <img id="logo-short" src="resources/images/logo.png"/>
+      </a>
+      <a href="#" id="cart">
+        <span class="glyphicon glyphicon-shopping-cart"></span>
+      </a>
+    </header>
+
+  <div id="wrapper">
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+      <ul id="sidebar_menu" class="sidebar-nav">
+        <li class="sidebar-brand"><a id="menu-toggle" href="#">Menu<span id="main_icon"><i class="fas fa-bars fa-lg"></i></span></a></li>
+      </ul>
+      <ul class="sidebar-nav" id="sidebar">
+        <li><a>Computers<span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span></a></li>
+        <li><a>Laptops<span class="sub_icon"><i class="fas fa-laptop fa-lg"></i></span></a></li>
+        <li><a>Mobile<span class="sub_icon"><i class="fas fa-mobile-alt fa-lg"></i></span></a></li>
+        <li><a>Components<span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span></a></li>
+        <li><a>Storage<span class="sub_icon"><i class="fas fa-hdd fa-lg"></i></span></a></li>
+        <li><a>Periferals<span class="sub_icon"><i class="fas fa-keyboard fa-lg"></i></span></a></li>
+        <li><a>Image and Video<span class="sub_icon"><i class="fas fa-desktop fa-lg"></i></span></a></li>
+        <li><a>Network<span class="sub_icon"><i class="fas fa-rss fa-lg"></i></span></a></li>
+        <li><a>Software<span class="sub_icon"><i class="far fa-window-maximize fa-lg"></i></span></a></li>
+        <li><a>Configurator<span class="sub_icon"><i class="fas fa-cogs fa-lg"></i></span></a></li>
+      </ul>
+    </div>
+
+    <div id="page-content-wrapper">
     <div class="container">
-  <div class="col-md-4">
-    <ul class="list-group help-group">
-      <div class="faq-list list-group nav nav-tabs">
-        <a href="#tab1" class="list-group-item active" role="tab" data-toggle="tab">Frequently Asked Questions</a>
-        <a href="#tab2" class="list-group-item" role="tab" data-toggle="tab"><i class="mdi mdi-account"></i> My profile</a>
-        <a href="#tab3" class="list-group-item" role="tab" data-toggle="tab"><i class="mdi mdi-account-settings"></i> My account</a>
-        <a href="#tab4" class="list-group-item" role="tab" data-toggle="tab"><i class="mdi mdi-star"></i> My favorites</a>
-        <a href="#tab5" class="list-group-item" role="tab" data-toggle="tab"><i class="mdi mdi-cart"></i> Checkout</a>
-        <a href="#tab6" class="list-group-item" role="tab" data-toggle="tab"><i class="mdi mdi-heart"></i> Lorem ipsum</a>
-        <a href="#tab7" class="list-group-item" role="tab" data-toggle="tab"><i class="mdi mdi-check"></i> Dolor sit amet</a>
-      </div>
-    </ul>
-  </div>
-  <div class="col-md-8">
-    <div class="tab-content panels-faq">
-      <div class="tab-pane active" id="tab1">
-        <div class="panel-group" id="help-accordion-1">
-          <div class="panel panel-default panel-help">
-            <a href="#opret-produkt" data-toggle="collapse" data-parent="#help-accordion-1">
-              <div class="panel-heading">
-                <h2>How do I edit my profile?</h2>
-              </div>
-            </a>
-            <div id="opret-produkt" class="collapse in">
-              <div class="panel-body">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus nesciunt ut officiis accusantium quisquam minima praesentium, beatae fugit illo nobis fugiat adipisci quia distinctio repellat culpa saepe, optio aperiam est!</p>
-                <p><strong>Example: </strong>Facere, id excepturi iusto aliquid beatae delectus nemo enim, ad saepe nam et.</p>
-              </div>
-            </div>
-          </div>
-          <div class="panel panel-default panel-help">
-            <a href="#rediger-produkt" data-toggle="collapse" data-parent="#help-accordion-1">
-              <div class="panel-heading">
-                <h2>How do I upload a new profile picture?</h2>
-              </div>
-            </a>
-            <div id="rediger-produkt" class="collapse">
-              <div class="panel-body">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus nesciunt ut officiis accusantium quisquam minima praesentium, beatae fugit illo nobis fugiat adipisci quia distinctio repellat culpa saepe, optio aperiam est!</p>
-                <p><strong>Example: </strong>Facere, id excepturi iusto aliquid beatae delectus nemo enim, ad saepe nam et.</p>
+    <div class="col-md-4" id="topics_help">
+      <ul class="list-group help-group">
+        <div class="faq-list list-group nav nav-tabs">
+          <a href="#tab1" class="list-group-item active" role="tab" data-toggle="tab">Frequently Asked Questions</a>
+          <a href="#tab2" class="list-group-item" role="tab" data-toggle="tab"><i class="mdi mdi-account"></i> My profile</a>
+          <a href="#tab3" class="list-group-item" role="tab" data-toggle="tab"><i class="mdi mdi-account-settings"></i> My account</a>
+          <a href="#tab4" class="list-group-item" role="tab" data-toggle="tab"><i class="mdi mdi-star"></i> My favorites</a>
+          <a href="#tab5" class="list-group-item" role="tab" data-toggle="tab"><i class="mdi mdi-cart"></i> Checkout</a>
+          <a href="#tab6" class="list-group-item" role="tab" data-toggle="tab"><i class="mdi mdi-heart"></i> Lorem ipsum</a>
+          <a href="#tab7" class="list-group-item" role="tab" data-toggle="tab"><i class="mdi mdi-check"></i> Dolor sit amet</a>
+        </div>
+      </ul>
+    </div>
+    <div class="col-md-8">
+      <div class="tab-content panels-faq">
+        <div class="tab-pane active" id="tab1">
+          <div class="panel-group" id="help-accordion-1">
+            <div class="panel panel-default panel-help">
+              <a href="#opret-produkt" data-toggle="collapse" data-parent="#help-accordion-1">
+                <div class="panel-heading">
+                  <h2>How do I edit my profile?</h2>
+                </div>
+              </a>
+              <div id="opret-produkt" class="collapse in">
+                <div class="panel-body">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus nesciunt ut officiis accusantium quisquam minima praesentium, beatae fugit illo nobis fugiat adipisci quia distinctio repellat culpa saepe, optio aperiam est!</p>
+                  <p><strong>Example: </strong>Facere, id excepturi iusto aliquid beatae delectus nemo enim, ad saepe nam et.</p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="panel panel-default panel-help">
-            <a href="#ret-pris" data-toggle="collapse" data-parent="#help-accordion-1">
-              <div class="panel-heading">
-                <h2>Can I change my phone number?</h2>
-              </div>
-            </a>
-            <div id="ret-pris" class="collapse">
-              <div class="panel-body">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus nesciunt ut officiis accusantium quisquam minima praesentium, beatae fugit illo nobis fugiat adipisci quia distinctio repellat culpa saepe, optio aperiam est!</p>
-                <p><strong>Example: </strong>Facere, id excepturi iusto aliquid beatae delectus nemo enim, ad saepe nam et.</p>
-              </div>
-            </div>
-          </div>
-          <div class="panel panel-default panel-help">
-            <a href="#slet-produkt" data-toggle="collapse" data-parent="#help-accordion-1">
-              <div class="panel-heading">
-                <h2>Where do I change my privacy settings?</h2>
-              </div>
-            </a>
-            <div id="slet-produkt" class="collapse">
-              <div class="panel-body">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus nesciunt ut officiis accusantium quisquam minima praesentium, beatae fugit illo nobis fugiat adipisci quia distinctio repellat culpa saepe, optio aperiam est!</p>
-                <p><strong>Example: </strong>Facere, id excepturi iusto aliquid beatae delectus nemo enim, ad saepe nam et.</p>
+            <div class="panel panel-default panel-help">
+              <a href="#rediger-produkt" data-toggle="collapse" data-parent="#help-accordion-1">
+                <div class="panel-heading">
+                  <h2>How do I upload a new profile picture?</h2>
+                </div>
+              </a>
+              <div id="rediger-produkt" class="collapse">
+                <div class="panel-body">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus nesciunt ut officiis accusantium quisquam minima praesentium, beatae fugit illo nobis fugiat adipisci quia distinctio repellat culpa saepe, optio aperiam est!</p>
+                  <p><strong>Example: </strong>Facere, id excepturi iusto aliquid beatae delectus nemo enim, ad saepe nam et.</p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="panel panel-default panel-help">
-            <a href="#opret-kampagne" data-toggle="collapse" data-parent="#help-accordion-1">
-              <div class="panel-heading">
-                <h2>What is this?</h2>
+            <div class="panel panel-default panel-help">
+              <a href="#ret-pris" data-toggle="collapse" data-parent="#help-accordion-1">
+                <div class="panel-heading">
+                  <h2>Can I change my phone number?</h2>
+                </div>
+              </a>
+              <div id="ret-pris" class="collapse">
+                <div class="panel-body">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus nesciunt ut officiis accusantium quisquam minima praesentium, beatae fugit illo nobis fugiat adipisci quia distinctio repellat culpa saepe, optio aperiam est!</p>
+                  <p><strong>Example: </strong>Facere, id excepturi iusto aliquid beatae delectus nemo enim, ad saepe nam et.</p>
+                </div>
               </div>
-            </a>
-            <div id="opret-kampagne" class="collapse">
-              <div class="panel-body">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus nesciunt ut officiis accusantium quisquam minima praesentium, beatae fugit illo nobis fugiat adipisci quia distinctio repellat culpa saepe, optio aperiam est!</p>
-                <p><strong>Example: </strong>Facere, id excepturi iusto aliquid beatae delectus nemo enim, ad saepe nam et.</p>
+            </div>
+            <div class="panel panel-default panel-help">
+              <a href="#slet-produkt" data-toggle="collapse" data-parent="#help-accordion-1">
+                <div class="panel-heading">
+                  <h2>Where do I change my privacy settings?</h2>
+                </div>
+              </a>
+              <div id="slet-produkt" class="collapse">
+                <div class="panel-body">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus nesciunt ut officiis accusantium quisquam minima praesentium, beatae fugit illo nobis fugiat adipisci quia distinctio repellat culpa saepe, optio aperiam est!</p>
+                  <p><strong>Example: </strong>Facere, id excepturi iusto aliquid beatae delectus nemo enim, ad saepe nam et.</p>
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default panel-help">
+              <a href="#opret-kampagne" data-toggle="collapse" data-parent="#help-accordion-1">
+                <div class="panel-heading">
+                  <h2>What is this?</h2>
+                </div>
+              </a>
+              <div id="opret-kampagne" class="collapse">
+                <div class="panel-body">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus nesciunt ut officiis accusantium quisquam minima praesentium, beatae fugit illo nobis fugiat adipisci quia distinctio repellat culpa saepe, optio aperiam est!</p>
+                  <p><strong>Example: </strong>Facere, id excepturi iusto aliquid beatae delectus nemo enim, ad saepe nam et.</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="tab-pane" id="tab2">
-        <div class="panel-group" id="help-accordion-2">
-          <div class="panel panel-default panel-help">
-            <a href="#help-three" data-toggle="collapse" data-parent="#help-accordion-2">
-              <div class="panel-heading">
-                <h2>Lorem ipsum?</h2>
-              </div>
-            </a>
-            <div id="help-three" class="collapse in">
-              <div class="panel-body">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus nesciunt ut officiis accusantium quisquam minima praesentium, beatae fugit illo nobis fugiat adipisci quia distinctio repellat culpa saepe, optio aperiam est!</p>
-                <p><strong>Example: </strong>Facere, id excepturi iusto aliquid beatae delectus nemo enim, ad saepe nam et.</p>
+        <div class="tab-pane" id="tab2">
+          <div class="panel-group" id="help-accordion-2">
+            <div class="panel panel-default panel-help">
+              <a href="#help-three" data-toggle="collapse" data-parent="#help-accordion-2">
+                <div class="panel-heading">
+                  <h2>Lorem ipsum?</h2>
+                </div>
+              </a>
+              <div id="help-three" class="collapse in">
+                <div class="panel-body">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus nesciunt ut officiis accusantium quisquam minima praesentium, beatae fugit illo nobis fugiat adipisci quia distinctio repellat culpa saepe, optio aperiam est!</p>
+                  <p><strong>Example: </strong>Facere, id excepturi iusto aliquid beatae delectus nemo enim, ad saepe nam et.</p>
+                </div>
               </div>
             </div>
           </div>
@@ -115,5 +153,107 @@
     </div>
   </div>
 </div>
+
+  <!--Footer-->
+  <footer class="page-footer indigo center-on-small-only pt-0">
+
+    <!--Footer Links-->
+    <div class="container">
+
+      <!--Grid row-->
+      <div class="row pt-5 mb-3 text-center d-flex justify-content-center">
+
+        <!--Grid column-->
+        <div class="col-md-2 mb-3">
+          <h6 class="title font-bold"><a href="#!">About us</a></h6>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-md-2 mb-3">
+          <h6 class="title font-bold"><a href="#!">Products</a></h6>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-md-2 mb-3">
+          <h6 class="title font-bold"><a href="#!">Awards</a></h6>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-md-2 mb-3">
+          <h6 class="title font-bold"><a href="#!">Help</a></h6>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-md-2 mb-3">
+          <h6 class="title font-bold"><a href="#!">Contact</a></h6>
+        </div>
+        <!--Grid column-->
+
+      </div>
+      <!--Grid row-->
+
+      <hr class="rgba-white-light" style="margin: 0 15%;">
+
+      <!--Grid row-->
+      <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
+
+        <!--Grid column-->
+        <div class="col-md-8 col-12 mt-5">
+          <p style="line-height: 1.7rem">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+            totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae
+            vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
+            aut fugit, sed quia consequuntur.</p>
+
+          </div>
+          <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+
+        <hr class="clearfix d-md-none rgba-white-light" style="margin: 10% 15% 5%;">
+
+        <!--Grid row-->
+        <div class="row pb-3">
+
+          <!--Grid column-->
+          <div class="col-md-12">
+
+            <div class="footer-socials mb-5 flex-center">
+              <!--Facebook-->
+              <a class="icons-sm fb-ic"><i class="fa fa-facebook fa-lg white-text mr-md-4"> </i></a>
+              <!--Twitter-->
+              <a class="icons-sm tw-ic"><i class="fa fa-twitter fa-lg white-text mr-md-4"> </i></a>
+              <!--Google +-->
+              <a class="icons-sm gplus-ic"><i class="fa fa-google-plus fa-lg white-text mr-md-4"> </i></a>
+              <!--Linkedin-->
+              <a class="icons-sm li-ic"><i class="fa fa-linkedin fa-lg white-text mr-md-4"> </i></a>
+              <!--Instagram-->
+              <a class="icons-sm ins-ic"><i class="fa fa-instagram fa-lg white-text mr-md-4"> </i></a>
+              <!--Pinterest-->
+              <a class="icons-sm pin-ic"><i class="fa fa-pinterest fa-lg white-text"> </i></a>
+            </div>
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+
+      </div>
+      <!--/Footer Links-->
+
+      <!--Copyright-->
+      <div class="footer-copyright">
+        <div class="container-fluid">
+          © 2018 Copyright: <a href="https://www.MDBootstrap.com"> MDBootstrap.com </a>
+        </div>
+      </div>
+      <!--/Copyright-->
+
+    </footer>
+    <!--/Footer-->
+        </div>
 </body>
 </html>

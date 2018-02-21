@@ -22,7 +22,7 @@
 </head>
 <body>
 
-  <header>
+  <!-- <header>
     <a href="homepage.html">
       <img id="logo" src="resources/images/logo_b.png"/>
       <img id="logo-short" src="resources/images/logo.png"/>
@@ -30,7 +30,42 @@
     <a href="#" id="cart">
       <span class="glyphicon glyphicon-shopping-cart"></span>
     </a>
-  </header>
+  </header> -->
+
+  <nav class="navbar fixed-top navbar-expand-md bg-dark">
+    <a class="navbar-brand" href="#">
+      <img src="/resources/images/logo.png" width="auto" height="59px" alt="">
+    </a>
+    <form class="form-inline my-2 my-lg-0">
+      <!-- Category Selection -->
+      <select id="catSelect" class="form-control" name="category">
+        <option value="comp">Computadores</option>
+        <option value="comp1">Computadores1</option>
+        <option value="comp2">Compu</option>
+        <option value="comp2">Computadores</option>
+      </select>
+      <!-- Search input -->
+      <input id="searchBar" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <!-- Profile DropDown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img src="/resources/images/icon.png" style="display: inline-block" height="43px" alt=""> Profile
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Favorites</a>
+            <a class="dropdown-item" href="#">My profile</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About Us</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
   <div id="wrapper">
 

@@ -15,89 +15,139 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/homepage.css">
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"> -->
+
+  <!-- Developed CSS -->
+  <link rel="stylesheet" href="css/common.css">
+
+  <!-- Developed JS -->
   <script src="js/homepage.js" defer></script>
 
   <title>Sonic Flow</title>
 </head>
+
 <body>
-
-  <!--Footer-->
-<footer class="mt-4">
-<div class="container-fluid bg-faded mt-4">
-  <div class="container">
-    <div class="row py-3">
-      <div class="col-md-4">
-        <div class="row py-2">
-          <div class="col-sm-3 hidden-md-down">
-            <a class="bg-circle bg-info" href="#">
-              <i class="fa fa-2x fa-fw fa-address-card" aria-hidden="true "></i>
-            </a>
-          </div>
-          <div class="col-sm-9">
-            <h4>Contact us</h4>
-            <p>We'd love to hear from you</p>
-          </div>
-        </div>
-        </div>
-        <div class="col-md-4">
-        <div class="row py-2">
-          <div class="col-sm-3 hidden-md-down">
-            <a class="bg-circle bg-info" href="#">
-              <i class="fa fa-2x fa-fw fa-info" aria-hidden="true "></i>
-            </a>
-          </div>
-          <div class="col-sm-9">
-            <h4>Info</h4>
-            <p class=" ">About us </a></p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="row py-2">
-          <div class="col-sm-3 hidden-md-down">
-            <a class="bg-circle bg-danger" href="# ">
-              <i class="fas fa-2x fa-fw fa-question" aria-hidden="true "></i>
-            </a>
-          </div>
-          <div class="col-sm-9">
-            <h4>FAQ</h4>
-            <p>Clear yourself up!</a></p>
-          </div>
-        </div>
-        </div>
+  <nav class="navbar navbar-expand-xl navbar-light fixed-top bg-white">
+    <!-- logo -->
+    <a class="navbar-brand" href="#">
+      <img src="resources/images/logo.png" width="auto" height="64px" alt="">
+    </a>
+    <!-- toggle button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- links and search bar -->
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <!-- search form -->
+      <form class="form-inline mt-2 mt-md-0">
+        <select id="catSelect" class="form-control" name="categories">
+          <option value="option">option</option>
+          <option value="option1">option medium</option>
+          <option value="option2">option very very big</option>
+        </select>
+        <input id="searchBar" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+      <!-- links -->
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Disabled</a>
+        </li>
+        <li class="nav-item mobileNav">
+          <a class="nav-link" href="#">Cat1</a>
+        </li>
+        <li class="nav-item mobileNav">
+          <a class="nav-link" href="#">cat2</a>
+        </li>
+        <li class="nav-item mobileNav">
+          <a class="nav-link" href="#">cat3</a>
+        </li>
+      </ul>
     </div>
-  </div>
-</div>
+  </nav>
 
+  <div id="contentWrapper">
 
-<div class="container-fluid bg-primary py-3">
-  <div class="container">
-    <div class="row py-3">
-      <div class="col-md-9">
-        <p class="text-white">Lorem ipsum.</p>
-      </div>
-      <div class="col-md-3">
-        <div class="d-inline-block">
-          <div class="bg-circle-outline d-inline-block">
-            <a href="https://www.facebook.com/" class="text-white"><i class="fab fa-2x fa-fw fa-facebook"></i></a>
-          </div>
-          <div class="bg-circle-outline d-inline-block">
-            <a href="https://twitter.com/" class="text-white">
-              <i class="fab fa-2x fa-fw fa-twitter"></i></a>
-          </div>
-          <div class="bg-circle-outline d-inline-block">
-            <a href="https://www.linkedin.com/company/" class="text-white">
-              <i class="fab fa-2x fa-fw fa-linkedin"></i></a>
+    <!--Footer-->
+    <footer class="mt-4">
+      <div class="container-fluid bg-faded mt-4">
+        <div class="container">
+          <div class="row py-3">
+            <div class="col-md-4">
+              <div class="row py-2">
+                <div class="col-sm-3 hidden-md-down">
+                  <a class="bg-circle bg-info" href="#">
+                    <i class="fa fa-2x fa-fw fa-address-card" aria-hidden="true "></i>
+                  </a>
+                </div>
+                <div class="col-sm-9">
+                  <h4>Contact us</h4>
+                  <p>We'd love to hear from you</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="row py-2">
+                <div class="col-sm-3 hidden-md-down">
+                  <a class="bg-circle bg-info" href="#">
+                    <i class="fa fa-2x fa-fw fa-info" aria-hidden="true "></i>
+                  </a>
+                </div>
+                <div class="col-sm-9">
+                  <h4>Info</h4>
+                  <p class=" ">About us </a></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="row py-2">
+                <div class="col-sm-3 hidden-md-down">
+                  <a class="bg-circle bg-danger" href="# ">
+                    <i class="fas fa-2x fa-fw fa-question" aria-hidden="true "></i>
+                  </a>
+                </div>
+                <div class="col-sm-9">
+                  <h4>FAQ</h4>
+                  <p>Clear yourself up!</a></p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-</footer>
 
-  </div>
 
-</body>
-</html>
+      <div class="container-fluid bg-primary py-3">
+        <div class="container">
+          <div class="row py-3">
+            <div class="col-md-9">
+              <p class="text-white">Lorem ipsum.</p>
+            </div>
+            <div class="col-md-3">
+              <div class="d-inline-block">
+                <div class="bg-circle-outline d-inline-block">
+                  <a href="https://www.facebook.com/" class="text-white"><i class="fab fa-2x fa-fw fa-facebook"></i></a>
+                </div>
+                <div class="bg-circle-outline d-inline-block">
+                  <a href="https://twitter.com/" class="text-white">
+                    <i class="fab fa-2x fa-fw fa-twitter"></i></a>
+                  </div>
+                  <div class="bg-circle-outline d-inline-block">
+                    <a href="https://www.linkedin.com/company/" class="text-white">
+                      <i class="fab fa-2x fa-fw fa-linkedin"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </body>
+    </html>

@@ -145,12 +145,19 @@ header.header-short {
   padding-right: 5%;
 }
 
+
+footer{
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
 .list-inline-item a{
   color:grey;
   font-size:17px;
   padding:10px;
   font-weight: bold;
   text-decoration: none;
+  margin-top: 20px;
 }
 
 .list-inline-item a:hover{
@@ -161,6 +168,8 @@ header.header-short {
   color:grey;
   font-size:28px;
   padding:5px;
+    padding-top: 20px;
+
 }
 
 .fab fa-facebook-square:hover , .fab fa-google-plus-g:hover , .fab fa-linkedin:hover {

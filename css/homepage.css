@@ -175,3 +175,39 @@ background-color: #65768e;
     border-bottom: 2px solid grey;
   }
 }
+
+
+.copyright{
+  float: right;
+  width: auto;
+  font-size:10px;
+  padding-right: 5%;
+}
+
+footer{
+  background-color:#fff;
+  padding: 60px 0px;
+  margin-top: 100%;
+  margin-left: 20%;
+}
+
+
+.list-inline-item a{
+  color:#b1aca1;
+  font-size:17px;
+  padding:10px;
+}
+
+.list-inline-item a:hover{
+  color:#6794c2;
+}
+
+.fab fa-facebook-square, .fab fa-google-plus-g, .fab fa-linkedin {
+  color:#b1aca1;
+  font-size:20px;
+  padding:10px;
+}
+
+.fab fa-facebook-square:hover , .fab fa-google-plus-g:hover , .fab fa-linkedin:hover {
+  color:#6794c2;
+}

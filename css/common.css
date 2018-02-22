@@ -1,8 +1,38 @@
-#contentWrapper{
-  border: 2px solid red;
+body{
+  overflow: hidden;
+}
+
+#content-wrapper{
+  height: 100%;
+  width: 98.5%;
+  overflow-y: scroll;
+}
+
+#sidebar-wrapper {
+  background-color: #65768e;
+  height:100%;
+  padding-right: 0;
+  overflow-y: scroll;
+}
+
+.wrapper {
+  height: 100vh;
   padding-top: 90px;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
+  #navbarCollapse .mobileNav{
+    display: none;
+  }
+}
 
+@media (max-width: 1199px) {
+  #sidebar-wrapper{
+    display: none;
+  }
+  #content-wrapper{
+    flex: none;
+    max-width: none;
+    width: 100%;
+  }
 }

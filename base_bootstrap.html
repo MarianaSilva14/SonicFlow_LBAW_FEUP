@@ -19,6 +19,8 @@
 
   <!-- Developed CSS -->
   <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/homepage.css">
+  <link rel="stylesheet" href="css/contacts.css">
 
   <!-- Developed JS -->
   <script src="js/homepage.js" defer></script>
@@ -72,82 +74,160 @@
     </div>
   </nav>
 
-  <div id="contentWrapper">
+  <div class="wrapper row">
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper" class="col-2">
+      <ul class="sidebar-nav" id="sidebar">
+        <li><a>Computers<span class="sub_icon"><i class="fas fa-desktop fa-lg"></i></span></a></li>
+        <li><a>Laptops<span class="sub_icon"><i class="fas fa-laptop fa-lg"></i></span></a></li>
+        <li><a>Mobile<span class="sub_icon" id="mobile"><i class="fas fa-mobile-alt fa-lg"></i></span></a></li>
+        <li><a>Components<span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span></a></li>
+        <li><a>Storage<span class="sub_icon"><i class="fas fa-hdd fa-lg"></i></span></a></li>
+        <li><a>Periferals<span class="sub_icon"><i class="fas fa-keyboard fa-lg"></i></span></a></li>
+        <li><a>Photo<span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span></a></li>
+        <li><a>Video<span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span></a></li>
+        <li><a>Network<span class="sub_icon"><i class="fas fa-rss fa-lg"></i></span></a></li>
+        <li><a>Software<span class="sub_icon"><i class="far fa-window-maximize fa-lg"></i></span></a></li>
+        <li><a>Configurator<span class="sub_icon"><i class="fas fa-cogs fa-lg"></i></span></a></li>
+        <li><a>Configurator<span class="sub_icon"><i class="fas fa-cogs fa-lg"></i></span></a></li>
+        <li><a>Configurator<span class="sub_icon"><i class="fas fa-cogs fa-lg"></i></span></a></li>
+        <li><a>Software<span class="sub_icon"><i class="far fa-window-maximize fa-lg"></i></span></a></li>
+      </ul>
+    </div>
 
-    <!--Footer-->
-    <footer class="mt-4">
-      <div class="container-fluid bg-faded mt-4">
-        <div class="container">
-          <div class="row py-3">
-            <div class="col-md-4">
-              <div class="row py-2">
-                <div class="col-sm-3 hidden-md-down">
-                  <a class="bg-circle bg-info" href="#">
-                    <i class="fa fa-2x fa-fw fa-address-card" aria-hidden="true "></i>
-                  </a>
-                </div>
-                <div class="col-sm-9">
-                  <h4>Contact us</h4>
-                  <p>We'd love to hear from you</p>
-                </div>
+    <div id="content-wrapper" class="col-10">
+
+      <h1 class="header-title"> Contact Us</h1>
+      <h5 style="text-align:center">We'd love to hear from you!</h5>
+      <div class="social_icons" style="color:#009fc8">
+        <i class="fab fa-instagram fa-2x"></i>
+        <i class="fab fa-facebook-square fa-2x"></i>
+        <i class="fab fa-twitter-square fa-2x"></i>
+        <i class="fab fa-linkedin fa-2x"></i>
+      </div>
+      <br>
+      <div class="col-sm-12" id="parent">
+        <div class="row">
+          <div class="col-sm-6">
+            <form >
+              <div class="form-group">
+                <input type="text" class="form-control" id="name" name="nm" placeholder="Name" required autofocus="">
               </div>
-            </div>
-            <div class="col-md-4">
-              <div class="row py-2">
-                <div class="col-sm-3 hidden-md-down">
-                  <a class="bg-circle bg-info" href="#">
-                    <i class="fa fa-2x fa-fw fa-info" aria-hidden="true "></i>
-                  </a>
-                </div>
-                <div class="col-sm-9">
-                  <h4>Info</h4>
-                  <p class=" ">About us </a></p>
-                </div>
+              <div class="form-group form_left">
+                <input type="email" class="form-control" id="email" name="em" placeholder="Email" required>
               </div>
-            </div>
-            <div class="col-md-4">
-              <div class="row py-2">
-                <div class="col-sm-3 hidden-md-down">
-                  <a class="bg-circle bg-danger" href="# ">
-                    <i class="fas fa-2x fa-fw fa-question" aria-hidden="true "></i>
-                  </a>
-                </div>
-                <div class="col-sm-9">
-                  <h4>FAQ</h4>
-                  <p>Clear yourself up!</a></p>
-                </div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="phone" onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="10" placeholder="Mobile No." required="">
               </div>
-            </div>
+              <div class="form-group">
+                <textarea class="form-control textarea-contact" rows="5" id="comment" name="FB" placeholder="Type Your Message/Feedback here..." required></textarea>
+                <br>
+                <button class="btn btn-default btn-send"> <span class="glyphicon glyphicon-send"></span> Submit </button>
+              </div>
+            </form>
+          </div>
+          <div class="col-sm-6">
+            <iframe width="100%" height="320px;" frameborder="0" style="border:0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12012.041648923576!2d-8.59768759999995!3d41.17794010000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x405225b4b451f7d7!2sFEUP+-+Faculdade+de+Engenharia+da+Universidade+do+Porto!5e0!3m2!1spt-PT!2spt!4v1519150843364" allowfullscreen></iframe>
           </div>
         </div>
       </div>
 
-
-      <div class="container-fluid bg-primary py-3">
-        <div class="container">
-          <div class="row py-3">
-            <div class="col-md-9">
-              <p class="text-white">Lorem ipsum.</p>
-            </div>
-            <div class="col-md-3">
-              <div class="d-inline-block">
-                <div class="bg-circle-outline d-inline-block">
-                  <a href="https://www.facebook.com/" class="text-white"><i class="fab fa-2x fa-fw fa-facebook"></i></a>
+      <div class="container second-portion">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-lg-4">
+            <div class="box">
+              <div class="icon">
+                <div class="image"><i class="fas fa-envelope"></i></div>
+                <div class="info">
+                  <br>
+                  <h3 class="title">MAIL & WEBSITE</h3>
+                  <p>
+                    <i class="fas fa-envelope"></i> &nbsp gondhiyahardik6610@gmail.com
+                    <br>
+                    <br>
+                    <i class="fas fa-globe"></i> &nbsp www.hardikgondhiya.com
+                  </p>
                 </div>
-                <div class="bg-circle-outline d-inline-block">
-                  <a href="https://twitter.com/" class="text-white">
-                    <i class="fab fa-2x fa-fw fa-twitter"></i></a>
-                  </div>
-                  <div class="bg-circle-outline d-inline-block">
-                    <a href="https://www.linkedin.com/company/" class="text-white">
-                      <i class="fab fa-2x fa-fw fa-linkedin"></i></a>
-                    </div>
+              </div>
+              <div class="space"></div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-lg-4">
+            <div class="box">
+              <div class="icon">
+                <div class="image"><i class="fas fa-mobile" aria-hidden="true"></i></div>
+                <div class="info">
+                  <br>
+                  <h3 class="title">CONTACT</h3>
+                  <p>
+                    <i class="fas fa-mobile" aria-hidden="true"></i> &nbsp (+91)-9624XXXXX
+                    <br>
+                    <br>
+                    <i class="fas fa-mobile" aria-hidden="true"></i> &nbsp  (+91)-7567065254
+                  </p>
+                </div>
+              </div>
+              <div class="space"></div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-lg-4">
+            <div class="box">
+              <div class="icon">
+                <div class="image"><i class="fas fa-map-marker" aria-hidden="true"></i></div>
+                <div class="info">
+                  <br>
+                  <h3 class="title">ADDRESS</h3>
+                  <p>
+                    <i class="fas fa-map-marker" aria-hidden="true"></i> &nbsp 15/3 Junction Plot
+                    "Shree Krishna Krupa", Rajkot - 360001.
+                  </p>
+                </div>
+              </div>
+              <div class="space"></div>
+            </div>
+          </div>
+        </div>
+
+        <!--Footer-->
+        <footer>
+          <div class="container">
+            <div class="row text-center">
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <ul class="list-inline">
+
+                  <li class="list-inline-item">
+                    <a href="#">Home</a>
+                  </li>
+
+                  <li class="list-inline-item">
+                    <a href="#">About us</a>
+                  </li>
+
+                  <li class="list-inline-item">
+                    <a href="#">Contact</a>
+                  </li>
+
+                  <li class="list-inline-item">
+                    <a href="#">FAQ</a>
+                  </li>
+
+                  <li class="list-inline-item">
+                    <a href="#">Contact</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <ul class="nav navbar-nav list-inline">
+                  <ul class="list-inline">
+                    <li class="list-inline-item"><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                    <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin"></i></a></li></ul>
                   </div>
                 </div>
               </div>
-            </div>
+            </footer>
           </div>
-        </footer>
-      </div>
-    </body>
-    </html>
+        </div>
+
+      </body>
+      </html>

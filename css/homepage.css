@@ -1,3 +1,7 @@
+html, body {
+  font-family: 'Open Sans', sans-serif;
+}
+
 .navbar-brand{
  padding: 0;
 }
@@ -75,6 +79,7 @@ header.header-short {
 		overflow-y: scroll;
     background: #b6bdce;
     height: 100%;
+    padding-top: 5%;
 }
 
 #sidebar-wrapper::-webkit-scrollbar {
@@ -186,8 +191,6 @@ background-color: #65768e;
 
 footer{
   background-color:#fff;
-  padding: 60px 0px;
-  margin-top: 50%;
   margin-left: 20%;
 }
 
@@ -196,6 +199,8 @@ footer{
   color:grey;
   font-size:17px;
   padding:10px;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .list-inline-item a:hover{
@@ -204,8 +209,8 @@ footer{
 
 .fab fa-facebook-square, .fab fa-google-plus-g, .fab fa-linkedin {
   color:grey;
-  font-size:25px;
-  padding:10px;
+  font-size:28px;
+  padding:5px;
 }
 
 .fab fa-facebook-square:hover , .fab fa-google-plus-g:hover , .fab fa-linkedin:hover {

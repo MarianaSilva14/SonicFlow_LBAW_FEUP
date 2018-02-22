@@ -21,8 +21,8 @@
 }
 
 #imageProduct { grid-area: image; }
-#titleProduct { 
-	grid-area: title; 
+#titleProduct {
+	grid-area: title;
 	font-size: 2em;
 }
 #rate_price { grid-area: rate_price; }
@@ -32,7 +32,7 @@
 #price{
 	font-size: 2em;
 	color: #f8941e;
-	float: right;	
+	float: right;
 }
 
 #addToCart { grid-area: addToCart; }
@@ -86,3 +86,49 @@
 .addToCart:hover span:after {
   opacity: 1;
   right: 0;
+}
+
+/*CSS FOOTER*/
+
+footer{
+	font-family: 'Open Sans', sans-serif;
+}
+
+.bg-primary {
+ background-color: #000 !important;
+}
+
+.bg-circle
+{
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  padding: 14px 4px;
+  color: #ececec;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.bg-circle-outline
+{
+  width: 50px;
+  height: 50px;
+  color:smoke;
+  padding: 8px 2px;
+  border-color: smoke;
+  border-radius: 50%;
+}
+
+
+.bg-circle a, a:hover, .media a:focus
+{
+  text-decoration: none !important;
+  outline: none;
+  color: #ececec;
+}
+.bg-circle-outline a, a:hover, .media a:focus
+{
+  text-decoration: none !important;
+  outline: none;
+  color: #ececec;
+}

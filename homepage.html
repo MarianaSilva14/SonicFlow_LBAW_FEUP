@@ -15,81 +15,149 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!-- Developed CSS -->
   <link rel="stylesheet" href="css/homepage.css">
+
+  <!-- Developed JS -->
   <script src="js/homepage.js" defer></script>
 
   <title>Sonic Flow</title>
 </head>
 <body>
 
-  <!-- <header>
-    <a href="homepage.html">
-      <img id="logo" src="resources/images/logo_b.png"/>
-      <img id="logo-short" src="resources/images/logo.png"/>
-    </a>
-    <a href="#" id="cart">
-      <span class="glyphicon glyphicon-shopping-cart"></span>
-    </a>
-  </header> -->
+  <div class="fixedOverlay">
+    <nav class="navbar navbar-expand-md" style="background-color: #fff">
+      <a class="navbar-brand" href="#">
+        <img src="resources/images/logo.png" width="auto" height="59px" alt="">
+      </a>
+      <form class="form-inline my-2 my-lg-0">
+        <!-- Category Selection -->
+        <select id="catSelect" class="form-control" name="category">
+          <option value="comp">Computadores</option>
+          <option value="comp1">Computadores1</option>
+          <option value="comp2">Compu</option>
+          <option value="comp2">Computadores</option>
+        </select>
+        <!-- Search input -->
+        <input id="searchBar" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <!-- Profile DropDown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src="resources/images/icon.png" style="display: inline-block" height="43px" alt=""> Profile
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">Favorites</a>
+              <a class="dropdown-item" href="#">My profile</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About Us</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-  <nav class="navbar fixed-top navbar-expand-md bg-dark">
-    <a class="navbar-brand" href="#">
-      <img src="resources/images/logo.png" width="auto" height="59px" alt="">
-    </a>
-    <form class="form-inline my-2 my-lg-0">
-      <!-- Category Selection -->
-      <select id="catSelect" class="form-control" name="category">
-        <option value="comp">Computadores</option>
-        <option value="comp1">Computadores1</option>
-        <option value="comp2">Compu</option>
-        <option value="comp2">Computadores</option>
-      </select>
-      <!-- Search input -->
-      <input id="searchBar" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-        <!-- Profile DropDown -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <img src="resources/images/icon.png" style="display: inline-block" height="43px" alt=""> Profile
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Favorites</a>
-            <a class="dropdown-item" href="#">My profile</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">About Us</a>
-        </li>
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+      <ul class="sidebar-nav" id="sidebar">
+        <li><a><span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span>Computers</a></li>
+        <li><a><span class="sub_icon"><i class="fas fa-laptop fa-lg"></i></span>Laptops</a></li>
+        <li><a><span class="sub_icon" id="mobile"><i class="fas fa-mobile-alt fa-lg"></i></span>Mobile</a></li>
+        <li><a><span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span>Components</a></li>
+        <li><a><span class="sub_icon"><i class="fas fa-hdd fa-lg"></i></span>Storage</a></li>
+        <li><a><span class="sub_icon"><i class="fas fa-keyboard fa-lg"></i></span>Periferals</a></li>
+        <li><a><span class="sub_icon"><i class="fas fa-desktop fa-lg"></i></span>Image and Video</a></li>
+        <li><a><span class="sub_icon"><i class="fas fa-rss fa-lg"></i></span>Network</a></li>
+        <li><a><span class="sub_icon"><i class="far fa-window-maximize fa-lg"></i></span>Software</a></li>
+        <li><a><span class="sub_icon"><i class="fas fa-cogs fa-lg"></i></span>Configurator</a></li>
       </ul>
     </div>
-  </nav>
+  </div>
+
+  <div id="page-content-wrapper">
+    <ul>
+      <li>a</li>
+      <li>a</li>
+      <li>a</li>
+      <li>a</li>
+      <li>a</li>
+      <li>a</li>
+      <li>a</li>
+      <li>a</li>
+      <li>a</li>
+      <li>a</li>
+      <li>a</li>
+      <li>a</li>
+      <li>a</li>
+      <li>a</li>
+      <li>a</li>
+      <li>a</li>
+      <li>a</li>
+      <li>a</li>
+      <li>a</li>
+      <li>a</li>
+      <li>a</li>
+      <li>a</li>
+      <li>a</li>
+      <li>a</li>
+      <li>a</li>
+      <li>a</li>
+      <li>a</li>
+      <li>a</li>
+      <li>a</li>
+      <li>a</li>
+      <li>a</li>
+      <li>a</li>
+      <li>a</li>
+      <li>a</li>
+      <li>a</li>
+      <li>a</li>
+      <li>a</li>
+      <li>a</li>
+      <li>a</li>
+      <li>a</li>
+      <li>a</li>
+      <li>a</li>
+      <li>a</li>
+      <li>a</li>
+      <li>a</li>
+      <li>a</li>
+      <li>a</li>
+      <li>a</li>
+      <li>a</li>
+      <li>a</li>
+      <li>a</li>
+      <li>a</li>
+      <li>a</li>
+      <li>a</li>
+    </ul>
+  </div>
 
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <div id="sidebar-wrapper">
-      <ul id="sidebar_menu" class="sidebar-nav">
-        <li class="sidebar-brand"><a id="menu-toggle" href="#">Menu<span id="main_icon"><i class="fas fa-bars fa-lg"></i></span></a></li>
-      </ul>
+    <!-- <div id="sidebar-wrapper">
       <ul class="sidebar-nav" id="sidebar">
-        <li><a>Computers<span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span></a></li>
-        <li><a>Laptops<span class="sub_icon"><i class="fas fa-laptop fa-lg"></i></span></a></li>
-        <li><a>Mobile<span class="sub_icon" id="mobile"><i class="fas fa-mobile-alt fa-lg"></i></span></a></li>
-        <li><a>Components<span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span></a></li>
-        <li><a>Storage<span class="sub_icon"><i class="fas fa-hdd fa-lg"></i></span></a></li>
-        <li><a>Periferals<span class="sub_icon"><i class="fas fa-keyboard fa-lg"></i></span></a></li>
-        <li><a>Image and Video<span class="sub_icon"><i class="fas fa-desktop fa-lg"></i></span></a></li>
-        <li><a>Network<span class="sub_icon"><i class="fas fa-rss fa-lg"></i></span></a></li>
-        <li><a>Software<span class="sub_icon"><i class="far fa-window-maximize fa-lg"></i></span></a></li>
-        <li><a>Configurator<span class="sub_icon"><i class="fas fa-cogs fa-lg"></i></span></a></li>
+        <li><a><span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span>Computers</a></li>
+        <li><a><span class="sub_icon"><i class="fas fa-laptop fa-lg"></i></span>Laptops</a></li>
+        <li><a><span class="sub_icon" id="mobile"><i class="fas fa-mobile-alt fa-lg"></i></span>Mobile</a></li>
+        <li><a><span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span>Components</a></li>
+        <li><a><span class="sub_icon"><i class="fas fa-hdd fa-lg"></i></span>Storage</a></li>
+        <li><a><span class="sub_icon"><i class="fas fa-keyboard fa-lg"></i></span>Periferals</a></li>
+        <li><a><span class="sub_icon"><i class="fas fa-desktop fa-lg"></i></span>Image and Video</a></li>
+        <li><a><span class="sub_icon"><i class="fas fa-rss fa-lg"></i></span>Network</a></li>
+        <li><a><span class="sub_icon"><i class="far fa-window-maximize fa-lg"></i></span>Software</a></li>
+        <li><a><span class="sub_icon"><i class="fas fa-cogs fa-lg"></i></span>Configurator</a></li>
       </ul>
-    </div>
+    </div> -->
 
     <!-- Page content -->
-    <div id="page-content-wrapper">
+    <!-- <div id="page-content-wrapper">
       <ul>
         <li>a</li>
         <li>a</li>
@@ -146,7 +214,7 @@
         <li>a</li>
         <li>a</li>
       </ul>
-    </div>
+    </div> -->
 
     <!--Footer-->
     <footer class="page-footer indigo center-on-small-only pt-0">

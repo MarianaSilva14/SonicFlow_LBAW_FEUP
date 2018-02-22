@@ -187,13 +187,13 @@ background-color: #65768e;
 footer{
   background-color:#fff;
   padding: 60px 0px;
-  margin-top: 100%;
+  margin-top: 50%;
   margin-left: 20%;
 }
 
 
 .list-inline-item a{
-  color:#b1aca1;
+  color:grey;
   font-size:17px;
   padding:10px;
 }
@@ -203,8 +203,8 @@ footer{
 }
 
 .fab fa-facebook-square, .fab fa-google-plus-g, .fab fa-linkedin {
-  color:#b1aca1;
-  font-size:20px;
+  color:grey;
+  font-size:25px;
   padding:10px;
 }
 

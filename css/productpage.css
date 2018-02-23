@@ -2,16 +2,19 @@
 	height: 75%;
     margin: 2px;
     padding: 2px;
+    
 }
 
 #product {
-  width:  90%;
+
+  display: grid; /*here*/
+
+  width:  60%;
   margin: 5% 5%;
   padding: 5%;
   height: 100%;
   border: 1px solid #8D8D8D;
-
-  display: grid;
+  
   grid-template-columns: 2fr 3fr;
   grid-template-rows: 1.5fr 1fr 1fr 1fr;
   grid-template-areas: "image  title"
@@ -86,49 +89,4 @@
 .addToCart:hover span:after {
   opacity: 1;
   right: 0;
-}
-
-/*CSS FOOTER*/
-
-footer{
-	font-family: 'Open Sans', sans-serif;
-}
-
-.bg-primary {
- background-color: #000 !important;
-}
-
-.bg-circle
-{
-  display: inline-block;
-  width: 60px;
-  height: 60px;
-  padding: 14px 4px;
-  color: #ececec;
-  text-align: center;
-  border-radius: 50%;
-}
-
-.bg-circle-outline
-{
-  width: 50px;
-  height: 50px;
-  color:smoke;
-  padding: 8px 2px;
-  border-color: smoke;
-  border-radius: 50%;
-}
-
-
-.bg-circle a, a:hover, .media a:focus
-{
-  text-decoration: none !important;
-  outline: none;
-  color: #ececec;
-}
-.bg-circle-outline a, a:hover, .media a:focus
-{
-  text-decoration: none !important;
-  outline: none;
-  color: #ececec;
 }

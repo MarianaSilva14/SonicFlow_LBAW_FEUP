@@ -128,3 +128,13 @@ footer{
     margin-right: 0
   }
 }
+
+.btn-outline-success{
+  color: #009fc8;
+  border-color: #009fc8;
+}
+
+.btn-outline-success:hover{
+  background-color: #009fc8;
+  border-color: #009fc8;
+}

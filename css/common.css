@@ -5,15 +5,77 @@ body{
 
 #content-wrapper{
   height: 100%;
-  width: 98.5%;
-  overflow-y: scroll;
+  width: 100%;
+  position: relative;
+  padding-left: 25px;
+  padding-right: 5px;
+  right: 15px;
+  overflow-y: auto;
 }
 
 #sidebar-wrapper {
   background-color: #65768e;
   height:100%;
   padding-right: 0;
-  overflow-y: scroll;
+  overflow-y: auto;
+}
+
+#sidebar-wrapper .sidebar-nav {
+    display: block;
+    float: left;
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+#sidebar-wrapper .sidebar-nav li {
+  line-height: 40px;
+  text-indent: 20px;
+}
+
+#sidebar-wrapper .sidebar-nav li a {
+  color: white;
+  display: block;
+  text-decoration: none;
+  width: 100%;
+  background: #65768e;
+  border-top: 1px solid #65768e;
+  border-bottom: 1px solid #65768e;
+  padding-top: 5%;
+}
+
+#sidebar-wrapper .sidebar-nav li a:hover {
+  color: #65768e;
+  background: rgba(255,255,255,0.2);
+  text-decoration: none;
+  background: #009fc8;
+
+}
+
+#sidebar-wrapper .sub_icon{
+  float: right;
+  padding-right: 10px;
+}
+
+#sidebar-wrapper .sub_icon#mobile{
+  padding-right: 15px;
+}
+
+#sidebar-wrapper::-webkit-scrollbar,
+#content-wrapper::-webkit-scrollbar{
+  z-index: -1;
+}
+
+#sidebar-wrapper:hover::-webkit-scrollbar,
+#content-wrapper:hover::-webkit-scrollbar {
+  background-color: #aaa;
+}
+
+#sidebar-wrapper:hover::-webkit-scrollbar-thumb,
+#content-wrapper:hover::-webkit-scrollbar-thumb{
+    background: #000;
 }
 
 .wrapper {
@@ -21,12 +83,35 @@ body{
   padding-top: 90px;
 }
 
+footer{
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+.form-control:focus{
+  box-shadow: none;
+}
+
+/* PC Screen */
 @media (min-width: 1200px) {
+  #catSelect{
+  	border-top-right-radius: 0;
+  	border-bottom-right-radius: 0;
+    border-right: 1px solid black;
+  }
+
+  #searchBar{
+  	border-top-left-radius: 0;
+  	border-bottom-left-radius: 0;
+  	border-left: 1px solid black;
+  }
+
   #navbarCollapse .mobileNav{
     display: none;
   }
 }
 
+/* Tablet and mobile */
 @media (max-width: 1199px) {
   #sidebar-wrapper{
     display: none;
@@ -35,5 +120,12 @@ body{
     flex: none;
     max-width: none;
     width: 100%;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 350px) {
+  .navbar-brand{
+    margin-right: 0
   }
 }

@@ -27,8 +27,74 @@
 </head>
 
 <body>
+  <nav class="navbar navbar-expand-xl navbar-light fixed-top bg-white">
+    <!-- logo -->
+    <a class="navbar-brand" href="#">
+      <img src="resources/images/logo.png" width="auto" height="64px" alt="">
+    </a>
+    <!-- toggle button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- links and search bar -->
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <!-- search form -->
+      <form class="form-inline mt-2 mt-md-0">
+        <select id="catSelect" class="form-control" name="categories">
+          <option value="option">option</option>
+          <option value="option1">option medium</option>
+          <option value="option2">option very very big</option>
+        </select>
+        <input id="searchBar" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+      <!-- links -->
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Disabled</a>
+        </li>
+        <li class="nav-item mobileNav">
+          <a class="nav-link" href="#">Cat1</a>
+        </li>
+        <li class="nav-item mobileNav">
+          <a class="nav-link" href="#">cat2</a>
+        </li>
+        <li class="nav-item mobileNav">
+          <a class="nav-link" href="#">cat3</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+<div class="wrapper row">
+  <!-- Sidebar -->
+  <div id="sidebar-wrapper" class="col-2">
+    <ul class="sidebar-nav" id="sidebar">
+      <li><a>Computers<span class="sub_icon"><i class="fas fa-desktop fa-lg"></i></span></a></li>
+      <li><a>Laptops<span class="sub_icon"><i class="fas fa-laptop fa-lg"></i></span></a></li>
+      <li><a>Mobile<span class="sub_icon" id="mobile"><i class="fas fa-mobile-alt fa-lg"></i></span></a></li>
+      <li><a>Components<span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span></a></li>
+      <li><a>Storage<span class="sub_icon"><i class="fas fa-hdd fa-lg"></i></span></a></li>
+      <li><a>Periferals<span class="sub_icon"><i class="fas fa-keyboard fa-lg"></i></span></a></li>
+      <li><a>Photo<span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span></a></li>
+      <li><a>Video<span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span></a></li>
+      <li><a>Network<span class="sub_icon"><i class="fas fa-rss fa-lg"></i></span></a></li>
+      <li><a>Software<span class="sub_icon"><i class="far fa-window-maximize fa-lg"></i></span></a></li>
+      <li><a>Configurator<span class="sub_icon"><i class="fas fa-cogs fa-lg"></i></span></a></li>
+      <li><a>Configurator<span class="sub_icon"><i class="fas fa-cogs fa-lg"></i></span></a></li>
+      <li><a>Configurator<span class="sub_icon"><i class="fas fa-cogs fa-lg"></i></span></a></li>
+      <li><a>Software<span class="sub_icon"><i class="far fa-window-maximize fa-lg"></i></span></a></li>
+    </ul>
+  </div>
+
     <!-- Page content -->
-    <div id="page-content-wrapper">
+    <div id="content-wrapper" class="col-10">
           <h1 class="header-title"> Contact Us</h1>
           <h5 style="text-align:center">We'd love to hear from you!</h5>
           <div class="social_icons" style="color:#009fc8">
@@ -119,6 +185,46 @@
               </div>
             </div>
           </div>
+
+          <!--Footer-->
+          <footer>
+                      <hr width="75%">
+            <div class="container">
+              <div class="row text-center">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <ul class="list-inline">
+
+                    <li class="list-inline-item">
+                      <a href="#">Home</a>
+                    </li>
+
+                    <li class="list-inline-item">
+                      <a href="#">About us</a>
+                    </li>
+
+                    <li class="list-inline-item">
+                      <a href="#">Contact</a>
+                    </li>
+
+                    <li class="list-inline-item">
+                      <a href="#">FAQ</a>
+                    </li>
+
+                    <li class="list-inline-item">
+                      <a href="#">Contact</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <ul class="nav navbar-nav list-inline">
+                    <ul class="list-inline">
+                      <li class="list-inline-item"><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                      <li class="list-inline-item"><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                      <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin"></i></a></li></ul>
+                    </div>
+                  </div>
+                </div>
+              </footer>
         </div>
     </div>
   </body>

@@ -1,7 +1,6 @@
 .header-title
 {
   text-align: center;
-  font-family: 'Open Sans', sans-serif;
   color:#009fc8;
 }
 
@@ -54,10 +53,10 @@
 .box > .icon:hover > .image > i { color: white !important; }
 .box > .icon > .info { margin-top: -24px; background: rgba(0, 0, 0, 0.04); border: 1px solid #e0e0e0; padding: 15px 0 10px 0; min-height:163px;}
 .box > .icon:hover > .info { background: rgba(0, 0, 0, 0.04); border-color: #e0e0e0; color: white; }
-.box > .icon > .info > h3.title { font-family: "Open Sans",sans-serif !important; font-size: 16px; color: #222; font-weight: 700; }
-.box > .icon > .info > p { font-family: "Open Sans",sans-serif !important; font-size: 13px; color: #666; line-height: 1.5em; margin: 20px;}
+.box > .icon > .info > h3.title { font-size: 16px; color: #222; font-weight: 700; }
+.box > .icon > .info > p { font-size: 13px; color: #666; line-height: 1.5em; margin: 20px;}
 .box > .icon:hover > .info > h3.title, .box > .icon:hover > .info > p, .box > .icon:hover > .info > .more > a { color: #222; }
-.box > .icon > .info > .more a { font-family: "Open Sans",sans-serif !important; font-size: 12px; color: #222; line-height: 12px; text-transform: uppercase; text-decoration: none; }
+.box > .icon > .info > .more a { font-size: 12px; color: #222; line-height: 12px; text-transform: uppercase; text-decoration: none; }
 .box > .icon:hover > .info > .more > a { color: #fff; padding: 6px 8px; background-color: #63B76C; }
 .box .space { height: 30px; }
 

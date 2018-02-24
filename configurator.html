@@ -1,68 +1,154 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Configurator</title>
-  </head>
-  <body>
-    <ul>
-      <li>
-        A CPU(Central Processing Unit) is the required processor for a computer
-        to operate. A CPU consists in one or more independant processing cores
-        but they can still work together so the more cores your CPU has the more
-        the more calculations you can make per time unit. Each core can have one
-        or two threads(separate logical processing units) so as with cores the
-        same rule aplies. Intel developed Hyperthreading technology and AMD "...".
-        If your CPU has one of these technology them the number of threads in your
-        CPU is 2 per core otherwise it's 1. It's worth noting that some CPU's
-        include a graphics processor aswell.
-        Suggestions:
-        <ul>
-          <li>
-            High Performance (16+ Threads)
-            <p>
-              High perfomance CPU's are ideal for distributed workload that can
-              make use of all the available threads. These workload are presented
-              by video and image rendering
-            </p>
-          </li>
-          <li>
-            Medium Performance (8-12 Threads)
-            <p>
-              Ideal for a distributed workload, these CPU's are good for gaming
-              and multitasking as they have high clock speeds which increase the
-              speed of light workload and still have enough processing capacity
-              to do some heavy workloads.
-            </p>
-          </li>
-          <li>
-            Low Performance (8- Threads)
-            <p>
-              These CPU's are often used for light workloads that won't require
-              much processing power. Their selling points are lower cost and power
-              comsumption. Ideal for medium multitasking and lower-end gaming.
-            </p>
-          </li>
-        </ul>
-      </li>
-      <li>
-        The Graphics Card is a board which includes all the necessary components
-        to do graphic processing, these processors are required mainly for gaming
-        but in general they can perform very distributed tasks for their high amount
-        of cores and they do this tasks very fast as they only process specialized
-        workloads. If you don't need to do any specialized workloads you might want
-        to consider a CPU with an integrated graphics processor as it can reduce
-        your system's overall cost. Something to note here is the VRAM available.
-        Cards with the same processor have different amounts of memory available
-        as each task requires specific memory space, you should take your use in
-        account when choosing between memory amount.
-      </li>
-      <li>RAM(Random Access Memory)</li>
-      <li>Motherboard</li>
-      <li>CPU Cooler</li>
-      <li>Storage</li>
-      <li>Case</li>
-      <li>PSU(Power Supply Unit)</li>
-    </ul>
-  </body>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" type="image/png" href="resources/images/icon_2.png" sizes="16x16">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"> -->
+
+  <!-- Developed CSS -->
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/configurator.css">
+
+  <!-- Developed JS -->
+  <script src="js/homepage.js" defer></script>
+
+  <title>Configurator</title>
+</head>
+
+<body>
+
+  <!-- <ul>
+    <li>
+      A CPU(Central Processing Unit) is the required processor for a computer
+      to operate. A CPU consists in one or more independant processing cores
+      but they can still work together so the more cores your CPU has the more
+      the more calculations you can make per time unit. Each core can have one
+      or two threads(separate logical processing units) so as with cores the
+      same rule aplies. Intel developed Hyperthreading technology and AMD "...".
+      If your CPU has one of these technology them the number of threads in your
+      CPU is 2 per core otherwise it's 1. It's worth noting that some CPU's
+      include a graphics processor aswell.
+      Suggestions:
+      <ul>
+        <li>
+          High Performance (16+ Threads)
+          <p>High perfomance CPU's are ideal for distributed workload that can
+            make use of all the available threads. These workload are presented
+            by video and image rendering
+          </p>
+        </li>
+        <li>
+          Medium Performance (8-12 Threads)
+          <p>
+            Ideal for a distributed workload, these CPU's are good for gaming
+            and multitasking as they have high clock speeds which increase the
+            speed of light workload and still have enough processing capacity
+            to do some heavy workloads.
+          </p>
+        </li>
+        <li>
+          Low Performance (8- Threads)
+          <p>
+            These CPU's are often used for light workloads that won't require
+            much processing power. Their selling points are lower cost and power
+            comsumption. Ideal for medium multitasking and lower-end gaming.
+          </p>
+        </li>
+      </ul>
+    </li>
+    <li>
+      The Graphics Card is a board which includes all the necessary components
+      to do graphic processing, these processors are required mainly for gaming
+      but in general they can perform very distributed tasks for their high amount
+      of cores and they do this tasks very fast as they only process specialized
+      workloads. If you don't need to do any specialized workloads you might want
+      to consider a CPU with an integrated graphics processor as it can reduce
+      your system's overall cost. Something to note here is the VRAM available.
+      Cards with the same processor have different amounts of memory available
+      as each task requires specific memory space, you should take your use in
+      account when choosing between memory amount.
+    </li>
+    <li>RAM(Random Access Memory)</li>
+    <li>Motherboard</li>
+    <li>CPU Cooler</li>
+    <li>Storage</li>
+    <li>Case</li>
+    <li>PSU(Power Supply Unit)</li>
+  </ul> -->
+
+
+  <!-- page intro under construction -->
+
+
+
+  <form>
+
+    <div id="components" class="form-group">
+      <div class="form-row">
+        <div class="col-xl-6 col-sm-12">
+          <label for="caseInput" class="mainLabel">Case</label>
+          <select id="caseInput" class="form-control" name="pc-case">
+            <option value="">None</option>
+
+            <option value="4054_4054" data-html="<img src='/Client/CL000000/Temp/CAIXA1306_1_636448035191081453_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1306" data-link="/pt-PT/produto/4054/Caixa-Aerocool-AERO-300-Preta/AERO300.html" data-part="AERO300" data-stock="yellow" data-price="33.900030">Caixa Aerocool AERO-300 Preta (33,90 €)</option>
+
+            <option value="4055_4055" data-html="<img src='/Client/CL000000/Temp/CAIXA1323_1_636448035193181456_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1323" data-link="/pt-PT/produto/4055/Caixa-Aerocool-AERO-300-Window-Preta/AERO300FAW.html" data-part="AERO300FAW" data-stock="blue" data-price="40.999959">Caixa Aerocool AERO-300 Window Preta (41,00 €)</option>
+
+            <option value="4060_4060" data-html="<img src='/Client/CL000000/Temp/CAIXA1177_1_636448033900479646_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1177" data-link="/pt-PT/produto/4060/Caixa-Aerocool-AERO-800-Window-Preta/AERO800BK.html" data-part="AERO800BK" data-stock="blue" data-price="67.900059">Caixa Aerocool AERO-800 Window Preta (67,90 €)</option>
+
+            <option value="4059_4059" data-html="<img src='/Client/CL000000/Temp/CAIXA1325_1_636448035193781457_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1325" data-link="/pt-PT/produto/4059/Caixa-Aerocool-BattleHawk-Branca/BATTLEHAWKWH.html" data-part="BATTLEHAWKWH" data-stock="blue" data-price="58.900026">Caixa Aerocool BattleHawk Branca (58,90 €)</option>
+
+            <option value="30842_11543" data-html="<img src='/Client/CL000000/Temp/CAIXA1357_1_636448035616282048_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1357" data-link="/pt-PT/produto/30842/Caixa-Aerocool-CyberX/CYBERX.html" data-part="CYBERX" data-stock="blue" data-price="39.899970">Caixa Aerocool CyberX (39,90 €)</option>
+
+            <option value="30841_11542" data-html="<img src='/Client/CL000000/Temp/CAIXA1356_1_636448035616082048_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1356" data-link="/pt-PT/produto/30841/Caixa-Aerocool-CyberX-Advance/CYBERXAD.html" data-part="CYBERXAD" data-stock="blue" data-price="46.900023">Caixa Aerocool CyberX Advance (46,90 €)</option>
+
+            <option value="31971_12673" data-html="<img src='/Client/CL000000/Temp/CAIXA1408_1_636523300096187892_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1408" data-link="/pt-PT/produto/31971/Caixa-Aerocool-Cylon-RGB-Flow-Lighting/CYLON.html" data-part="CYLON" data-stock="yellow" data-price="40.999959">Caixa Aerocool Cylon RGB Flow Lighting (41,00 €)</option>
+
+            <option value="31972_12674" data-html="<img src='/Client/CL000000/Temp/CAIXA1409_1_636523300096500393_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1409" data-link="/pt-PT/produto/31972/Caixa-Aerocool-DS-230/DS230BK.html" data-part="DS230BK" data-stock="blue" data-price="94.900035">Caixa Aerocool DS 230 (94,90 €)</option>
+
+            <option value="4053_4053" data-html="<img src='/Client/CL000000/Temp/CAIXA957_1_636448033258878748_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA957" data-link="/pt-PT/produto/4053/Caixa-Aerocool-GT-Advance-Preta/GTADBK.html" data-part="GTADBK" data-stock="blue" data-price="36.900000">Caixa Aerocool GT Advance Preta (36,90 €)</option>
+
+            <option value="30838_11539" data-html="<img src='/Client/CL000000/Temp/CAIXA1361_1_636448035617482050_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1361" data-link="/pt-PT/produto/30838/Caixa-Aerocool-Project-7-P7-C0-Pro/P7C0PRO.html" data-part="P7C0PRO" data-stock="blue" data-price="112.899978">Caixa Aerocool Project 7 P7-C0 Pro (112,90 €)</option>
+
+            <option value="4063_4063" data-html="<img src='/Client/CL000000/Temp/CAIXA1328_1_636448035194681458_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1328" data-link="/pt-PT/produto/4063/Caixa-Aerocool-Project-7-P7-C1-Branca/P7C1WG.html" data-part="P7C1WG" data-stock="blue" data-price="112.899978">Caixa Aerocool Project 7 P7-C1 Branca (112,90 €)</option>
+
+            <option value="4062_4062" data-html="<img src='/Client/CL000000/Temp/CAIXA1327_1_636448035194381458_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1327" data-link="/pt-PT/produto/4062/Caixa-Aerocool-Project-7-P7-C1-Preta/P7C1BG.html" data-part="P7C1BG" data-stock="blue" data-price="112.899978">Caixa Aerocool Project 7 P7-C1 Preta (112,90 €)</option>
+
+          </select>
+          <small id="emailHelp" class="form-text text-muted"><b>PN</b>:&ltpart number&gt , <b>REF</b>:&ltreference&gt</small>
+        </div>
+        <div class="col-xl-1 col-sm-2 col-6">
+          <label for="caseUnitPrice">Unit</label>
+          <input id="caseUnitPrice" type="text" readonly class="form-control-plaintext unit-price-display" value="€9999.99">
+        </div>
+        <div class="col-xl-2 col-sm-4 col-6">
+          <label for="caseAmount">&zwnj;</label>
+          <input id="caseAmount" type="number" class="form-control" value="1" min="1" max="100" step="1">
+        </div>
+        <div class="col-xl-2 col-sm-4 col-6">
+          <label for="caseAvalability">&zwnj;</label>
+          <input id="caseAvalability" type="text" readonly class="form-control-plaintext" value="Available">
+        </div>
+        <div class="col-xl-1 col-sm-2 col-6">
+          <label for="caseTotalPrice">Total</label>
+          <input id="caseTotalPrice" type="text" readonly class="form-control-plaintext" value="€9999.99">
+        </div>
+      </div>
+    </div>
+
+  <form/>
+</body>
 </html>

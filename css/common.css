@@ -6,10 +6,8 @@ body{
 #content-wrapper{
   height: 100%;
   width: 100%;
-  position: relative;
-  padding-left: 25px;
-  padding-right: 5px;
-  right: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
   overflow-y: auto;
 }
 
@@ -81,6 +79,7 @@ body{
 .wrapper {
   height: 100vh;
   padding-top: 90px;
+  margin: 0;
 }
 
 footer{

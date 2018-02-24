@@ -1,3 +1,35 @@
 .mainLabel{
   font-weight: bold;
 }
+
+.hidden {
+  display: none;
+}
+
+.mainLabel{
+  width: 100%;
+  text-align: justify;
+}
+
+a.toggle-tips{
+  float: right;
+  color: inherit;
+  text-decoration: none;
+  padding-right: 5%;
+}
+
+.toggle-tips svg{
+  transition: all 0.5s;
+}
+
+.overlay.hidden ~ .toggle-tips svg{
+  transform: rotate(-90deg);
+}
+
+.overlay {
+  z-index: 10;
+  background-color: white;
+  border: 1px solid #ff9090;
+  position: absolute;
+  border-radius: 5px;
+}

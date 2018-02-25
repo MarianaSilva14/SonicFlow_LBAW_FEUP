@@ -68,12 +68,14 @@ body{
 
 #sidebar-wrapper:hover::-webkit-scrollbar,
 #content-wrapper:hover::-webkit-scrollbar {
-  background-color: #aaa;
+  background-color: #b6bdce;
+  border-radius: 20px;
 }
 
 #sidebar-wrapper:hover::-webkit-scrollbar-thumb,
 #content-wrapper:hover::-webkit-scrollbar-thumb{
-    background: #000;
+    background: #65768e;
+    border-radius: 20px;
 }
 
 .wrapper {

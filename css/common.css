@@ -28,7 +28,7 @@ body{
 }
 
 #sidebar-wrapper {
-  background-color: #b6bdce;
+  background-color: #65768e;
   height:100%;
   padding: 0;
   overflow-y: auto;
@@ -54,9 +54,9 @@ body{
   display: block;
   text-decoration: none;
   width: 100%;
-  background: #b6bdce;
-  border-top: 1px solid #b6bdce;
-  border-bottom: 1px solid #b6bdce;
+  background: #65768e;
+  border-top: 1px solid #65768e;
+  border-bottom: 1px solid #65768e;
   padding-top: 5%;
   font-weight: bold;
 }
@@ -65,7 +65,7 @@ body{
   color: #fff;
   background: rgba(255,255,255,0.2);
   text-decoration: none;
-  background: #65768e;
+  background: #b6bdce;
 }
 
 #sidebar-wrapper .sub_icon{
@@ -103,6 +103,16 @@ body{
 footer{
   padding-top: 5%;
   padding-bottom: 5%;
+}
+
+footer a{
+  color: #65768e;
+}
+
+footer a:hover{
+  color: #009fc8;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .form-control:focus{

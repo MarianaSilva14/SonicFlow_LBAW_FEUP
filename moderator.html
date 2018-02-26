@@ -75,7 +75,7 @@
 
   <div class="wrapper row">
     <!-- Sidebar -->
-    <div id="sidebar-wrapper" class="col-2">
+    <!-- <div id="sidebar-wrapper" class="col-2">
       <ul class="sidebar-nav" id="sidebar">
         <li><a>Computers<span class="sub_icon"><i class="fas fa-desktop fa-lg"></i></span></a></li>
         <li><a>Laptops<span class="sub_icon"><i class="fas fa-laptop fa-lg"></i></span></a></li>
@@ -92,9 +92,30 @@
         <li><a>Configurator<span class="sub_icon"><i class="fas fa-cogs fa-lg"></i></span></a></li>
         <li><a>Software<span class="sub_icon"><i class="far fa-window-maximize fa-lg"></i></span></a></li>
       </ul>
-    </div>
+    </div> -->
 
     <div id="content-wrapper" class="col-10">
+      <nav class="nav-fill">
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <a class="nav-item nav-link active" id="nav-flagged-tab" data-toggle="tab" href="#nav-flagged" role="tab" aria-controls="nav-flagged" aria-selected="true">Flagged Comments</a>
+          <a class="nav-item nav-link" id="nav-banned-tab" data-toggle="tab" href="#nav-banned" role="tab" aria-controls="nav-banned" aria-selected="false">Banned Users</a>
+          <!-- <a class="nav-item nav-link" id="nav-chat-tab" data-toggle="tab" href="#nav-chat" role="tab" aria-controls="nav-chat" aria-selected="false">Chat</a> -->
+        </div>
+      </nav>
+      <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-flagged" role="tabpanel" aria-labelledby="nav-flagged-tab">
+        <br>
+        Commentaries that have been flagged by the user
+        </div>
+        <div class="tab-pane fade" id="nav-banned" role="tabpanel" aria-labelledby="nav-banned-tab">
+        <br>
+        Users that are banned
+        </div>
+        <!-- <div class="tab-pane fade" id="nav-chat" role="tabpanel" aria-labelledby="nav-chat-tab">
+        <br>
+        Mini chat application maybe???
+        </div> -->
+      </div>
 
     </div>
 

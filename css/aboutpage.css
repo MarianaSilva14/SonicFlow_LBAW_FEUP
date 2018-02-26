@@ -1,0 +1,33 @@
+p{
+    max-width: 600px;
+    margin: 40px auto;
+    line-height: 1.5em;
+    font-size: 1.2em;
+    padding: 10px;
+}
+
+h3{
+  width:100%;
+  color: #009fc8;
+  text-align:center;
+  border-bottom: 1.5px solid #009fc8;
+  line-height: 0.1em;
+  margin: 10px 0 20px;
+  width: 30%;
+  position: relative;
+}
+
+h3 span{
+  background: #fff;
+  padding: 0 10px;
+  margin-left: -50%;
+  margin-right: -50%;
+}
+
+h3 span::before{
+  margin-left: -50%;
+}
+
+h3 span::after{
+  margin-right: -50%;
+}

@@ -31,7 +31,12 @@ body{
   background-color: #65768e;
   height:100%;
   padding: 0;
+  z-index:2000;
   overflow-y: auto;
+}
+
+nav{
+    box-shadow:0 1px 5px 0 #b6bdce;
 }
 
 #sidebar-wrapper .sidebar-nav {
@@ -122,15 +127,18 @@ footer a:hover{
 /* PC Screen */
 @media (min-width: 1200px) {
   #catSelect{
-  	border-top-right-radius: 0;
-  	border-bottom-right-radius: 0;
-    border-right: 1px solid black;
+  	border-top-right-radius: 5px;
+  	border-top-left-radius: 5px;
+    border-bottom-right-radius: 0px;
+  	border-bottom-left-radius: 0px;
   }
 
   #searchBar{
-  	border-top-left-radius: 0;
-  	border-bottom-left-radius: 0;
-  	border-left: 1px solid black;
+    border-top-right-radius: 5px;
+  	border-top-left-radius: 5px;
+    border-bottom-right-radius: 0px;
+  	border-bottom-left-radius: 0px;
+    margin-left: 5px;
   }
 
   #navbarCollapse .mobileNav{

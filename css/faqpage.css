@@ -44,7 +44,7 @@ body {
   border-bottom: 1px solid #ddd;
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
-  color: #009fc8;
+  color: #65768e;
   transition: background-color .2s;
 
 }
@@ -94,7 +94,7 @@ body {
   line-height: 20px;
   letter-spacing: 0;
   text-transform: none;
-  color: #009fc8;
+  color: #65768e;
   font-weight: bold;
 }
 

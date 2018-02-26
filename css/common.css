@@ -1,3 +1,19 @@
+.bg-logo-blue{
+  background-color: #009fc8;
+}
+
+.bg-logo-orange{
+  background-color: #f8941e;
+}
+
+.bg-logo-greyDark{
+  background-color: #65768e;
+}
+
+.bg-logo-greyLight{
+  background-color: #b6bdce;
+}
+
 body{
   overflow: hidden;
   font-family: 'Open Sans', sans-serif;
@@ -14,7 +30,7 @@ body{
 #sidebar-wrapper {
   background-color: #65768e;
   height:100%;
-  padding-right: 0;
+  padding: 0;
   overflow-y: auto;
 }
 
@@ -42,14 +58,14 @@ body{
   border-top: 1px solid #65768e;
   border-bottom: 1px solid #65768e;
   padding-top: 5%;
+  font-weight: bold;
 }
 
 #sidebar-wrapper .sidebar-nav li a:hover {
-  color: #65768e;
+  color: #fff;
   background: rgba(255,255,255,0.2);
   text-decoration: none;
-  background: #009fc8;
-
+  background: #b6bdce;
 }
 
 #sidebar-wrapper .sub_icon{
@@ -87,6 +103,16 @@ body{
 footer{
   padding-top: 5%;
   padding-bottom: 5%;
+}
+
+footer a{
+  color: #65768e;
+}
+
+footer a:hover{
+  color: #009fc8;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .form-control:focus{

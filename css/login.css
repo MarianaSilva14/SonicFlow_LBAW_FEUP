@@ -9,7 +9,7 @@ html {
 
 body {
   margin: 0;
-  font: normal 75% Arial, Helvetica, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   background-color: inherit;
 }
 canvas {
@@ -156,7 +156,7 @@ canvas {
 
 .btn.btn-signin, .btn.btn-register{
     /*background-color: #4d90fe; */
-    background-color: rgb(104, 145, 162);
+    background-color: #009fc8;
     /* background-color: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
     padding: 0px;
     font-weight: 700;
@@ -178,7 +178,7 @@ canvas {
 .btn.btn-register:hover,
 .btn.btn-register:active,
 .btn.btn-register:focus {
-    background-color: rgb(0,159,200);
+    background-color: #b6bdce;
 }
 
 .forgot-password {

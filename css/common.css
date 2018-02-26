@@ -1,3 +1,19 @@
+.bg-logo-blue{
+  background-color: #009fc8;
+}
+
+.bg-logo-orange{
+  background-color: #f8941e;
+}
+
+.bg-logo-greyDark{
+  background-color: #65768e;
+}
+
+.bg-logo-greyLight{
+  background-color: #b6bdce;
+}
+
 body{
   overflow: hidden;
   font-family: 'Open Sans', sans-serif;
@@ -12,9 +28,9 @@ body{
 }
 
 #sidebar-wrapper {
-  background-color: #65768e;
+  background-color: #b6bdce;
   height:100%;
-  padding-right: 0;
+  padding: 0;
   overflow-y: auto;
 }
 
@@ -38,18 +54,18 @@ body{
   display: block;
   text-decoration: none;
   width: 100%;
-  background: #65768e;
-  border-top: 1px solid #65768e;
-  border-bottom: 1px solid #65768e;
+  background: #b6bdce;
+  border-top: 1px solid #b6bdce;
+  border-bottom: 1px solid #b6bdce;
   padding-top: 5%;
+  font-weight: bold;
 }
 
 #sidebar-wrapper .sidebar-nav li a:hover {
-  color: #65768e;
+  color: #fff;
   background: rgba(255,255,255,0.2);
   text-decoration: none;
-  background: #009fc8;
-
+  background: #65768e;
 }
 
 #sidebar-wrapper .sub_icon{

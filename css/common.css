@@ -33,6 +33,7 @@ body{
   padding: 0;
   z-index:2000;
   overflow-y: auto;
+  box-shadow: 1px 1px 0 0 #b6bdce;
 }
 
 nav{
@@ -85,6 +86,7 @@ nav{
 #sidebar-wrapper::-webkit-scrollbar,
 #content-wrapper::-webkit-scrollbar{
   z-index: -1;
+  width: 15px;
 }
 
 #sidebar-wrapper:hover::-webkit-scrollbar,

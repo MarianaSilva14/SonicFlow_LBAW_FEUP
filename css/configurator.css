@@ -1,7 +1,12 @@
 .mainLabel{
+  font-weight: bold;
   font-size: 1.2em;
   width: 100%;
   text-align: justify;
+}
+
+.mainLabel div{
+  font-weight: normal;
 }
 
 hr{
@@ -16,8 +21,7 @@ hr{
 
 .sectionTitle {
   padding-left: 5%;
-  margin-left: 2.5%;
-  margin-right: 2.5%;
+  margin: 2.5% 2.5% 1.5% 2.5%;
   border-bottom: 1px solid #f8941e;
 }
 
@@ -26,8 +30,15 @@ hr{
   top: 7px;
 }
 
-.hidden {
-  display: none;
+.sectionTitle.total {
+  border-bottom: 0;
+  border-top: 1px solid #f8941e;
+  text-align: right;
+  padding-right: 5%;
+}
+
+.sectionTitle.total span::before{
+  content: "Total:"
 }
 
 a.toggle-tips{
@@ -38,17 +49,11 @@ a.toggle-tips{
 }
 
 .toggle-tips svg{
+  transform: rotate(-90deg);
   transition: all 0.5s;
 }
 
-.overlay.hidden ~ .toggle-tips svg{
-  transform: rotate(-90deg);
-}
-
-.overlay {
-  z-index: 10;
-  background-color: white;
-  border: 1px solid #ff9090;
-  position: absolute;
-  border-radius: 5px;
+.toggle-tips[aria-expanded="true"] svg{
+  transform: rotate(0deg);
+  transition: all 0.5s;
 }

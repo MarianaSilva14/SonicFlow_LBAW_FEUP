@@ -24,7 +24,7 @@
 
   <!-- Developed JS -->
   <script src="js/homepage.js" defer></script>
-
+  <script src="js/product.js" defer></script>
   <title>Sonic Flow</title>
 </head>
 
@@ -141,9 +141,23 @@
               </div>
               <div class="col-md-6 col-6">
                 <label for="crating">Rating</label>
-                <p id="rating" >
+
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="star-rating">
+                      <span class="fas fa-star" data-rating="1"></span>
+                      <span class="fas fa-star" data-rating="2"></span>
+                      <span class="fas fa-star" data-rating="3"></span>
+                      <span class="fas fa-star" data-rating="4"></span>
+                      <span class="fas fa-star" data-rating="5"></span>
+                      <input type="hidden" name="whatever1" class="rating-value" value="0">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- <p id="rating" >
                   &ltinsert rating&gt
-                </p>
+                </p> -->
               </div>
               <div class="col-md-6 col-6">
                 <label for="price">Price</label>

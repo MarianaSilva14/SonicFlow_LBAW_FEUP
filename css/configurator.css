@@ -1,14 +1,33 @@
 .mainLabel{
-  font-weight: bold;
+  font-size: 1.2em;
+  width: 100%;
+  text-align: justify;
+}
+
+hr{
+  width: 90%;
+  border-color: #009fc8;
+}
+
+.form-group{
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.sectionTitle {
+  padding-left: 5%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  border-bottom: 1px solid #f8941e;
+}
+
+.sectionTitle span{
+  position: relative;
+  top: 7px;
 }
 
 .hidden {
   display: none;
-}
-
-.mainLabel{
-  width: 100%;
-  text-align: justify;
 }
 
 a.toggle-tips{

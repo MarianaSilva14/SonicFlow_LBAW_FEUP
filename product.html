@@ -145,23 +145,40 @@
                 </p>
               </div>
               <div class="col-md-6 col-6">
-                <label for="caseTotalPrice">Total</label>
-                <input id="caseTotalPrice" type="text" readonly class="form-control-plaintext" value="€9999.99">
+                <label for="price">Price</label>
+                <input id="price" type="text" readonly class="form-control-plaintext" value="€9999.99">
+                <small class="orignalPrice">€9999,99</small>
               </div>
               <div class="col-md-4 col-6">
-                <label for="caseAmount">&zwnj;</label>
-                <input id="caseAmount" type="number" class="form-control" value="1" min="1" max="100" step="1">
+                <label for="amount">&zwnj;</label>
+                <input id="amount" type="number" class="form-control" value="1" min="1" max="100" step="1">
               </div>
-              <div class="col-md-8 col-6">
-                <label for="caseAvalability">&zwnj;</label>
-                <input id="caseAvalability" type="text" readonly class="form-control-plaintext" value="Available">
+              <div class="col-md-2 col-6">
+                <label for="avalability">&zwnj;</label>
+                <input id="avalability" type="text" readonly class="form-control-plaintext" value="Available">
+              </div>
+              <div class="col-md-6 col-12">
+                <button class="addToCart" style="vertical-align:middle"><span> Add to Cart </span></button>
               </div>
             </div>
           </div>
         </div>
       </form>
 
-
+      <div class="secondary">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="specs-tab" data-toggle="tab" href="#specs" role="tab" aria-controls="home" aria-selected="true">Specifications</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="comment-tab" data-toggle="tab" href="#comments" role="tab" aria-controls="profile" aria-selected="false">Comments</a>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="specs" role="tabpanel" aria-labelledby="home-tab">this is specs</div>
+          <div class="tab-pane fade" id="comment" role="tabpanel" aria-labelledby="profile-tab">this is coments</div>
+        </div>
+      </div>
 
       <!--Footer-->
       <footer>

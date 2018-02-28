@@ -1,65 +1,31 @@
-#page-content-wrapper {
-	height: 75%;
-    margin: 2px;
-    padding: 2px;
-
-}
-
-#product {
-
-  display: grid; /*here*/
-
-  width:  60%;
-  margin: 5% 5%;
-  padding: 5%;
-  height: 100%;
-  border: 1px solid #8D8D8D;
-
-  grid-template-columns: 2fr 3fr;
-  grid-template-rows: 1.5fr 1fr 1fr 1fr;
-  grid-template-areas: "image  title"
-                       "image  rate_price"
-                       "image  addToCart"
-                       "image  fav_comp";
-}
-
-#imageProduct { grid-area: image; }
-#titleProduct {
-	grid-area: title;
-	font-size: 2em;
-}
-#rate_price { grid-area: rate_price; }
-
-#rate{float: left;}
-
 #price{
 	font-size: 2em;
 	color: #f8941e;
-	float: right;
 }
 
-#addToCart { grid-area: addToCart; }
-#fav_comp { grid-area: fav_comp; }
+.orignalPrice{
+	text-decoration: line-through;
+	position: relative;
+	top: -20px;
+	color: #b6bdce;
+}
 
-.carousel-control-next-icon,.carousel-control-prev-icon {
-	background-color: grey;
+textarea {
+    resize: none;
 }
 
 .addToCart {
-  display: inline-block;
+	width: 100%;
+	height: 100%;
   border-radius: 4px;
+	margin: 5px;
+	padding: 20px;
   background-color: #009fc8;
+	color: #FFFFFF;
   border: none;
-  color: #FFFFFF;
-  text-align: center;
-  font-size: 28px;
-  padding: 20px;
-  width: 75%;
-  transition: all 0.5s;
+  font-size: 22px;
   cursor: pointer;
-  margin: 5px;
-  height: 75%;
-  float: right;
+	transition: all 0.5s;
 }
 
 .addToCart span {
@@ -89,12 +55,4 @@
 .addToCart:hover span:after {
   opacity: 1;
   right: 0;
-}
-
-.carousel-indicators li {
-	background-color: #65768e;
-}
-
-.carousel-indicators li.active{
-	background-color: #009fc8;
 }

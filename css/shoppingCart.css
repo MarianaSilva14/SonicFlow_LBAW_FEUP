@@ -3,6 +3,14 @@ h4 {
     color: #65768e;
 }
 
+td.productImg{
+  width: 124px;
+}
+
+td.amount{
+  width: 100px;
+}
+
 .btn-danger {
     background-color: #f8941e;
     border-color: #f8941e;

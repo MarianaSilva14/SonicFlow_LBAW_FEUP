@@ -98,7 +98,7 @@
     <div id="content-wrapper" class="col-12">
       <nav class="nav-fill">
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
-          <a class="nav-item nav-link active" id="nav-flagged-tab" data-toggle="tab" href="#nav-flagged" role="tab" aria-controls="nav-flagged" aria-selected="true">Edit Products</a>
+          <a class="nav-item nav-link active" id="nav-flagged-tab" data-toggle="tab" href="#nav-flagged" role="tab" aria-controls="nav-flagged" aria-selected="true">Product Management</a>
           <a class="nav-item nav-link" id="nav-banned-tab" data-toggle="tab" href="#nav-banned" role="tab" aria-controls="nav-banned" aria-selected="false">Moderation</a>
           <!-- <a class="nav-item nav-link" id="nav-chat-tab" data-toggle="tab" href="#nav-chat" role="tab" aria-controls="nav-chat" aria-selected="false">Chat</a> -->
         </div>
@@ -106,30 +106,16 @@
       <div class="tab-content" id="nav-tabContent">
         <div class="tab-pane fade show active" id="nav-flagged" role="tabpanel" aria-labelledby="nav-flagged-tab">
 <br>
-          <div class="container">
-	<div class="row">
-        <div class="col-md-6">
-            <div id="custom-search-input">
-                <div class="input-group col-md-12">
-                    <input type="text" class="form-control input-lg" placeholder="Search" />
-                    <span class="input-group-btn">
-                        <button class="btn btn-info btn-lg" type="button">
-                            <i style="color:#65768e"class="fas fa-search"></i>
-                        </button>
-                    </span>
-                </div>
-            </div>
-        </div>
-	</div>
-</div>
+          <form class="form-inline mt-2 mt-md-0">
+            <select id="catSelect" class="form-control" name="categories">
+              <option value="option">option</option>
+              <option value="option1">option medium</option>
+              <option value="option2">option very very big</option>
+            </select>
+            <input id="searchBar" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
               <div class="row">
-                <div class="outbox col-xl-3 col-md-4">
-                  <div class="ibox">
-                    <div class="ibox-content plus-box">
-                      <i style="color: #009fc8" class="fas fa-plus fa-10x"></i>
-                    </div>
-                  </div>
-                </div>
                 <div class="outbox col-xl-3 col-md-4">
                   <div class="ibox">
                     <div class="ibox-content product-box">

@@ -74,12 +74,12 @@ nav{
 }
 
 #sidebar-wrapper .sub_icon{
-  float: right;
-  padding-right: 10px;
+  float: left;
+  /* padding-left: 10px; */
 }
 
 #sidebar-wrapper .sub_icon#mobile{
-  padding-right: 15px;
+  padding-left: 6px;
 }
 
 #sidebar-wrapper::-webkit-scrollbar,

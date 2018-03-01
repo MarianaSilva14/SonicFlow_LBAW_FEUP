@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="icon" type="image/png" href="resources/images/icon_2.png" sizes="16x16">
   <script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -98,11 +100,11 @@
     <!-- Page content -->
     <div id="content-wrapper" class="col-10">
 
-                    <nav class="breadcrumb">
-  <a class="breadcrumb-item" href="#">Homepage</a>
-    <a class="breadcrumb-item" href="#">Category</a>
-  <span class="breadcrumb-item active">Product</span>
-</nav>
+      <nav class="breadcrumb">
+        <a class="breadcrumb-item" href="#">Homepage</a>
+        <a class="breadcrumb-item" href="#">Category</a>
+        <span class="breadcrumb-item active">Product</span>
+      </nav>
 
       <form>
         <div class="form-row">
@@ -144,7 +146,7 @@
               <!-- Title -->
               <div class="col-md-12">
                 <div class="form-group">
-                  <textarea class="form-control" readonly rows="3">Apple MacBook Air 13'' i5-1,8GHz | 8GB | 128GBApple MacBook Air 13'' i5-1,8GHz | 8GB | 128GBApple MacBook Air 13'' i5-1,8GHz | 8GB | 128GBApple MacBook Air 13'' i5-1,8GHz | 8GB | 128GB</textarea>
+                  <textarea class="form-control productTitle" readonly rows="2">Apple MacBook Air 13'' i5-1,8GHz | 8GB | 128GB</textarea>
                 </div>
               </div>
               <!-- Rating -->
@@ -160,7 +162,7 @@
                 <small class="ratingLabel">Rating</small>
               </div>
               <!-- Price -->
-              <div class="col-md-4 col-4">
+              <div class="col-md-4 col-sm-4 col-5">
                 <!-- <label for="price">Price</label> -->
                 <input id="price" type="text" readonly class="form-control-plaintext bg-danger" value="€9999.99">
                 <small class="originalPrice">€9999.99</small>
@@ -170,14 +172,21 @@
                 <!-- <label for="amount">&zwnj;</label> -->
                 <input id="amount" type="number" class="form-control" value="1" min="1" max="100" step="1">
               </div>
-              <div class="w-100"></div>
+              <div class="linksBox">
+                <span class="addFavs"><i class="far fa-heart"></i><a href="#">Add to Favorites</a></span>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="customCheck1">
+                  <label class="custom-control-label" for="customCheck1">Compare</label>
+                </div>
+              </div>
               <!-- Availability -->
               <div class="col-md-3 col-6">
-                <button class="availability btn btn-outline-success" disabled><span> Available </span></button>
+                <button class="availability btn btn-outline-success" disabled><i class="fas fa-check-circle"></i><span>Available </span></button>
+                <button class="availability btn btn-outline-warning" disabled hidden><i class="fas fa-phone"></i><span>On Order</span></button>
               </div>
               <!-- Button -->
               <div class="col-md-6 col-12">
-                <button class="addToCart" style="vertical-align:middle"><span> Add to Cart </span></button>
+                <button class="addToCart" style="vertical-align:middle"><span>Add to Cart</span><i class="fas fa-cart-plus"></i></button>
               </div>
             </div>
           </div>

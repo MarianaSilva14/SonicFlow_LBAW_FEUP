@@ -136,56 +136,46 @@
                 <span class="sr-only">Next</span>
               </a>
             </div>
-            <input type="file" multiple class="form-control">
+            <input type="file" hidden multiple class="form-control">
           </div>
           <div id="info" class="col-md-6 col-sm-12">
             <!-- cost and buttons -->
             <div class="form-row">
+              <!-- Title -->
               <div class="col-md-12">
                 <div class="form-group">
                   <textarea class="form-control" readonly rows="3">Apple MacBook Air 13'' i5-1,8GHz | 8GB | 128GBApple MacBook Air 13'' i5-1,8GHz | 8GB | 128GBApple MacBook Air 13'' i5-1,8GHz | 8GB | 128GBApple MacBook Air 13'' i5-1,8GHz | 8GB | 128GB</textarea>
                 </div>
               </div>
-              <div class="col-md-6 col-6">
+              <!-- Rating -->
+              <div class="col-md-12 col-12">
                 <!-- <label for="rating">Rating</label> -->
-
-                <!-- <div class="row">
-                  <div class="col-lg-12">
-                    <div class="star-rating">
-                      <span class="fas fa-star" data-rating="1"></span>
-                      <span class="fas fa-star" data-rating="2"></span>
-                      <span class="fas fa-star" data-rating="3"></span>
-                      <span class="fas fa-star" data-rating="4"></span>
-                      <span class="fas fa-star" data-rating="5"></span>
-                      <input type="hidden" name="whatever1" class="rating-value" value="0">
-                    </div>
-                  </div>
-                </div> -->
                 <fieldset id="rating" class="rating form-control">
-                  <input type="radio" id="star5" name="rating" value="5" /><span class="fas fa-star fa-2x"></span>
-                  <input type="radio" id="star4" name="rating" value="4" /><span class="fas fa-star fa-2x"></span>
-                  <input type="radio" id="star3" name="rating" value="3" /><span class="fas fa-star fa-2x"></span>
-                  <input type="radio" id="star2" name="rating" value="2" /><span class="fas fa-star fa-2x"></span>
-                  <input type="radio" id="star1" name="rating" value="1" /><span class="fas fa-star fa-2x"></span>
+                  <input type="radio" id="star5" name="rating" value="5" /><span class="fas fa-star fa-lg"></span>
+                  <input type="radio" id="star4" name="rating" value="4" /><span class="fas fa-star fa-lg"></span>
+                  <input type="radio" id="star3" name="rating" value="3" /><span class="fas fa-star fa-lg"></span>
+                  <input type="radio" id="star2" name="rating" value="2" /><span class="fas fa-star fa-lg"></span>
+                  <input type="radio" id="star1" name="rating" value="1" /><span class="fas fa-star fa-lg"></span>
                 </fieldset>
                 <small class="ratingLabel">Rating</small>
-                <!-- <p id="rating" >
-                  &ltinsert rating&gt
-                </p> -->
               </div>
-              <div class="col-md-6 col-6">
+              <!-- Price -->
+              <div class="col-md-4 col-4">
                 <!-- <label for="price">Price</label> -->
-                <input id="price" type="text" readonly class="form-control-plaintext" value="€9999.99">
-                <small class="orignalPrice">€9999,99</small>
+                <input id="price" type="text" readonly class="form-control-plaintext bg-danger" value="€9999.99">
+                <small class="originalPrice">€9999.99</small>
               </div>
-              <div class="col-md-4 col-6">
-                <label for="amount">&zwnj;</label>
+              <!-- Amount -->
+              <div class="col-md-2 col-2">
+                <!-- <label for="amount">&zwnj;</label> -->
                 <input id="amount" type="number" class="form-control" value="1" min="1" max="100" step="1">
               </div>
-              <div class="col-md-2 col-6">
-                <label for="avalability">&zwnj;</label>
-                <input id="avalability" type="text" readonly class="form-control-plaintext" value="Available">
+              <div class="w-100"></div>
+              <!-- Availability -->
+              <div class="col-md-3 col-6">
+                <button class="availability btn btn-outline-success" disabled><span> Available </span></button>
               </div>
+              <!-- Button -->
               <div class="col-md-6 col-12">
                 <button class="addToCart" style="vertical-align:middle"><span> Add to Cart </span></button>
               </div>

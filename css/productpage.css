@@ -10,6 +10,12 @@
 	color: #b6bdce;
 }
 
+.ratingLabel{
+	position: relative;
+	left: 20px;
+	color: #b6bdce;
+}
+
 textarea {
     resize: none;
 }
@@ -63,7 +69,7 @@ fieldset, i { margin: 0; padding: 0; }
 /****** Style Star Rating Widget *****/
 .rating {
   border: none;
-  float: left;
+	width: 205px;
 }
 .rating > input { display: none; }
 .rating > svg:before {

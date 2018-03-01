@@ -76,3 +76,11 @@ td.edit_cart {
   text-align: center;
   vertical-align: middle;
 }
+
+#catSelectButton{
+  border-radius: 7px 0 0 7px;
+}
+
+#searchBtn{
+border-radius: 0 7px 7px 0;
+}

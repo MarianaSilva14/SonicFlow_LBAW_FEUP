@@ -71,3 +71,8 @@ td.amount{
     background-color: #d68322;
     border-color: #d68322;
 }
+
+td.delete_cart {
+  text-align: center;
+  vertical-align: middle;
+}

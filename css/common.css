@@ -125,6 +125,16 @@ footer a:hover{
   box-shadow: none;
 }
 
+#catSelectButton{
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+#searchBtn {
+  border-radius: 0px;
+}
 /* PC Screen */
 @media (min-width: 1200px) {
   #catSelect{
@@ -166,26 +176,28 @@ footer a:hover{
   }
 }
 
-.btn-outline-success{
+#searchBtn{
   color: #009fc8;
   border-color: #009fc8;
 }
 
-.btn-outline-success:hover{
+#searchBtn:hover{
   background-color: #009fc8;
   border-color: #009fc8;
 }
 
-.btn-outline-success:not(:disabled):not(.disabled):active, .show>.btn-outline-success.dropdown-toggle{
+#searchBtn:not(:disabled):not(.disabled):active, .show>#searchBtn.dropdown-toggle{
   background-color: #009fc8;
   border-color: #009fc8;
 }
 
-.btn-outline-success.focus, .btn-outline-success:focus{
+#searchBtn.focus, .searchBtn:focus{
   box-shadow: 0 0 0 0.2rem rgba(0, 159, 200,.5);
 }
 
-.btn-outline-success:not(:disabled):not(.disabled).active:focus, .btn-outline-success:not(:disabled):not(.disabled):active:focus, .show>.btn-outline-success.dropdown-toggle:focus{
+#searchBtn:not(:disabled):not(.disabled).active:focus, 
+#searchBtn:not(:disabled):not(.disabled):active:focus, 
+.show>#searchBtn.dropdown-toggle:focus{
   box-shadow: 0 0 0 0.2rem rgba(0, 159, 200,.5);
 }
 

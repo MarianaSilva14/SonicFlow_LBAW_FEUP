@@ -22,7 +22,7 @@
 
 
   <!-- Developed JS -->
-  <script src="js/homepage.js" defer></script>
+  <script src="js/common.js" defer></script>
   <title>Contacts page</title>
 </head>
 
@@ -39,15 +39,37 @@
     <!-- links and search bar -->
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <!-- search form -->
-      <form class="form-inline mt-2 mt-md-0">
-        <select id="catSelect" class="form-control" name="categories">
-          <option value="option">option</option>
-          <option value="option1">option medium</option>
-          <option value="option2">option very very big</option>
-        </select>
-        <input id="searchBar" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
+      
+     <div class="container">
+    <div class="row">    
+        <div class="col-xs-8 col-xs-offset-2">
+        <div class="input-group">
+                <div class="input-group-btn search-panel">
+                    <button type="button" id="catSelectButton" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                      <span id="catSelect"><span class="glyphicon glyphicon-align-justify"></span> All</span>  <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="#contains"> <span class="glyphicon glyphicon-envelope text-danger"></span> Computers</a></li>
+                      <li><a href="#its_equal"> <span class="glyphicon glyphicon-music text-warning"></span> Laptops</a></li>
+                      <li><a href="#greather_than"> <span class="glyphicon glyphicon-user text-success"></span> Mobile</a></li>
+                      <li><a href="#less_than"><span class="glyphicon glyphicon-book text-primary"></span> Components </a></li>
+                      <li class="divider"></li>
+                      <li><a href="#all"> <span class="glyphicon glyphicon-picture text-info"></span> Storage</a></li>
+                      <li><a href="#contains"> <span class="glyphicon glyphicon-envelope text-danger"></span> Periferals</a></li>
+                      <li><a href="#contains"> <span class="glyphicon glyphicon-envelope text-danger"></span> Photo</a></li>
+                      <li><a href="#contains"> <span class="glyphicon glyphicon-envelope text-danger"></span> Video</a></li>
+                      <li><a href="#contains"> <span class="glyphicon glyphicon-envelope text-danger"></span> Network</a></li>
+                      <li><a href="#contains"> <span class="glyphicon glyphicon-envelope text-danger"></span> Software</a></li>
+                    </ul>
+                </div>
+                <input type="hidden" name="search_param" value="all" id="search_param">         
+                <input type="text" class="form-control" name="x" placeholder="Search...">
+        <button id="searchBtn" class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+  </div>
+</div>
+      
       <!-- links -->
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
@@ -72,26 +94,26 @@
     </div>
   </nav>
 
-<div class="wrapper row">
-  <!-- Sidebar -->
-  <div id="sidebar-wrapper" class="col-2">
-    <ul class="sidebar-nav" id="sidebar">
-      <li><a>Computers<span class="sub_icon"><i class="fas fa-desktop fa-lg"></i></span></a></li>
-      <li><a>Laptops<span class="sub_icon"><i class="fas fa-laptop fa-lg"></i></span></a></li>
-      <li><a>Mobile<span class="sub_icon" id="mobile"><i class="fas fa-mobile-alt fa-lg"></i></span></a></li>
-      <li><a>Components<span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span></a></li>
-      <li><a>Storage<span class="sub_icon"><i class="fas fa-hdd fa-lg"></i></span></a></li>
-      <li><a>Periferals<span class="sub_icon"><i class="fas fa-keyboard fa-lg"></i></span></a></li>
-      <li><a>Photo<span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span></a></li>
-      <li><a>Video<span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span></a></li>
-      <li><a>Network<span class="sub_icon"><i class="fas fa-rss fa-lg"></i></span></a></li>
-      <li><a>Software<span class="sub_icon"><i class="far fa-window-maximize fa-lg"></i></span></a></li>
-      <li><a>Configurator<span class="sub_icon"><i class="fas fa-cogs fa-lg"></i></span></a></li>
-      <li><a>Configurator<span class="sub_icon"><i class="fas fa-cogs fa-lg"></i></span></a></li>
-      <li><a>Configurator<span class="sub_icon"><i class="fas fa-cogs fa-lg"></i></span></a></li>
-      <li><a>Software<span class="sub_icon"><i class="far fa-window-maximize fa-lg"></i></span></a></li>
-    </ul>
-  </div>
+  <div class="wrapper row">
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper" class="col-2">
+      <ul class="sidebar-nav" id="sidebar">
+        <li><a><span class="sub_icon"><i class="fas fa-desktop fa-lg"></i></span>Computers</a></li>
+        <li><a><span class="sub_icon"><i class="fas fa-laptop fa-lg"></i></span>Laptops</a></li>
+        <li><a><span class="sub_icon" id="mobile"><i class="fas fa-mobile-alt fa-lg"></i></span>Mobile</a></li>
+        <li><a><span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span>Components</a></li>
+        <li><a><span class="sub_icon"><i class="fas fa-hdd fa-lg"></i></span>Storage</a></li>
+        <li><a><span class="sub_icon"><i class="fas fa-keyboard fa-lg"></i></span>Periferals</a></li>
+        <li><a><span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span>Photo</a></li>
+        <li><a><span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span>Video</a></li>
+        <li><a><span class="sub_icon"><i class="fas fa-rss fa-lg"></i></span>Network</a></li>
+        <li><a><span class="sub_icon"><i class="far fa-window-maximize fa-lg"></i></span>Software</a></li>
+        <li><a><span class="sub_icon"><i class="fas fa-cogs fa-lg"></i></span>Configurator</a></li>
+        <li><a><span class="sub_icon"><i class="fas fa-cogs fa-lg"></i></span>Configurator</a></li>
+        <li><a><span class="sub_icon"><i class="fas fa-cogs fa-lg"></i></span>Configurator</a></li>
+        <li><a><span class="sub_icon"><i class="far fa-window-maximize fa-lg"></i></span>Software</a></li>
+      </ul>
+    </div>
 
     <!-- Page content -->
     <div id="content-wrapper" class="col-10">

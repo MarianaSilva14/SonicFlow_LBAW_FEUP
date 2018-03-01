@@ -73,13 +73,17 @@ nav{
   background: #b6bdce;
 }
 
-#sidebar-wrapper .sub_icon{
+.sub_icon{
   float: left;
   /* padding-left: 10px; */
 }
 
-#sidebar-wrapper .sub_icon#mobile{
-  padding-left: 6px;
+.sub_icon#mobile{
+  padding-left: 8px;
+}
+
+#navbarCollapse .mobileNav{
+  text-indent: 20px;
 }
 
 #sidebar-wrapper::-webkit-scrollbar,
@@ -135,6 +139,39 @@ footer a:hover{
 #searchBtn {
   border-radius: 0px;
 }
+
+#searchBtn{
+  color: #009fc8;
+  border-color: #009fc8;
+}
+
+#searchBtn:hover{
+  background-color: #009fc8;
+  border-color: #009fc8;
+}
+
+#searchBtn:not(:disabled):not(.disabled):active, .show>#searchBtn.dropdown-toggle{
+  background-color: #009fc8;
+  border-color: #009fc8;
+}
+
+#searchBtn.focus, .searchBtn:focus{
+  box-shadow: 0 0 0 0.2rem rgba(0, 159, 200,.5);
+}
+
+#searchBtn:not(:disabled):not(.disabled).active:focus,
+#searchBtn:not(:disabled):not(.disabled):active:focus,
+.show>#searchBtn.dropdown-toggle:focus{
+  box-shadow: 0 0 0 0.2rem rgba(0, 159, 200,.5);
+}
+
+.breadcrumb{
+margin-left: -15px;
+margin-right: -15px;
+background-color: white;
+box-shadow: none;
+}
+
 /* PC Screen */
 @media (min-width: 1200px) {
   #catSelect{
@@ -167,6 +204,10 @@ footer a:hover{
     max-width: none;
     width: 100%;
   }
+  .sub_icon{
+    float: left;
+    text-indent: 0;
+  }
 }
 
 /* Small mobile */
@@ -174,34 +215,4 @@ footer a:hover{
   .navbar-brand{
     margin-right: 0
   }
-}
-
-#searchBtn{
-  color: #009fc8;
-  border-color: #009fc8;
-}
-
-#searchBtn:hover{
-  background-color: #009fc8;
-  border-color: #009fc8;
-}
-
-#searchBtn:not(:disabled):not(.disabled):active, .show>#searchBtn.dropdown-toggle{
-  background-color: #009fc8;
-  border-color: #009fc8;
-}
-
-#searchBtn.focus, .searchBtn:focus{
-  box-shadow: 0 0 0 0.2rem rgba(0, 159, 200,.5);
-}
-
-#searchBtn:not(:disabled):not(.disabled).active:focus, 
-#searchBtn:not(:disabled):not(.disabled):active:focus, 
-.show>#searchBtn.dropdown-toggle:focus{
-  box-shadow: 0 0 0 0.2rem rgba(0, 159, 200,.5);
-}
-
-.breadcrumb{
-margin-left: -15px;
-margin-right: -15px;
 }

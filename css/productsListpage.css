@@ -49,8 +49,8 @@
   background-color: #f8941e;
   padding: 6px 12px;
   position: absolute;
-  top: -32px;
-  right: 0;
+  top: -20px;
+  left: 10px;
 }
 
 .discount-price ~ .product-price{
@@ -64,8 +64,9 @@
   background-color: #f8941e;
   padding: 6px 12px;
   position: absolute;
-  top: -5px;
-  right: 0;
+  top: -20px;
+  left: 100px;
+  z-index: 2;
 }
 
 .ibox {

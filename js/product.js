@@ -57,3 +57,21 @@
 //     });
 //   });
 // });
+
+// $(document).ready(function() {
+//   var svgs = document.querySelectorAll('#rating svg');
+//   var inputs = document.querySelectorAll('#rating input');
+//   for(let i = 0; i < svgs.length; i++){
+//     svgs[i].addEventListener("click", function(e){
+//
+//       for(var j = 0; j < svgs.length; j++){
+//         console.log("here");
+//         svgs[j].classList.remove("golden_star");
+//         if(j <= i){
+//           svgs[j].classList.add("golden_star");
+//         }
+//       }
+//       inputs[i].checked = true;
+//     });
+//   }
+// });

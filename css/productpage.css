@@ -130,3 +130,7 @@ fieldset, i { margin: 0; padding: 0; }
 .rating > input:checked ~ svg:hover,
 .rating > svg:hover ~ input:checked ~ svg, /* lighten current selection */
 .rating > input:checked ~ svg:hover ~ svg { color: #FFED85;  }
+
+.golden_star {
+	color: #FFED85;
+}

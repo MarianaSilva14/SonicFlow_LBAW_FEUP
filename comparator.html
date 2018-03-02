@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" type="image/png" href="resources/images/icon_2.png" sizes="16x16">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"> -->
+
+  <!-- Developed CSS -->
+  <link rel="stylesheet" href="css/common.css">
+
+  <!-- Developed JS -->
+  <script src="js/common.js" defer></script>
+
+
+  <title>Sonic Flow</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-xl navbar-light fixed-top bg-white">
+    <!-- logo -->
+    <a class="navbar-brand" href="#">
+      <img src="resources/images/logo.png" width="auto" height="64px" alt="">
+    </a>
+    <!-- toggle button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- links and search bar -->
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <!-- search form -->
+
+      <div class="container">
+    <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+        <div class="input-group">
+                <div class="input-group-btn search-panel">
+                    <button type="button" id="catSelectButton" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                      <span id="catSelect"><span class="glyphicon glyphicon-align-justify"></span> All</span>  <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="#contains"> <span class="glyphicon glyphicon-envelope text-danger"></span> Computers</a></li>
+                      <li><a href="#its_equal"> <span class="glyphicon glyphicon-music text-warning"></span> Laptops</a></li>
+                      <li><a href="#greather_than"> <span class="glyphicon glyphicon-user text-success"></span> Mobile</a></li>
+                      <li><a href="#less_than"><span class="glyphicon glyphicon-book text-primary"></span> Components </a></li>
+                      <li class="divider"></li>
+                      <li><a href="#all"> <span class="glyphicon glyphicon-picture text-info"></span> Storage</a></li>
+                      <li><a href="#contains"> <span class="glyphicon glyphicon-envelope text-danger"></span> Periferals</a></li>
+                      <li><a href="#contains"> <span class="glyphicon glyphicon-envelope text-danger"></span> Photo</a></li>
+                      <li><a href="#contains"> <span class="glyphicon glyphicon-envelope text-danger"></span> Video</a></li>
+                      <li><a href="#contains"> <span class="glyphicon glyphicon-envelope text-danger"></span> Network</a></li>
+                      <li><a href="#contains"> <span class="glyphicon glyphicon-envelope text-danger"></span> Software</a></li>
+                    </ul>
+                </div>
+                <input type="hidden" name="search_param" value="all" id="search_param">
+                <input type="text" class="form-control" name="x" placeholder="Search...">
+        <button id="searchBtn" class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+  </div>
+</div>
+
+      <!-- links -->
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="login.html">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="register.html">Register</a>
+        </li>
+        <li class="nav-item mobileNav">
+          <a class="nav-link" href="#">Cat1</a>
+        </li>
+        <li class="nav-item mobileNav">
+          <a class="nav-link" href="#">cat2</a>
+        </li>
+        <li class="nav-item mobileNav">
+          <a class="nav-link" href="#">cat3</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="wrapper row">
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper" class="col-2">
+      <ul class="sidebar-nav" id="sidebar">
+        <li><a><span class="sub_icon"><i class="fas fa-desktop fa-lg"></i></span>Computers</a></li>
+        <li><a><span class="sub_icon"><i class="fas fa-laptop fa-lg"></i></span>Laptops</a></li>
+        <li><a><span class="sub_icon" id="mobile"><i class="fas fa-mobile-alt fa-lg"></i></span>Mobile</a></li>
+        <li><a><span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span>Components</a></li>
+        <li><a><span class="sub_icon"><i class="fas fa-hdd fa-lg"></i></span>Storage</a></li>
+        <li><a><span class="sub_icon"><i class="fas fa-keyboard fa-lg"></i></span>Periferals</a></li>
+        <li><a><span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span>Photo</a></li>
+        <li><a><span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span>Video</a></li>
+        <li><a><span class="sub_icon"><i class="fas fa-rss fa-lg"></i></span>Network</a></li>
+        <li><a><span class="sub_icon"><i class="far fa-window-maximize fa-lg"></i></span>Software</a></li>
+        <li><a><span class="sub_icon"><i class="fas fa-cogs fa-lg"></i></span>Configurator</a></li>
+        <li><a><span class="sub_icon"><i class="fas fa-cogs fa-lg"></i></span>Configurator</a></li>
+        <li><a><span class="sub_icon"><i class="fas fa-cogs fa-lg"></i></span>Configurator</a></li>
+        <li><a><span class="sub_icon"><i class="far fa-window-maximize fa-lg"></i></span>Software</a></li>
+      </ul>
+    </div>
+
+    <div id="content-wrapper" class="col-10">
+
+    </div>
+  <!--Footer-->
+          <footer>
+            <hr style="width:75%">
+            <div class="container">
+              <div class="row text-center">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <ul class="list-inline">
+
+                    <li class="list-inline-item">
+                      <a href="#">Home</a>
+                    </li>
+
+                    <li class="list-inline-item">
+                      <a href="#">About us</a>
+                    </li>
+
+                    <li class="list-inline-item">
+                      <a href="#">Contact</a>
+                    </li>
+
+                    <li class="list-inline-item">
+                      <a href="#">FAQ</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <ul class="nav navbar-nav list-inline">
+                    <ul class="list-inline">
+                      <li class="list-inline-item"><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                      <li class="list-inline-item"><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                      <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin"></i></a></li></ul>
+                    </div>
+                  </div>
+                </div>
+              </footer>
+        </div>
+    </div>
+  </body>
+  </html>

@@ -9,9 +9,18 @@
   font-weight: normal;
 }
 
+#caseUnitPrice, #caseAvalability {
+  text-align: center;
+}
+
+#labelUnity {
+ text-align: center;
+}
+
 hr{
-  width: 90%;
-  border-color: #009fc8;
+  width: 100%;
+  border-color: #e0e0e0;
+  size:0.5px;
 }
 
 .form-group{
@@ -20,9 +29,12 @@ hr{
 }
 
 .sectionTitle {
-  padding-left: 5%;
-  margin: 2.5% 2.5% 1.5% 2.5%;
-  border-bottom: 1px solid #f8941e;
+  margin: 5% 5% 3% 5%;
+  border-bottom: 4px solid #f8941e;
+}
+
+#caseInput{
+  background-color: white;
 }
 
 .sectionTitle span{
@@ -34,11 +46,14 @@ hr{
   border-bottom: 0;
   border-top: 1px solid #f8941e;
   text-align: right;
-  padding-right: 5%;
+  padding-top: 3%;
+  font-weight: bold;
 }
 
 .sectionTitle.total span::before{
-  content: "Total:"
+  content: "Total: ";
+  font-weight: normal;
+  font-size: 60%;
 }
 
 a.toggle-tips{

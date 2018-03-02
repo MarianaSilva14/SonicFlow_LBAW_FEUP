@@ -12,9 +12,13 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/bootstrap-slider.min.js" integrity="sha256-ssw743RfM8cbNhwou26tmmPhiNhq3buUbRG/RevtfG4=" crossorigin="anonymous"></script>
+
+  </script>
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/css/bootstrap-slider.min.css" integrity="sha256-WfuSLYdzGvlsFU6ImYYSE277WsjfyU30QeGuNIjeJEI=" crossorigin="anonymous"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
   <!-- Developed CSS -->
   <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="css/productsListpage.css">
@@ -142,6 +146,29 @@
         <a class="breadcrumb-item" href="#">Homepage</a>
         <span class="breadcrumb-item active">Category</span>
       </nav>
+
+      <div class="row form-inline filterBar">
+        <select id="categories" class="col-2 form-control" name="categories">
+          <option value="">Select brand...</option>
+          <option value="">option</option>
+          <option value="">option</option>
+          <option value="">option</option>
+        </select>
+        <div class="col-4 priceRange">
+          Price between: <input type="text" class="form-control" value="10"/>
+          and <input type="text" class="form-control" value="1000"/>
+        </div>
+        <div class="col-1 custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="productAvailable">
+          <label class="custom-control-label" for="productAvailable">Available</label>
+        </div>
+        <select class="col-2 form-control" name="sortBy">
+          <option value="">Sort by...</option>
+          <option value="">option</option>
+          <option value="">option</option>
+          <option value="">option</option>
+        </select>
+      </div>
 
       <div class="row">
         <div class="outbox col-xl-3 col-md-4">

@@ -4,7 +4,11 @@
   padding-right: 5px;
 }
 
-.custom-control{
+.filterBar{
+  margin: 0;
+}
+
+.filterBar .custom-control{
     border: 1px solid #ced4da;
     border-radius: .25rem;
     line-height: 1.5;
@@ -17,11 +21,6 @@
 .custom-control-label[for="productAvailable"]::after{
   top: 10px;
   left: 5px;
-}
-
-.priceRange{
-  width: auto;
-  flex: none;
 }
 
 .product-box {
@@ -123,11 +122,6 @@
   margin-bottom: 20px;
 }
 
-/* .btn-primary:hover {
-  background-color: #009fc8;
-  border-color: #009fc8;
-} */
-
 #content-wrapper .btn-primary {
   padding-right: .5rem;
   padding-left: .5rem;
@@ -137,4 +131,21 @@
 
 .btn-primary.addtoFavs{
   margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .priceRange{
+    width: auto;
+    flex: none;
+  }
+}
+
+@media (max-width: 575px) {
+  .priceRange input{
+    display: inline-block;
+  }
+
+  .filterBar .custom-control{
+      margin-right: 0;
+  }
 }

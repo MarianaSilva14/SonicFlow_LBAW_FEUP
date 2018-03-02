@@ -89,18 +89,20 @@ nav{
 #sidebar-wrapper::-webkit-scrollbar,
 #content-wrapper::-webkit-scrollbar{
   z-index: -1;
-  width: 15px;
+  width: 10px;
+  left: -5px;
 }
 
 #sidebar-wrapper:hover::-webkit-scrollbar,
-#content-wrapper:hover::-webkit-scrollbar {
-  background-color: #b6bdce;
+#content-wrapper:hover::-webkit-scrollbar-thumb
+ {
+  background-color: #65768e;
   border-radius: 20px;
 }
 
 #sidebar-wrapper:hover::-webkit-scrollbar-thumb,
-#content-wrapper:hover::-webkit-scrollbar-thumb{
-    background: #65768e;
+#content-wrapper:hover::-webkit-scrollbar{
+    background: #b6bdce;
     border-radius: 20px;
 }
 

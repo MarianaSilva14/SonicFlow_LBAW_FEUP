@@ -41,10 +41,24 @@
 
 .addFavs{
 	margin: 10px;
+	color: red;
+}
+
+.addFavs a{
+	margin: 10px;
+	color: #65768e;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.addFavs:hover .fa-heart{
+	font-size: 150%;
 }
 
 .custom-control{
 	display: inline-block;
+		color: #65768e;
+	font-weight: bold;
 }
 
 textarea.form-control.productTitle {
@@ -134,3 +148,19 @@ fieldset, i { margin: 0; padding: 0; }
 .golden_star {
 	color: #FFED85;
 }
+
+#specs-form {
+	margin-left: 2%;
+	font-size: 90%;
+}
+
+#specs-form legend{
+	font-weight: bold;
+	font-size: 1.5em;
+	color: #b6bdce;
+}
+
+#specs-form label{
+	font-weight: bold;
+}
+

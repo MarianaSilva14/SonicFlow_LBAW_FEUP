@@ -12,12 +12,10 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/bootstrap-slider.min.js" integrity="sha256-ssw743RfM8cbNhwou26tmmPhiNhq3buUbRG/RevtfG4=" crossorigin="anonymous"></script>
 
   </script>
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/css/bootstrap-slider.min.css" integrity="sha256-WfuSLYdzGvlsFU6ImYYSE277WsjfyU30QeGuNIjeJEI=" crossorigin="anonymous"/>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
   <!-- Developed CSS -->
   <link rel="stylesheet" href="css/common.css">
@@ -41,32 +39,30 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <!-- search form -->
 
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-8 col-xs-offset-2">
-            <div class="input-group">
-              <div class="input-group-btn search-panel">
-                <button type="button" id="catSelectButton" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                  <span id="catSelect"><span class="glyphicon glyphicon-align-justify"></span> All</span>  <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" role="menu">
-                  <li><a href="#contains"> <span class="glyphicon glyphicon-envelope text-danger"></span> Computers</a></li>
-                  <li><a href="#its_equal"> <span class="glyphicon glyphicon-music text-warning"></span> Laptops</a></li>
-                  <li><a href="#greather_than"> <span class="glyphicon glyphicon-user text-success"></span> Mobile</a></li>
-                  <li><a href="#less_than"><span class="glyphicon glyphicon-book text-primary"></span> Components </a></li>
-                  <li class="divider"></li>
-                  <li><a href="#all"> <span class="glyphicon glyphicon-picture text-info"></span> Storage</a></li>
-                  <li><a href="#contains"> <span class="glyphicon glyphicon-envelope text-danger"></span> Periferals</a></li>
-                  <li><a href="#contains"> <span class="glyphicon glyphicon-envelope text-danger"></span> Photo</a></li>
-                  <li><a href="#contains"> <span class="glyphicon glyphicon-envelope text-danger"></span> Video</a></li>
-                  <li><a href="#contains"> <span class="glyphicon glyphicon-envelope text-danger"></span> Network</a></li>
-                  <li><a href="#contains"> <span class="glyphicon glyphicon-envelope text-danger"></span> Software</a></li>
-                </ul>
-              </div>
-              <input type="hidden" name="search_param" value="all" id="search_param">
-              <input type="text" class="form-control" name="x" placeholder="Search...">
-              <button id="searchBtn" class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+      <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+          <div class="input-group">
+            <div class="input-group-btn search-panel">
+              <button type="button" id="catSelectButton" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                <span id="catSelect"><span class="glyphicon glyphicon-align-justify"></span> All</span>  <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#contains"> <span class="glyphicon glyphicon-envelope text-danger"></span> Computers</a></li>
+                <li><a href="#its_equal"> <span class="glyphicon glyphicon-music text-warning"></span> Laptops</a></li>
+                <li><a href="#greather_than"> <span class="glyphicon glyphicon-user text-success"></span> Mobile</a></li>
+                <li><a href="#less_than"><span class="glyphicon glyphicon-book text-primary"></span> Components </a></li>
+                <li class="divider"></li>
+                <li><a href="#all"> <span class="glyphicon glyphicon-picture text-info"></span> Storage</a></li>
+                <li><a href="#contains"> <span class="glyphicon glyphicon-envelope text-danger"></span> Periferals</a></li>
+                <li><a href="#contains"> <span class="glyphicon glyphicon-envelope text-danger"></span> Photo</a></li>
+                <li><a href="#contains"> <span class="glyphicon glyphicon-envelope text-danger"></span> Video</a></li>
+                <li><a href="#contains"> <span class="glyphicon glyphicon-envelope text-danger"></span> Network</a></li>
+                <li><a href="#contains"> <span class="glyphicon glyphicon-envelope text-danger"></span> Software</a></li>
+              </ul>
             </div>
+            <input type="hidden" name="search_param" value="all" id="search_param">
+            <input type="text" class="form-control" name="x" placeholder="Search...">
+            <button id="searchBtn" class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
           </div>
         </div>
       </div>
@@ -117,6 +113,7 @@
         </li>
       </ul>
     </div>
+
   </nav>
 
   <div class="wrapper row">
@@ -148,21 +145,21 @@
       </nav>
 
       <div class="row form-inline filterBar">
-        <select id="categories" class="col-2 form-control" name="categories">
+        <select id="categories" class="col-xl-2 col-sm-12 form-control" name="categories">
           <option value="">Select brand...</option>
           <option value="">option</option>
           <option value="">option</option>
           <option value="">option</option>
         </select>
-        <div class="col-4 priceRange">
+        <div class="col-xl-4 col-lg-4 col-sm-12 col-12 priceRange">
           Price between: <input type="text" class="form-control" value="10"/>
           and <input type="text" class="form-control" value="1000"/>
         </div>
-        <div class="col-1 custom-control custom-checkbox">
+        <div class="col-xl-1 col-lg-4 col-sm-6 custom-control custom-checkbox">
           <input type="checkbox" class="custom-control-input" id="productAvailable">
           <label class="custom-control-label" for="productAvailable">Available</label>
         </div>
-        <select class="col-2 form-control" name="sortBy">
+        <select class="col-xl-2 col-lg-4 col-sm-5 form-control" name="sortBy">
           <option value="">Sort by...</option>
           <option value="">option</option>
           <option value="">option</option>

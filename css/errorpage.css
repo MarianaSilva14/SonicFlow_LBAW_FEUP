@@ -24,3 +24,25 @@ line-height:5px;
   color: #009fc8;
   font-size: 17px;
 }
+
+.jumbotron {
+    background-color: #ffffff;
+    padding-top: 1px;
+}
+
+.home-page{
+  text-align:center;
+  border: 10px solid #009fc8;
+  background-color: #009fc8;
+}
+
+a:not([href]):not([tabindex]){
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+a:not([href]):not([tabindex]):focus, a:not([href]):not([tabindex]):hover {
+    color: #ffffff;
+    text-decoration:underline;
+}

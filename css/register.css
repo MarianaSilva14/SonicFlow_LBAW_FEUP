@@ -1,7 +1,7 @@
 /* ---- reset ---- */
 
 html {
-  background-image: linear-gradient(rgb(0,159,200),rgb(182, 189, 206));
+  background-image: linear-gradient(to right, #65768e,#b6bdce);
   background-repeat: no-repeat;
   height: 100%;
   overflow: hidden;

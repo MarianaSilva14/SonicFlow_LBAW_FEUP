@@ -1,3 +1,28 @@
+.filterBar .priceRange input{
+  width: 60px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.custom-control{
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    line-height: 1.5;
+    padding: .375rem .75rem;
+    padding-left: 2rem;
+    margin-right: 15px;
+}
+
+.custom-control-label[for="productAvailable"]::before,
+.custom-control-label[for="productAvailable"]::after{
+  top: 10px;
+  left: 5px;
+}
+
+.priceRange{
+  width: auto;
+  flex: none;
+}
 
 .product-box {
   padding: 0;

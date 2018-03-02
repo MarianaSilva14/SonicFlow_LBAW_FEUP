@@ -1,5 +1,13 @@
-td.productImg{
-  width: 124px;
+
+
+td.ignore{
+  color: green;
+}
+td.offense{
+  color: green;
+}
+td.ban{
+  color: green;
 }
 
 td.amount{
@@ -75,6 +83,16 @@ td.delete_cart {
 td.edit_cart {
   text-align: center;
   vertical-align: middle;
+}
+
+td.ignore{
+  color: green;
+}
+td.offense{
+  color: orange;
+}
+td.ban{
+  color: darkred;
 }
 
 #catSelectButton{

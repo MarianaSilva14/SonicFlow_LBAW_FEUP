@@ -20,7 +20,7 @@
 
   <!-- Developed CSS -->
   <link rel="stylesheet" href="css/common.css">
-
+  <link rel="stylesheet" href="css/administration.css">
   <!-- Developed JS -->
   <script src="js/homepage.js" defer></script>
 
@@ -104,12 +104,67 @@
       </nav>
       <div class="tab-content" id="nav-tabContent">
         <div class="tab-pane fade show active" id="nav-flagged" role="tabpanel" aria-labelledby="nav-flagged-tab">
-        <br>
-        Commentaries that have been flagged by the user
+        <!-- <br>
+        Commentaries that have been flagged by the user -->
+        <!-- COMMNETARIES FLAGGED -->
+
+
+        <table class="table table-hover table-bordered">
+          <tr class="info" style="color:#65768e">
+            <th>Picture</th>
+            <th>Username</th>
+            <th>Comment</th>
+            <th>Number Offenses</th>
+            <th>Ignore</th>
+            <th>Add offense</th>
+            <th>Ban</th>
+          </tr>
+          <tr>
+            <td class="productImg"><img src="http://placehold.it/100x100" alt="..." class="img-fluid"/></td>
+            <td>arroubatudo</td>
+            <td>a tua cor de pele incomoda me</td>
+            <td>5</td>
+            <td class="edit_cart ignore"><i class="far fa-thumbs-up fa-2x"></i></td>
+            <td class="edit_cart offense"><i class="far fa-thumbs-down fa-2x"></i></td>
+            <td class="edit_cart ban"><i class="fas fa-lock fa-2x"></i></td>
+          </tr>
+
+        </table>
+
+
+
+
+
+
+
+
+
         </div>
         <div class="tab-pane fade" id="nav-banned" role="tabpanel" aria-labelledby="nav-banned-tab">
-        <br>
-        Users that are banned
+        <!-- <br>
+        Users that are banned -->
+
+        <!--  BANNED USERS -->
+
+        <table class="table table-hover table-bordered">
+          <tr class="info" style="color:#65768e">
+            <th>Picture</th>
+            <th>Name</th>
+            <th>Ban Date (DD-MM-YYYY)</th>
+            <th>Time Elapsed (Days)</th>
+            <th>Unban</th>
+          </tr>
+          <tr>
+            <td class="productImg"><img src="http://placehold.it/100x100" alt="..." class="img-fluid"/></td>
+            <td>Joao Castanheira Cig</td>
+            <td>27-02-2017</td>
+            <td>20</td>
+            <td class="edit_cart"><i class="fas fa-unlock-alt fa-2x"></i></td>
+          </tr>
+
+        </table>
+
+
         </div>
         <!-- <div class="tab-pane fade" id="nav-chat" role="tabpanel" aria-labelledby="nav-chat-tab">
         <br>

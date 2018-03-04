@@ -190,3 +190,8 @@ canvas {
 .forgot-password:focus{
     color: rgb(0,159,200);
 }
+
+.btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+    background-color: #009fc8;
+    border-color: #009fc8;
+}

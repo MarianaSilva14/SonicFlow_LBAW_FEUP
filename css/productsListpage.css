@@ -129,7 +129,8 @@
   border-color: #009fc8;
 }
 
-.btn-primary.addtoFavs{
+.btn-primary.addtoFavs,
+.btn.rmFromFavs{
   margin-left: auto;
 }
 

@@ -181,6 +181,34 @@ background-color: white;
 box-shadow: none;
 }
 
+#catSelectButton{
+  border-radius: 7px 0 0 7px;
+}
+
+#searchBtn{
+  border-radius: 0 7px 7px 0;
+}
+
+.dropdown-menu{
+  padding-left: 8px;
+}
+
+#navbarCollapse .selectedView{
+  font-weight: bold;
+  border-bottom: 2px solid #f8941e;
+  color: #f8941e;
+}
+
+#modNavTabs.nav-tabs[role="tablist"] .nav-link{
+  font-size: 1.5rem;
+  color: #65768e;
+}
+
+#modNavTabs.nav-tabs[role="tablist"] .nav-link.active{
+  font-weight: bold;
+  color: #009fc8;
+}
+
 /* PC Screen */
 @media (min-width: 1200px) {
   #catSelect{
@@ -224,16 +252,4 @@ box-shadow: none;
   .navbar-brand{
     margin-right: 0
   }
-}
-
-#catSelectButton{
-  border-radius: 7px 0 0 7px;
-}
-
-#searchBtn{
-border-radius: 0 7px 7px 0;
-}
-
-.dropdown-menu{
-  padding-left: 8px;
 }

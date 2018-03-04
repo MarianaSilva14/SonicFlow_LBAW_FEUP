@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" type="image/png" href="../resources/images/icon_2.png" sizes="16x16">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"> -->
+
+  <!-- Developed CSS -->
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/administration.css">
+
+  <!-- Developed JS -->
+  <script src="../js/homepage.js" defer></script>
+
+  <title>Sonic Flow</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-xl navbar-light fixed-top bg-white">
+    <!-- logo -->
+    <a class="navbar-brand" href="homepage.html">
+      <img src="../resources/images/logo.png" width="auto" height="64px" alt="">
+    </a>
+    <!-- toggle button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- links and search bar -->
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <!-- links -->
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="homepage.html">Visitor Mode</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link selectedView" href="homepage.html">Administrator Mode</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mobileNav" href="configurator.html"><span class="sub_icon"><i class="fas fa-cogs fa-lg"></i></span>Configurator</a>
+        </li>
+
+        <!-- SEPARATOR -->
+        <hr class="mobileNav w-100 my-1"></hr>
+
+        <li class="nav-item">
+          <a class="nav-link mobileNav" href="productsListpage.html?cat=Computers"><span class="sub_icon"><i class="fas fa-desktop fa-lg"></i></span>Computers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mobileNav" href="productsListpage.html?cat=Laptops"><span class="sub_icon"><i class="fas fa-laptop fa-lg"></i></span>Laptops</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mobileNav" href="productsListpage.html?cat=Mobile"><span class="sub_icon" id="mobile"><i class="fas fa-mobile-alt fa-lg"></i></span>Mobile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mobileNav" href="productsListpage.html?cat=Components"><span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span>Components</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mobileNav" href="productsListpage.html?cat=Storage"><span class="sub_icon"><i class="fas fa-hdd fa-lg"></i></span>Storage</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mobileNav" href="productsListpage.html?cat=Periferals"><span class="sub_icon"><i class="fas fa-keyboard fa-lg"></i></span>Periferals</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mobileNav" href="productsListpage.html?cat=Photo"><span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span>Photo</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mobileNav" href="productsListpage.html?cat=Video"><span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span>Video</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mobileNav" href="productsListpage.html?cat=Network"><span class="sub_icon"><i class="fas fa-rss fa-lg"></i></span>Network</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mobileNav" href="productsListpage.html?cat=Software"><span class="sub_icon"><i class="far fa-window-maximize fa-lg"></i></span>Software</a>
+        </li>
+      </ul>
+
+    </div>
+  </nav>
+
+  <div class="wrapper row">
+    <div id="content-wrapper" class="col-12">
+      <nav class="nav-fill">
+        <div class="nav nav-tabs" id="modNavTabs" role="tablist">
+          <a class="nav-item nav-link active" id="nav-flagged-tab" data-toggle="tab" href="#nav-flagged" role="tab" aria-controls="nav-flagged" aria-selected="true">Product Management</a>
+          <a class="nav-item nav-link" id="nav-banned-tab" data-toggle="tab" href="#nav-banned" role="tab" aria-controls="nav-banned" aria-selected="false">Moderation</a>
+          <!-- <a class="nav-item nav-link" id="nav-chat-tab" data-toggle="tab" href="#nav-chat" role="tab" aria-controls="nav-chat" aria-selected="false">Chat</a> -->
+        </div>
+      </nav>
+      <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-flagged" role="tabpanel" aria-labelledby="nav-flagged-tab">
+
+          <!-- search form -->
+
+         <div class="container" style="padding-top: 25px; padding-left:0px">
+        <div class="row">
+            <div class="col-xs-8 col-xs-offset-2">
+            <div class="input-group">
+                    <div class="input-group-btn search-panel">
+                        <button type="button" id="catSelectButton" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                          <span id="catSelect"><span class="glyphicon glyphicon-align-justify"></span> All</span>  <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="#contains"> <span class="glyphicon glyphicon-envelope text-danger"></span> Computers</a></li>
+                          <li><a href="#its_equal"> <span class="glyphicon glyphicon-music text-warning"></span> Laptops</a></li>
+                          <li><a href="#greather_than"> <span class="glyphicon glyphicon-user text-success"></span> Mobile</a></li>
+                          <li><a href="#less_than"><span class="glyphicon glyphicon-book text-primary"></span> Components </a></li>
+                          <li class="divider"></li>
+                          <li><a href="#all"> <span class="glyphicon glyphicon-picture text-info"></span> Storage</a></li>
+                          <li><a href="#contains"> <span class="glyphicon glyphicon-envelope text-danger"></span> Periferals</a></li>
+                          <li><a href="#contains"> <span class="glyphicon glyphicon-envelope text-danger"></span> Photo</a></li>
+                          <li><a href="#contains"> <span class="glyphicon glyphicon-envelope text-danger"></span> Video</a></li>
+                          <li><a href="#contains"> <span class="glyphicon glyphicon-envelope text-danger"></span> Network</a></li>
+                          <li><a href="#contains"> <span class="glyphicon glyphicon-envelope text-danger"></span> Software</a></li>
+                        </ul>
+                    </div>
+                    <input type="hidden" name="search_param" value="all" id="search_param">
+                    <input type="text" class="form-control" name="x" placeholder="Search...">
+            <button id="searchBtn" class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+      </div>
+    </div>
+
+            <!-- Page content -->
+
+
+              		<div class="panel panel-primary">
+            			<table class="table table-hover table-bordered">
+            				<tr class="info" style="color:#65768e">
+              				<th>Delete</th>
+                      <th>Product</th>
+            					<th>Item Name</th>
+            					<th>Cost</th>
+                      <th>Discount</th>
+            					<th>Quantity</th>
+                      <th>Edit</th>
+            				</tr>
+            				<tr>
+              				<td class="delete_cart"><i class="far fa-trash-alt fa-2x"></i></td>
+                      <td class="productImg"><img src="http://placehold.it/100x100" alt="..." class="img-fluid"/></td>
+            					<td>Apple MacBook Pro 15''</td>
+            					<td class="unitCost">€3 199,99 </td>
+                      <td class="unitCost">€199,99 </td>
+            					<td class="amount"><input type="number" class="form-control text-center" value="1"></td>
+                      <td class="edit_cart"><i class="far fa-edit fa-2x"></i></td>
+            				</tr>
+
+                    <tr>
+                      <td class="delete_cart"><i class="far fa-trash-alt fa-2x"></i></td>
+                      <td class="productImg"><img src="http://placehold.it/100x100" alt="..." class="img-fluid"/></td>
+                      <td>Apple MacBook Air 15''</td>
+                      <td class="unitCost">€2 199,99 </td>
+                      <td class="unitCost">€99,99 </td>
+                      <td class="amount"><input type="number" class="form-control text-center" value="1"></td>
+                      <td class="edit_cart"><i class="far fa-edit fa-2x"></i></td>
+                    </tr>
+
+
+            			</table>
+            		</div>
+
+
+        </div>
+        <div class="tab-pane fade" id="nav-banned" role="tabpanel" aria-labelledby="nav-banned-tab">
+        <br>
+        Add moderators
+        </div>
+        <!-- <div class="tab-pane fade" id="nav-chat" role="tabpanel" aria-labelledby="nav-chat-tab">
+        <br>
+        Mini chat application maybe???
+        </div> -->
+      </div>
+
+    </div>
+
+    <!--Footer-->
+    <footer>
+      <hr style="width:75%">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <ul class="list-inline">
+
+              <li class="list-inline-item">
+                <a href="homepage.html">Home</a>
+              </li>
+
+              <li class="list-inline-item">
+                <a href="aboutpage.html">About us</a>
+              </li>
+
+              <li class="list-inline-item">
+                <a href="contacts.html">Contact</a>
+              </li>
+
+              <li class="list-inline-item">
+                <a href="faqpage.html">FAQ</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <ul class="nav navbar-nav list-inline">
+              <ul class="list-inline">
+                <li class="list-inline-item"><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                <li class="list-inline-item"><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin"></i></a></li>
+              </ul>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  </div>
+
+  </body>
+  </html>

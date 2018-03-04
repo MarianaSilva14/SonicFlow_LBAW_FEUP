@@ -222,3 +222,15 @@ box-shadow: none;
     margin-right: 0
   }
 }
+
+#catSelectButton{
+  border-radius: 7px 0 0 7px;
+}
+
+#searchBtn{
+border-radius: 0 7px 7px 0;
+}
+
+.dropdown-menu{
+  padding-left: 8px;
+}

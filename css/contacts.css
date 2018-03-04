@@ -8,13 +8,14 @@
   margin-left: 7.5%;
 }
 
-.form-control
+#formContainer .form-control
 {
   border-radius:15px;
-  border:1px solid #EDEDED;
+  border:2px solid #EDEDED;
+  transition: all 0.5s;
 }
 
-.form-control:focus
+#formContainer .form-control:focus
 {
   border:1px solid #65768e;
 }

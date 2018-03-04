@@ -14,7 +14,7 @@
   background-color: #b6bdce;
 }
 
-body{
+html{
   overflow: hidden;
   font-family: 'Open Sans', sans-serif;
 }
@@ -31,13 +31,16 @@ body{
   background-color: #65768e;
   height:100%;
   padding: 0;
-  z-index:2000;
   overflow-y: auto;
   box-shadow: 1px 1px 0 0 #b6bdce;
 }
 
 nav{
     box-shadow:0 1px 5px 0 #b6bdce;
+}
+
+.searchForm{
+  margin: 0;
 }
 
 #sidebar-wrapper .sidebar-nav {

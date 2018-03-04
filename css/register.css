@@ -1,8 +1,7 @@
 /* ---- reset ---- */
 
 html {
-  background-image: linear-gradient(to right, #65768e,#b6bdce);
-  background-repeat: no-repeat;
+  background-color: white;
   height: 100%;
   overflow: hidden;
 }
@@ -144,4 +143,8 @@ body {
 .forgot-password:active,
 .forgot-password:focus{
     color: rgb(0,159,200);
+}
+
+#catSelect{
+    font-weight: lighter;
 }

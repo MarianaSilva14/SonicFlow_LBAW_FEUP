@@ -103,7 +103,7 @@ textarea.form-control.productTitle {
 }
 
 .addToCart:hover {
-    box-shadow: 0 8px 10px 0 rgba(0,0,0,0.24), 0 15px 15px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 4px 5px 0 rgb(182, 189, 206), 0 7px 7px 0 rgb(255, 255, 255);
 }
 
 .addToCart:hover span {
@@ -163,4 +163,3 @@ fieldset, i { margin: 0; padding: 0; }
 #specs-form label{
 	font-weight: bold;
 }
-

@@ -53,6 +53,10 @@
   position: relative;
 }
 
+.product-desc .row{
+  margin:0;
+}
+
 .product-name {
   font-size: 16px;
   font-weight: 600;
@@ -72,9 +76,9 @@
   color: #ffffff;
   background-color: #f8941e;
   padding: 6px 12px;
-  position: absolute;
+  /* position: absolute;
   top: -20px;
-  left: 10px;
+  left: 10px; */
 }
 
 .discount-price ~ .product-price{
@@ -87,9 +91,9 @@
   color: #ffffff;
   background-color: #f8941e;
   padding: 6px 12px;
-  position: absolute;
+  /* position: absolute;
   top: -20px;
-  left: 100px;
+  left: 100px; */
   z-index: 2;
 }
 

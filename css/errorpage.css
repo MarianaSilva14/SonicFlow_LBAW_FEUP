@@ -46,3 +46,11 @@ a:not([href]):not([tabindex]):focus, a:not([href]):not([tabindex]):hover {
     color: #ffffff;
     text-decoration:underline;
 }
+
+.home-page{
+  color: white;
+}
+
+a:hover{
+  color: #ffffff;
+}

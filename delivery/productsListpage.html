@@ -20,6 +20,7 @@
   <!-- Developed CSS -->
   <link rel="stylesheet" href="../css/common.css">
   <link rel="stylesheet" href="../css/productsListpage.css">
+  <link rel="stylesheet" href="../css/comparator.css">
   <!-- Developed JS -->
   <script src="../js/common.js" defer></script>
   <script>
@@ -165,6 +166,35 @@
         <a class="breadcrumb-item" href="homepage.html">Homepage</a>
         <span class="breadcrumb-item active"><script>document.write(GetURLParameter('cat'))</script></span>
       </nav>
+
+      <div class="compareOverlay">
+        <i class="fas fa-times close"></i>
+        <div class="form-group row mx-0">
+          <div class="col-sm-2 offset-1 thumbnails">
+            <i class="fas fa-times"></i>
+            <img src="https://static.fnac-static.com/multimedia/Images/PT/NR/fa/44/14/1328378/1505-1.jpg" alt="100x100" class="img-fluid">
+            <p> Portátil Acer Aspire </p>
+          </div>
+          <div class="col-sm-2 thumbnails">
+            <i class="fas fa-times"></i>
+            <img src="https://static.fnac-static.com/multimedia/Images/PT/NR/01/41/12/1196289/1505-1/tsp20170623090030/Apple-MacBook-Pro-15-Retina-i7-2-8GHz-16GB-1TB-Radeon-Pro-555-com-Touch-Bar-e-Touch-ID-Cinzento-Sideral.jpg" alt="100x100" class="img-fluid">
+            <p> Apple MacBook Pro 15 </p>
+          </div>
+          <div class="col-sm-2 thumbnails">
+            <i class="fas fa-times"></i>
+            <img src="https://static.fnac-static.com/multimedia/Images/PT/NR/22/05/13/1246498/1505-1.jpg" alt="100x100" class="img-fluid">
+            <p> Portátil Asus </p>
+          </div>
+          <div class="col-sm-2 thumbnails">
+            <i class="fas fa-times"></i>
+            <img src="https://static.fnac-static.com/multimedia/Images/PT/NR/01/41/12/1196289/1505-1/tsp20170623090030/Apple-MacBook-Pro-15-Retina-i7-2-8GHz-16GB-1TB-Radeon-Pro-555-com-Touch-Bar-e-Touch-ID-Cinzento-Sideral.jpg" alt="100x100" class="img-fluid">
+            <p> Apple MacBook Pro 17 </p>
+          </div>
+          <div class="col-sm-2 my-auto">
+            <button class="btn btn-primary">Compare Now!</button>
+          </div>
+        </div>
+      </div>
 
       <div class="row form-inline filterBar">
         <select id="categories" class="col-xl-2 col-sm-12 form-control" name="categories">

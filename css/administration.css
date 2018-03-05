@@ -102,3 +102,55 @@ td.ban{
 #searchBtn{
 border-radius: 0 7px 7px 0;
 }
+
+.admin-cont{
+padding-top: 25px; 
+padding-left:0px;
+padding-bottom: 25px;
+}
+
+.addProduct{
+  text-align: center;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+#addProduct {
+ border-color: #009fc8;
+ font-size: 15px;
+ color: #009fc8;
+ border-color: #009fc8;
+ margin: 10px 50px 10px 10px;
+ padding: 5px 50px 5px 50px;
+}
+
+#addProduct:hover, #addProduct:active{
+  background-color: #009fc8;
+  border-color: #009fc8;
+  color: white;
+}
+
+#addProduct:not(:disabled):not(.disabled):active, .show>#addProduct.dropdown-toggle{
+  background-color: #009fc8;
+  border-color: #009fc8;
+}
+
+#addProduct:focus{
+  box-shadow: none;
+}
+
+#addProduct:not(:disabled):not(.disabled).active:focus,
+#addProduct:not(:disabled):not(.disabled):active:focus,
+.show>#addProduct.dropdown-toggle:focus{
+  box-shadow: 0 0 0 0.2rem rgba(0, 159, 200,.5);
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 159, 200,.5);
+}
+
+.nav-search {
+  padding-top: 7px;
+}
+
+.container {
+    margin-right: 10px;
+    margin-left: 8px;
+}

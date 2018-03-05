@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" type="image/png" href="resources/images/icon_2.png" sizes="16x16">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"> -->
+
+  <!-- Developed CSS -->
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/comparator.css">
+
+
+  <!-- Developed JS -->
+  <script src="js/common.js" defer></script>
+
+
+  <title>Sonic Flow</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-xl navbar-light fixed-top bg-white">
+    <!-- logo -->
+    <a class="navbar-brand" href="#">
+      <img src="resources/images/logo.png" width="auto" height="64px" alt="">
+    </a>
+    <!-- toggle button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- links and search bar -->
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <!-- search form -->
+
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-8 col-xs-offset-2">
+            <div class="input-group">
+              <div class="input-group-btn search-panel">
+                <button type="button" id="catSelectButton" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                  <span id="catSelect"><span class="glyphicon glyphicon-align-justify"></span> All</span>  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#contains"> <span class="glyphicon glyphicon-envelope text-danger"></span> Computers</a></li>
+                  <li><a href="#its_equal"> <span class="glyphicon glyphicon-music text-warning"></span> Laptops</a></li>
+                  <li><a href="#greather_than"> <span class="glyphicon glyphicon-user text-success"></span> Mobile</a></li>
+                  <li><a href="#less_than"><span class="glyphicon glyphicon-book text-primary"></span> Components </a></li>
+                  <li class="divider"></li>
+                  <li><a href="#all"> <span class="glyphicon glyphicon-picture text-info"></span> Storage</a></li>
+                  <li><a href="#contains"> <span class="glyphicon glyphicon-envelope text-danger"></span> Periferals</a></li>
+                  <li><a href="#contains"> <span class="glyphicon glyphicon-envelope text-danger"></span> Photo</a></li>
+                  <li><a href="#contains"> <span class="glyphicon glyphicon-envelope text-danger"></span> Video</a></li>
+                  <li><a href="#contains"> <span class="glyphicon glyphicon-envelope text-danger"></span> Network</a></li>
+                  <li><a href="#contains"> <span class="glyphicon glyphicon-envelope text-danger"></span> Software</a></li>
+                </ul>
+              </div>
+              <input type="hidden" name="search_param" value="all" id="search_param">
+              <input type="text" class="form-control" name="x" placeholder="Search...">
+              <button id="searchBtn" class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- links -->
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="login.html">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="register.html">Register</a>
+        </li>
+        <li class="nav-item mobileNav">
+          <a class="nav-link" href="#">Cat1</a>
+        </li>
+        <li class="nav-item mobileNav">
+          <a class="nav-link" href="#">cat2</a>
+        </li>
+        <li class="nav-item mobileNav">
+          <a class="nav-link" href="#">cat3</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="wrapper row">
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper" class="col-2">
+      <ul class="sidebar-nav" id="sidebar">
+        <li><a><span class="sub_icon"><i class="fas fa-desktop fa-lg"></i></span>Computers</a></li>
+        <li><a><span class="sub_icon"><i class="fas fa-laptop fa-lg"></i></span>Laptops</a></li>
+        <li><a><span class="sub_icon" id="mobile"><i class="fas fa-mobile-alt fa-lg"></i></span>Mobile</a></li>
+        <li><a><span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span>Components</a></li>
+        <li><a><span class="sub_icon"><i class="fas fa-hdd fa-lg"></i></span>Storage</a></li>
+        <li><a><span class="sub_icon"><i class="fas fa-keyboard fa-lg"></i></span>Periferals</a></li>
+        <li><a><span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span>Photo</a></li>
+        <li><a><span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span>Video</a></li>
+        <li><a><span class="sub_icon"><i class="fas fa-rss fa-lg"></i></span>Network</a></li>
+        <li><a><span class="sub_icon"><i class="far fa-window-maximize fa-lg"></i></span>Software</a></li>
+        <li><a><span class="sub_icon"><i class="fas fa-cogs fa-lg"></i></span>Configurator</a></li>
+        <li><a><span class="sub_icon"><i class="fas fa-cogs fa-lg"></i></span>Configurator</a></li>
+        <li><a><span class="sub_icon"><i class="fas fa-cogs fa-lg"></i></span>Configurator</a></li>
+        <li><a><span class="sub_icon"><i class="far fa-window-maximize fa-lg"></i></span>Software</a></li>
+      </ul>
+    </div>
+
+    <div id="content-wrapper" class="col-10">
+
+      <nav class="breadcrumb">
+        <a class="breadcrumb-item" href="#">Homepage</a>
+        <span class="breadcrumb-item active">Comparator</span>
+      </nav>
+
+      <br>
+
+      <form>
+        <div class="form-group row">
+          <label for="image" class="col-sm-3 col-form-label"> &zwnj; </label>
+          <div class="col-sm-2 thumbnails">
+            <i class="fas fa-times"></i>
+            <img src="https://static.fnac-static.com/multimedia/Images/PT/NR/fa/44/14/1328378/1505-1.jpg" alt="100x100" class="img-fluid">
+            <p> Portátil Acer Aspire </p>
+          </div>
+
+          <div class="col-sm-2 thumbnails">
+            <i class="fas fa-times"></i>
+            <img src="https://static.fnac-static.com/multimedia/Images/PT/NR/01/41/12/1196289/1505-1/tsp20170623090030/Apple-MacBook-Pro-15-Retina-i7-2-8GHz-16GB-1TB-Radeon-Pro-555-com-Touch-Bar-e-Touch-ID-Cinzento-Sideral.jpg" alt="100x100" class="img-fluid">
+            <p> Apple MacBook Pro 15 </p>
+          </div>
+          <div class="col-sm-2 thumbnails">
+            <i class="fas fa-times"></i>
+            <img src="https://static.fnac-static.com/multimedia/Images/PT/NR/22/05/13/1246498/1505-1.jpg" alt="100x100" class="img-fluid">
+            <p> Portátil Asus </p>
+          </div>
+
+          <div class="col-sm-2 thumbnails">
+            <i class="fas fa-times"></i>
+            <img src="https://static.fnac-static.com/multimedia/Images/PT/NR/01/41/12/1196289/1505-1/tsp20170623090030/Apple-MacBook-Pro-15-Retina-i7-2-8GHz-16GB-1TB-Radeon-Pro-555-com-Touch-Bar-e-Touch-ID-Cinzento-Sideral.jpg" alt="100x100" class="img-fluid">
+            <p> Apple MacBook Pro 17 </p>
+          </div>
+        </div>
+      </form>
+
+      <form class="spec">
+
+        <legend> Summary </legend>
+
+        <div class="form-group row">
+          <label for="screenSize" class="col-sm-3 col-form-label">Screen Size</label>
+          <p class="col-sm-2">23.8 inches</p>
+          <p class="col-sm-2">23.8 inches</p>
+          <p class="col-sm-2">23.8 inches</p>
+          <p class="col-sm-2">23.8 inches</p>
+        </div>
+
+        <div class="form-group row">
+          <label for="maxScreenRes" class="col-sm-3 col-form-label">Screen Resolution</label>
+          <p class="col-sm-2">1920 x 1080 pixels </p>
+          <p class="col-sm-2">1920 x 1080 pixels </p>
+          <p class="col-sm-2">1920 x 1080 pixels </p>
+          <p class="col-sm-2">1920 x 1080 pixels </p>
+        </div>
+
+        <div class="form-group row">
+          <label for="processor" class="col-sm-3 col-form-label">Processor</label>
+          <p class="col-sm-2">2.4 GHz Intel Core i5</p>
+          <p class="col-sm-2">2.4 GHz Intel Core i5</p>
+          <p class="col-sm-2">2.4 GHz Intel Core i5</p>
+          <p class="col-sm-2">2.4 GHz Intel Core i5</p>
+        </div>
+
+        <div class="form-group row">
+          <label for="ram" class="col-sm-3 col-form-label">Ram</label>
+          <p class="col-sm-2">12 GB DDR4</p>
+          <p class="col-sm-2">12 GB DDR4</p>
+          <p class="col-sm-2">12 GB DDR4</p>
+          <p class="col-sm-2">12 GB DDR4</p>
+        </div>
+
+        <div class="form-group row">
+          <label for="hardDrive" class="col-sm-3 col-form-label">Hard Drive</label>
+          <p class="col-sm-2">1000 GB Mechanical Hard Drive</p>
+          <p class="col-sm-2">1000 GB Mechanical Hard Drive</p>
+          <p class="col-sm-2">1000 GB Mechanical Hard Drive</p>
+          <p class="col-sm-2">1000 GB Mechanical Hard Drive</p>
+        </div>
+
+        <div class="form-group row">
+          <label for="graphics" class="col-sm-3 col-form-label">Graphics Coprocessor</label>
+          <p class="col-sm-2">Intel 630</p>
+          <p class="col-sm-2">Intel 630</p>
+          <p class="col-sm-2">Intel 630</p>
+          <p class="col-sm-2">Intel 630</p>
+        </div>
+
+        <div class="form-group row">
+          <label for="cardDes" class="col-sm-3 col-form-label">Card Description</label>
+          <p class="col-sm-2">Integrated</p>
+          <p class="col-sm-2">Integrated</p>
+          <p class="col-sm-2">Integrated</p>
+          <p class="col-sm-2">Integrated</p>
+        </div>
+
+        <div class="form-group row">
+          <label for="usb2" class="col-sm-3 col-form-label">Number of USB 2.0 Ports</label>
+          <p class="col-sm-2">1</p>
+          <p class="col-sm-2">1</p>
+          <p class="col-sm-2">1</p>
+          <p class="col-sm-2">1</p>
+        </div>
+
+        <div class="form-group row">
+          <label for="usb3" class="col-sm-3 col-form-label">Number of USB 3.0 Ports</label>
+          <p class="col-sm-2">4</p>
+          <p class="col-sm-2">4</p>
+          <p class="col-sm-2">4</p>
+          <p class="col-sm-2">4</p>
+        </div>
+
+      </form>
+      <br><br>
+      <form class="spec">
+
+        <legend> Other Technical Details </legend>
+
+        <div class="form-group row">
+          <label for="brand" class="col-sm-3 col-form-label">Brand Name</label>
+          <p class="col-sm-2">Apple</p>
+          <p class="col-sm-2">Apple</p>
+          <p class="col-sm-2">Apple</p>
+          <p class="col-sm-2">Apple</p>
+        </div>
+
+        <div class="form-group row">
+          <label for="series" class="col-sm-3 col-form-label">Series</label>
+          <p class="col-sm-2">Pro</p>
+          <p class="col-sm-2">Pro</p>
+          <p class="col-sm-2">Pro</p>
+          <p class="col-sm-2">Pro</p>
+        </div>
+
+        <div class="form-group row">
+          <label for="brand" class="col-sm-3 col-form-label">Item model number</label>
+          <p class="col-sm-2">AZ3-715-ACKi5</p>
+          <p class="col-sm-2">AZ3-715-ACKi5</p>
+          <p class="col-sm-2">AZ3-715-ACKi5</p>
+          <p class="col-sm-2">AZ3-715-ACKi5</p>
+        </div>
+
+        <div class="form-group row">
+          <label for="series" class="col-sm-3 col-form-label">Hardware Platform</label>
+          <p class="col-sm-2">PC</p>
+          <p class="col-sm-2">PC</p>
+          <p class="col-sm-2">PC</p>
+          <p class="col-sm-2">PC</p>
+        </div>
+
+        <div class="form-group row">
+          <label for="brand" class="col-sm-3 col-form-label">Operating System</label>
+          <p class="col-sm-2">Windows 10</p>
+          <p class="col-sm-2">Windows 10</p>
+          <p class="col-sm-2">Windows 10</p>
+          <p class="col-sm-2">Windows 10</p>
+        </div>
+
+        <div class="form-group row">
+          <label for="series" class="col-sm-3 col-form-label">Item Weight</label>
+          <p class="col-sm-2">22.6 pounds</p>
+          <p class="col-sm-2">22.6 pounds</p>
+          <p class="col-sm-2">22.6 pounds</p>
+          <p class="col-sm-2">22.6 pounds</p>
+        </div>
+
+        <div class="form-group row">
+          <label for="brand" class="col-sm-3 col-form-label">Product Dimensions</label>
+          <p class="col-sm-2">23.3 x 1.4 x 18.4 inches</p>
+          <p class="col-sm-2">23.3 x 1.4 x 18.4 inches</p>
+          <p class="col-sm-2">23.3 x 1.4 x 18.4 inches</p>
+          <p class="col-sm-2">23.3 x 1.4 x 18.4 inches</p>
+        </div>
+
+        <div class="form-group row">
+          <label for="series" class="col-sm-3 col-form-label">Item Dimensions L x W x H</label>
+          <p class="col-sm-2">23.34 x 1.42 x 18.45 inches</p>
+          <p class="col-sm-2">23.34 x 1.42 x 18.45 inches</p>
+          <p class="col-sm-2">23.34 x 1.42 x 18.45 inches</p>
+          <p class="col-sm-2">23.34 x 1.42 x 18.45 inches</p>
+        </div>
+
+        <div class="form-group row">
+          <label for="brand" class="col-sm-3 col-form-label">Color</label>
+          <p class="col-sm-2">grey</p>
+          <p class="col-sm-2">grey</p>
+          <p class="col-sm-2">grey</p>
+          <p class="col-sm-2">grey</p>
+        </div>
+
+        <div class="form-group row">
+          <label for="series" class="col-sm-3 col-form-label">Processor Brand</label>
+          <p class="col-sm-2">Intel</p>
+          <p class="col-sm-2">Intel</p>
+          <p class="col-sm-2">Intel</p>
+          <p class="col-sm-2">Intel</p>
+        </div>
+
+        <div class="form-group row">
+          <label for="brand" class="col-sm-3 col-form-label">Processor Count</label>
+          <p class="col-sm-2">1</p>
+          <p class="col-sm-2">1</p>
+          <p class="col-sm-2">1</p>
+          <p class="col-sm-2">1</p>
+        </div>
+
+        <div class="form-group row">
+          <label for="series" class="col-sm-3 col-form-label">Computer Memory Type</label>
+          <p class="col-sm-2">DDR4 SDRAM</p>
+          <p class="col-sm-2">DDR4 SDRAM</p>
+          <p class="col-sm-2">DDR4 SDRAM</p>
+          <p class="col-sm-2">DDR4 SDRAM</p>
+        </div>
+
+        <div class="form-group row">
+          <label for="series" class="col-sm-3 col-form-label">Hard Drive Interface</label>
+          <p class="col-sm-2">ATA</p>
+          <p class="col-sm-2">ATA</p>
+          <p class="col-sm-2">ATA</p>
+          <p class="col-sm-2">ATA</p>
+        </div>
+
+        <div class="form-group row">
+          <label for="brand" class="col-sm-3 col-form-label">Hard Drive Rotational Speed</label>
+          <p class="col-sm-2">5400 RPM</p>
+          <p class="col-sm-2">5400 RPM</p>
+          <p class="col-sm-2">5400 RPM</p>
+          <p class="col-sm-2">5400 RPM</p>
+        </div>
+
+        <div class="form-group row">
+          <label for="series" class="col-sm-3 col-form-label">Optical Drive Type</label>
+          <p class="col-sm-2">DVD-RW</p>
+          <p class="col-sm-2">DVD-RW</p>
+          <p class="col-sm-2">DVD-RW</p>
+          <p class="col-sm-2">DVD-RW</p>
+        </div>
+
+      </form>
+
+      <!--Footer-->
+      <footer>
+        <hr style="width:75%">
+        <div class="container">
+          <div class="row text-center">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <ul class="list-inline">
+
+                <li class="list-inline-item">
+                  <a href="#">Home</a>
+                </li>
+
+                <li class="list-inline-item">
+                  <a href="#">About us</a>
+                </li>
+
+                <li class="list-inline-item">
+                  <a href="#">Contact</a>
+                </li>
+
+                <li class="list-inline-item">
+                  <a href="#">FAQ</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <ul class="nav navbar-nav list-inline">
+                <ul class="list-inline">
+                  <li class="list-inline-item"><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                  <li class="list-inline-item"><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                  <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin"></i></a></li></ul>
+                </div>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+
+
+
+    </div>
+  </body>
+  </html>

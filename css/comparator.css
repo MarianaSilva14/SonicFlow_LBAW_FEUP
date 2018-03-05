@@ -9,7 +9,7 @@
 .thumbnails svg{
 	position: absolute;
 	right: 10%;
-	color: red;
+	color: #dc3545;
 }
 
 @media (max-width:576px) {

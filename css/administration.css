@@ -78,11 +78,13 @@ td.amount{
 td.delete_cart {
   text-align: center;
   vertical-align: middle;
+  color: #dc3545;
 }
 
 td.edit_cart {
   text-align: center;
   vertical-align: middle;
+  color:#009fc8;
 }
 
 td.ignore{
@@ -104,7 +106,7 @@ border-radius: 0 7px 7px 0;
 }
 
 .admin-cont{
-padding-top: 25px; 
+padding-top: 25px;
 padding-left:0px;
 padding-bottom: 25px;
 }

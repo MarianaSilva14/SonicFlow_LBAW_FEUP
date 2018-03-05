@@ -3,5 +3,4 @@ TODO links to product pages
 TODO link to shopping Cart
 TODO checkout loyalty points
 TODO sidebar Configurator image
-TODO purchase history better example
 TODO links to login, register, comparator

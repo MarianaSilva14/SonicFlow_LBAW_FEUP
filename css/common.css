@@ -215,7 +215,17 @@ box-shadow: none;
 }
 
 #navbarCollapse a[href="profilepage.html"]{
-  padding-left: 44px;
+  
+}
+
+#navbarCollapse .nav-link .fa-shopping-cart{
+  margin-top:8px;
+  margin-right: 10px;
+  color:#f8941e;
+}
+
+#navbarCollapse .logout{
+  margin-top:5px;
 }
 
 /* PC Screen */

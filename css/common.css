@@ -224,6 +224,12 @@ box-shadow: none;
   margin-top:5px;
 }
 
+#sidebar-wrapper .sidebar-nav li a#configurator  {
+  border-bottom: 2px solid #b6bdce;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+}
+
 /* PC Screen */
 @media (min-width: 1200px) {
   #catSelect{

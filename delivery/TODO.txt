@@ -1,6 +1,3 @@
-TODO fix shopping cart table
 TODO links to product pages
-TODO link to shopping Cart
 TODO checkout loyalty points
-TODO sidebar Configurator image
-TODO links to login, register, comparator
+TODO links to comparator

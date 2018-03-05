@@ -2,6 +2,6 @@ TODO fix shopping cart table
 TODO links to product pages
 TODO link to shopping Cart
 TODO checkout loyalty points
-TODO fix price tags layout(e.g. home page)
+TODO sidebar Configurator image
 TODO purchase history better example
 TODO links to login, register, comparator

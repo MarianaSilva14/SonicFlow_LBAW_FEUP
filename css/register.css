@@ -1,11 +1,4 @@
 /* ---- reset ---- */
-
-html {
-  background-color: white;
-  height: 100%;
-  overflow: hidden;
-}
-
 body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
@@ -15,15 +8,6 @@ body {
 .card-container.card {
     max-width: 450px;
     padding: 40px 40px;
-}
-
-.btn {
-    font-weight: 700;
-    height: 36px;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
-    cursor: default;
 }
 
 /*
@@ -143,8 +127,4 @@ body {
 .forgot-password:active,
 .forgot-password:focus{
     color: rgb(0,159,200);
-}
-
-#catSelect{
-    font-weight: lighter;
 }

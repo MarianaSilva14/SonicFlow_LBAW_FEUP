@@ -1,6 +1,19 @@
 .spec .col-sm-2 {
 	border-left: 1px solid #b6bdce;
 }
-.form-group{
+
+.thumbnails{
 	text-align: center;
+}
+
+.thumbnails svg{
+	position: absolute;
+	right: 10%;
+	color: red;
+}
+
+@media (max-width:576px) {
+	.thumbnails svg{
+		font-size: 30px;
+	}
 }

@@ -20,8 +20,7 @@ h3{
 h3 span{
   background: #fff;
   padding: 0 10px;
-  margin-left: -50%;
-  margin-right: -50%;
+
 }
 
 h3 span::before{
@@ -30,4 +29,8 @@ h3 span::before{
 
 h3 span::after{
   margin-right: -50%;
+}
+
+#title_about{
+  margin-left: 38.5%;
 }

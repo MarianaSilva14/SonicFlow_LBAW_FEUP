@@ -209,6 +209,15 @@ box-shadow: none;
   color: #009fc8;
 }
 
+#profile_picture{
+  height:39px;
+  border-radius: 50%;
+}
+
+#navbarCollapse a[href="profilepage.html"]{
+  padding-left: 44px;
+}
+
 /* PC Screen */
 @media (min-width: 1200px) {
   #catSelect{
@@ -252,9 +261,4 @@ box-shadow: none;
   .navbar-brand{
     margin-right: 0
   }
-}
-
-#profile_picture{
-  height:39px;
-  border-radius: 50%;
 }

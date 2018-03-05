@@ -253,3 +253,8 @@ box-shadow: none;
     margin-right: 0
   }
 }
+
+#profile_picture{
+  height:39px;
+  border-radius: 50%;
+}

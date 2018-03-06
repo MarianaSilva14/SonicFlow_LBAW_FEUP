@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" type="image/png" href="../resources/images/icon_2.png" sizes="16x16">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  </script>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+  <!-- Developed CSS -->
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/productsListpage.css">
+  <link rel="stylesheet" href="../css/comparator.css">
+  <!-- Developed JS -->
+  <script src="../js/common.js" defer></script>
+  <script>
+  function GetURLParameter(sParam)
+  {
+      var sPageURL = window.location.search.substring(1);
+      var sURLVariables = sPageURL.split('&');
+      for (var i = 0; i < sURLVariables.length; i++)
+      {
+          var sParameterName = sURLVariables[i].split('=');
+          if (sParameterName[0] == sParam)
+          {
+              document.title = sParameterName[1];
+              return sParameterName[1];
+          }
+      }
+  }
+  </script>
+
+  <title>Products</title>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-xl navbar-light fixed-top bg-white">
+    <!-- logo -->
+    <a class="navbar-brand" href="homepage.html">
+      <img src="../resources/images/logo.png" width="auto" height="64px" alt="">
+    </a>
+    <!-- toggle button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- links and search bar -->
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <!-- search form -->
+      <div class="row searchForm">
+        <div class="col-xs-8 col-xs-offset-2">
+          <div class="input-group">
+            <div class="input-group-btn search-panel">
+              <button type="button" id="catSelectButton" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                <span id="catSelect">All</span>  <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#contains">All</a></li>
+                <li><a href="#contains">Computers</a></li>
+                <li><a href="#contains">Laptops</a></li>
+                <li><a href="#contains">Mobile</a></li>
+                <li><a href="#contains">Components</a></li>
+                <li><a href="#contains">Storage</a></li>
+                <li><a href="#contains">Periferals</a></li>
+                <li><a href="#contains">Photo</a></li>
+                <li><a href="#contains">Video</a></li>
+                <li><a href="#contains">Network</a></li>
+                <li><a href="#contains">Software</a></li>
+              </ul>
+            </div>
+            <input type="hidden" name="search_param" value="all" id="search_param">
+            <input type="text" class="form-control" name="x" placeholder="Search...">
+            <button id="searchBtn" class="btn btn-outline-success" type="submit"><i class="fas fa-search"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- links -->
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="shoppingCart.html"><i class="fas fa-shopping-cart fa-lg"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="login.html">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="register.html">Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mobileNav" href="configurator.html"><span class="sub_icon"><i class="fas fa-cogs fa-lg"></i></span>Configurator</a>
+        </li>
+
+        <!-- SEPARATOR -->
+        <hr class="mobileNav w-100 my-1"></hr>
+
+        <li class="nav-item">
+          <a class="nav-link mobileNav" href="productsListpage.html?cat=Computers"><span class="sub_icon"><i class="fas fa-desktop fa-lg"></i></span>Computers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mobileNav" href="productsListpage.html?cat=Laptops"><span class="sub_icon"><i class="fas fa-laptop fa-lg"></i></span>Laptops</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mobileNav" href="productsListpage.html?cat=Mobile"><span class="sub_icon" id="mobile"><i class="fas fa-mobile-alt fa-lg"></i></span>Mobile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mobileNav" href="productsListpage.html?cat=Components"><span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span>Components</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mobileNav" href="productsListpage.html?cat=Storage"><span class="sub_icon"><i class="fas fa-hdd fa-lg"></i></span>Storage</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mobileNav" href="productsListpage.html?cat=Periferals"><span class="sub_icon"><i class="fas fa-keyboard fa-lg"></i></span>Periferals</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mobileNav" href="productsListpage.html?cat=Photo"><span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span>Photo</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mobileNav" href="productsListpage.html?cat=Video"><span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span>Video</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mobileNav" href="productsListpage.html?cat=Network"><span class="sub_icon"><i class="fas fa-rss fa-lg"></i></span>Network</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mobileNav" href="productsListpage.html?cat=Software"><span class="sub_icon"><i class="far fa-window-maximize fa-lg"></i></span>Software</a>
+        </li>
+      </ul>
+
+    </div>
+  </nav>
+
+  <div class="wrapper row">
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper" class="col-2">
+      <ul class="sidebar-nav" id="sidebar">
+        <li><a id="configurator" href="configurator.html"><span class="sub_icon"><i class="fas fa-cogs fa-lg"></i></span>Configurator</a></li>
+        <li><a href="productsListpage.html?cat=Computers"><span class="sub_icon"><i class="fas fa-desktop fa-lg"></i></span>Computers</a></li>
+        <li><a href="productsListpage.html?cat=Laptops"><span class="sub_icon"><i class="fas fa-laptop fa-lg"></i></span>Laptops</a></li>
+        <li><a href="productsListpage.html?cat=Mobile"><span class="sub_icon" id="mobile"><i class="fas fa-mobile-alt fa-lg"></i></span>Mobile</a></li>
+        <li><a href="productsListpage.html?cat=Components"><span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span>Components</a></li>
+        <li><a href="productsListpage.html?cat=Storage"><span class="sub_icon"><i class="fas fa-hdd fa-lg"></i></span>Storage</a></li>
+        <li><a href="productsListpage.html?cat=Periferals"><span class="sub_icon"><i class="fas fa-keyboard fa-lg"></i></span>Periferals</a></li>
+        <li><a href="productsListpage.html?cat=Photo"><span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span>Photo</a></li>
+        <li><a href="productsListpage.html?cat=Video"><span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span>Video</a></li>
+        <li><a href="productsListpage.html?cat=Network"><span class="sub_icon"><i class="fas fa-rss fa-lg"></i></span>Network</a></li>
+        <li><a href="productsListpage.html?cat=Software"><span class="sub_icon"><i class="far fa-window-maximize fa-lg"></i></span>Software</a></li>
+        <li><a href="productsListpage.html?cat=Software"><span class="sub_icon"><i class="far fa-window-maximize fa-lg"></i></span>Software</a></li>
+      </ul>
+    </div>
+
+
+    <div id="content-wrapper" class="col-10">
+
+      <nav class="breadcrumb">
+        <a class="breadcrumb-item" href="homepage.html">Homepage</a>
+        <span class="breadcrumb-item active"><script>document.write(GetURLParameter('cat'))</script></span>
+      </nav>
+
+      <div class="compareOverlay">
+        <i class="fas fa-times close"></i>
+        <form action="comparator.html">
+        <div class="form-group row mx-0">
+          <div class="col-sm-2 offset-1 thumbnails">
+            <i class="fas fa-times"></i>
+            <img src="https://static.fnac-static.com/multimedia/Images/PT/NR/fa/44/14/1328378/1505-1.jpg" alt="100x100" class="img-fluid">
+            <p> Portátil Acer Aspire </p>
+          </div>
+          <div class="col-sm-2 thumbnails">
+            <i class="fas fa-times"></i>
+            <img src="https://static.fnac-static.com/multimedia/Images/PT/NR/01/41/12/1196289/1505-1/tsp20170623090030/Apple-MacBook-Pro-15-Retina-i7-2-8GHz-16GB-1TB-Radeon-Pro-555-com-Touch-Bar-e-Touch-ID-Cinzento-Sideral.jpg" alt="100x100" class="img-fluid">
+            <p> Apple MacBook Pro 15 </p>
+          </div>
+          <div class="col-sm-2 thumbnails">
+            <i class="fas fa-times"></i>
+            <img src="https://static.fnac-static.com/multimedia/Images/PT/NR/22/05/13/1246498/1505-1.jpg" alt="100x100" class="img-fluid">
+            <p> Portátil Asus </p>
+          </div>
+          <div class="col-sm-2 thumbnails">
+            <i class="fas fa-times"></i>
+            <img src="https://static.fnac-static.com/multimedia/Images/PT/NR/01/41/12/1196289/1505-1/tsp20170623090030/Apple-MacBook-Pro-15-Retina-i7-2-8GHz-16GB-1TB-Radeon-Pro-555-com-Touch-Bar-e-Touch-ID-Cinzento-Sideral.jpg" alt="100x100" class="img-fluid">
+            <p> Apple MacBook Pro 17 </p>
+          </div>
+          <div class="col-sm-2 my-auto">
+            <button class="btn btn-primary">Compare Now!</button>
+          </div>
+        </div>
+      </form>
+      </div>
+
+      <div class="row form-inline filterBar">
+        <select id="categories" class="col-xl-2 col-sm-12 form-control" name="categories">
+          <option value="">Select brand...</option>
+          <option value="">option</option>
+          <option value="">option</option>
+          <option value="">option</option>
+        </select>
+        <div class="col-xl-4 col-lg-4 col-sm-12 col-12 priceRange">
+          Price between: <input type="text" class="form-control" value="10"/>
+          and <input type="text" class="form-control" value="1000"/>
+        </div>
+        <div class="col-xl-1 col-lg-4 col-sm-6 custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="productAvailable">
+          <label class="custom-control-label" for="productAvailable">Available</label>
+        </div>
+        <select class="col-xl-2 col-lg-4 col-sm-5 form-control" name="sortBy">
+          <option value="">Sort by...</option>
+          <option value="">option</option>
+          <option value="">option</option>
+          <option value="">option</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <div class="outbox col-xl-3 col-md-4">
+          <div class="ibox">
+            <div class="ibox-content product-box">
+              <div class="product-imitation">
+                <img src="https://static.fnac-static.com/multimedia/Images/PT/NR/01/41/12/1196289/1505-1/tsp20170623090030/Apple-MacBook-Pro-15-Retina-i7-2-8GHz-16GB-1TB-Radeon-Pro-555-com-Touch-Bar-e-Touch-ID-Cinzento-Sideral.jpg" alt="194x228"class="img-fluid">
+              </div>
+              <div class="product-desc">
+                <div class="priceTags">
+                  <span class="bg-danger discount-price">
+                    3 199,99 €
+                  </span>
+                  <span class="product-price">
+                    3 622,67 €
+                  </span>
+                </div>
+                <br>
+                <small class="text-muted">Category</small>
+                <a href="#" class="product-name"> Apple MacBook Pro 15''</a>
+
+                <div class="small m-t-xs">
+                  Many desktop publishing packages and web page editors now.
+                </div>
+                <br>
+                <div class="m-t text-righ row">
+                  <a href="#" class="addtoCart col-8 btn btn-xs btn-outline btn-primary">Add to cart  <i class="fas fa-cart-plus"></i></a>
+                  <a href="#" class="addtoFavs col-3 btn btn-xs btn-outline btn-primary"><i class="far fa-heart"></i></a>
+                </div>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                <label class="custom-control-label" for="customCheck1">Compare</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="outbox col-xl-3 col-md-4">
+          <div class="ibox">
+            <div class="ibox-content product-box">
+              <div class="product-imitation">
+                <img src="https://static.fnac-static.com/multimedia/Images/PT/NR/fa/44/14/1328378/1505-1.jpg" alt="194x228"class="img-fluid">
+              </div>
+              <div class="product-desc">
+                <div class="priceTags">
+                  <span class="product-price">
+                    999,99 €
+                  </span>
+                </div>
+                <br>
+                <small class="text-muted">Category</small>
+                <a href="#" class="product-name"> Portátil Acer Aspire</a>
+                <div class="small">
+                  Many desktop publishing packages and web page editors now.
+                </div>
+                <br>
+                <div class="buttons row">
+                  <a href="#" class="addtoCart col-8 btn btn-xs btn-outline btn-primary">Add to cart  <i class="fas fa-cart-plus"></i></a>
+                  <a href="#" class="addtoFavs col-3 btn btn-xs btn-outline btn-primary"><i class="far fa-heart"></i></a>
+                </div>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck2">
+                <label class="custom-control-label" for="customCheck2">Compare</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="outbox col-xl-3 col-md-4">
+          <div class="ibox">
+            <div class="ibox-content product-box">
+              <div class="product-imitation">
+                <img src="https://static.fnac-static.com/multimedia/Images/PT/NR/22/05/13/1246498/1505-1.jpg" alt="194x228"class="img-fluid">
+              </div>
+              <div class="product-desc">
+                <div class="priceTags">
+                  <span class="product-price">
+                    650 €
+                  </span>
+                </div>
+                <br>
+                <small class="text-muted">Category</small>
+                <a href="#" class="product-name"> Portátil Asus</a>
+                <div class="small m-t-xs">
+                  Many desktop publishing packages and web page editors now.
+                </div>
+                <br>
+                <div class="m-t text-righ row">
+                  <a href="#" class="addtoCart col-8 btn btn-xs btn-outline btn-primary">Add to cart  <i class="fas fa-cart-plus"></i></a>
+                  <a href="#" class="addtoFavs col-3 btn btn-xs btn-outline btn-primary"><i class="far fa-heart"></i></a>
+                </div>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck3">
+                <label class="custom-control-label" for="customCheck3">Compare</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="outbox col-xl-3 col-md-4">
+          <div class="ibox">
+            <div class="ibox-content product-box">
+
+              <div class="product-imitation">
+                <img src="https://static.fnac-static.com/multimedia/Images/PT/NR/59/6b/15/1403737/1505-1.jpg" alt="194x228"class="img-fluid">
+              </div>
+              <div class="product-desc">
+                <div class="priceTags">
+                  <span class="product-price">
+                    958,99 €
+                  </span>
+                </div>
+                <br>
+                <small class="text-muted">Category</small>
+                <a href="#" class="product-name"> Portátil HP Pavilion</a>
+                <div class="small m-t-xs">
+                  Many desktop publishing packages and web page editors now.
+                </div>
+                <br>
+                <div class="m-t text-righ row">
+                  <a href="#" class="addtoCart col-8 btn btn-xs btn-outline btn-primary">Add to cart  <i class="fas fa-cart-plus"></i></a>
+                  <a href="#" class="addtoFavs col-3 btn btn-xs btn-outline btn-primary"><i class="far fa-heart"></i></a>
+                </div>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="customCheck4">
+                <label class="custom-control-label" for="customCheck4">Compare</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Footer-->
+      <footer>
+        <hr width="75%">
+        <div class="container">
+          <div class="row text-center">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <ul class="list-inline">
+
+                <li class="list-inline-item">
+                  <a href="homepage.html">Home</a>
+                </li>
+
+                <li class="list-inline-item">
+                  <a href="aboutpage.html">About us</a>
+                </li>
+
+                <li class="list-inline-item">
+                  <a href="contacts.html">Contact</a>
+                </li>
+
+                <li class="list-inline-item">
+                  <a href="faqpage.html">FAQ</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <ul class="nav navbar-nav list-inline">
+                <ul class="list-inline">
+                  <li class="list-inline-item"><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                  <li class="list-inline-item"><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                  <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                </ul>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+  </div>
+</body>
+</html>

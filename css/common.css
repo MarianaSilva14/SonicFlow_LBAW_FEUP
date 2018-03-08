@@ -220,8 +220,21 @@ box-shadow: none;
   color:#f8941e;
 }
 
+.navbar-light .navbar-nav .login, .navbar-light .navbar-nav .register{
+    margin-top: 5px;
+    color: #65768e;
+    font-weight: bold;
+}
+
 #navbarCollapse .logout{
-  margin-top:5px;
+  margin-top:6px;
+  color: #65768e;
+  font-weight: bold;
+}
+
+#navbarCollapse .profile{
+  color: #65768e;
+  font-weight: bold;
 }
 
 #sidebar-wrapper .sidebar-nav li a#configurator  {

@@ -57,3 +57,9 @@ td svg:nth-child(2){
 td[aria-expanded="true"] svg:nth-child(2){
   transform: rotate(0deg);
 }
+
+.secondary {
+  min-height: 100%;
+  position: relative;
+  height: auto;
+}

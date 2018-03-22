@@ -36,6 +36,8 @@ CREATE TABLE banned (
     username_customer text PRIMARY KEY REFERENCES customer ON DELETE CASCADE,
     bannedDate DATE NOT NULL, --this has to be with triggers
     username_moderator text NOT NULL REFERENCES moderator ON DELETE CASCADE,
+
+    -- CONSTRAINT banned_date CHECK (banned_date > username_customer.joinDate)
 );
 
 CREATE TABLE comment (
@@ -55,7 +57,7 @@ CREATE TABLE answer (
 
 CREATE TABLE flagged (
     idComment INTEGER NOT NULL REFERENCES comment ON DELETE CASCADE,
-    "hidden" INTEGER NOT NULL,
+    "hidden" BOOLEAN NOT NULL,
 );
 
 CREATE TABLE category (

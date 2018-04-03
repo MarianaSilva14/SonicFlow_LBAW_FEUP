@@ -33,7 +33,7 @@ CREATE TABLE banned (
 
 CREATE TABLE comment (
     id SERIAL PRIMARY KEY,
-    username INTEGER NOT NULL REFERENCES "user" ON DELETE CASCADE,
+    username TEXT NOT NULL REFERENCES "user" ON DELETE CASCADE,
     "date" TIMESTAMP DEFAULT now() NOT NULL,
     commentary text NOT NULL,
     flagsNo INTEGER NOT NULL DEFAULT 0,

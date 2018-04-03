@@ -7,9 +7,7 @@ CREATE TABLE "user" (
 );
  
 CREATE TABLE customer (
-    id SERIAL PRIMARY KEY,
-    username text NOT NULL 
-        REFERENCES "user" ON DELETE CASCADE,
+    username text PRIMARY KEY REFERENCES "user" ON DELETE CASCADE,
     "name" text NOT NULL,
     "address" text,
     loyaltyPoints INTEGER NOT NULL DEFAULT 0,
@@ -20,19 +18,17 @@ CREATE TABLE customer (
 );
 
 CREATE TABLE moderator (
-    id SERIAL PRIMARY KEY,
-    username text NOT NULL REFERENCES "user" ON DELETE CASCADE
+    username text PRIMARY KEY REFERENCES "user" ON DELETE CASCADE
 );
 
 CREATE TABLE administrator (
-    id SERIAL PRIMARY KEY,
-    username text NOT NULL REFERENCES "user" ON DELETE CASCADE
+    username text PRIMARY KEY REFERENCES "user" ON DELETE CASCADE
 );
 
 CREATE TABLE banned (
-    username_customer INTEGER PRIMARY KEY REFERENCES customer ON DELETE CASCADE,
+    username_customer TEXT PRIMARY KEY REFERENCES customer ON DELETE CASCADE,
     bannedDate TIMESTAMP DEFAULT now() NOT NULL,
-    username_moderator INTEGER NOT NULL REFERENCES moderator ON DELETE CASCADE
+    username_moderator TEXT NOT NULL REFERENCES moderator ON DELETE CASCADE
 );
 
 CREATE TABLE comment (
@@ -126,7 +122,7 @@ CREATE TABLE purchase_product (
 );
 
 CREATE TABLE rating (
-    username text NOT NULL,
+    username text PRIMARY KEY REFERENCES customer ON DELETE CASCADE
     refProduct INTEGER NOT NULL REFERENCES product ON DELETE CASCADE,
     "value" INTEGER NOT NULL CHECK (("value" > 0 ) AND ("value" <= 5)),
     PRIMARY KEY(username, refProduct)

@@ -1,0 +1,15 @@
+INSERT INTO attribute_product VALUES (1,'901896832', 'diam');
+INSERT INTO attribute_product VALUES (2,'672442768', 'diam');
+INSERT INTO attribute_product VALUES (3,'186596482', 'diam');
+INSERT INTO attribute_product VALUES (4,'556397271', 'diam');
+INSERT INTO attribute_product VALUES (5,'696296971', 'diam');
+INSERT INTO attribute_product VALUES (6,'841341724', 'diam');
+INSERT INTO attribute_product VALUES (7,'780741675', 'diam');
+INSERT INTO attribute_product VALUES (8,'410469648', 'diam');
+INSERT INTO attribute_product VALUES (9,'901889798', 'diam');
+INSERT INTO attribute_product VALUES (10,'171093287', 'diam');
+INSERT INTO attribute_product VALUES (1,'083108184', 'diam');
+INSERT INTO attribute_product VALUES (2,'914510007', 'diam');
+INSERT INTO attribute_product VALUES (3,'542291350', 'diam');
+INSERT INTO attribute_product VALUES (4,'891931229', 'diam');
+INSERT INTO attribute_product VALUES (5,'278925974', 'diam');

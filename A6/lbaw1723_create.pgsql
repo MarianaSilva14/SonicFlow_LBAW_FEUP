@@ -137,3 +137,4 @@ CREATE TABLE rating (
 -- 1 add foreign key on rating.refProduct to product
 -- 2 "date" of comment must have a default NOW()
 -- 3 flagsNo of comment must have a default of 0
+-- 4 add foreign key from comment to product

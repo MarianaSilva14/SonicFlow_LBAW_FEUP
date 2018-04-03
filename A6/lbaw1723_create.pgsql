@@ -13,8 +13,8 @@ CREATE TABLE customer (
     "name" text NOT NULL,
     "address" text,
     loyaltyPoints INTEGER NOT NULL DEFAULT 0,
-    newsletter INTEGER NOT NULL,
-    inactive INTEGER NOT NULL,
+    newsletter BOOLEAN NOT NULL DEFAULT TRUE,
+    inactive BOOLEAN NOT NULL DEFAULT FALSE,
 
     CONSTRAINT lp_positive CHECK ((loyaltyPoints >= 0))
 );
@@ -95,7 +95,7 @@ CREATE TABLE category_attribute (
 );
 
 CREATE TABLE favorite (
-    username_customer INTEGER NOT NULL REFERENCES customer ON DELETE CASCADE,
+    username INTEGER NOT NULL REFERENCES customer ON DELETE CASCADE,
     refProduct INTEGER NOT NULL REFERENCES product ON DELETE CASCADE,
 
     UNIQUE(username_customer, refProduct)

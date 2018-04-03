@@ -1,10 +1,10 @@
 INSERT INTO comment VALUES (1,'TYTTbQf', '2012-05-16 12:36:38', 'blakhinwuhdie hdie', 0, FALSE, '901896832');
-INSERT INTO comment VALUES (2,'KXiAxRukz', '2012-05-16 11:39:38', 'blakdjhiwuhdie hdie', 0, FALSE, '672442768');
+INSERT INTO comment VALUES (2,'KXiAxRukz', '2012-05-16 11:39:38', 'blakdjhiwuhdie hdie', 0, FALSE, '901896832');
 INSERT INTO comment VALUES (3,'5zkyn6n5U', '2012-05-16 13:36:38','blakahiwuhdie hdie', 0, FALSE, '186596482');
-INSERT INTO comment VALUES (4,'CgsHHRf', '2012-05-16 14:36:38','blakhkiwuhdie hdie', 0, FALSE, '556397271');
+INSERT INTO comment VALUES (4,'CgsHHRf', '2012-05-16 14:36:38','blakhkiwuhdie hdie', 0, FALSE, '186596482');
 INSERT INTO comment VALUES (5,'j5zBk', '2012-05-16 11:36:38','blakhiwujbhdie hdie', 0, FALSE, '696296971');
-INSERT INTO comment VALUES (6,'0MM8g8', '2012-05-16 17:36:38','blakhjiwuhdie hdie', 0, FALSE, '841341724');
+INSERT INTO comment VALUES (6,'0MM8g8', '2012-05-16 17:36:38','blakhjiwuhdie hdie', 0, FALSE, '696296971');
 INSERT INTO comment VALUES (7,'Ssuwu', '2012-05-16 16:36:38','blakhijbwuhdie hdie', 0, FALSE, '780741675');
-INSERT INTO comment VALUES (8,'PjujYy', '2012-05-16 15:33:38','blakhijhbwuhdie hdie', 0, FALSE, '410469648');
-INSERT INTO comment VALUES (9,'glbGcBfG', '2012-05-16 15:32:38','blakhbjhiwuhdie hdie', 0, FALSE, '901889798');
+INSERT INTO comment VALUES (8,'PjujYy', '2012-05-16 15:33:38','blakhijhbwuhdie hdie', 0, FALSE, '780741675');
+INSERT INTO comment VALUES (9,'glbGcBfG', '2012-05-16 15:32:38','blakhbjhiwuhdie hdie', 0, FALSE, '171093287');
 INSERT INTO comment VALUES (10,'l1mtgBKN', '2012-05-16 15:26:38','blakhiwuhdie hdie', 0, FALSE, '171093287');

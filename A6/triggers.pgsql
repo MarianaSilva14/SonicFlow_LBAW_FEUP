@@ -1,6 +1,6 @@
 -- 1 data banido maior que data user
 
-CREATE FUNCTION check_banned_date() RETURNS trigger AS $check_banned_date$
+CREATE OR REPLACE FUNCTION check_banned_date() RETURNS trigger AS $check_banned_date$
     BEGIN
 
         IF EXISTS (
@@ -19,7 +19,7 @@ CREATE  TRIGGER check_banned_date BEFORE INSERT OR UPDATE ON banned
 
 --2 data comment maior que data comment acima e data user
 
-CREATE FUNCTION check_answer_date() RETURNS trigger AS $check_answer_date$
+CREATE OR REPLACE FUNCTION check_answer_date() RETURNS trigger AS $check_answer_date$
     BEGIN
 
         IF EXISTS (
@@ -46,7 +46,7 @@ CREATE TRIGGER check_answer_date BEFORE INSERT OR UPDATE ON answer
 
 -- 3 Atualizar o rating the um produto
 
-CREATE FUNCTION update_product_rating() RETURNS trigger AS $update_product_rating$
+CREATE OR REPLACE FUNCTION update_product_rating() RETURNS trigger AS $update_product_rating$
     BEGIN
 
         UPDATE product SET rating = (

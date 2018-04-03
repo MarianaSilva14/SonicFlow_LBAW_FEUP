@@ -31,6 +31,26 @@ CREATE TABLE banned (
     username_moderator TEXT NOT NULL REFERENCES moderator ON DELETE CASCADE
 );
 
+CREATE TABLE category (
+    id SERIAL PRIMARY KEY,
+    "name" text NOT NULL
+);
+
+CREATE TABLE product (
+    sku SERIAL PRIMARY KEY,
+    title text NOT NULL,
+    idCat INTEGER NOT NULL REFERENCES category ON DELETE CASCADE,
+    price REAL NOT NULL,
+    discountPrice REAL,
+    rating REAL NOT NULL,
+    stock INTEGER NOT NULL,
+
+    CONSTRAINT price_positive CHECK (price > 0),
+    CONSTRAINT discount_positive CHECK (discountPrice is NULL or discountPrice > 0),
+    CONSTRAINT stock_positive CHECK(stock >= 0),
+    CONSTRAINT rating_positive CHECK(rating >= 0)
+);
+
 CREATE TABLE comment (
     id SERIAL PRIMARY KEY,
     username TEXT NOT NULL REFERENCES "user" ON DELETE CASCADE,
@@ -53,26 +73,6 @@ CREATE TABLE flagged (
     "hidden" BOOLEAN NOT NULL
 );
 
-CREATE TABLE category (
-    id SERIAL PRIMARY KEY,
-    "name" text NOT NULL
-);
-
-CREATE TABLE product (
-    sku SERIAL PRIMARY KEY,
-    title text NOT NULL,
-    idCat INTEGER NOT NULL REFERENCES category ON DELETE CASCADE,
-    price REAL NOT NULL,
-    discountPrice REAL,
-    rating REAL NOT NULL,
-    stock INTEGER NOT NULL,
-
-    CONSTRAINT price_positive CHECK (price > 0),
-    CONSTRAINT discount_positive CHECK (discountPrice is NULL or discountPrice > 0),
-    CONSTRAINT stock_positive CHECK(stock >= 0),
-    CONSTRAINT rating_positive CHECK(rating >= 0)
-);
-
 CREATE TABLE attribute (
     id SERIAL PRIMARY KEY,
     "name" text NOT NULL
@@ -92,7 +92,7 @@ CREATE TABLE category_attribute (
 );
 
 CREATE TABLE favorite (
-    username INTEGER NOT NULL REFERENCES customer ON DELETE CASCADE,
+    username TEXT NOT NULL REFERENCES customer ON DELETE CASCADE,
     refProduct INTEGER NOT NULL REFERENCES product ON DELETE CASCADE,
 
     UNIQUE(username, refProduct)

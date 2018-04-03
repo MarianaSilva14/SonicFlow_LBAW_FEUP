@@ -4,29 +4,29 @@ SELECT product.title,
         product.category,
         product.price,
         product.discountPrice,
-  FROM product
-  WHERE discountPrice != NULL;
+  FROM product, category
+  WHERE discountPrice != NULL AND product.idCat = category.id;
 
 SELECT product.title,
         category."name",
         product.price,
         product.discountPrice,
-  FROM Product
-  WHERE Product.idCat == $cat;
+  FROM product, category
+  WHERE Product.idCat = $cat AND category.id = $cat;
 
 SELECT product.title,
         category."name",
         product.price,
         product.discountPrice,
-  FROM Product,
-  WHERE Product.title LIKE %$name%
+  FROM product, category
+  WHERE product.title LIKE %$name% and category.id = product.idCat;
 
 SELECT product.title,
         category."name",
         product.price,
         product.discountPrice,
-  FROM "user" JOIN favorite ON username, product
-  WHERE favorite.refProduct = product.sku;
+  FROM "user" JOIN favorite ON username, product, category
+  WHERE favorite.refProduct = product.sku AND category.id = product.idCat;
 
 --PRODUCT PAGE
 SELECT product.sku,
@@ -41,11 +41,11 @@ SELECT product.sku,
   WHERE product.idCat = category.id
    AND category_attribute.idCategory = product.idCat
    AND category_attribute.idAttribute = attribute_product.idAttribute
-   AND attribute_product.refProduct = product.sku
+   AND attribute_product.refProduct = product.sku;
 
 --CUSTOMER PROFILE SELECT
 SELECT "name","address",loyaltyPoints,email,username,picture
-  FROM "user" JOIN customer ON username
+  FROM "user" JOIN customer ON username;
 
 --:::::::::::::::INSERTS::::::::::::
 --insert new answer or comment

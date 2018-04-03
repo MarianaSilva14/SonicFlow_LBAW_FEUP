@@ -4,7 +4,7 @@ CREATE OR REPLACE FUNCTION check_banned_date() RETURNS trigger AS $check_banned_
     BEGIN
 
         IF EXISTS (
-            SELECT U.joinDate FROM "user" U  WHERE U.username = NEW.username_customer AND U.joinDate > NEW.bannedDate;
+            SELECT U.joinDate FROM "user" U  WHERE U.username = NEW.username_customer AND U.joinDate > NEW.bannedDate
         ) 
         THEN RAISE EXCEPTION '% cannot be banned before joining', NEW.username_customer;
         END IF;
@@ -31,7 +31,7 @@ CREATE OR REPLACE FUNCTION check_answer_date() RETURNS trigger AS $check_answer_
                 AND 
                 C2.id = NEW.idChild
                 AND 
-                C1."date" > C2."date";
+                C1."date" > C2."date"
         ) 
         THEN RAISE EXCEPTION 'Must comment on an older commentary.';
         END IF;

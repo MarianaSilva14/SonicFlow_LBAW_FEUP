@@ -1,50 +1,14 @@
---QUERIES TO VALIDATE AND CREATE INDEXES, COULD ADD THE INSERTS AS WELL
+-- varias tabelas que dêm search pelo idCat
+CREATE INDEX discounted_product ON product USING hash(idCat, discountPrice);
 
---PRODUCT QUICK VIEWS
-SELECT product.title,
-        product.idCat,
-        product.category,
-        product.price,
-        product.discountPrice,
-  FROM product
-  WHERE discountPrice != NULL;
+-- mais lento e com maior tamanho que GiST mas não é lossy
+CREATE INDEX search_product ON product USING GIN (to_tsvector('english', title));
 
-SELECT product.title,
-        category."name",
-        product.price,
-        product.discountPrice,
-  FROM Product
-  WHERE Product.idCat == $cat;
+-- para mostrar apenas comentarios mais recentes por exemplo
+CREATE INDEX comments_range ON comment USING btree("date");
 
-SELECT product.title,
-        category."name",
-        product.price,
-        product.discountPrice,
-  FROM Product,
-  WHERE Product.title LIKE %$name%
+-- para mostrar compras de um cliente
+CREATE INDEX customer_purchases ON purchase USING hash(username);
 
-SELECT product.title,
-        category."name",
-        product.price,
-        product.discountPrice,
-  FROM "user" JOIN favorite ON username, product
-  WHERE favorite.refProduct = product.sku;
 
---PRODUCT PAGE
-SELECT product.sku,
-        product.title,
-        category."name",
-        product.price,
-        product.discountPrice,
-        product.rating,
-        attribute."name",
-        attribute_product."value",
-  FROM product, attribute_product, category_attribute, attribute, category
-  WHERE product.idCat = category.id
-   AND category_attribute.idCategory = product.idCat
-   AND category_attribute.idAttribute = attribute_product.idAttribute
-   AND attribute_product.refProduct = product.sku
 
---CUSTOMER PROFILE SELECT
-SELECT "name","address",loyaltyPoints,email,username,picture
-  FROM "user" JOIN customer ON username

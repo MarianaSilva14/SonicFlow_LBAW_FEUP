@@ -1,7 +1,7 @@
 --PRODUCT QUICK VIEWS
 SELECT product.title,
         product.idCat,
-        product.category,
+        category."name",
         product.price,
         product.discountPrice,
   FROM product, category

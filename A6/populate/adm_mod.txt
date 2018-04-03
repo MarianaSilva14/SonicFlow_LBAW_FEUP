@@ -1,0 +1,5 @@
+INSERT INTO administrator VALUES ('xavirt');
+INSERT INTO administrator VALUES ('ana');
+INSERT INTO administrator VALUES ('mariana');
+INSERT INTO administrator VALUES ('eduardo');
+INSERT INTO moderator VALUES ('jcl');

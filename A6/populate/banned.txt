@@ -1,0 +1,5 @@
+INSERT INTO banned VALUES ('TYTTbQf','2018-03-29 09:05:05','jcl');
+INSERT INTO banned VALUES ('KXiAxRukz','2018-04-02 08:00:55','jcl');
+INSERT INTO banned VALUES ('5zkyn6n5U','2018-03-30 14:04:26','jcl');
+INSERT INTO banned VALUES ('CgsHHRf','2018-03-30 15:30:22','jcl');
+INSERT INTO banned VALUES ('j5zBk','2018-04-01 23:05:45','jcl');

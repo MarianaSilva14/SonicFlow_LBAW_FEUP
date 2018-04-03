@@ -1,0 +1,10 @@
+INSERT INTO category VALUES (1, 'Computers');
+INSERT INTO category VALUES (2, 'Laptops');
+INSERT INTO category VALUES (3, 'Mobile');
+INSERT INTO category VALUES (4, 'Components');
+INSERT INTO category VALUES (5, 'Storage');
+INSERT INTO category VALUES (6, 'Peripherals');
+INSERT INTO category VALUES (7, 'Photo');
+INSERT INTO category VALUES (8, 'Video');
+INSERT INTO category VALUES (9, 'Network');
+INSERT INTO category VALUES (10, 'Software');

@@ -31,7 +31,7 @@ CREATE TABLE administrator (
 
 CREATE TABLE banned (
     username_customer INTEGER PRIMARY KEY REFERENCES customer ON DELETE CASCADE,
-    bannedDate DATE NOT NULL,
+    bannedDate TIMESTAMP DEFAULT now() NOT NULL,
     username_moderator INTEGER NOT NULL REFERENCES moderator ON DELETE CASCADE
 );
 

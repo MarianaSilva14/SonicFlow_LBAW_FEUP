@@ -7,8 +7,8 @@ CREATE TABLE "user" (
 );
  
 CREATE TABLE customer (
-    id INTEGER PRIMARY KEY,
-    username_user text NOT NULL 
+    id SERIAL PRIMARY KEY,
+    username text NOT NULL 
         REFERENCES "user" ON DELETE CASCADE,
     "name" text NOT NULL,
     "address" text,
@@ -20,13 +20,13 @@ CREATE TABLE customer (
 );
 
 CREATE TABLE moderator (
-    id INTEGER PRIMARY KEY,
-    username_user text NOT NULL REFERENCES "user" ON DELETE CASCADE
+    id SERIAL PRIMARY KEY,
+    username text NOT NULL REFERENCES "user" ON DELETE CASCADE
 );
 
 CREATE TABLE administrator (
-    id INTEGER PRIMARY KEY,
-    username_user text NOT NULL REFERENCES "user" ON DELETE CASCADE
+    id SERIAL PRIMARY KEY,
+    username text NOT NULL REFERENCES "user" ON DELETE CASCADE
 );
 
 CREATE TABLE banned (
@@ -36,11 +36,12 @@ CREATE TABLE banned (
 );
 
 CREATE TABLE comment (
-    id INTEGER PRIMARY KEY,
-    username_customer INTEGER NOT NULL REFERENCES moderator ON DELETE CASCADE,
+    id SERIAL PRIMARY KEY,
+    username INTEGER NOT NULL REFERENCES moderator ON DELETE CASCADE,
     "date" DATE NOT NULL,
     commentary text NOT NULL,
-    flagsNo INTEGER NOT NULL
+    flagsNo INTEGER NOT NULL,
+    deleted BOOLEAN DEFAULT FALSE NOT NULL
 );
 
 CREATE TABLE answer (
@@ -56,12 +57,12 @@ CREATE TABLE flagged (
 );
 
 CREATE TABLE category (
-    id INTEGER PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     "name" text NOT NULL
 );
 
 CREATE TABLE product (
-    sku INTEGER PRIMARY KEY,
+    sku SERIAL PRIMARY KEY,
     title text NOT NULL,
     idCat INTEGER NOT NULL REFERENCES category ON DELETE CASCADE,
     price REAL NOT NULL,
@@ -76,7 +77,7 @@ CREATE TABLE product (
 );
 
 CREATE TABLE attribute (
-    id INTEGER PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     "name" text NOT NULL
 );
 
@@ -101,7 +102,7 @@ CREATE TABLE favorite (
 );
 
 CREATE TABLE purchase (
-    id INTEGER PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     username INTEGER NOT NULL REFERENCES customer ON DELETE CASCADE,
     "date" DATE NOT NULL, 
     "value" REAL NOT NULL,
@@ -124,10 +125,10 @@ CREATE TABLE purchase_product (
 );
 
 CREATE TABLE rating (
-    username_customer text NOT NULL,
+    username text NOT NULL,
     refProduct INTEGER NOT NULL,
     "value" INTEGER NOT NULL CHECK (("value" > 0 ) AND ("value" <= 5)),
-    PRIMARY KEY(username_customer, refProduct)
+    PRIMARY KEY(username, refProduct)
 );
 
 

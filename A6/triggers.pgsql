@@ -1,4 +1,4 @@
--- 1 data banido maior que data user
+-- 1 user can only be banned after joining
 
 CREATE OR REPLACE FUNCTION check_banned_date() RETURNS trigger AS $check_banned_date$
     BEGIN
@@ -17,7 +17,7 @@ CREATE  TRIGGER check_banned_date BEFORE INSERT OR UPDATE ON banned
     FOR EACH ROW EXECUTE PROCEDURE check_banned_date();
 
 
---2 data comment maior que data comment acima e data user
+--2 date of comment answer must be later than parent comment
 
 CREATE OR REPLACE FUNCTION check_answer_date() RETURNS trigger AS $check_answer_date$
     BEGIN
@@ -44,7 +44,7 @@ CREATE TRIGGER check_answer_date BEFORE INSERT OR UPDATE ON answer
     FOR EACH ROW EXECUTE PROCEDURE check_answer_date();
 
 
--- 3 Atualizar o rating the um produto
+-- 3 update the rating of a product
 
 CREATE OR REPLACE FUNCTION update_product_rating() RETURNS trigger AS $update_product_rating$
     BEGIN
@@ -62,4 +62,17 @@ $update_product_rating$ LANGUAGE plpgsql;
 CREATE TRIGGER update_product_rating AFTER INSERT OR UPDATE ON rating
     FOR EACH ROW EXECUTE PROCEDURE update_product_rating();
 
+-- 4 discount price on a product
 
+CREATE OR REPLACE FUNCTION constraint_product_discount() RETURNS trigger AS $constraint_product_discount$
+    BEGIN
+        IF NEW.discountPrice > NEW.price THEN
+        RAISE EXCEPTION 'Discount price must be lower than price.';
+        END IF;
+        
+        RETURN NEW;
+    END;
+$constraint_product_discount$ LANGUAGE plpgsql;
+
+CREATE TRIGGER constraint_product_discount BEFORE INSERT OR UPDATE ON product
+    FOR EACH ROW EXECUTE PROCEDURE constraint_product_discount();

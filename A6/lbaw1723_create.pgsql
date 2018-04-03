@@ -95,7 +95,7 @@ CREATE TABLE favorite (
     username INTEGER NOT NULL REFERENCES customer ON DELETE CASCADE,
     refProduct INTEGER NOT NULL REFERENCES product ON DELETE CASCADE,
 
-    UNIQUE(username_customer, refProduct)
+    UNIQUE(username, refProduct)
 );
 
 CREATE TABLE purchase (

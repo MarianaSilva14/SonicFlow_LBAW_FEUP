@@ -3,8 +3,3 @@ INSERT INTO attribute VALUES (2,'visual');
 INSERT INTO attribute VALUES (3,'tatil');
 INSERT INTO attribute VALUES (4,'alto');
 INSERT INTO attribute VALUES (5,'comprido');
-INSERT INTO attribute VALUES (6,'baixo');
-INSERT INTO attribute VALUES (7,'pequeno');
-INSERT INTO attribute VALUES (8,'estreito');
-INSERT INTO attribute VALUES (9,'largo');
-INSERT INTO attribute VALUES (10,'veloz');

@@ -1,0 +1,15 @@
+INSERT INTO product VALUES ('901896832','diam blandit',5,7195.11,6.39,1.86,245);
+INSERT INTO product VALUES ('672442768','dolor taciti',5,3608.78,8.96,1.88,965);
+INSERT INTO product VALUES ('186596482','Pellentesque',4,8215.91,4.96,4.66,800);
+INSERT INTO product VALUES ('556397271','diam',6,3170.98,7.66,2.27,935);
+INSERT INTO product VALUES ('696296971','Cras mattis lectus',1,4329.14,8.12,1.19,454);
+INSERT INTO product VALUES ('841341724','erat nostra',9,3940.47,7.28,2.66,914);
+INSERT INTO product VALUES ('780741675','Curabitur',2,4758.14,2.02,4.78,1026);
+INSERT INTO product VALUES ('410469648','montes pellentesque',7,8552.68,8.42,1.18,929);
+INSERT INTO product VALUES ('901889798','elementum suscipi',9,409.62,8.15,4.22,1138);
+INSERT INTO product VALUES ('171093287','risus sollicitudin',7,4699.83,6.70,3.75,451);
+INSERT INTO product VALUES ('083108184','lacinia fringilla',8,9117.49,5.60,4.93,964);
+INSERT INTO product VALUES ('914510007','Curabitur sociis dis nisi',2,4207.41,3.23,2.27,1342);
+INSERT INTO product VALUES ('542291350','eleifend Nulla',3,2673.58,5.02,3.78,1401);
+INSERT INTO product VALUES ('891931229','tempus sociis odio mattis magna',10,6118.55,8.32,2.59,630);
+INSERT INTO product VALUES ('278925974','conubia ornare lobortis',1,7101.92,7.27,1.02,290);

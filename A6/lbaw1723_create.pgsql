@@ -37,11 +37,12 @@ CREATE TABLE banned (
 
 CREATE TABLE comment (
     id SERIAL PRIMARY KEY,
-    username INTEGER NOT NULL REFERENCES moderator ON DELETE CASCADE,
-    "date" DATE NOT NULL,
+    username INTEGER NOT NULL REFERENCES "user" ON DELETE CASCADE,
+    "date" TIMESTAMP DEFAULT now() NOT NULL,
     commentary text NOT NULL,
-    flagsNo INTEGER NOT NULL,
-    deleted BOOLEAN DEFAULT FALSE NOT NULL
+    flagsNo INTEGER NOT NULL DEFAULT 0,
+    deleted BOOLEAN DEFAULT FALSE NOT NULL,
+    refProduct INTEGER NOT NULL REFERENCES product ON DELETE CASCADE
 );
 
 CREATE TABLE answer (
@@ -103,8 +104,8 @@ CREATE TABLE favorite (
 
 CREATE TABLE purchase (
     id SERIAL PRIMARY KEY,
-    username INTEGER NOT NULL REFERENCES customer ON DELETE CASCADE,
-    "date" DATE NOT NULL, 
+    username TEXT NOT NULL REFERENCES customer ON DELETE CASCADE,
+    "date" TIMESTAMP DEFAULT now() NOT NULL,
     "value" REAL NOT NULL,
     method text NOT NULL,
 
@@ -126,15 +127,9 @@ CREATE TABLE purchase_product (
 
 CREATE TABLE rating (
     username text NOT NULL,
-    refProduct INTEGER NOT NULL,
+    refProduct INTEGER NOT NULL REFERENCES product ON DELETE CASCADE,
     "value" INTEGER NOT NULL CHECK (("value" > 0 ) AND ("value" <= 5)),
     PRIMARY KEY(username, refProduct)
 );
 
 
--- TODO: 
-
--- 1 add foreign key on rating.refProduct to product
--- 2 "date" of comment must have a default NOW()
--- 3 flagsNo of comment must have a default of 0
--- 4 add foreign key from comment to product

@@ -44,6 +44,9 @@ CREATE TABLE product (
     discountPrice REAL,
     rating REAL NOT NULL,
     stock INTEGER NOT NULL,
+    description TEXT,
+    search tsvector,
+
 
     CONSTRAINT price_positive CHECK (price > 0),
     CONSTRAINT discount_positive CHECK (discountPrice is NULL or discountPrice > 0),
@@ -58,7 +61,8 @@ CREATE TABLE comment (
     commentary text NOT NULL,
     flagsNo INTEGER NOT NULL DEFAULT 0,
     deleted BOOLEAN DEFAULT FALSE NOT NULL,
-    refProduct INTEGER NOT NULL REFERENCES product ON DELETE CASCADE
+    refProduct INTEGER NOT NULL REFERENCES product ON DELETE CASCADE,
+    search tsvector
 );
 
 CREATE TABLE answer (

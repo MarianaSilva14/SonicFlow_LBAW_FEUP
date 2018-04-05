@@ -76,3 +76,49 @@ $constraint_product_discount$ LANGUAGE plpgsql;
 
 CREATE TRIGGER constraint_product_discount BEFORE INSERT OR UPDATE ON product
     FOR EACH ROW EXECUTE PROCEDURE constraint_product_discount();
+
+
+-- 5 update insert product
+
+CREATE OR REPLACE FUNCTION insert_update_product() RETURNS trigger AS $insert_update_product$
+    BEGIN
+
+    IF TG_OP = 'INSERT' 
+    THEN NEW.search = setweight(to_tsvector(coalesce(NEW.title,'')), 'A')    ||
+                      setweight(to_tsvector(coalesce(NEW.description,'')), 'B');
+    END IF;
+    IF TG_OP = 'UPDATE' THEN
+        IF NEW.title <> OLD.title OR NEW.decription <> OLD.description
+        THEN NEW.search = setweight(to_tsvector(coalesce(NEW.title,'')), 'A')    ||
+                          setweight(to_tsvector(coalesce(NEW.description,'')), 'B');
+        END IF;
+    END IF;
+    RETURN NEW;
+    END;
+$insert_update_product$ LANGUAGE plpgsql;
+
+
+CREATE TRIGGER insert_update_product BEFORE INSERT OR UPDATE ON product
+    FOR EACH ROW EXECUTE PROCEDURE insert_update_product();
+
+
+-- 6 update insert comment
+
+CREATE OR REPLACE FUNCTION insert_update_comment() RETURNS trigger AS $insert_update_comment$
+    BEGIN
+
+    IF TG_OP = 'INSERT' 
+    THEN NEW.search = to_tsvector(NEW.commentary);
+    END IF;
+    IF TG_OP = 'UPDATE' THEN
+        IF NEW.commentary <> OLD.commentary
+        THEN NEW.search = to_tsvector(NEW.commentary);
+        END IF;
+    END IF;
+    RETURN NEW;
+    END;
+$insert_update_comment$ LANGUAGE plpgsql;
+
+
+CREATE TRIGGER insert_update_comment BEFORE INSERT OR UPDATE ON comment
+    FOR EACH ROW EXECUTE PROCEDURE insert_update_comment();

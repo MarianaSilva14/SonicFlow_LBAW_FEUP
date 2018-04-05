@@ -18,8 +18,8 @@ SELECT product.title,
         category."name",
         product.price,
         product.discountPrice,
-  FROM product, category
-  WHERE product.title LIKE %$name% and category.id = product.idCat;
+FROM product, category
+WHERE search @@ plainto_tsquery('english',$name) and category.id = product.idCat;
 
 SELECT product.title,
         category."name",
@@ -42,6 +42,10 @@ SELECT product.sku,
    AND category_attribute.idCategory = product.idCat
    AND category_attribute.idAttribute = attribute_product.idAttribute
    AND attribute_product.refProduct = product.sku;
+
+SELECT *
+  FROM comment
+  WHERE search @@ plainto_tsquery('english',$name);
 
 --CUSTOMER PROFILE SELECT
 SELECT "name","address",loyaltyPoints,email,username,picture

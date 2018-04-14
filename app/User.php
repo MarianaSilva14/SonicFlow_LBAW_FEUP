@@ -17,6 +17,19 @@ class User extends Authenticatable
       return json_decode(json_encode($customer), true)['name'];
     }
 
+
+    public function isCustomer(){
+        return DB::table('customer')->where('user_username', $this->username).$this->exists();
+    }
+
+    public function isAdmin(){
+        return DB::table('administrator')->where('user_username', $this->username).$this->exists();
+    }
+
+    public function isModerator(){
+        return DB::table('moderator')->where('user_username', $this->username).$this->exists();
+    }
+
     public $incrementing = false;
 
     /**

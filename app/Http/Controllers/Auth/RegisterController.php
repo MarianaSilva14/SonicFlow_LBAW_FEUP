@@ -83,25 +83,3 @@ class RegisterController extends Controller
         return $user;
     }
 }
-
-
-/*
- * CREATE TABLE "user" (
-    username text PRIMARY KEY,
-    "password" text NOT NULL,
-    email text UNIQUE NOT NULL,
-    joinDate TIMESTAMP DEFAULT now() NOT NULL,
-    picture text
-);
-
-CREATE TABLE customer (
-    user_username text PRIMARY KEY REFERENCES "user" ON DELETE CASCADE,
-    "name" text NOT NULL,
-    "address" text,
-    loyaltyPoints INTEGER NOT NULL DEFAULT 0,
-    newsletter BOOLEAN NOT NULL DEFAULT TRUE,
-    inactive BOOLEAN NOT NULL DEFAULT FALSE,
-
-    CONSTRAINT lp_positive CHECK ((loyaltyPoints >= 0))
-);
- * */

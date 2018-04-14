@@ -21,7 +21,8 @@ CREATE TABLE "user" (
     "password" text NOT NULL,
     email text UNIQUE NOT NULL,
     joinDate TIMESTAMP DEFAULT now() NOT NULL,
-    picture text
+    picture text,
+    remember_token text
 );
  
 CREATE TABLE customer (
@@ -360,8 +361,11 @@ INSERT INTO "user" VALUES ('ana','$2y$10$3U/Uo5OTfiKohXC0f06TIu51gaGw8qFeaOR3KRZ
 INSERT INTO "user" VALUES ('mariana','$2y$10$3U/Uo5OTfiKohXC0f06TIu51gaGw8qFeaOR3KRZ66GHC/WQYdKFm6','marianals@gmail.com','2018-04-08 02:28:28');
 INSERT INTO "user" VALUES ('eduardo','$2y$10$3U/Uo5OTfiKohXC0f06TIu51gaGw8qFeaOR3KRZ66GHC/WQYdKFm6','edu.swimming@gmail.com','2018-04-06 15:52:45');
 INSERT INTO "user" VALUES ('jcl','$2y$10$3U/Uo5OTfiKohXC0f06TIu51gaGw8qFeaOR3KRZ66GHC/WQYdKFm6','jcl@gmail.com','2018-04-04 01:47:20');
+INSERT INTO "user" VALUES ('xavi123', '$2y$10$ov5gkUSHX79k6Gnhl.izP.fYWS4B8wARqpYVvaPcEAOU.xA0RYu7q', 'xfontes@lol.com', '2018-04-14 15:15:40.431337');
+INSERT INTO "user" VALUES ('edu123', '$2y$10$L6r7FmhS30ehMpxoSjqkxeuCcMkN167VdcJxWXYu7AsbdKCPtczna', 'edu@edu.com', '2018-04-14 15:37:32.106099');
 
 --CUSTOMER
+INSERT INTO customer VALUES ('xavi123', 'Xavier Fontes', 'lole stree', 0, 'TRUE', 'FALSE');
 INSERT INTO customer VALUES ('TYTTbQf','Harlan Colon','12414  Argentina Ln.',16,'TRUE','FALSE');
 INSERT INTO customer VALUES ('KXiAxRukz','Brenden Sharp','69233 North Saint Helena Ln.',74,'TRUE','FALSE');
 INSERT INTO customer VALUES ('5zkyn6n5U','Hammett Warner','27023  Anguilla St.',97,'FALSE','FALSE');
@@ -418,6 +422,7 @@ INSERT INTO moderator VALUES ('jcl');
 
 --ADMINISTRATOR
 INSERT INTO administrator VALUES ('xavirt');
+INSERT INTO administrator VALUES ('edu123');
 INSERT INTO administrator VALUES ('ana');
 INSERT INTO administrator VALUES ('mariana');
 INSERT INTO administrator VALUES ('eduardo');

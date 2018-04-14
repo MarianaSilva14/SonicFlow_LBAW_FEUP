@@ -26,7 +26,7 @@ class Customer extends Model
     /**
      * The user this customer belongs to.
      */
-    public function card() {
+    public function user() {
         return $this->belongsTo('App\User');
     }
 

@@ -19,6 +19,9 @@ Route::get('/', function () {
 Route::get('cards', 'CardController@list');
 Route::get('cards/{id}', 'CardController@show');
 
+// Profile
+Route::get('users/{id}','CustomerController@show');
+
 // Static
 Route::view('homepage','pages.homepage');
 Route::view('about','pages.about');

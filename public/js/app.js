@@ -1,4 +1,14 @@
-function addEventListeners() {
+$(document).ready(function(e){
+    $('.search-panel .dropdown-menu').find('a').click(function(e) {
+		e.preventDefault();
+		var param = $(this).attr("href").replace("#","");
+		var concept = $(this).html();
+		$('.search-panel span#catSelect').html(concept);
+		$('.input-group #search_param').val(param);
+	});
+});
+
+/*function addEventListeners() {
   let itemCheckers = document.querySelectorAll('article.card li.item input[type=checkbox]');
   [].forEach.call(itemCheckers, function(checker) {
     checker.addEventListener('change', sendItemUpdateRequest);
@@ -177,4 +187,4 @@ function createItem(item) {
   return new_item;
 }
 
-addEventListeners();
+addEventListeners();*/

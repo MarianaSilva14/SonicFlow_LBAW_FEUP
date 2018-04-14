@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Customer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+
+use App\Customer;
 
 class CustomerController extends Controller
 {
@@ -18,13 +19,8 @@ class CustomerController extends Controller
    */
   public function show($username)
   {
-    $customer = DB::table('customer')->where('user_username','xavi123')->first();
-
-    // try {
-      $this->authorize('profile', $customer);
-    // } catch (\Exception $e) {
-    //   $e
-    // }
+    $customer = Customer::find($username);
+    $this->authorize('profile', $customer);
     return view('pages.profile', ['infoCustomer' => $customer,'infoUser' => Auth::user()]);
   }
 

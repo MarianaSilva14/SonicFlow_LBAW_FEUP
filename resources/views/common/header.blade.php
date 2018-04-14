@@ -54,14 +54,14 @@
             {{Auth::user()->getName()}}
           </a>
         @else
-          <a class="nav-link login" href="login">Login</a>
+          <a class="nav-link login" href="{{route('login')}}">Login</a>
         @endif
       </li>
       <li class="nav-item">
         @if (Auth::check())
-          <a class="nav-link login" href="logout">Logout</a>
+          <a class="nav-link login" href="{{route('logout')}}">Logout</a>
         @else
-          <a class="nav-link register" href="register">Register</a>
+          <a class="nav-link register" href="{{route('register')}}">Register</a>
         @endif
       </li>
       <li class="nav-item">

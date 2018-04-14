@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', {{$name}})
+@section('title', $infoCustomer->name)
 
 @section('head')
 <link rel="stylesheet" href="{{ asset('css/profilepage.css') }}">

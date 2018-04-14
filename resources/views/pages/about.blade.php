@@ -3,17 +3,12 @@
 @section('title', 'About Us')
 
 @section('head')
-<link rel="stylesheet" href="{{ asset('css/common.css') }}">
 <link rel="stylesheet" href="{{ asset('css/contacts.css') }}">
 <link rel="stylesheet" href="{{ asset('css/aboutpage.css') }}">
-<script src="js/common.js" defer></script>
 @endsection
 
 @section('content')
-<nav class="breadcrumb">
-  <a class="breadcrumb-item" href="homepage.html">Homepage</a>
-  <span class="breadcrumb-item active">About us</span>
-</nav>
+@include('common.breadcrumb', ['currPage' => 'About Us'])
 <h1 class="header-title">About Sonic Flow</h1>
 <h3> <span>OUR STORY </span></h3>
 <p class="text_about"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been

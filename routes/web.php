@@ -19,7 +19,10 @@ Route::get('/', function () {
 Route::get('cards', 'CardController@list');
 Route::get('cards/{id}', 'CardController@show');
 
+// Static
 Route::view('about','pages.about');
+Route::view('contact','pages.contact');
+Route::view('faq','pages.faq');
 
 // API
 Route::put('api/cards', 'CardController@create');

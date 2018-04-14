@@ -27,7 +27,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/cards';
+    protected $redirectTo = '/homepage';
 
     /**
      * Create a new controller instance.
@@ -48,9 +48,11 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
+            'firstname' => 'required|string|max:255',
+            'lastname' => 'required|string|max:255',
+            'username' => 'required|string|max:255|unique:user',
+            'email' => 'required|string|email|max:255|unique:user',
+            'password' => 'required|string|min:8',
         ]);
     }
 
@@ -62,10 +64,44 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
+        $user = User::create([
+            'username' => $data['username'],
             'password' => bcrypt($data['password']),
+            'email' => $data['email']
+
         ]);
+
+        $customer = Customer::create([
+            'user_username' => $user['username'],
+            'name' => $data['firstname'] . " " . $data['lastname'],
+            'address' => $data['address'],
+            'loyaltyPoints' => 0,
+            'newsletter' => true,
+            'inactive' => false
+        ]);
+
+        return $user;
     }
 }
+
+
+/*
+ * CREATE TABLE "user" (
+    username text PRIMARY KEY,
+    "password" text NOT NULL,
+    email text UNIQUE NOT NULL,
+    joinDate TIMESTAMP DEFAULT now() NOT NULL,
+    picture text
+);
+
+CREATE TABLE customer (
+    user_username text PRIMARY KEY REFERENCES "user" ON DELETE CASCADE,
+    "name" text NOT NULL,
+    "address" text,
+    loyaltyPoints INTEGER NOT NULL DEFAULT 0,
+    newsletter BOOLEAN NOT NULL DEFAULT TRUE,
+    inactive BOOLEAN NOT NULL DEFAULT FALSE,
+
+    CONSTRAINT lp_positive CHECK ((loyaltyPoints >= 0))
+);
+ * */

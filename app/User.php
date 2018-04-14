@@ -9,6 +9,18 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    protected $primaryKey = 'username'; // or null
+
+    public $incrementing = false;
+
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = 'user';
+
+
     // Don't add create and update timestamps in database.
     public $timestamps  = false;
 
@@ -18,7 +30,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'username', 'email', 'password',
     ];
 
     /**
@@ -30,10 +42,11 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+
     /**
      * The cards this user owns.
      */
-     public function cards() {
-      return $this->hasMany('App\Card');
-    }
+     //public function cards() {
+      //return $this->hasMany('App\Card');
+    //}
 }

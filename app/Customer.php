@@ -23,4 +23,11 @@ class Customer extends Model
     // Don't add create and update timestamps in database.
     public $timestamps = false;
 
+    /**
+     * The user this customer belongs to.
+     */
+    public function card() {
+        return $this->belongsTo('App\User');
+    }
+
 }

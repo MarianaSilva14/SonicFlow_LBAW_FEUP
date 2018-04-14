@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\DB;
 
 class User extends Authenticatable
 {
@@ -12,7 +13,8 @@ class User extends Authenticatable
     protected $primaryKey = 'username'; // or null
 
     public function getName(){
-      return 'Joao';
+        $customer = DB::table('customer')->select('name')->where('user_username', $this->username)->first();
+      return json_decode(json_encode($customer), true)['name'];
     }
 
     public $incrementing = false;
@@ -48,9 +50,9 @@ class User extends Authenticatable
 
 
     /**
-     * The cards this user owns.
+     * The customer this user is.
      */
-     //public function cards() {
-      //return $this->hasMany('App\Card');
-    //}
+     public function getCustomer() {
+      return $this->hasOne('App\Customer');
+    }
 }

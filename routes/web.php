@@ -20,6 +20,7 @@ Route::get('cards', 'CardController@list');
 Route::get('cards/{id}', 'CardController@show');
 
 // Static
+Route::view('homepage','pages.homepage');
 Route::view('about','pages.about');
 Route::view('contact','pages.contact');
 Route::view('faq','pages.faq');

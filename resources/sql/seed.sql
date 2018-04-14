@@ -167,7 +167,8 @@ CREATE OR REPLACE FUNCTION check_banned_date() RETURNS trigger AS $check_banned_
     END;
 $check_banned_date$ LANGUAGE plpgsql;
 
-CREATE  OR REPLACE TRIGGER check_banned_date BEFORE INSERT OR UPDATE ON banned
+DROP TRIGGER IF EXISTS check_banned_date;
+CREATE TRIGGER check_banned_date BEFORE INSERT OR UPDATE ON banned
     FOR EACH ROW EXECUTE PROCEDURE check_banned_date();
 
 
@@ -194,7 +195,8 @@ CREATE OR REPLACE FUNCTION check_answer_date() RETURNS trigger AS $check_answer_
     END;
 $check_answer_date$ LANGUAGE plpgsql;
 
-CREATE OR REPLACE TRIGGER check_answer_date BEFORE INSERT OR UPDATE ON answer
+DROP TRIGGER IF EXISTS check_answer_date;
+CREATE TRIGGER check_answer_date BEFORE INSERT OR UPDATE ON answer
     FOR EACH ROW EXECUTE PROCEDURE check_answer_date();
 
 
@@ -212,8 +214,8 @@ CREATE OR REPLACE FUNCTION update_product_rating() RETURNS trigger AS $update_pr
     END;
 $update_product_rating$ LANGUAGE plpgsql;
 
-
-CREATE OR REPLACE TRIGGER update_product_rating AFTER INSERT OR UPDATE ON rating
+DROP TRIGGER IF EXISTS update_product_rating;
+CREATE TRIGGER update_product_rating AFTER INSERT OR UPDATE ON rating
     FOR EACH ROW EXECUTE PROCEDURE update_product_rating();
 
 -- 4 discount price on a product
@@ -228,7 +230,8 @@ CREATE OR REPLACE FUNCTION constraint_product_discount() RETURNS trigger AS $con
     END;
 $constraint_product_discount$ LANGUAGE plpgsql;
 
-CREATE OR REPLACE TRIGGER constraint_product_discount BEFORE INSERT OR UPDATE ON product
+DROP TRIGGER IF EXISTS constraint_product_discount;
+CREATE TRIGGER constraint_product_discount BEFORE INSERT OR UPDATE ON product
     FOR EACH ROW EXECUTE PROCEDURE constraint_product_discount();
 
 
@@ -251,8 +254,8 @@ CREATE OR REPLACE FUNCTION insert_update_product() RETURNS trigger AS $insert_up
     END;
 $insert_update_product$ LANGUAGE plpgsql;
 
-
-CREATE OR REPLACE TRIGGER insert_update_product BEFORE INSERT OR UPDATE ON product
+DROP TRIGGER IF EXISTS insert_update_product;
+CREATE TRIGGER insert_update_product BEFORE INSERT OR UPDATE ON product
     FOR EACH ROW EXECUTE PROCEDURE insert_update_product();
 
 
@@ -273,8 +276,8 @@ CREATE OR REPLACE FUNCTION insert_update_comment() RETURNS trigger AS $insert_up
     END;
 $insert_update_comment$ LANGUAGE plpgsql;
 
-
-CREATE OR REPLACE TRIGGER insert_update_comment BEFORE INSERT OR UPDATE ON comment
+DROP TRIGGER IF EXISTS insert_update_comment;
+CREATE TRIGGER insert_update_comment BEFORE INSERT OR UPDATE ON comment
     FOR EACH ROW EXECUTE PROCEDURE insert_update_comment();
 
 

@@ -27,6 +27,16 @@ class LoginController extends Controller
      * @return String where it will be redirected
      */
     protected function redirectTo(){
+        $user = Auth::user();
+
+        if( $user->role == 'ADMIN'){
+            return '/administration';
+        }
+
+        if( $user->role == 'MOD'){
+            return '/moderation';
+        }
+
         return '/homepage';
     }
 

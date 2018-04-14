@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-xl navbar-light fixed-top bg-white">
   <!-- logo -->
-  <a class="navbar-brand" href="homepage">
+  <a class="navbar-brand" href="/">
     <img src="{{asset('images/logo.png')}}" width="auto" height="64px" alt="">
   </a>
   <!-- toggle button -->
@@ -41,11 +41,11 @@
     <!-- links -->
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link" href="shoppingCart.html"><i class="fas fa-shopping-cart fa-lg"></i></a>
+        <a class="nav-link" href="{{route(shoppingCart)}}"><i class="fas fa-shopping-cart fa-lg"></i></a>
       </li>
       <li class="nav-item">
         @if (Auth::check())
-          <a class="nav-link profile" href="users/{{Auth::user()->username}}">
+          <a class="nav-link profile" href="{{route('profile', ['id' => Auth::user()->username])}}">
             @if( Auth::user()->picture == "")
               <img id="profile_picture" alt="Responsive image"src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" id="profile-image1" class="img-fluid">
             @else
@@ -65,41 +65,41 @@
         @endif
       </li>
       <li class="nav-item">
-        <a class="nav-link mobileNav" href="configurator.html"><span class="sub_icon"><i class="fas fa-cogs fa-lg"></i></span>Configurator</a>
+        <a class="nav-link mobileNav" href="{{route(configurator)}}"><span class="sub_icon"><i class="fas fa-cogs fa-lg"></i></span>Configurator</a>
       </li>
 
       <!-- SEPARATOR -->
       <hr class="mobileNav w-100 my-1"></hr>
 
       <li class="nav-item">
-        <a class="nav-link mobileNav" href="productsListpage.html?cat=Computers"><span class="sub_icon"><i class="fas fa-desktop fa-lg"></i></span>Computers</a>
+        <a class="nav-link mobileNav" href="{{route(products)}}?cat=Computers"><span class="sub_icon"><i class="fas fa-desktop fa-lg"></i></span>Computers</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link mobileNav" href="productsListpage.html?cat=Laptops"><span class="sub_icon"><i class="fas fa-laptop fa-lg"></i></span>Laptops</a>
+        <a class="nav-link mobileNav" href="{{route(products)}}?cat=Laptops"><span class="sub_icon"><i class="fas fa-laptop fa-lg"></i></span>Laptops</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link mobileNav" href="productsListpage.html?cat=Mobile"><span class="sub_icon" id="mobile"><i class="fas fa-mobile-alt fa-lg"></i></span>Mobile</a>
+        <a class="nav-link mobileNav" href="{{route(products)}}?cat=Mobile"><span class="sub_icon" id="mobile"><i class="fas fa-mobile-alt fa-lg"></i></span>Mobile</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link mobileNav" href="productsListpage.html?cat=Components"><span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span>Components</a>
+        <a class="nav-link mobileNav" href="{{route(products)}}?cat=Components"><span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span>Components</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link mobileNav" href="productsListpage.html?cat=Storage"><span class="sub_icon"><i class="fas fa-hdd fa-lg"></i></span>Storage</a>
+        <a class="nav-link mobileNav" href="{{route(products)}}?cat=Storage"><span class="sub_icon"><i class="fas fa-hdd fa-lg"></i></span>Storage</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link mobileNav" href="productsListpage.html?cat=Periferals"><span class="sub_icon"><i class="fas fa-keyboard fa-lg"></i></span>Periferals</a>
+        <a class="nav-link mobileNav" href="{{route(products)}}?cat=Periferals"><span class="sub_icon"><i class="fas fa-keyboard fa-lg"></i></span>Periferals</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link mobileNav" href="productsListpage.html?cat=Photo"><span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span>Photo</a>
+        <a class="nav-link mobileNav" href="{{route(products)}}?cat=Photo"><span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span>Photo</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link mobileNav" href="productsListpage.html?cat=Video"><span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span>Video</a>
+        <a class="nav-link mobileNav" href="{{route(products)}}?cat=Video"><span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span>Video</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link mobileNav" href="productsListpage.html?cat=Network"><span class="sub_icon"><i class="fas fa-rss fa-lg"></i></span>Network</a>
+        <a class="nav-link mobileNav" href="{{route(products)}}?cat=Network"><span class="sub_icon"><i class="fas fa-rss fa-lg"></i></span>Network</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link mobileNav" href="productsListpage.html?cat=Software"><span class="sub_icon"><i class="far fa-window-maximize fa-lg"></i></span>Software</a>
+        <a class="nav-link mobileNav" href="{{route(products)}}?cat=Software"><span class="sub_icon"><i class="far fa-window-maximize fa-lg"></i></span>Software</a>
       </li>
     </ul>
 
@@ -110,18 +110,18 @@
   <!-- Sidebar -->
   <div id="sidebar-wrapper" class="col-2">
     <ul class="sidebar-nav" id="sidebar">
-      <li><a  id="configurator" href="configurator"><span class="sub_icon"><i class="fas fa-cogs fa-lg"></i></span>Configurator</a></li>
-      <li><a href="productsListpage.html?cat=Computers"><span class="sub_icon"><i class="fas fa-desktop fa-lg"></i></span>Computers</a></li>
-      <li><a href="productsListpage.html?cat=Laptops"><span class="sub_icon"><i class="fas fa-laptop fa-lg"></i></span>Laptops</a></li>
-      <li><a href="productsListpage.html?cat=Mobile"><span class="sub_icon" id="mobile"><i class="fas fa-mobile-alt fa-lg"></i></span>Mobile</a></li>
-      <li><a href="productsListpage.html?cat=Components"><span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span>Components</a></li>
-      <li><a href="productsListpage.html?cat=Storage"><span class="sub_icon"><i class="fas fa-hdd fa-lg"></i></span>Storage</a></li>
-      <li><a href="productsListpage.html?cat=Periferals"><span class="sub_icon"><i class="fas fa-keyboard fa-lg"></i></span>Periferals</a></li>
-      <li><a href="productsListpage.html?cat=Photo"><span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span>Photo</a></li>
-      <li><a href="productsListpage.html?cat=Video"><span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span>Video</a></li>
-      <li><a href="productsListpage.html?cat=Network"><span class="sub_icon"><i class="fas fa-rss fa-lg"></i></span>Network</a></li>
-      <li><a href="productsListpage.html?cat=Software"><span class="sub_icon"><i class="far fa-window-maximize fa-lg"></i></span>Software</a></li>
-      <li><a href="productsListpage.html?cat=Software"><span class="sub_icon"><i class="far fa-window-maximize fa-lg"></i></span>Software</a></li>
+      <li><a  id="configurator" href="{{route(configurator)}}"><span class="sub_icon"><i class="fas fa-cogs fa-lg"></i></span>Configurator</a></li>
+      <li><a href="{{route(products)}}?cat=Computers"><span class="sub_icon"><i class="fas fa-desktop fa-lg"></i></span>Computers</a></li>
+      <li><a href="{{route(products)}}?cat=Laptops"><span class="sub_icon"><i class="fas fa-laptop fa-lg"></i></span>Laptops</a></li>
+      <li><a href="{{route(products)}}?cat=Mobile"><span class="sub_icon" id="mobile"><i class="fas fa-mobile-alt fa-lg"></i></span>Mobile</a></li>
+      <li><a href="{{route(products)}}?cat=Components"><span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span>Components</a></li>
+      <li><a href="{{route(products)}}?cat=Storage"><span class="sub_icon"><i class="fas fa-hdd fa-lg"></i></span>Storage</a></li>
+      <li><a href="{{route(products)}}?cat=Periferals"><span class="sub_icon"><i class="fas fa-keyboard fa-lg"></i></span>Periferals</a></li>
+      <li><a href="{{route(products)}}?cat=Photo"><span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span>Photo</a></li>
+      <li><a href="{{route(products)}}?cat=Video"><span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span>Video</a></li>
+      <li><a href="{{route(products)}}?cat=Network"><span class="sub_icon"><i class="fas fa-rss fa-lg"></i></span>Network</a></li>
+      <li><a href="{{route(products)}}?cat=Software"><span class="sub_icon"><i class="far fa-window-maximize fa-lg"></i></span>Software</a></li>
+      <li><a href="{{route(products)}}?cat=Software"><span class="sub_icon"><i class="far fa-window-maximize fa-lg"></i></span>Software</a></li>
     </ul>
   </div>
 

@@ -1,0 +1,74 @@
+.mainLabel{
+  font-weight: bold;
+  font-size: 1.2em;
+  width: 100%;
+  text-align: justify;
+}
+
+.mainLabel div{
+  font-weight: normal;
+}
+
+#caseUnitPrice, #caseAvalability {
+  text-align: center;
+}
+
+#labelUnity {
+ text-align: center;
+}
+
+hr{
+  width: 100%;
+  border-color: #e0e0e0;
+  size:0.5px;
+}
+
+.form-group{
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.sectionTitle {
+  margin: 5% 5% 3% 5%;
+  border-bottom: 4px solid #f8941e;
+}
+
+#caseInput{
+  background-color: white;
+}
+
+.sectionTitle span{
+  position: relative;
+  top: 7px;
+}
+
+.sectionTitle.total {
+  border-bottom: 0;
+  border-top: 1px solid #f8941e;
+  text-align: right;
+  padding-top: 3%;
+  font-weight: bold;
+}
+
+.sectionTitle.total span::before{
+  content: "Total: ";
+  font-weight: normal;
+  font-size: 60%;
+}
+
+a.toggle-tips{
+  float: right;
+  color: inherit;
+  text-decoration: none;
+  padding-right: 5%;
+}
+
+.toggle-tips svg{
+  transform: rotate(-90deg);
+  transition: all 0.5s;
+}
+
+.toggle-tips[aria-expanded="true"] svg{
+  transform: rotate(0deg);
+  transition: all 0.5s;
+}

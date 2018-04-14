@@ -1,0 +1,65 @@
+h4
+{
+  color:#65768e;
+}
+
+.panel .panel-default{
+  margin: 30px;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #65768e;
+    border-color: #65768e;
+}
+
+.btn-primary:hover {
+    background-color: #65768e;
+    border-color: #65768e;
+}
+
+.btn-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgb(101, 118, 142);
+}
+
+.btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #65768e;
+    border-color: #65768e;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem rgb(101, 118, 142);
+}
+
+.btn:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgb(221, 221, 221);
+}
+
+.alert-info {
+  color: #65768e;
+  background-color: #dedede;
+  border-color: #dedede;
+}
+
+table, th, tr, td{
+  transition: all 2s;
+}
+
+td svg:nth-child(2){
+  transform: rotate(90deg);
+  position: relative;
+  left: -18px;
+  transition: all 0.5s;
+}
+
+td[aria-expanded="true"] svg:nth-child(2){
+  transform: rotate(0deg);
+}
+
+.secondary {
+  min-height: 100%;
+  position: relative;
+  height: auto;
+}

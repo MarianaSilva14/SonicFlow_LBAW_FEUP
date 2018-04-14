@@ -10,9 +10,8 @@
 
 @section('content')
 @include('common.breadcrumb', ['currPage' => 'My Profile'])
-<div class="container" style="padding-top:50px">
+<div class="container">
   <div class="row">
-
     <div class="secondary">
       <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item">
@@ -31,7 +30,6 @@
       </ul>
 
       <div class="tab-content" id="myTabContent">
-
         <br>
         <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 
@@ -120,25 +118,56 @@
           </div>
         </div>
         <div class="tab-pane fade" id="purchaseHistory" role="tabpanel" aria-labelledby="purchaseHistory-tab">
-          <br>
-          <div class="panel panel-primary">
-            <div class="panel-heading"></div>
-            <table class="table table-striped table-hover table-bordered">
-              <tr class="info" style="color:#65768e">
-                <th>Entry</th>
-                <th>Item Name</th>
-                <th>Cost</th>
-                <th>Date</th>
-              </tr>
 
-              <tr>
-                <td>1</td>
-                <td>Apple MacBook Pro 15''</td>
-                <td>3 199,99 €</td>
-                <td>28/02/2018</td>
-              </tr>
-            </table>
+          <!-- BEGIN PURCHASE HISTORY -->
+
+          <div class="panel panel-primary">
+          <div class="panel-heading"><h4 style="padding-bottom: 19px">Purchase History</h4></div>
+          <table class="table table-striped table-hover table-bordered">
+            <tr class="info" style="color:#65768e">
+              <th>Items</th>
+              <th>Cost</th>
+              <th>Date</th>
+              <th>Expand</th>
+            </tr>
+
+            <tr>
+              <td>
+                2*Apple MacBook Pro 15'', etc
+                <div id="opret-produkt" class="collapse in" style="margin-top: 10px">
+                  <div>
+                    <table class="table table-striped table-hover table-bordered">
+              				<tr class="info" style="color:#65768e;">
+              					<th>Item Name</th>
+              					<th>Cost</th>
+              				</tr>
+
+              				<tr>
+              					<td>Apple MacBook Pro 15''</td>
+              					<td>3 199,99 €</td>
+              				</tr>
+                      <tr>
+              					<td>Apple MacBook Pro 15''</td>
+              					<td>3 199,99 €</td>
+              				</tr>
+                      <tr>
+              					<td>Mouse</td>
+              					<td>10</td>
+              				</tr>
+              			</table>
+                </div>
+              </td>
+              <td>6 409,98 €</td>
+              <td>28/02/2018</td>
+              <td class="panel panel-default panel-help" href="#opret-produkt" data-toggle="collapse">
+                <i class="fas fa-minus"></i>
+                <i class="fas fa-minus"></i>
+              </td>
+            </tr>
+          </table>
           </div>
+
+          <!--  END PURCHASE HISTORY-->
         </div>
         <div class="tab-pane fade" id="favorites" role="tabpanel" aria-labelledby="favorites-tab">
           <div class="row">
@@ -149,12 +178,15 @@
                     <img src="https://static.fnac-static.com/multimedia/Images/PT/NR/01/41/12/1196289/1505-1/tsp20170623090030/Apple-MacBook-Pro-15-Retina-i7-2-8GHz-16GB-1TB-Radeon-Pro-555-com-Touch-Bar-e-Touch-ID-Cinzento-Sideral.jpg" alt="194x228"class="img-fluid">
                   </div>
                   <div class="product-desc">
-                    <span class="bg-danger discount-price">
-                      3 199,99 €
-                    </span>
-                    <span class="product-price">
-                      3 622,67 €
-                    </span>
+                    <div class="priceTags">
+                      <span class="bg-danger discount-price">
+                        3199,99 €
+                      </span>
+                      <span class="product-price">
+                        3622,99 €
+                      </span>
+                    </div>
+                    <br>
                     <small class="text-muted">Category</small>
                     <a href="#" class="product-name"> Apple MacBook Pro 15''</a>
 
@@ -164,7 +196,7 @@
                     <br>
                     <div class="m-t text-righ row">
                       <a href="#" class="addtoCart col-8 btn btn-xs btn-outline btn-primary">Add to cart  <i class="fas fa-cart-plus"></i></a>
-                      <a href="#" class="btn btn-danger col-3"><i class="far fa-trash-alt"></i></a>
+                      <a href="#" class="rmFromFavs btn btn-danger col-3"><i class="far fa-trash-alt"></i></a>
                     </div>
                   </div>
                 </div>
@@ -177,7 +209,12 @@
                     <img src="https://static.fnac-static.com/multimedia/Images/PT/NR/fa/44/14/1328378/1505-1.jpg" alt="194x228"class="img-fluid">
                   </div>
                   <div class="product-desc">
-                    <span class="product-price">999,99 €</span>
+                    <div class="priceTags">
+                      <span class="product-price">
+                        999,99 €
+                      </span>
+                    </div>
+                    <br>
                     <small class="text-muted">Category</small>
                     <a href="#" class="product-name"> Portátil Acer Aspire</a>
                     <div class="small">
@@ -186,7 +223,7 @@
                     <br>
                     <div class="buttons row">
                       <a href="#" class="addtoCart col-8 btn btn-xs btn-outline btn-primary">Add to cart  <i class="fas fa-cart-plus"></i></a>
-                      <a href="#" class="btn btn-danger col-3"><i class="far fa-trash-alt"></i></a>
+                      <a href="#" class="rmFromFavs btn btn-danger col-3"><i class="far fa-trash-alt"></i></a>
                     </div>
                   </div>
                 </div>
@@ -199,7 +236,12 @@
                     <img src="https://static.fnac-static.com/multimedia/Images/PT/NR/22/05/13/1246498/1505-1.jpg" alt="194x228"class="img-fluid">
                   </div>
                   <div class="product-desc">
-                    <span class="product-price">650 €</span>
+                    <div class="priceTags">
+                    <span class="product-price">
+                      649,99 €
+                    </span>
+                  </div>
+                  <br>
                     <small class="text-muted">Category</small>
                     <a href="#" class="product-name"> Portátil Asus</a>
                     <div class="small m-t-xs">
@@ -208,7 +250,7 @@
                     <br>
                     <div class="m-t text-righ row">
                       <a href="#" class="addtoCart col-8 btn btn-xs btn-outline btn-primary">Add to cart  <i class="fas fa-cart-plus"></i></a>
-                      <a href="#" class="btn btn-danger col-3"><i class="far fa-trash-alt"></i></a>
+                      <a href="#" class="rmFromFavs btn btn-danger col-3"><i class="far fa-trash-alt"></i></a>
                     </div>
                   </div>
                 </div>
@@ -222,9 +264,12 @@
                     <img src="https://static.fnac-static.com/multimedia/Images/PT/NR/59/6b/15/1403737/1505-1.jpg" alt="194x228"class="img-fluid">
                   </div>
                   <div class="product-desc">
-                    <span class="product-price">
-                      958,71 €
-                    </span>
+                    <div class="priceTags">
+                      <span class="product-price">
+                        959,99 €
+                      </span>
+                    </div>
+                    <br>
                     <small class="text-muted">Category</small>
                     <a href="#" class="product-name"> Portátil HP Pavilion</a>
                     <div class="small m-t-xs">
@@ -233,7 +278,7 @@
                     <br>
                     <div class="m-t text-righ row">
                       <a href="#" class="addtoCart col-8 btn btn-xs btn-outline btn-primary">Add to cart  <i class="fas fa-cart-plus"></i></a>
-                      <a href="#" class="btn btn-danger col-3"><i class="far fa-trash-alt"></i></a>
+                      <a href="#" class="rmFromFavs btn btn-danger col-3"><i class="far fa-trash-alt"></i></a>
                     </div>
                   </div>
                 </div>

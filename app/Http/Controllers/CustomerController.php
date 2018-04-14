@@ -24,18 +24,6 @@ class CustomerController extends Controller
     return view('pages.profile', ['infoCustomer' => $customer,'infoUser' => Auth::user()]);
   }
 
-
-  /**
-   * Retreives the user information
-   *
-   * @return Array Array of strings representing the user information
-   */
-  public function getInfo($id)
-  {
-
-  }
-
-
   /**
    * Creates a new customer.
    *

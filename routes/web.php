@@ -20,7 +20,7 @@ Route::get('cards', 'CardController@list');
 Route::get('cards/{id}', 'CardController@show');
 
 // Profile
-Route::get('users/{id}','CustomerController@show');
+Route::get('users/{id}','CustomerController@show')->name('profile');
 
 // Static
 Route::view('homepage','pages.homepage');

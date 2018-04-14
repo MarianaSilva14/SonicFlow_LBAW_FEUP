@@ -1,0 +1,56 @@
+body {
+background-image: url("../images/.jpg");
+background-color:white;
+background-attachment:scroll;
+background-repeat:no-repeat;
+background-position:center;
+background-size:cover;
+line-height:5px;
+}
+.display-1 {
+  text-align:center;
+  color:#009fc8;
+  opacity: 0.5;
+}
+.display-1 .fa {
+  animation:fa-spin 5s infinite linear;
+}
+.display-3 {
+  text-align:center;
+  color:#009fc8;
+}
+.lower-case {
+  text-align:center;
+  color: #009fc8;
+  font-size: 17px;
+}
+
+.jumbotron {
+    background-color: #ffffff;
+    padding-top: 1px;
+}
+
+.home-page{
+  text-align:center;
+  border: 10px solid #009fc8;
+  background-color: #009fc8;
+}
+
+a:not([href]):not([tabindex]){
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+a:not([href]):not([tabindex]):focus, a:not([href]):not([tabindex]):hover {
+    color: #ffffff;
+    text-decoration:underline;
+}
+
+.home-page{
+  color: white;
+}
+
+a:hover{
+  color: #ffffff;
+}

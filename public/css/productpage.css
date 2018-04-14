@@ -1,0 +1,194 @@
+#price{
+	font-size: 1.7em;
+	padding: 5px;
+	text-align: center;
+	color: white;
+}
+
+.originalPrice{
+	text-decoration: line-through;
+	position: relative;
+	background-color: #f8941e;
+	color: white;
+	top: 2px;
+	font-size: 1em;
+	padding: 5px 25px 5px 25px;
+}
+
+.secondary{
+	padding-top: 60px;
+}
+
+.availability{
+	height: 110%;
+}
+
+.availability span{
+	margin-left: 10px;
+}
+
+.ratingLabel{
+	position: relative;
+	left: 15px;
+	top: -10px;
+	color: #b6bdce;
+}
+
+.linksBox{
+	width: 100%;
+	padding: 25px 0px;
+}
+
+.addFavs{
+	margin: 10px;
+	color: red;
+}
+
+.addFavs a{
+	margin: 10px;
+	color: #65768e;
+	font-weight: bold;
+}
+
+.addFavs:hover .fa-heart{
+	font-size: 150%;
+}
+
+.custom-control{
+	display: inline-block;
+		color: #65768e;
+	font-weight: bold;
+}
+
+textarea.form-control.productTitle {
+    resize: none;
+		background-color: white;
+		border: none;
+		font-weight: bold;
+		font-size: 1.8rem;
+}
+
+.form-group{
+	margin-bottom: 0;
+}
+
+.addToCart {
+	height: 110%;
+	width: 100%;
+  border-radius: 4px;
+  background-color: #009fc8;
+	color: #FFFFFF;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+	transition: all 0.5s;
+}
+
+.addToCart span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+	margin-right: 10px;
+}
+
+.addToCart span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.addToCart:hover {
+    box-shadow: 0 4px 5px 0 rgb(182, 189, 206), 0 7px 7px 0 rgb(255, 255, 255);
+}
+
+.addToCart:hover span {
+  padding-right: 25px;
+}
+
+.addToCart:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+/*  star rating */
+
+fieldset, i { margin: 0; padding: 0; }
+/****** Style Star Rating Widget *****/
+.rating {
+  border: none;
+	width: 145px;
+}
+.rating > input { display: none; }
+.rating > svg:before {
+  margin: 5px;
+  font-size: 1.25em;
+  display: inline-block;
+}
+
+.rating > svg {
+  color: #ddd;
+	float: right;
+}
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating > input:checked ~ svg, /* show gold star when clicked */
+.rating:not(:checked) > svg:hover, /* hover current star */
+.rating:not(:checked) > svg:hover ~ svg { color: #FFD700;  } /* hover previous stars in list */
+
+.rating > input:checked + svg:hover, /* hover current star when changing rating */
+.rating > input:checked ~ svg:hover,
+.rating > svg:hover ~ input:checked ~ svg, /* lighten current selection */
+.rating > input:checked ~ svg:hover ~ svg { color: #FFED85;  }
+
+.golden_star {
+	color: #FFED85;
+}
+
+#specs-form {
+	margin-left: 2%;
+	font-size: 90%;
+}
+
+#specs-form legend{
+	font-weight: bold;
+	font-size: 1.5em;
+	color: #b6bdce;
+}
+
+#specs-form label{
+	font-weight: bold;
+}
+
+.commentForm textarea{
+  resize: none;
+  background-size: 500% 500%;
+  -webkit-animation: rainbow 18s ease infinite;
+  -z-animation: rainbow 18s ease infinite;
+  -o-animation: rainbow 18s ease infinite;
+  animation: rainbow 18s ease infinite;
+}
+
+@-webkit-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-moz-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-o-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}

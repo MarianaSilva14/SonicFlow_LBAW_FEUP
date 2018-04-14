@@ -20,7 +20,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="{{ asset('css/common.css') }}">
     @yield('head')
+    <script src="js/common.js" defer></script>
 
     <script type="text/javascript">
         // Fix for Firefox autofocus CSS bug

@@ -7,19 +7,19 @@
         <ul class="list-inline">
 
           <li class="list-inline-item">
-            <a href="homepage.html">Home</a>
+            <a href="homepage">Home</a>
           </li>
 
           <li class="list-inline-item">
-            <a href="aboutpage.html">About us</a>
+            <a href="about">About us</a>
           </li>
 
           <li class="list-inline-item">
-            <a href="contacts.html">Contact</a>
+            <a href="contact">Contact</a>
           </li>
 
           <li class="list-inline-item">
-            <a href="faqpage.html">FAQ</a>
+            <a href="faq">FAQ</a>
           </li>
         </ul>
       </div>

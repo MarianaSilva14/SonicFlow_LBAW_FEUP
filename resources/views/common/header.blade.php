@@ -44,10 +44,21 @@
         <a class="nav-link" href="shoppingCart.html"><i class="fas fa-shopping-cart fa-lg"></i></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link login" href="login.html">Login</a>
+        @if (Auth::check())
+          <a class="nav-link profile" href="users/{{Auth::user()->username}}">
+            <img id="profile_picture" alt="Responsive image"src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" id="profile-image1" class="img-fluid">
+            {{Auth::user()->getName()}}
+          </a>
+        @else
+          <a class="nav-link login" href="login">Login</a>
+        @endif
       </li>
       <li class="nav-item">
-        <a class="nav-link register" href="register.html">Register</a>
+        @if (Auth::check())
+          <a class="nav-link login" href="logout">Logout</a>
+        @else
+          <a class="nav-link register" href="register">Register</a>
+        @endif
       </li>
       <li class="nav-item">
         <a class="nav-link mobileNav" href="configurator.html"><span class="sub_icon"><i class="fas fa-cogs fa-lg"></i></span>Configurator</a>

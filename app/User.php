@@ -11,6 +11,10 @@ class User extends Authenticatable
 
     protected $primaryKey = 'username'; // or null
 
+    public function getName(){
+      return 'Joao';
+    }
+
     public $incrementing = false;
 
     /**

@@ -21,8 +21,11 @@ CREATE TABLE "user" (
     "password" text NOT NULL,
     email text UNIQUE NOT NULL,
     joinDate TIMESTAMP DEFAULT now() NOT NULL,
+    role text NOT NULL DEFAULT 'CUST',
     picture text,
-    remember_token text
+    remember_token text,
+
+    CONSTRAINT role_valid CHECK ((role in ('CUST', 'MOD', 'ADMIN')))
 );
  
 CREATE TABLE customer (
@@ -356,13 +359,13 @@ INSERT INTO "user" VALUES ('0vhmA5o2','dP._UKHIH','Olga@convallis.us','2018-04-1
 INSERT INTO "user" VALUES ('RhmO','KB\^+PPixL:WP','Erica@eget.us','2018-04-14 01:03:13');
 INSERT INTO "user" VALUES ('02t39yKwKo','acz0(!.s(cf)=','India@Class.net','2018-04-18 10:45:45');
 INSERT INTO "user" VALUES ('O9kk0','=iq}QlX(?~;q#3','Brody@consectetuer.org','2018-04-15 21:23:56');
-INSERT INTO "user" VALUES ('xavirt','$2y$10$3U/Uo5OTfiKohXC0f06TIu51gaGw8qFeaOR3KRZ66GHC/WQYdKFm6','xfontes42@gmail.com','2018-04-06 18:30:24');
-INSERT INTO "user" VALUES ('ana','$2y$10$3U/Uo5OTfiKohXC0f06TIu51gaGw8qFeaOR3KRZ66GHC/WQYdKFm6','anaezes@gmail.com','2018-04-07 23:59:44');
-INSERT INTO "user" VALUES ('mariana','$2y$10$3U/Uo5OTfiKohXC0f06TIu51gaGw8qFeaOR3KRZ66GHC/WQYdKFm6','marianals@gmail.com','2018-04-08 02:28:28');
-INSERT INTO "user" VALUES ('eduardo','$2y$10$3U/Uo5OTfiKohXC0f06TIu51gaGw8qFeaOR3KRZ66GHC/WQYdKFm6','edu.swimming@gmail.com','2018-04-06 15:52:45');
-INSERT INTO "user" VALUES ('jcl','$2y$10$3U/Uo5OTfiKohXC0f06TIu51gaGw8qFeaOR3KRZ66GHC/WQYdKFm6','jcl@gmail.com','2018-04-04 01:47:20');
+INSERT INTO "user" VALUES ('xavirt','$2y$10$3U/Uo5OTfiKohXC0f06TIu51gaGw8qFeaOR3KRZ66GHC/WQYdKFm6','xfontes42@gmail.com','2018-04-06 18:30:24','ADMIN');
+INSERT INTO "user" VALUES ('ana','$2y$10$3U/Uo5OTfiKohXC0f06TIu51gaGw8qFeaOR3KRZ66GHC/WQYdKFm6','anaezes@gmail.com','2018-04-07 23:59:44','ADMIN');
+INSERT INTO "user" VALUES ('mariana','$2y$10$3U/Uo5OTfiKohXC0f06TIu51gaGw8qFeaOR3KRZ66GHC/WQYdKFm6','marianals@gmail.com','2018-04-08 02:28:28','ADMIN');
+INSERT INTO "user" VALUES ('eduardo','$2y$10$3U/Uo5OTfiKohXC0f06TIu51gaGw8qFeaOR3KRZ66GHC/WQYdKFm6','edu.swimming@gmail.com','2018-04-06 15:52:45','ADMIN');
+INSERT INTO "user" VALUES ('jcl','$2y$10$3U/Uo5OTfiKohXC0f06TIu51gaGw8qFeaOR3KRZ66GHC/WQYdKFm6','jcl@gmail.com','2018-04-04 01:47:20','MOD');
 INSERT INTO "user" VALUES ('xavi123', '$2y$10$ov5gkUSHX79k6Gnhl.izP.fYWS4B8wARqpYVvaPcEAOU.xA0RYu7q', 'xfontes@lol.com', '2018-04-14 15:15:40.431337');
-INSERT INTO "user" VALUES ('edu123', '$2y$10$L6r7FmhS30ehMpxoSjqkxeuCcMkN167VdcJxWXYu7AsbdKCPtczna', 'edu@edu.com', '2018-04-14 15:37:32.106099');
+INSERT INTO "user" VALUES ('edu123', '$2y$10$L6r7FmhS30ehMpxoSjqkxeuCcMkN167VdcJxWXYu7AsbdKCPtczna', 'edu@edu.com', '2018-04-14 15:37:32.106099','ADMIN');
 
 --CUSTOMER
 INSERT INTO customer VALUES ('xavi123', 'Xavier Fontes', 'lole stree', 0, 'TRUE', 'FALSE');

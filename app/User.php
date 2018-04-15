@@ -17,6 +17,12 @@ class User extends Authenticatable
       return json_decode(json_encode($customer), true)['name'];
     }
 
+    public function getPicture(){
+      if($this->picture == "")
+        return 'https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg';
+      else
+        return $this->picture;
+    }
 
     public function isCustomer(){
         return DB::table('customer')->where('user_username', $this->username).$this->exists();

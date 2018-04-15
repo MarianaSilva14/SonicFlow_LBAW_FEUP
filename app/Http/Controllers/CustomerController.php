@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
 use App\Customer;
+use App\User;
 
 class CustomerController extends Controller
 {
@@ -30,21 +31,26 @@ class CustomerController extends Controller
    * @param  String  $username
    * @return Response
    */
-  public function update(Request $resquest,$username)
+  public function update(Request $request,$username)
   {
     $customer = Customer::find($username);
     $user = User::find($username);
     $this->authorize('profile', $customer);
 
-    //todo save picture -> get url -> update picture field in table
+    if($request->input('oldPassword')!=""){
+      if($user->password != bcrypt($request->input('oldPassword')) || $request->input('password') == "") {
+        return view('pages.profile', ['editable'=> TRUE, 'alert' => 'Old Password is <strong>invalid</strong> or new password wasn\'t <strong>set</strong>', 'infoCustomer' => $customer,'infoUser' => Auth::user()]);
+      }
+      $user->password = $request->input('password');
+    }
+
     if($request->hasFile('picture')){
-      
+      $picPath = $request->file('picture')->store('avatars');
+      $user->picture = $picPath;
     }
 
     $user->email = $request->input('email');
-    $user->password = $request->input('password');
-    $user->picture = $picUrl;
-    $customer->name = $request->input('firstName').$request->input('lastName');
+    $customer->name = $request->input('firstName').' '.$request->input('lastName');
     $customer->address = $request->input('address');
 
     $user->save();

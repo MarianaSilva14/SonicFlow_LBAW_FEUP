@@ -23,6 +23,14 @@ class Customer extends Model
     // Don't add create and update timestamps in database.
     public $timestamps = false;
 
+    public function firstName(){
+      return explode(' ',$this->name,2)[0];
+    }
+
+    public function lastName(){
+      return explode(' ',$this->name,2)[1];
+    }
+
     /**
      * The user this customer belongs to.
      */

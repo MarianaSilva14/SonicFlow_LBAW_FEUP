@@ -37,7 +37,7 @@
             <!-- left column -->
             <div class="col-md-3">
               <div class="text-center">
-                <img alt="Responsive image" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" id="profile-image1" class="img-fluid">
+                <img alt="Responsive image" src="{{$infoUser->getPicture()}}" id="profile-image1" class="img-fluid">
               </div>
             </div>
 
@@ -50,12 +50,12 @@
                   {!!$alert!!}
                 </div>
               @endif
-              <form method="post" action="{{route('profile',['id' => Auth::user()->username])}}" class="form-horizontal" role="form">
+              <form method="post" action="{{route('profile',['id' => Auth::user()->username])}}" class="form-horizontal" role="form" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="form-group">
                   <label class="col-md-3 control-label">Username:</label>
                   <div class="col-md-8">
-                    <input class="form-control" name="username" type="text" value="janeuser" readonly>
+                    <input class="form-control" name="username" type="text" value="{{$infoUser->username}}" readonly>
                   </div>
                 </div>
                 @if($editable)
@@ -72,9 +72,9 @@
                   <label class="col-lg-3 control-label">First name:</label>
                   <div class="col-lg-8">
                     @if($editable)
-                      <input class="form-control" name="firstName" type="text" value="Jane">
+                      <input class="form-control" name="firstName" type="text" value="{{$infoCustomer->firstName()}}">
                     @else
-                      <input class="form-control" name="firstName" type="text" value="Jane" readonly>
+                      <input class="form-control" name="firstName" type="text" value="{{$infoCustomer->firstName()}}" readonly>
                     @endif
                   </div>
                 </div>
@@ -82,9 +82,9 @@
                   <label class="col-lg-3 control-label">Last name:</label>
                   <div class="col-lg-8">
                     @if($editable)
-                      <input class="form-control" name="lastName" type="text" value="Bishop">
+                      <input class="form-control" name="lastName" type="text" value="{{$infoCustomer->lastName()}}">
                     @else
-                      <input class="form-control" name="lastName" type="text" value="Bishop" readonly>
+                      <input class="form-control" name="lastName" type="text" value="{{$infoCustomer->lastName()}}" readonly>
                     @endif
                   </div>
                 </div>
@@ -92,31 +92,29 @@
                   <label class="col-lg-3 control-label">Email:</label>
                   <div class="col-lg-8">
                     @if($editable)
-                      <input class="form-control" name="email" type="text" value="janesemail@gmail.com">
+                      <input class="form-control" name="email" type="text" value="{{$infoUser->email}}">
                     @else
-                      <input class="form-control" name="email" type="text" value="janesemail@gmail.com" readonly>
+                      <input class="form-control" name="email" type="text" value="{{$infoUser->email}}" readonly>
                     @endif
                   </div>
                 </div>
                 @if($editable)
                   <div class="form-group">
+                    <label class="col-md-3 control-label">Old Password:</label>
+                    <div class="col-md-8">
+                      <input class="form-control" name="oldPassword" type="password" value="">
+                    </div>
+                  </div>
+                  <div class="form-group">
                     <label class="col-md-3 control-label">Password:</label>
                     <div class="col-md-8">
-                      @if($editable)
-                        <input class="form-control" name="password" type="password" value="11111122333">
-                      @else
-                        <input class="form-control" name="password" type="password" value="11111122333" readonly>
-                      @endif
+                      <input class="form-control" name="password" type="password" value="">
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="col-md-3 control-label">Confirm password:</label>
                     <div class="col-md-8">
-                      @if($editable)
-                        <input class="form-control" type="password" value="11111122333">
-                      @else
-                        <input class="form-control" type="password" value="11111122333" readonly>
-                      @endif
+                      <input class="form-control" type="password" value="">
                     </div>
                   </div>
                 @endif

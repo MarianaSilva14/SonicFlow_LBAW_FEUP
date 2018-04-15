@@ -363,7 +363,7 @@ INSERT INTO "user" VALUES ('xavirt','$2y$10$3U/Uo5OTfiKohXC0f06TIu51gaGw8qFeaOR3
 INSERT INTO "user" VALUES ('ana','$2y$10$3U/Uo5OTfiKohXC0f06TIu51gaGw8qFeaOR3KRZ66GHC/WQYdKFm6','anaezes@gmail.com','2018-04-07 23:59:44','ADMIN');
 INSERT INTO "user" VALUES ('mariana','$2y$10$3U/Uo5OTfiKohXC0f06TIu51gaGw8qFeaOR3KRZ66GHC/WQYdKFm6','marianals@gmail.com','2018-04-08 02:28:28','ADMIN');
 INSERT INTO "user" VALUES ('eduardo','$2y$10$3U/Uo5OTfiKohXC0f06TIu51gaGw8qFeaOR3KRZ66GHC/WQYdKFm6','edu.swimming@gmail.com','2018-04-06 15:52:45','ADMIN');
-INSERT INTO "user" VALUES ('jcl','$2y$10$3U/Uo5OTfiKohXC0f06TIu51gaGw8qFeaOR3KRZ66GHC/WQYdKFm6','jcl@gmail.com','2018-04-04 01:47:20','MOD');
+INSERT INTO "user" VALUES ('jcl','$2y$10$g841JOLd/Oh.1y2qt8QCUu8ZuXM9HlVn2O.0gMmu4l4pf5jbRnQHG','jcl@gmail.com','2018-04-04 01:47:20','MOD');
 INSERT INTO "user" VALUES ('xavi123', '$2y$10$ov5gkUSHX79k6Gnhl.izP.fYWS4B8wARqpYVvaPcEAOU.xA0RYu7q', 'xfontes@lol.com', '2018-04-14 15:15:40.431337');
 INSERT INTO "user" VALUES ('edu123', '$2y$10$L6r7FmhS30ehMpxoSjqkxeuCcMkN167VdcJxWXYu7AsbdKCPtczna', 'edu@edu.com', '2018-04-14 15:37:32.106099','ADMIN');
 

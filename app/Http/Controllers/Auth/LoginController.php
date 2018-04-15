@@ -30,14 +30,14 @@ class LoginController extends Controller
         $user = Auth::user();
 
         if( $user->role == 'ADMIN'){
-            return '/administration';
+            return url('administration');
         }
 
         if( $user->role == 'MOD'){
-            return '/moderation';
+            return url('moderation');
         }
 
-        return '/homepage';
+        return url('homepage');
     }
 
     /**

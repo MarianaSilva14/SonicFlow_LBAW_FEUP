@@ -21,12 +21,20 @@ Route::get('cards/{id}', 'CardController@show');
 
 // Profile
 Route::get('users/{id}','CustomerController@show')->name('profile');
+Route::post('users/{id}','CustomerController@update');
+Route::get('users/{id}/edit','CustomerController@edit')->name('profileEdit');
+
+// Products
+Route::view('products','pages.homepage')->name('products');
 
 // Static
-Route::view('homepage','pages.homepage');
-Route::view('about','pages.about');
-Route::view('contact','pages.contact');
-Route::view('faq','pages.faq');
+Route::view('homepage','pages.homepage')->name('homepage');
+Route::view('about','pages.about')->name('about');
+Route::view('contact','pages.contact')->name('contact');
+Route::view('faq','pages.faq')->name('faq');
+Route::view('configurator','pages.homepage')->name('configurator');
+Route::view('shoppingCart','pages.homepage')->name('shoppingCart');
+
 
 // API
 Route::put('api/cards', 'CardController@create');
@@ -36,7 +44,6 @@ Route::post('api/item/{id}', 'ItemController@update');
 Route::delete('api/item/{id}', 'ItemController@delete');
 
 // Authentication
-
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
 Route::get('logout', 'Auth\LoginController@logout')->name('logout');

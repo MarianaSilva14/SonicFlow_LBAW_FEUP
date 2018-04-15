@@ -38,78 +38,98 @@
             <div class="col-md-3">
               <div class="text-center">
                 <img alt="Responsive image" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" id="profile-image1" class="img-fluid">
-                <br> <br>
-                <input type="file" class="form-control">
               </div>
             </div>
 
             <!-- edit form column -->
             <div class="col-md-9 personal-info">
-              <div class="alert alert-info alert-dismissable">
-                <a class="panel-close close" data-dismiss="alert">×</a>
-                <i class="fa fa-coffee"></i>
-                This is an <strong>.alert</strong>. Use this to show important messages to the user.
-              </div>
-              <form class="form-horizontal" role="form">
+              @if ($alert != "")
+                <div class="alert alert-info alert-dismissable">
+                  <a class="panel-close close" data-dismiss="alert">×</a>
+                  <i class="fa fa-coffee"></i>
+                  {!!$alert!!}
+                </div>
+              @endif
+              <form method="post" action="{{route('profile',['id' => Auth::user()->username])}}" class="form-horizontal" role="form">
+                {{ csrf_field() }}
+                <div class="form-group">
+                  <label class="col-md-3 control-label">Username:</label>
+                  <div class="col-md-8">
+                    <input class="form-control" name="username" type="text" value="janeuser" readonly>
+                  </div>
+                </div>
+                @if($editable)
+                  <div class="form-group">
+                @else
+                  <div class="form-group" hidden>
+                @endif
+                  <label class="col-lg-3 control-label">Profile Picture:</label>
+                  <div class="col-lg-8">
+                    <input type="file" name="picture" class="form-control">
+                  </div>
+                </div>
                 <div class="form-group">
                   <label class="col-lg-3 control-label">First name:</label>
                   <div class="col-lg-8">
-                    <input class="form-control" type="text" value="Jane">
+                    @if($editable)
+                      <input class="form-control" name="firstName" type="text" value="Jane">
+                    @else
+                      <input class="form-control" name="firstName" type="text" value="Jane" readonly>
+                    @endif
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-lg-3 control-label">Last name:</label>
                   <div class="col-lg-8">
-                    <input class="form-control" type="text" value="Bishop">
+                    @if($editable)
+                      <input class="form-control" name="lastName" type="text" value="Bishop">
+                    @else
+                      <input class="form-control" name="lastName" type="text" value="Bishop" readonly>
+                    @endif
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-lg-3 control-label">Email:</label>
                   <div class="col-lg-8">
-                    <input class="form-control" type="text" value="janesemail@gmail.com">
+                    @if($editable)
+                      <input class="form-control" name="email" type="text" value="janesemail@gmail.com">
+                    @else
+                      <input class="form-control" name="email" type="text" value="janesemail@gmail.com" readonly>
+                    @endif
                   </div>
                 </div>
-                <div class="form-group">
-                  <label class="col-lg-3 control-label">Time Zone:</label>
-                  <div class="col-lg-8">
-                    <div class="ui-select">
-                      <select id="user_time_zone" class="form-control">
-                        <option value="Hawaii">(GMT-10:00) Hawaii</option>
-                        <option value="Alaska">(GMT-09:00) Alaska</option>
-                        <option value="Pacific Time (US &amp; Canada)">(GMT-08:00) Pacific Time (US &amp; Canada)</option>
-                        <option value="Arizona">(GMT-07:00) Arizona</option>
-                        <option value="Mountain Time (US &amp; Canada)">(GMT-07:00) Mountain Time (US &amp; Canada)</option>
-                        <option value="Central Time (US &amp; Canada)" selected="selected">(GMT-06:00) Central Time (US &amp; Canada)</option>
-                        <option value="Eastern Time (US &amp; Canada)">(GMT-05:00) Eastern Time (US &amp; Canada)</option>
-                        <option value="Indiana (East)">(GMT-05:00) Indiana (East)</option>
-                      </select>
+                @if($editable)
+                  <div class="form-group">
+                    <label class="col-md-3 control-label">Password:</label>
+                    <div class="col-md-8">
+                      @if($editable)
+                        <input class="form-control" name="password" type="password" value="11111122333">
+                      @else
+                        <input class="form-control" name="password" type="password" value="11111122333" readonly>
+                      @endif
                     </div>
                   </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-md-3 control-label">Username:</label>
-                  <div class="col-md-8">
-                    <input class="form-control" type="text" value="janeuser">
+                  <div class="form-group">
+                    <label class="col-md-3 control-label">Confirm password:</label>
+                    <div class="col-md-8">
+                      @if($editable)
+                        <input class="form-control" type="password" value="11111122333">
+                      @else
+                        <input class="form-control" type="password" value="11111122333" readonly>
+                      @endif
+                    </div>
                   </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-md-3 control-label">Password:</label>
-                  <div class="col-md-8">
-                    <input class="form-control" type="password" value="11111122333">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-md-3 control-label">Confirm password:</label>
-                  <div class="col-md-8">
-                    <input class="form-control" type="password" value="11111122333">
-                  </div>
-                </div>
+                @endif
                 <div class="form-group">
                   <label class="col-md-3 control-label"></label>
                   <div class="col-md-8">
-                    <input type="button" class="btn btn-primary"  value="Save Changes">
-                    <span></span>
-                    <input type="reset" class="btn btn-default" value="Cancel">
+                    @if($editable)
+                      <button type="submit" class="btn btn-primary">Save Changes</button>
+                      <span></span>
+                      <a href="{{route('profile',['id' => Auth::user()->username])}}" class="btn btn-default">Cancel</a>
+                    @else
+                      <a href="{{route('profileEdit',['id' => Auth::user()->username])}}" class="btn btn-primary">Edit</a>
+                    @endif
                   </div>
                 </div>
               </form>

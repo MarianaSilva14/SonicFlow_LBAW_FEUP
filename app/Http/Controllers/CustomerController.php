@@ -14,14 +14,56 @@ class CustomerController extends Controller
   /**
    * Shows the profile of a given user.
    *
-   * @param  String  $id
+   * @param  String  $username
    * @return Response
    */
   public function show($username)
   {
     $customer = Customer::find($username);
     $this->authorize('profile', $customer);
-    return view('pages.profile', ['infoCustomer' => $customer,'infoUser' => Auth::user()]);
+    return view('pages.profile', ['editable'=> FALSE, 'alert' => '', 'infoCustomer' => $customer,'infoUser' => Auth::user()]);
+  }
+
+  /**
+   * Shows the profile of a given user with editable fields.
+   *
+   * @param  String  $username
+   * @return Response
+   */
+  public function update(Request $resquest,$username)
+  {
+    $customer = Customer::find($username);
+    $user = User::find($username);
+    $this->authorize('profile', $customer);
+
+    //todo save picture -> get url -> update picture field in table
+    if($request->hasFile('picture')){
+      
+    }
+
+    $user->email = $request->input('email');
+    $user->password = $request->input('password');
+    $user->picture = $picUrl;
+    $customer->name = $request->input('firstName').$request->input('lastName');
+    $customer->address = $request->input('address');
+
+    $user->save();
+    $customer->save();
+
+    return view('pages.profile', ['editable'=> FALSE, 'alert' => 'Profile was <strong>succesfully</strong> edited', 'infoCustomer' => $customer,'infoUser' => Auth::user()]);
+  }
+
+  /**
+   * Shows the profile of a given user with editable fields.
+   *
+   * @param  String  $username
+   * @return Response
+   */
+  public function edit($username)
+  {
+    $customer = Customer::find($username);
+    $this->authorize('profile', $customer);
+    return view('pages.profile', ['editable'=> TRUE, 'alert' => 'Profile is now being <strong>edited</strong>', 'infoCustomer' => $customer,'infoUser' => Auth::user()]);
   }
 
   /**

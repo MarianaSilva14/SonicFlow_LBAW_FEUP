@@ -40,9 +40,28 @@
 
     <!-- links -->
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="{{route('shoppingCart')}}"><i class="fas fa-shopping-cart fa-lg"></i></a>
-      </li>
+      @if(Auth::check() && !Auth::user()->isCustomer())
+        <li class="nav-item">
+          <a class="nav-link selectedView" href="{{route('homepage')}}">Visitor Mode</a>
+        </li>
+        <li class="nav-item">
+            @if(Auth::user()->isAdmin())
+              <a class="nav-link" href="{{url('administration')}}">
+              Administrator Mode
+            @elseif(Auth::user()->isModerator())
+              <a class="nav-link" href="{{url('moderation')}}">
+              Moderator Mode
+            @else
+              <a class="nav-link" href="#">
+              Congratulations to You!
+            @endif
+          </a>
+        </li>
+      @else
+        <li class="nav-item">
+          <a class="nav-link" href="{{route('shoppingCart')}}"><i class="fas fa-shopping-cart fa-lg"></i></a>
+        </li>
+      @endif
       <li class="nav-item">
         @if (Auth::check())
           <a class="nav-link profile" href="{{route('profile', ['id' => Auth::user()->username])}}">

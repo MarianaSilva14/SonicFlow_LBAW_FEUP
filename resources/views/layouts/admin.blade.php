@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
   <link rel="stylesheet" href="{{ asset('css/common.css') }}">
+  <link rel="stylesheet" href="{{asset('css/administration.css')}}">
   @yield('head')
   <script src="js/common.js" defer></script>
 
@@ -49,12 +50,14 @@
           <a class="nav-link" href="{{route('homepage')}}">Visitor Mode</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link selectedView" href="homepage.html">
             @if(Auth::user()->isAdmin())
+              <a class="nav-link selectedView" href="{{url('administration')}}">
               Administrator Mode
             @elseif(Auth::user()->isModerator())
+              <a class="nav-link selectedView" href="{{url('moderation')}}">
               Moderator Mode
             @else
+              <a class="nav-link selectedView" href="#">
               Congratulations to You!
             @endif
           </a>
@@ -111,11 +114,9 @@
       </nav>
       <div class="tab-content" id="nav-tabContent">
         <div class="tab-pane fade show active" id="nav-flagged" role="tabpanel" aria-labelledby="nav-flagged-tab">
-          Tab 1
           @yield('tab1')
         </div>
         <div class="tab-pane fade" id="nav-banned" role="tabpanel" aria-labelledby="nav-banned-tab">
-          Tab 2
           @yield('tab2')
         </div>
       </div>

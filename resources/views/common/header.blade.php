@@ -49,7 +49,7 @@
             @if( Auth::user()->picture == "")
               <img id="profile_picture" alt="Responsive image"src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" id="profile-image1" class="img-fluid">
             @else
-              <img id="profile_picture" alt="Responsive image"src="https://orig00.deviantart.net/b94b/f/2015/230/0/4/google_default_profile_picture_by_mircrosoft18-d967dkr.jpg" id="profile-image1" class="img-fluid">
+              <img id="profile_picture" alt="Responsive image"src="{{ \Illuminate\Support\Facades\Storage::url(Auth::User()->getPicture()) }}" id="profile-image1" class="img-fluid">
             @endif
             {{Auth::user()->getName()}}
           </a>

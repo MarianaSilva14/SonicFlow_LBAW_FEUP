@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 use App\Customer;
 use App\User;
@@ -38,14 +39,14 @@ class CustomerController extends Controller
     $this->authorize('profile', $customer);
 
     if($request->input('oldPassword')!=""){
-      if($user->password != bcrypt($request->input('oldPassword')) || $request->input('password') == "") {
+      if(!Hash::check($request->input('oldPassword'),$user->password) || $request->input('password') == "") {
         return view('pages.profile', ['editable'=> TRUE, 'alert' => 'Old Password is <strong>invalid</strong> or new password wasn\'t <strong>set</strong>', 'infoCustomer' => $customer,'infoUser' => Auth::user()]);
       }
-      $user->password = $request->input('password');
+      $user->password = bcrypt($request->input('password'));
     }
 
     if($request->hasFile('picture')){
-      $picPath = $request->file('picture')->store('avatars');
+      $picPath = $request->file('picture')->store('public/avatars');
       $user->picture = $picPath;
     }
 
@@ -56,7 +57,9 @@ class CustomerController extends Controller
     $user->save();
     $customer->save();
 
-    return view('pages.profile', ['editable'=> FALSE, 'alert' => 'Profile was <strong>succesfully</strong> edited', 'infoCustomer' => $customer,'infoUser' => Auth::user()]);
+    Auth::setUser($user);
+
+    return view('pages.profile', ['editable'=> FALSE, 'alert' => 'Profile was <strong>succesfully</strong> edited', 'infoCustomer' => $customer,'infoUser' => $user]);
   }
 
   /**

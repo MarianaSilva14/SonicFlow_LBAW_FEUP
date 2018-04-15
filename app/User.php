@@ -18,9 +18,6 @@ class User extends Authenticatable
     }
 
     public function getPicture(){
-      if($this->picture == "")
-        return 'https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg';
-      else
         return $this->picture;
     }
 

@@ -37,7 +37,15 @@
             <!-- left column -->
             <div class="col-md-3">
               <div class="text-center">
-                <img alt="Responsive image" src="{{$infoUser->getPicture()}}" id="profile-image1" class="img-fluid">
+                @if ($infoUser->getPicture() == "")
+                  <img alt="Responsive image" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" id="profile-image1" class="img-fluid">
+                @else
+                  <img alt="Responsive image" src="{{ \Illuminate\Support\Facades\Storage::url('app/'.$infoUser->getPicture()) }}" id="profile-image1" class="img-fluid">
+{{--
+                  <img alt="Responsive image" src=" {{asset('storage/app/avatars/YWTlaut5YLqcMZ2ywsoQaiO0p3vWrv0TWFy5u8Tw.jpeg')}}" id="profile-image1" class="img-fluid">
+--}}
+
+                @endif
               </div>
             </div>
 

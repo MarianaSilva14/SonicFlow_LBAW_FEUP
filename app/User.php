@@ -22,15 +22,15 @@ class User extends Authenticatable
     }
 
     public function isCustomer(){
-        return DB::table('customer')->where('user_username', $this->username).$this->exists();
+        return DB::table('customer')->where('user_username', $this->username)->exists();
     }
 
     public function isAdmin(){
-        return DB::table('administrator')->where('user_username', $this->username).$this->exists();
+        return DB::table('administrator')->where('user_username', $this->username)->exists();
     }
 
     public function isModerator(){
-        return DB::table('moderator')->where('user_username', $this->username).$this->exists();
+        return DB::table('moderator')->where('user_username', $this->username)->exists();
     }
 
     public $incrementing = false;

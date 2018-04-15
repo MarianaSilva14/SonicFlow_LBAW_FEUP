@@ -36,13 +36,6 @@ Route::view('configurator','pages.homepage')->name('configurator');
 Route::view('shoppingCart','pages.homepage')->name('shoppingCart');
 
 
-// API
-Route::put('api/cards', 'CardController@create');
-Route::delete('api/cards/{card_id}', 'CardController@delete');
-Route::put('api/cards/{card_id}/', 'ItemController@create');
-Route::post('api/item/{id}', 'ItemController@update');
-Route::delete('api/item/{id}', 'ItemController@delete');
-
 // Authentication
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
@@ -55,3 +48,16 @@ Route::get('administration', 'AdministratorController@show')->name('administrati
 
 // Moderation
 Route::get('moderation', 'ModeratorController@show')->name('moderation');
+
+// API old
+Route::put('api/cards', 'CardController@create');
+Route::delete('api/cards/{card_id}', 'CardController@delete');
+Route::put('api/cards/{card_id}/', 'ItemController@create');
+Route::post('api/item/{id}', 'ItemController@update');
+Route::delete('api/item/{id}', 'ItemController@delete');
+
+// API new
+Route::get('api/product/{sku}', 'ProductController@getProductBySku')->where('sku', '[0-9]+')->name('api_product_sku');
+Route::get('api/product/{name}', 'ProductController@getProductByName')->name('api_product_name');
+Route::get('api/discounts', 'ProductController@getDiscounted')->name('api_discounted');
+Route::get('api/products/', 'ProductController@getProducts')->name('api_products');

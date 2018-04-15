@@ -58,6 +58,10 @@ Route::delete('api/item/{id}', 'ItemController@delete');
 
 // API new
 Route::get('api/product/{sku}', 'ProductController@getProductBySku')->where('sku', '[0-9]+')->name('api_product_sku');
-Route::get('api/product/{name}', 'ProductController@getProductByName')->name('api_product_name');
+Route::get('api/product/{name}', 'ProductController@getProductsByName')->name('api_product_name');
 Route::get('api/discounts', 'ProductController@getDiscounted')->name('api_discounted');
 Route::get('api/products/', 'ProductController@getProducts')->name('api_products');
+
+Route::get('', function () {
+    return redirect('login');
+});

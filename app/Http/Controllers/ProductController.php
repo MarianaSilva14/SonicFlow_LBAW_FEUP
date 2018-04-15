@@ -44,17 +44,18 @@ class ProductController extends Controller
     }
 
     public function getProductBySku(Integer $sku){
-
-
+        $product = DB::table('product')->where('sku', $sku)->first();
+        return json_encode($product);
     }
 
-    public function getProductByName(Integer $sku){
-
-
+    public function getProductsByName(String $title){
+        $products = DB::table('product')
+            ->whereRaw('search @@ plainto_tsquery(\'english\',?)', [$title])->get();
+        return json_encode($products);
     }
 
     public function getDiscounted(){
-
-
+        $discounted_products = DB::table('product')->whereNotNull('discountprice')->get();
+        return json_encode($discounted_products);
     }
 }

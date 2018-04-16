@@ -19,6 +19,14 @@ class Customer extends Model
      */
     protected $table = 'customer';
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'user_username', 'name', 'address', 'loyaltypoints', 'newsletter', 'inactive'
+    ];
 
     // Don't add create and update timestamps in database.
     public $timestamps = false;

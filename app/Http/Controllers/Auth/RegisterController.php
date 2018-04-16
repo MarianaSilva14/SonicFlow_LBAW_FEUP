@@ -78,10 +78,11 @@ class RegisterController extends Controller
             'user_username' => $user['username'],
             'name' => $data['firstname'] . " " . $data['lastname'],
             'address' => $data['address'],
-            'loyaltyPoints' => 0,
+            'loyaltypoints' => 0,
             'newsletter' => true,
             'inactive' => false
         ]);
+        $customer->save();
 
         Auth::setUser($user);
         return $user;

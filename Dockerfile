@@ -17,4 +17,4 @@ RUN mkdir /var/run/php
 
 # Start command
 CMD sh /docker_run.sh
-CMD bash php artisan storage:link
+# CMD bash php artisan storage:link

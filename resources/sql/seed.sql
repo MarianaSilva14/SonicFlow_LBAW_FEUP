@@ -68,6 +68,7 @@ CREATE TABLE product (
     stock INTEGER NOT NULL,
     description TEXT,
     search tsvector,
+    picture TEXT,
 
 
     CONSTRAINT price_positive CHECK (price > 0),

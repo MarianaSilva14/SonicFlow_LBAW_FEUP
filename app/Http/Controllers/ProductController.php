@@ -26,11 +26,6 @@ class ProductController extends Controller
     {
         $query = DB::table('product');
 
-        $title = $request->input('title');
-        if ($title != null){
-            $query = $query->whereRaw('search @@ plainto_tsquery(\'english\',?)', [$title]);
-        }
-
         $catgoryID = intval($request->input('categoryID'));
         if ($catgoryID != null){
             $query = $query->where('category_idCat', $catgoryID);
@@ -50,6 +45,13 @@ class ProductController extends Controller
             else{
                 $query = $query->where('stock', '=', 0);
             }
+        }
+
+        $title = $request->input('title');
+        if ($title != null){
+            $query = $query
+                ->whereRaw('search @@ plainto_tsquery(\'english\',?)', [$title])
+                ->orderByRaw('ts_rank(search,  plainto_tsquery(\'english\',?) DESC',[$title]);
         }
 
         $products = $query->get();

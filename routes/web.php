@@ -15,10 +15,6 @@ Route::get('/', function () {
     return redirect('login');
 });
 
-// Cards
-Route::get('cards', 'CardController@list');
-Route::get('cards/{id}', 'CardController@show');
-
 // Profile
 Route::get('users/{id}','CustomerController@show')->name('profile');
 Route::post('users/{id}','CustomerController@update');
@@ -50,13 +46,6 @@ Route::get('administration', 'AdministratorController@show')->name('administrati
 
 // Moderation
 Route::get('moderation', 'ModeratorController@show')->name('moderation');
-
-// API old
-Route::put('api/cards', 'CardController@create');
-Route::delete('api/cards/{card_id}', 'CardController@delete');
-Route::put('api/cards/{card_id}/', 'ItemController@create');
-Route::post('api/item/{id}', 'ItemController@update');
-Route::delete('api/item/{id}', 'ItemController@delete');
 
 // API new
 Route::get('api/product/{sku}', 'ProductController@getProductBySku')->where('sku', '[0-9]+')->name('api_product_sku');

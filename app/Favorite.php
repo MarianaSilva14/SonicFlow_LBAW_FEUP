@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: xfontes
- * Date: 17-04-2018
- * Time: 14:19
- */
 
 namespace App;
 

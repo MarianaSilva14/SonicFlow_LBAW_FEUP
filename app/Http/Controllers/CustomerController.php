@@ -46,7 +46,7 @@ class CustomerController extends Controller
     }
 
     if($request->hasFile('picture')){
-      $picPath = $request->file('picture')->store('public/avatars');
+      $picPath = $request->file('picture')->store('public/avatars', ['public']);
       $user->picture = $picPath;
     }
 

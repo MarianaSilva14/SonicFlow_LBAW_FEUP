@@ -1,5 +1,9 @@
 <?php
 
+
+header("Location: http://lbaw1723.lbaw-prod.fe.up.pt/homepage"); /* Redirect browser */
+exit();
+
 /**
  * Laravel - A PHP Framework For Web Artisans
  *

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Favorite;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -115,11 +117,11 @@ class CustomerController extends Controller
 
     $product = DB::table('favorite')->where([['customer_username', '=', Auth::user()->username],['product_idproduct', '=', $sku]])->first();
 
+
     if($product == null)
       DB::table('favorite')->insert(['customer_username' => Auth::user()->username, 'product_idproduct' => $sku]);
     else{
-        $product->delete();
-        $product->save();
+        DB::table('favorite')->where([['customer_username', '=', Auth::user()->username],['product_idproduct', '=', $sku]])->delete();
     }
 
 
@@ -133,13 +135,12 @@ class CustomerController extends Controller
             return redirect('login');
         }
 
-        $product = DB::table('favorite')->where([['customer_username', '=', Auth::user()->username],['product_idproduct', '=', $sku]])->first();
+        //$product = DB::table('favorite')->where([['customer_username', '=', Auth::user()->username],['product_idproduct', '=', $sku]])->first();
 
-        if($product == null)
-            return redirect('homepage');
+//        if($product == null)
+//            return redirect('homepage');
 
-        $product->delete();
-        $product->save();
+        DB::table('favorite')->where([['customer_username', '=', Auth::user()->username],['product_idproduct', '=', $sku]])->delete();
 
         return redirect('homepage');
     }

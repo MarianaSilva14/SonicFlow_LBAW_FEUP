@@ -20,7 +20,7 @@ CREATE TABLE "user" (
     username text PRIMARY KEY,
     "password" text NOT NULL,
     email text UNIQUE NOT NULL,
-    joinDate TIMESTAMP DEFAULT now() NOT NULL,
+    joindate TIMESTAMP DEFAULT now() NOT NULL,
     role text NOT NULL DEFAULT 'CUST',
     picture text,
     remember_token text,
@@ -32,11 +32,11 @@ CREATE TABLE customer (
     user_username text PRIMARY KEY REFERENCES "user" ON DELETE CASCADE,
     "name" text NOT NULL,
     "address" text,
-    loyaltyPoints INTEGER NOT NULL DEFAULT 0,
+    loyaltypoints INTEGER NOT NULL DEFAULT 0,
     newsletter BOOLEAN NOT NULL DEFAULT TRUE,
     inactive BOOLEAN NOT NULL DEFAULT FALSE,
 
-    CONSTRAINT lp_positive CHECK ((loyaltyPoints >= 0))
+    CONSTRAINT lp_positive CHECK ((loyaltypoints >= 0))
 );
 
 CREATE TABLE moderator (
@@ -49,7 +49,7 @@ CREATE TABLE administrator (
 
 CREATE TABLE banned (
     customer_username_customer TEXT PRIMARY KEY REFERENCES customer ON DELETE CASCADE,
-    bannedDate TIMESTAMP DEFAULT now() NOT NULL,
+    banneddate TIMESTAMP DEFAULT now() NOT NULL,
     moderator_username_moderator TEXT NOT NULL REFERENCES moderator ON DELETE CASCADE
 );
 
@@ -61,9 +61,9 @@ CREATE TABLE category (
 CREATE TABLE product (
     sku SERIAL PRIMARY KEY,
     title text NOT NULL,
-    category_idCat INTEGER NOT NULL REFERENCES category ON DELETE CASCADE,
+    category_idcat INTEGER NOT NULL REFERENCES category ON DELETE CASCADE,
     price REAL NOT NULL,
-    discountPrice REAL,
+    discountprice REAL,
     rating REAL NOT NULL,
     stock INTEGER NOT NULL,
     description TEXT,
@@ -72,7 +72,7 @@ CREATE TABLE product (
 
 
     CONSTRAINT price_positive CHECK (price > 0),
-    CONSTRAINT discount_positive CHECK (discountPrice is NULL or discountPrice > 0),
+    CONSTRAINT discount_positive CHECK (discountprice is NULL or discountprice > 0),
     CONSTRAINT stock_positive CHECK(stock >= 0),
     CONSTRAINT rating_positive CHECK(rating >= 0)
 );
@@ -82,21 +82,21 @@ CREATE TABLE comment (
     user_username TEXT NOT NULL REFERENCES "user" ON DELETE CASCADE,
     "date" TIMESTAMP DEFAULT now() NOT NULL,
     commentary text NOT NULL,
-    flagsNo INTEGER NOT NULL DEFAULT 0,
+    flagsno INTEGER NOT NULL DEFAULT 0,
     deleted BOOLEAN DEFAULT FALSE NOT NULL,
-    product_idProduct INTEGER NOT NULL REFERENCES product ON DELETE CASCADE,
+    product_idproduct INTEGER NOT NULL REFERENCES product ON DELETE CASCADE,
     search tsvector
 );
 
 CREATE TABLE answer (
-    comment_idParent INTEGER NOT NULL REFERENCES comment ON DELETE CASCADE,
-    comment_idChild INTEGER NOT NULL REFERENCES comment ON DELETE CASCADE,
+    comment_idparent INTEGER NOT NULL REFERENCES comment ON DELETE CASCADE,
+    comment_idchild INTEGER NOT NULL REFERENCES comment ON DELETE CASCADE,
 
-    UNIQUE(comment_idParent, comment_idChild)
+    UNIQUE(comment_idparent, comment_idchild)
 );
 
 CREATE TABLE flagged (
-    comment_idComment INTEGER NOT NULL REFERENCES comment ON DELETE CASCADE,
+    comment_idcomment INTEGER NOT NULL REFERENCES comment ON DELETE CASCADE,
     "hidden" BOOLEAN NOT NULL
 );
 
@@ -106,23 +106,23 @@ CREATE TABLE attribute (
 );
 
 CREATE TABLE attribute_product (
-    attribute_idAttribute INTEGER NOT NULL REFERENCES attribute ON DELETE CASCADE,
-    product_idProduct INTEGER NOT NULL REFERENCES product ON DELETE CASCADE,
+    attribute_idattribute INTEGER NOT NULL REFERENCES attribute ON DELETE CASCADE,
+    product_idproduct INTEGER NOT NULL REFERENCES product ON DELETE CASCADE,
     "value" text NOT NULL
 );
 
 CREATE TABLE category_attribute (
-    attribute_idAttribute INTEGER NOT NULL REFERENCES attribute ON DELETE CASCADE,
-    category_idCategory INTEGER NOT NULL REFERENCES category ON DELETE CASCADE,
+    attribute_idattribute INTEGER NOT NULL REFERENCES attribute ON DELETE CASCADE,
+    category_idcategory INTEGER NOT NULL REFERENCES category ON DELETE CASCADE,
 
-    UNIQUE(attribute_idAttribute, category_idCategory)
+    UNIQUE(attribute_idattribute, category_idcategory)
 );
 
 CREATE TABLE favorite (
     customer_username TEXT NOT NULL REFERENCES customer ON DELETE CASCADE,
-    product_idProduct INTEGER NOT NULL REFERENCES product ON DELETE CASCADE,
+    product_idproduct INTEGER NOT NULL REFERENCES product ON DELETE CASCADE,
 
-    UNIQUE(customer_username, product_idProduct)
+    UNIQUE(customer_username, product_idproduct)
 );
 
 CREATE TABLE purchase (
@@ -137,22 +137,22 @@ CREATE TABLE purchase (
 );
 
 CREATE TABLE purchase_product (
-    purchase_idPurchase INTEGER NOT NULL REFERENCES purchase ON DELETE CASCADE,
-    product_idProduct INTEGER NOT NULL REFERENCES product ON DELETE CASCADE,
+    purchase_idpurchase INTEGER NOT NULL REFERENCES purchase ON DELETE CASCADE,
+    product_idproduct INTEGER NOT NULL REFERENCES product ON DELETE CASCADE,
     price REAL NOT NULL,
     quantity INTEGER NOT NULL,
 
     CONSTRAINT quantity_positive CHECK (quantity > 0),
     CONSTRAINT price_positive CHECK (price > 0),
 
-    UNIQUE(purchase_idPurchase, product_idProduct)
+    UNIQUE(purchase_idpurchase, product_idproduct)
 );
 
 CREATE TABLE rating (
     customer_username text REFERENCES customer ON DELETE CASCADE,
-    product_idProduct INTEGER NOT NULL REFERENCES product ON DELETE CASCADE,
+    product_idproduct INTEGER NOT NULL REFERENCES product ON DELETE CASCADE,
     "value" INTEGER NOT NULL CHECK (("value" > 0 ) AND ("value" <= 5)),
-    PRIMARY KEY(customer_username, product_idProduct)
+    PRIMARY KEY(customer_username, product_idproduct)
 );
 
 -- TRIGGERS----------------------------------------------------------------------------------------
@@ -163,7 +163,7 @@ CREATE OR REPLACE FUNCTION check_banned_date() RETURNS trigger AS $check_banned_
     BEGIN
 
         IF EXISTS (
-            SELECT U.joinDate FROM "user" U  WHERE U.username = NEW.customer_username_customer AND U.joinDate > NEW.bannedDate
+            SELECT U.joindate FROM "user" U  WHERE U.username = NEW.customer_username_customer AND U.joindate > NEW.banneddate
         ) 
         THEN RAISE EXCEPTION '% cannot be banned before joining', NEW.customer_username_customer;
         END IF;
@@ -187,9 +187,9 @@ CREATE OR REPLACE FUNCTION check_answer_date() RETURNS trigger AS $check_answer_
             WHERE 
                 C1.id < C2.id 
                 AND
-                C1.id = NEW.comment_idParent
+                C1.id = NEW.comment_idparent
                 AND 
-                C2.id = NEW.comment_idChild
+                C2.id = NEW.comment_idchild
                 AND 
                 C1."date" > C2."date"
         ) 
@@ -211,9 +211,9 @@ CREATE OR REPLACE FUNCTION update_product_rating() RETURNS trigger AS $update_pr
     BEGIN
 
         UPDATE product SET rating = (
-            SELECT AVG("value") FROM rating R WHERE R.product_idProduct = NEW.product_idProduct 
+            SELECT AVG("value") FROM rating R WHERE R.product_idproduct = NEW.product_idproduct 
         )
-        WHERE sku = NEW.product_idProduct;
+        WHERE sku = NEW.product_idproduct;
         
         RETURN NEW;
     END;
@@ -227,7 +227,7 @@ CREATE TRIGGER update_product_rating AFTER INSERT OR UPDATE ON rating
 
 CREATE OR REPLACE FUNCTION constraint_product_discount() RETURNS trigger AS $constraint_product_discount$
     BEGIN
-        IF NEW.discountPrice > NEW.price THEN
+        IF NEW.discountprice > NEW.price THEN
         RAISE EXCEPTION 'Discount price must be lower than price.';
         END IF;
         
@@ -290,7 +290,7 @@ CREATE TRIGGER insert_update_comment BEFORE INSERT OR UPDATE ON comment
 
 -- varias tabelas que dêm search pelo idCat
 DROP INDEX IF EXISTS discounted_product;
-CREATE INDEX discounted_product ON product USING hash(category_idCat);
+CREATE INDEX discounted_product ON product USING hash(category_idcat);
 
 -- mais lento e com maior tamanho que GiST mas não é lossy
 DROP INDEX IF EXISTS search_product;

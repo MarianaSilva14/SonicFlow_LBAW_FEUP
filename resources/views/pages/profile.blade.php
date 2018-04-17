@@ -220,6 +220,7 @@
                     <div class="m-t text-righ row">
                       <a href="#" class="addtoCart col-8 btn btn-xs btn-outline btn-primary">Add to cart  <i class="fas fa-cart-plus"></i></a>
                       <a href="#" class="rmFromFavs btn btn-danger col-3"><i class="far fa-trash-alt"></i></a>
+                      <p hidden>83108184</p>
                     </div>
                   </div>
                 </div>
@@ -247,6 +248,7 @@
                     <div class="buttons row">
                       <a href="#" class="addtoCart col-8 btn btn-xs btn-outline btn-primary">Add to cart  <i class="fas fa-cart-plus"></i></a>
                       <a href="#" class="rmFromFavs btn btn-danger col-3"><i class="far fa-trash-alt"></i></a>
+                      <p hidden>83108184</p>
                     </div>
                   </div>
                 </div>
@@ -274,6 +276,7 @@
                     <div class="m-t text-righ row">
                       <a href="#" class="addtoCart col-8 btn btn-xs btn-outline btn-primary">Add to cart  <i class="fas fa-cart-plus"></i></a>
                       <a href="#" class="rmFromFavs btn btn-danger col-3"><i class="far fa-trash-alt"></i></a>
+                      <p hidden>83108184</p>
                     </div>
                   </div>
                 </div>
@@ -302,6 +305,7 @@
                     <div class="m-t text-righ row">
                       <a href="#" class="addtoCart col-8 btn btn-xs btn-outline btn-primary">Add to cart  <i class="fas fa-cart-plus"></i></a>
                       <a href="#" class="rmFromFavs btn btn-danger col-3"><i class="far fa-trash-alt"></i></a>
+                      <p hidden>83108184</p>
                     </div>
                   </div>
                 </div>

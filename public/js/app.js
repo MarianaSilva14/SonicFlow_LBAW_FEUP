@@ -8,6 +8,50 @@ $(document).ready(function(e){
 	});
 });
 
+function encodeForAjax(data) {
+  if (data == null) return null;
+  return Object.keys(data).map(function(k){
+    return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
+  }).join('&');
+}
+
+function sendAjaxRequest(method, url, data, handler) {
+  let request = new XMLHttpRequest();
+
+  request.open(method, url, true);
+  request.setRequestHeader('X-CSRF-TOKEN', document.querySelector('meta[name="csrf-token"]').content);
+  request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  request.addEventListener('load', handler);
+  request.send(encodeForAjax(data));
+}
+
+function removeFavoritesAction(){
+  var elementNode = this.nextElementSibling;
+  var productId = elementNode.innerHTML;
+  sendAjaxRequest('delete','/users/favorites/'+productId,{'sku':productId},removeFavoritesHandler);
+  event.preventDefault();
+}
+
+function removeFavoritesHandler(){
+  if(this.status != 200){
+    alert('Delete went wrong');
+  }
+}
+
+function removeFavoritesButton(){
+  var buttons = document.querySelectorAll("div#favorites .rmFromFavs");
+
+  console.log(buttons);
+
+  let productId;
+
+  for (var button of buttons) {
+    button.addEventListener('click',removeFavoritesAction);
+  }
+}
+
+removeFavoritesButton();
+
 /*function addEventListeners() {
   let itemCheckers = document.querySelectorAll('article.card li.item input[type=checkbox]');
   [].forEach.call(itemCheckers, function(checker) {
@@ -32,23 +76,6 @@ $(document).ready(function(e){
   let cardCreator = document.querySelector('article.card form.new_card');
   if (cardCreator != null)
     cardCreator.addEventListener('submit', sendCreateCardRequest);
-}
-
-function encodeForAjax(data) {
-  if (data == null) return null;
-  return Object.keys(data).map(function(k){
-    return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
-  }).join('&');
-}
-
-function sendAjaxRequest(method, url, data, handler) {
-  let request = new XMLHttpRequest();
-
-  request.open(method, url, true);
-  request.setRequestHeader('X-CSRF-TOKEN', document.querySelector('meta[name="csrf-token"]').content);
-  request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-  request.addEventListener('load', handler);
-  request.send(encodeForAjax(data));
 }
 
 function sendItemUpdateRequest() {

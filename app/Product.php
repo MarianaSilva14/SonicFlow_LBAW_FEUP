@@ -19,4 +19,8 @@ class Product extends Model
      */
     protected $table = 'product';
 
+    public function favoritesList(){
+      return $this->belongsToMany('App\Customer','favorite','user_username', 'product_idproduct');
+    }
+
 }

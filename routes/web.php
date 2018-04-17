@@ -23,6 +23,7 @@ Route::get('cards/{id}', 'CardController@show');
 Route::get('users/{id}','CustomerController@show')->name('profile');
 Route::post('users/{id}','CustomerController@update');
 Route::get('users/{id}/edit','CustomerController@edit')->name('profileEdit');
+Route::post('/users/{id}/favorites/{sku}','CustomerController@addToFavoritesList')->name('addFavoritesList');
 
 // Products
 Route::view('products','pages.homepage')->name('products');

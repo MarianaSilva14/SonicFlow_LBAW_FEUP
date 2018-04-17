@@ -46,4 +46,8 @@ class Customer extends Model
         return $this->belongsTo('App\User');
     }
 
+    public function favoritesList(){
+      return $this->belongsToMany('App\Product','favorite','customer_username', 'product_idproduct');
+    }
+
 }

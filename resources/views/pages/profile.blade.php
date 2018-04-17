@@ -192,6 +192,7 @@
           <!--  END PURCHASE HISTORY-->
         </div>
         <div class="tab-pane fade" id="favorites" role="tabpanel" aria-labelledby="favorites-tab">
+          @if(count($infoCustomer->favoritesList) != 0)
           <div class="row">
             <div class="outbox col-xl-3 col-md-4">
               <div class="ibox">
@@ -307,6 +308,7 @@
               </div>
             </div>
           </div>
+          @endif
         </div>
       </div>
     </div>

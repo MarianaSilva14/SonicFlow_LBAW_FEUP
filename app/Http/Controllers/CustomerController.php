@@ -105,4 +105,16 @@ class CustomerController extends Controller
 
       return $card;*/
   }
+
+  public function addToFavoritesList(Request $request, $idCustomer, $idProduct){
+
+    $product = DB::table('favorite')->where([['customer_username', '=', Auth::user()->username],['product_idproduct', '=', $idProduct]])->first();
+
+    if($product == null)
+      DB::table('favorite')->insert(['customer_username' => Auth::user()->username, 'product_idproduct' => $idProduct]);
+
+    return redirect('homepage');
+  }
+
+
 }

@@ -117,6 +117,11 @@ class CustomerController extends Controller
 
     if($product == null)
       DB::table('favorite')->insert(['customer_username' => Auth::user()->username, 'product_idproduct' => $sku]);
+    else{
+        $product->delete();
+        $product->save();
+    }
+
 
     return redirect('homepage');
   }

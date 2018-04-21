@@ -3,6 +3,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Answer;
+use App\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -92,5 +94,29 @@ class ProductController extends Controller
     public function show($sku){
       $product = Product::find($sku);
       return view('pages.product',['editable'=>FALSE,'product'=>$product,'attributes'=>$product->attributes()]);
+    }
+
+    public function addComment($sku, Request $request){
+        $user = Auth::user();
+        $comment_text = $request->input('commentary');
+
+        $comment = Comment::create([
+            'user_username' => $user->username,
+            'commentary' => $comment_text,
+            'flagsno' => 0,
+            'product_idproduct' => $sku
+        ]);
+
+        $parent_id = intval($request->input('parent_id'));
+        if ($parent_id != null){
+            $child_id = $comment->id;
+
+            Answer::create([
+                'comment_idparent' => $parent_id,
+                'comment_idchild' => $child_id
+            ]);
+        }
+
+        return url('product', ['id' => $sku ]);
     }
 }

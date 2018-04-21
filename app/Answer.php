@@ -11,6 +11,15 @@ class Answer extends Model
     //public $incrementing = false;
 
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'comment_idparent' , 'comment_idchild'
+    ];
+
+    /**
      * The table associated with the model.
      *
      * @var string

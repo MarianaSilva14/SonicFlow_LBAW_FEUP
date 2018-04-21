@@ -17,8 +17,8 @@
             {{$comment->commentary}}
           @endif
           <br>
-          <a href="" class="text-right small"><i class="fas fa-reply"></i> Reply</a>
-          <a href="" class="text-right small text-danger"><i class="fas fa-flag"></i> Flag</a>
+          <a href="#" class="text-right small replyLink"><i class="fas fa-reply"></i> Reply</a>
+          <a href="#" class="text-right small text-danger flagLink"><i class="fas fa-flag"></i> Flag</a>
           <p class="commentId" hidden>{{$comment->id}}</p>
         </p>
       </div>

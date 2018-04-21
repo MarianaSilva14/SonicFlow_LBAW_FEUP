@@ -140,8 +140,10 @@
       <!-- COMMENTS END -->
       <div class="row pt-2">
         <div class="col-md-10 offset-md-1 commentForm">
-          <textarea class="w-100" rows="5" placeholder="Write your opinion!"></textarea><br>
-          <a href="" class="btn btn-sm btn-primary">Comment</a>
+          <form class="" action="index.html" method="post">
+            <textarea class="w-100" rows="5" placeholder="Write your opinion!"></textarea><br>
+            <button class="btn btn-sm btn-primary">Comment</button>
+          </form>
         </div>
       </div>
     </div>

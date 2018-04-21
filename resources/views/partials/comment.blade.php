@@ -17,13 +17,13 @@
             {{$comment->commentary}}
           @endif
           <br>
-          <a href="#" class="text-right small replyLink"><i class="fas fa-reply"></i> Reply</a>
+          <a href="#" onclick="commentReplyAction({{$comment->product_idproduct}},{{$comment->id}})"class="text-right small replyLink"><i class="fas fa-reply"></i> Reply</a>
           <a href="#" class="text-right small text-danger flagLink"><i class="fas fa-flag"></i> Flag</a>
-          <p class="commentId" hidden>{{$comment->id}}</p>
         </p>
       </div>
     </div>
   </div>
+  <br>
   @foreach($comment->answers as $nextComment)
     @include('partials.comment',['reply'=>TRUE,'comment'=>$nextComment])
   @endforeach

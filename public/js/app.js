@@ -25,6 +25,10 @@ function sendAjaxRequest(method, url, data, handler) {
   request.send(encodeForAjax(data));
 }
 
+function insertAfter(newNode,referenceNode){
+  referenceNode.parentNode.insertBefore(newNode,referenceNode.nextSibling);
+}
+
 function removeFavoritesAction(){
   var elementNode = this.nextElementSibling;
   var productId = elementNode.innerHTML;
@@ -53,6 +57,23 @@ function productLinks(){
       window.location = this.nextElementSibling.querySelector('.product-name').href;
     }
   }
+}
+
+function commentReplyAction(productId,commentId){
+  let replyForm;
+  let previousForm = document.querySelector('div.replyForm');
+  if (previousForm != undefined) {
+    replyForm=previousForm;
+    previousForm.remove();
+  }else{
+    replyForm = document.querySelector('div.newCommentForm');
+    replyForm.classList.remove("newCommentForm");
+    replyForm.classList.add("replyForm");
+  }
+  let commentRow = event.target.closest("div.row");
+  insertAfter(replyForm,commentRow);
+  let input = document.getElementsByClassName('parentId');
+  input[0].setAttribute('value',commentId);
 }
 
 removeFavoritesButton();

@@ -140,7 +140,7 @@
       <!-- COMMENTS END -->
       <div class="row pt-2">
         <div class="col-md-10 offset-md-1 commentForm">
-          <form action="{{route('product_comment')}}" method="post">
+          <form action="{{route('product_comment',['id'=>$product->sku])}}" method="post">
             <textarea class="w-100" rows="5" placeholder="Write your opinion!"></textarea><br>
             <button class="btn btn-sm btn-primary">Comment</button>
           </form>

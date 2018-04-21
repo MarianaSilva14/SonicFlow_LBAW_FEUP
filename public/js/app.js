@@ -41,13 +41,19 @@ function removeFavoritesHandler(){
 function removeFavoritesButton(){
   var buttons = document.querySelectorAll("div#favorites .rmFromFavs");
 
-  console.log(buttons);
-
-  let productId;
-
   for (var button of buttons) {
     button.addEventListener('click',removeFavoritesAction);
   }
 }
 
+function productLinks(){
+  var images = document.querySelectorAll(".product-imitation")
+  for (var image of images) {
+    image.onclick = function(event){
+      window.location = this.nextElementSibling.querySelector('.product-name').href;
+    }
+  }
+}
+
 removeFavoritesButton();
+productLinks();

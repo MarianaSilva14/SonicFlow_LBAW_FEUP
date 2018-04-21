@@ -24,62 +24,73 @@ class ProductController extends Controller
      */
     public function getProducts(Request $request)
     {
-        $query = DB::table('product');
+      $query = DB::table('product');
 
-        $catgoryID = intval($request->input('categoryID'));
-        if ($catgoryID != null){
-            $query = $query->where('category_idCat', $catgoryID);
-        }
+      $catgoryID = intval($request->input('categoryID'));
+      if ($catgoryID != null){
+          $query = $query->where('category_idCat', $catgoryID);
+      }
 
-        $minPrice = floatval($request->input('minPrice'));
-        $maxPrice = floatval($request->input('maxPrice'));
-        if ( $minPrice != null && $maxPrice != null && ($minPrice < $maxPrice)){
-            $query = $query->whereBetween('price', [$minPrice, $maxPrice]);
-        }
+      $minPrice = floatval($request->input('minPrice'));
+      $maxPrice = floatval($request->input('maxPrice'));
+      if ( $minPrice != null && $maxPrice != null && ($minPrice < $maxPrice)){
+          $query = $query->whereBetween('price', [$minPrice, $maxPrice]);
+      }
 
-        $available = filter_var($request->input('productAvailability'), FILTER_VALIDATE_BOOLEAN);
-        if ( $available != null){
-            if ($available){
-                $query = $query->where('stock', '>', 0);
-            }
-            else{
-                $query = $query->where('stock', '=', 0);
-            }
-        }
+      $available = filter_var($request->input('productAvailability'), FILTER_VALIDATE_BOOLEAN);
+      if ( $available != null){
+          if ($available){
+              $query = $query->where('stock', '>', 0);
+          }
+          else{
+              $query = $query->where('stock', '=', 0);
+          }
+      }
 
-        $title = $request->input('title');
-        if ($title != null){
-            $query = $query
-                ->whereRaw('search @@ plainto_tsquery(\'english\',?)', [$title])
-                ->orderByRaw('ts_rank(search,  plainto_tsquery(\'english\',?) DESC',[$title]);
-        }
+      $title = $request->input('title');
+      if ($title != null){
+          $query = $query
+              ->whereRaw('search @@ plainto_tsquery(\'english\',?)', [$title])
+              ->orderByRaw('ts_rank(search,  plainto_tsquery(\'english\',?) DESC',[$title]);
+      }
 
-        $products = $query->get();
+      $products = $query->get();
 
-        //+title:String Category
-        //+categoryID:Integer 	Category
-        //+productBrand:String 	Product Brand
-        //+minPrice:Integer 	Price Lower Bound
-        //+maxPrice:String 	Price Higher Bound
-        //+productAvailability:boolean 	Product Availability
+      //+title:String Category
+      //+categoryID:Integer 	Category
+      //+productBrand:String 	Product Brand
+      //+minPrice:Integer 	Price Lower Bound
+      //+maxPrice:String 	Price Higher Bound
+      //+productAvailability:boolean 	Product Availability
 
 
-        return json_encode($products);
+      return json_encode($products);
     }
 
     public function getProductBySku(Integer $sku){
-        $product = DB::table('product')->where('sku', $sku)->first();
-        return json_encode($product);
+      $product = DB::table('product')->where('sku', $sku)->first();
+      return json_encode($product);
     }
 
     public function getProductsByName(String $title){
-        $products = DB::table('product')
-            ->whereRaw('search @@ plainto_tsquery(\'english\',?)', [$title])->get();
-        return json_encode($products);
+      $products = DB::table('product')
+          ->whereRaw('search @@ plainto_tsquery(\'english\',?)', [$title])->get();
+      return json_encode($products);
     }
 
     public function getDiscounted(){
-        $discounted_products = DB::table('product')->whereNotNull('discountprice')->get();
-        return json_encode($discounted_products);
+      $discounted_products = DB::table('product')->whereNotNull('discountprice')->get();
+      return json_encode($discounted_products);
+    }
+
+    public function editForm($sku){
+      $this->authorize('edit');
+
+      return view('pages.newProduct');
+    }
+
+    public function show($sku){
+      $product = Product::find($sku);
+      return view('pages.product',['editable'=>FALSE,'product'=>$product,'attributes'=>$product->attributes()]);
     }
 }

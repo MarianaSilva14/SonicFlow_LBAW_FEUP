@@ -76,7 +76,7 @@
                         </div>
                         <br>
                         <small class="text-muted">Category</small>
-                        <a href="product.html" class="product-name"> Apple MacBook Pro 15''</a>
+                        <a href="{{route('product',['id' => '186596482'])}}" class="product-name"> Apple MacBook Pro 15''</a>
 
                         <div class="small m-t-xs">
                           Many desktop publishing packages and web page editors now.

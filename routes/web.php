@@ -25,6 +25,11 @@ Route::delete('/users/favorites/{sku}','CustomerController@removeFromFavoritesLi
 // Products
 Route::view('products','pages.homepage')->name('products');
 
+//Single Product
+Route::get('product/{id}/edit','ProductController@editForm')->name('product_edit');
+Route::post('product/{id}/comment','ProductController@show')->name('product_comment');
+Route::get('product/{id}','ProductController@show')->name('product');
+
 // Static
 Route::view('homepage','pages.homepage')->name('homepage');
 Route::view('about','pages.about')->name('about');

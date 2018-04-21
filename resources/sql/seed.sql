@@ -27,7 +27,7 @@ CREATE TABLE "user" (
 
     CONSTRAINT role_valid CHECK ((role in ('CUST', 'MOD', 'ADMIN')))
 );
- 
+
 CREATE TABLE customer (
     user_username text PRIMARY KEY REFERENCES "user" ON DELETE CASCADE,
     "name" text NOT NULL,
@@ -164,15 +164,15 @@ CREATE OR REPLACE FUNCTION check_banned_date() RETURNS trigger AS $check_banned_
 
         IF EXISTS (
             SELECT U.joindate FROM "user" U  WHERE U.username = NEW.customer_username_customer AND U.joindate > NEW.banneddate
-        ) 
+        )
         THEN RAISE EXCEPTION '% cannot be banned before joining', NEW.customer_username_customer;
         END IF;
-        
+
         RETURN NEW;
     END;
 $check_banned_date$ LANGUAGE plpgsql;
 
-DROP TRIGGER IF EXISTS check_banned_date ON banned; 
+DROP TRIGGER IF EXISTS check_banned_date ON banned;
 CREATE TRIGGER check_banned_date BEFORE INSERT OR UPDATE ON banned
     FOR EACH ROW EXECUTE PROCEDURE check_banned_date();
 
@@ -183,19 +183,19 @@ CREATE OR REPLACE FUNCTION check_answer_date() RETURNS trigger AS $check_answer_
     BEGIN
 
         IF EXISTS (
-            SELECT C1.id, C2.id FROM comment C1, comment C2  
-            WHERE 
-                C1.id < C2.id 
+            SELECT C1.id, C2.id FROM comment C1, comment C2
+            WHERE
+                C1.id < C2.id
                 AND
                 C1.id = NEW.comment_idparent
-                AND 
+                AND
                 C2.id = NEW.comment_idchild
-                AND 
+                AND
                 C1."date" > C2."date"
-        ) 
+        )
         THEN RAISE EXCEPTION 'Must comment on an older commentary.';
         END IF;
-        
+
         RETURN NEW;
     END;
 $check_answer_date$ LANGUAGE plpgsql;
@@ -211,10 +211,10 @@ CREATE OR REPLACE FUNCTION update_product_rating() RETURNS trigger AS $update_pr
     BEGIN
 
         UPDATE product SET rating = (
-            SELECT AVG("value") FROM rating R WHERE R.product_idproduct = NEW.product_idproduct 
+            SELECT AVG("value") FROM rating R WHERE R.product_idproduct = NEW.product_idproduct
         )
         WHERE sku = NEW.product_idproduct;
-        
+
         RETURN NEW;
     END;
 $update_product_rating$ LANGUAGE plpgsql;
@@ -230,7 +230,7 @@ CREATE OR REPLACE FUNCTION constraint_product_discount() RETURNS trigger AS $con
         IF NEW.discountprice > NEW.price THEN
         RAISE EXCEPTION 'Discount price must be lower than price.';
         END IF;
-        
+
         RETURN NEW;
     END;
 $constraint_product_discount$ LANGUAGE plpgsql;
@@ -245,7 +245,7 @@ CREATE TRIGGER constraint_product_discount BEFORE INSERT OR UPDATE ON product
 CREATE OR REPLACE FUNCTION insert_update_product() RETURNS trigger AS $insert_update_product$
     BEGIN
 
-    IF TG_OP = 'INSERT' 
+    IF TG_OP = 'INSERT'
     THEN NEW.search = setweight(to_tsvector(coalesce(NEW.title,'')), 'A')    ||
                       setweight(to_tsvector(coalesce(NEW.description,'')), 'B');
     END IF;
@@ -269,7 +269,7 @@ CREATE TRIGGER insert_update_product BEFORE INSERT OR UPDATE ON product
 CREATE OR REPLACE FUNCTION insert_update_comment() RETURNS trigger AS $insert_update_comment$
     BEGIN
 
-    IF TG_OP = 'INSERT' 
+    IF TG_OP = 'INSERT'
     THEN NEW.search = to_tsvector(NEW.commentary);
     END IF;
     IF TG_OP = 'UPDATE' THEN
@@ -502,13 +502,14 @@ INSERT INTO flagged VALUES (10, FALSE);
 INSERT INTO attribute VALUES (1,'audio');
 INSERT INTO attribute VALUES (2,'visual');
 INSERT INTO attribute VALUES (3,'tatil');
-INSERT INTO attribute VALUES (4,'alto');
+INSERT INTO attribute VALUES (4,'screenSize');
 INSERT INTO attribute VALUES (5,'comprido');
 
 --ATTRIBUTE_PRODUCT
 INSERT INTO attribute_product VALUES (1,'901896832', 'diam');
 INSERT INTO attribute_product VALUES (2,'672442768', 'diam');
-INSERT INTO attribute_product VALUES (3,'186596482', 'diam');
+INSERT INTO attribute_product VALUES (4,'186596482', 'diam');
+INSERT INTO attribute_product VALUES (5,'186596482', 'diam');
 INSERT INTO attribute_product VALUES (4,'556397271', 'diam');
 INSERT INTO attribute_product VALUES (5,'696296971', 'diam');
 INSERT INTO attribute_product VALUES (1,'841341724', 'diam');

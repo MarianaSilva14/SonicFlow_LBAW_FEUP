@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Notifications\Notifiable;
 
 class Product extends Model
@@ -21,6 +22,27 @@ class Product extends Model
 
     public function favoritesList(){
       return $this->belongsToMany('App\Customer','favorite','user_username', 'product_idproduct');
+    }
+
+    public function attributes(){
+      $attributes =
+      DB::table('category')
+        ->join('category_attribute',function($join){
+          $join->on('category.id','=','category_idcategory')
+                ->where('category.id','=',$this->category_idcat);
+        })
+        ->join('attribute_product',function($join){
+          $join->on('attribute_product.attribute_idattribute','=','category_attribute.attribute_idattribute')
+                ->where('attribute_product.product_idproduct','=',$this->sku);
+        })
+        ->join('attribute','attribute.id','=','attribute_product.attribute_idattribute')
+        ->select('attribute.name','attribute_product.value')
+        ->get();
+      return $attributes;
+    }
+
+    public function getImages(){
+      return explode(';',$this->picture);
     }
 
 }

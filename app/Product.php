@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Comment;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Notifications\Notifiable;
 
@@ -39,6 +40,24 @@ class Product extends Model
         ->select('attribute.name','attribute_product.value')
         ->get();
       return $attributes;
+    }
+
+    public function comments(){
+      return $this->hasMany('App\Comment','product_idproduct');
+    }
+
+    public function getTopComments(){
+      // $comments =
+      // DB::table('comment')
+      //   ->where('comment.product_idproduct','=',$this->sku)
+      //   ->whereRaw('comment.id NOT IN (SELECT comment_idchild FROM answer)')
+      //   ->get();
+
+      $comments =
+      Comment::where('comment.product_idproduct','=',$this->sku)
+              ->whereRaw('comment.id NOT IN (SELECT comment_idchild FROM answer)')
+              ->get();
+      return $comments;
     }
 
     public function getImages(){

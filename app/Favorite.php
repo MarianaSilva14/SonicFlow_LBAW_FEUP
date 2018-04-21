@@ -3,7 +3,7 @@
 namespace App;
 
 
-class Favorite
+class Favorite extends Model
 {
     protected $primaryKey = null; // or null
 

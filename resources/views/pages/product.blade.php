@@ -9,7 +9,7 @@
 
 @section('content')
 @include('common.breadcrumb', ['currPage' => $product->title])
-<form>
+<form method="post" action="{{route('product',['id'=>$product->sku])}}">
   {{ csrf_field() }}
   <div class="form-row">
     <!-- Product Form -->
@@ -93,7 +93,7 @@
         </div>
         <!-- Button -->
         <div class="col-md-6 col-12">
-          <button class="addToCart" style="vertical-align:middle"><span>Add to Cart</span><i class="fas fa-cart-plus"></i></button>
+          <button type="button" class="addToCart" style="vertical-align:middle"><span>Add to Cart</span><i class="fas fa-cart-plus"></i></button>
         </div>
       </div>
     </div>
@@ -125,86 +125,26 @@
 
       <!-- SPECIFICATIONS START -->
       <br>
-      <form>
+      <form method="post" action="{{route('product',['id'=>$product->sku])}}">
         @each('partials.attribute',$attributes,'attribute')
       </form>
       <!-- SPECIFICATIONS END -->
     </div>
 
     <div class="tab-pane fade" id="comment" role="tabpanel" aria-labelledby="comment-tab">
-
-      <!-- COMMENTS START -->
       <br>
-      <div class="row">
-        <div class="comments col-md-10 offset-md-1" id="comments">
-          <!-- comment -->
-          <div class="comment mb-2 row">
-            <div class="comment-avatar col-md-1 col-sm-2 text-center pr-1">
-              <a href=""><img class="mx-auto rounded-circle img-fluid" src="http://demos.themes.guide/bodeo/assets/images/users/m103.jpg" alt="avatar"></a>
-            </div>
-            <div class="comment-content col-md-11 col-sm-10">
-              <h6 class="small comment-meta"><a href="#">admin</a> Today, 2:38</h6>
-              <div class="comment-body">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod <a href>http://wwwwww.com</a> tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
-                  <br>
-                  <a href="" class="text-right small"><i class="fas fa-reply"></i> Reply</a>
-                  <a href="" class="text-right small text-danger"><i class="fas fa-flag"></i> Flag</a>
-                </p>
-              </div>
-            </div>
-
-            <!-- reply is indented -->
-            <div class="comment-reply col-md-11 offset-md-1 col-sm-10 offset-sm-2">
-              <div class="row">
-                <div class="comment-avatar col-md-1 col-sm-2 text-center pr-1">
-                  <a href=""><img class="mx-auto rounded-circle img-fluid" src="http://demos.themes.guide/bodeo/assets/images/users/m101.jpg" alt="avatar"></a>
-                </div>
-                <div class="comment-content col-md-11 col-sm-10 col-12">
-                  <h6 class="small comment-meta"><a href="#">phildownney</a> Today, 12:31</h6>
-                  <div class="comment-body">
-                    <p>Really?? Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitat.
-                      <br>
-                      <a href="" class="text-right small"><i class="fas fa-reply"></i> Reply</a>
-                      <a href="" class="text-right small text-danger"><i class="fas fa-flag"></i> Flag</a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- /reply is indented -->
-          </div>
-          <!-- /comment -->
-          <!-- comment -->
-          <div class="comment mb-2 row">
-            <div class="comment-avatar col-md-1 col-sm-2 text-center pr-1">
-              <a href=""><img class="mx-auto rounded-circle img-fluid" src="http://demos.themes.guide/bodeo/assets/images/users/w102.jpg" alt="avatar"></a>
-            </div>
-            <div class="comment-content col-md-11 col-sm-10">
-              <h6 class="small comment-meta"><a href="#">maslarino</a> Yesterday, 5:03 PM</h6>
-              <div class="comment-body">
-                <p>Sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
-                  <br>
-                  <a href="" class="text-right small"><i class="fas fa-reply"></i> Reply</a>
-                  <a href="" class="text-right small text-danger"><i class="fas fa-flag"></i> Flag</a>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Comment Form-->
+      <!-- COMMENTS START -->
+      @foreach($product->getTopComments() as $comment)
+        @include('partials.comment',['reply'=>FALSE,'comment'=>$comment])
+      @endforeach
+      <!-- COMMENTS END -->
       <div class="row pt-2">
-        <form class="col-md-10 offset-md-1 commentForm" method="post" action="{{route('product_comment',['id'=>$product->sku])}}">
-          {{csrf_field()}}
+        <div class="col-md-10 offset-md-1 commentForm">
           <textarea class="w-100" rows="5" placeholder="Write your opinion!"></textarea><br>
-          <button href="" class="btn btn-sm btn-primary">Comment</button>
-        </form>
+          <a href="" class="btn btn-sm btn-primary">Comment</a>
+        </div>
       </div>
     </div>
   </div>
-
-  <!-- COMMENTS END -->
 </div>
 @endsection

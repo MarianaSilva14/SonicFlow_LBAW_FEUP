@@ -29,6 +29,8 @@ Route::view('products','pages.homepage')->name('products');
 Route::get('product/{id}/edit','ProductController@editForm')->name('product_edit');
 Route::post('product/{id}/comment','ProductController@show')->name('product_comment');
 Route::get('product/{id}','ProductController@show')->name('product');
+Route::post('product/{id}','ProductController@show');
+Route::delete('product/{id}','ProductController@show');
 
 // Static
 Route::view('homepage','pages.homepage')->name('homepage');

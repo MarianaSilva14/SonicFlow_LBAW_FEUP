@@ -478,6 +478,9 @@ INSERT INTO comment VALUES (7,'Ssuwu', '2012-05-16 16:36:38','blakhijbwuhdie hdi
 INSERT INTO comment VALUES (8,'PjujYy', '2012-05-16 17:33:38','blakhijhbwuhdie hdie', 0, FALSE, '780741675');
 INSERT INTO comment VALUES (9,'glbGcBfG', '2012-05-16 15:32:38','blakhbjhiwuhdie hdie', 0, FALSE, '171093287');
 INSERT INTO comment VALUES (10,'l1mtgBKN', '2012-05-16 16:26:38','blakhiwuhdie hdie', 0, FALSE, '171093287');
+INSERT INTO comment VALUES (11,'xavi123', '2012-05-18 13:36:38','i want this computer', 0, FALSE, '186596482');
+INSERT INTO comment VALUES (12,'xavi123', '2012-05-18 13:36:50','i want this computer now!', 0, FALSE, '186596482');
+INSERT INTO comment VALUES (13,'CgsHHRf', '2012-05-18 13:36:50','you stupid!', 0, FALSE, '186596482');
 
 --ANSWER
 INSERT INTO answer VALUES (1,2);
@@ -485,6 +488,8 @@ INSERT INTO answer VALUES (3,4);
 INSERT INTO answer VALUES (5,6);
 INSERT INTO answer VALUES (7,8);
 INSERT INTO answer VALUES (9,10);
+INSERT INTO answer VALUES (11,12);
+INSERT INTO answer VALUES (12,13);
 
 --FLAGGED
 INSERT INTO flagged VALUES (1, FALSE);

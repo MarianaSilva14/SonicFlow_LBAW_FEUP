@@ -482,6 +482,8 @@ INSERT INTO comment VALUES (11,'xavi123', '2012-05-18 13:36:38','i want this com
 INSERT INTO comment VALUES (12,'xavi123', '2012-05-18 13:36:50','i want this computer now!', 0, FALSE, '186596482');
 INSERT INTO comment VALUES (13,'CgsHHRf', '2012-05-18 13:36:50','you stupid!', 0, FALSE, '186596482');
 
+SELECT setval(pg_get_serial_sequence('comment', 'id'), max(id)) FROM comment;
+
 --ANSWER
 INSERT INTO answer VALUES (1,2);
 INSERT INTO answer VALUES (3,4);

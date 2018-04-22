@@ -105,7 +105,8 @@ class CustomerController extends Controller
       return redirect('login');
     }
 
-    $this->toggleFavorite();
+    //todo chango to ajax request return;
+    Customer::find(Auth::user()->username)->toggleFavorite($sku);
 
     return redirect('homepage');
   }

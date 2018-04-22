@@ -86,7 +86,7 @@
                           <a href="#" class="addtoCart col-8 btn btn-xs btn-outline btn-primary">Add to cart  <i class="fas fa-cart-plus"></i></a>
                           {{--TODO: Change this to ajax call later--}}
                           <a class="addtoFavs col-3 btn btn-xs btn-outline btn-primary">
-                            <form method="post" action="{{route('addFavoritesList', ['sku' => '83108184'])}}">
+                            <form method="post" action="{{route('toggleFavoritesList', ['sku' => '83108184'])}}">
                               {{csrf_field()}}
                               <button style = "background-color: transparent;border-color: transparent;color: white" role="submit"><i class="far fa-heart"></i></button>
                             </form>

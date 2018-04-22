@@ -18,6 +18,11 @@ class CustomerPolicy
       return $user->username == $customer->user_username;
     }
 
+    public function favorite(User $user){
+      //only customers can add favorites
+      return (Auth::check() && Auth::user()->isCustomer());
+    }
+
     public function list(User $user)
     {
       // Any user can list its own cards

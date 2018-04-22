@@ -39,6 +39,17 @@ class Customer extends Model
       return explode(' ',$this->name,2)[1];
     }
 
+    public function toggleFavorite($sku){
+      $exists = DB::table('favorite')->where([['customer_username', '=', Auth::user()->username],['product_idproduct', '=', $sku]])->exists();
+      if(!$exists){
+        DB::table('favorite')->insert(['customer_username' => Auth::user()->username, 'product_idproduct' => $sku]);
+        return true;
+      }else{
+        DB::table('favorite')->where([['customer_username', '=', Auth::user()->username],['product_idproduct', '=', $sku]])->delete();
+        return false;
+      }
+    }
+
     /**
      * The user this customer belongs to.
      */

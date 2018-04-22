@@ -97,33 +97,15 @@ class CustomerController extends Controller
       return $customer;
   }
 
+  public function toggleFavoritesList($sku){
 
-  public function delete(Request $request, $id)
-  {
-      /*$card = Card::find($id);
-
-      $this->authorize('delete', $card);
-      $card->delete();
-
-      return $card;*/
-  }
-
-  public function addToFavoritesList($sku){
-
-    if(!Auth::check()){
-      // user not logged in
+    try {
+      $this->authorize('favorite',Customer::class);
+    } catch (\Exception $e) {
       return redirect('login');
     }
 
-    $product = DB::table('favorite')->where([['customer_username', '=', Auth::user()->username],['product_idproduct', '=', $sku]])->first();
-
-
-    if($product == null)
-      DB::table('favorite')->insert(['customer_username' => Auth::user()->username, 'product_idproduct' => $sku]);
-    else{
-        DB::table('favorite')->where([['customer_username', '=', Auth::user()->username],['product_idproduct', '=', $sku]])->delete();
-    }
-
+    $this->toggleFavorite();
 
     return redirect('homepage');
   }
@@ -131,7 +113,6 @@ class CustomerController extends Controller
   public function removeFromFavoritesList($sku){
 
     if(!Auth::check()){
-        // user not logged in
         return redirect('login');
     }
 

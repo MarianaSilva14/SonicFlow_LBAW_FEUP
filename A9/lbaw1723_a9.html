@@ -279,10 +279,13 @@ code.language-yaml {
 	<tr>
 		<td colspan="2">
 		<div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">SELECT</span> *
-<span style="color: #008800; font-weight: bold">FROM</span> <span style="color: #008800; font-weight: bold">comment</span> <span style="color: #008800; font-weight: bold">C</span>, answer A, <span style="color: #aa6600; background-color: #fff0f0">&quot;user&quot;</span> U,
-<span style="color: #008800; font-weight: bold">WHERE</span> 	<span style="color: #008800; font-weight: bold">C</span>.product_idproduct = <span style="background-color: #e3d2d2">$</span>sku 
+<span style="color: #008800; font-weight: bold">FROM</span> <span style="">comment</span> <span>C</span>, answer A, <span style="color: #aa6600; background-color: #fff0f0">&quot;user&quot;</span> U,
+<span style="color: #008800; font-weight: bold">WHERE</span> 	<span style="color: #008800; font-weight: bold">C</span>.product_idproduct = <span style=" background-color: #e3d2d2">$</span>sku 
 	<span style="color: #008800; font-weight: bold">AND</span> <span style="color: #008800; font-weight: bold">C</span>.user_username = U.username
-	<span style="color: #008800; font-weight: bold">AND</span> ( ( <span style="color: #008800; font-weight: bold">C</span>.id = A.idparent ) <span style="color: #008800; font-weight: bold">OR</span> ( <span style="color: #008800; font-weight: bold">C</span>.id = A.idchild ) <span style="color: #008800; font-weight: bold">OR</span> ( <span style="color: #008800; font-weight: bold">NOT</span> <span style="color: #008800; font-weight: bold">EXISTS</span> ( <span style="color: #008800; font-weight: bold">SELECT</span> * <span style="color: #008800; font-weight: bold">FROM</span>  answer A2 <span style="color: #008800; font-weight: bold">where</span> A2.idparent = <span style="color: #008800; font-weight: bold">C</span>.id ) ) )
+	<span style="color: #008800; font-weight: bold">AND</span> ( ( <span style="color: #008800; font-weight: bold">C</span>.id = A.idparent ) 
+	        <span style="color: #008800; font-weight: bold">OR</span> ( <span style="color: #008800; font-weight: bold">C</span>.id = A.idchild ) 
+	        <span style="color: #008800; font-weight: bold">OR</span> ( <span style="color: #008800; font-weight: bold">NOT</span> <span style="color: #008800; font-weight: bold">EXISTS</span> 
+	            ( <span style="color: #008800; font-weight: bold">SELECT</span> * <span style="color: #008800; font-weight: bold">FROM</span>  answer A2 <span style="color: #008800; font-weight: bold">where</span> A2.idparent = <span style="color: #008800; font-weight: bold">C</span>.id ) ) )
 <span style="color: #008800; font-weight: bold">ORDER</span> <span style="color: #008800; font-weight: bold">BY</span> <span style="color: #008800; font-weight: bold">C</span>.<span style="color: #aa6600; background-color: #fff0f0">&quot;date&quot;</span> <span style="color: #008800; font-weight: bold">ASC</span>;
 </pre></div>
 		</td>
@@ -323,7 +326,7 @@ code.language-yaml {
 	</tr>
 	<tr>
 		<td> Justification </td>
-		<td class="col1">  When a customer is created there is an insert at the User table and at the Customer table and any operation in between must be such that there aren't any Phantom Reads. </td>
+		<td class="col1">  When a customer is created there is an insert at the User table and at the Customer table and any operation in between must be such that there aren't any Phantom Reads.</td>
 	</tr>
 	<tr>
 		<td colspan="2">
@@ -388,7 +391,7 @@ code.language-yaml {
 	</tr>
 	<tr>
 		<td> Justification </td>
-		<td class="col1">  When a customer is in the homepage we want to display discounted and recommended products and allow the user to search products but we don't want dirty reads to happen because products might be being updated.</td>
+		<td class="col1">  When a customer is in the homepage we want to display discounted and recommended products and allow the user to search products but we don't want dirty reads to happen because products might be undergoing updates.</td>
 	</tr>
 	<tr>
 		<td colspan="2">

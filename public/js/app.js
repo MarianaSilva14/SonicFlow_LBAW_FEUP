@@ -51,7 +51,7 @@ function removeFavoritesButton(){
 }
 
 function productLinks(){
-  var images = document.querySelectorAll(".product-imitation")
+  var images = document.querySelectorAll(".product-imitation");
   for (var image of images) {
     image.onclick = function(event){
       window.location = this.nextElementSibling.querySelector('.product-name').href;

@@ -37,7 +37,7 @@ class Product extends Model
                 ->where('attribute_product.product_idproduct','=',$this->sku);
         })
         ->join('attribute','attribute.id','=','attribute_product.attribute_idattribute')
-        ->select('attribute.name','attribute_product.value')
+        ->select('attribute.name','attribute_product.value','attribute.id')
         ->get();
       return $attributes;
     }

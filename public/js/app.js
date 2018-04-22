@@ -77,5 +77,16 @@ function commentReplyAction(productId,commentId){
   input[0].setAttribute('value',commentId);
 }
 
+function productUpdateAddListener(){
+  let inputs = document.querySelectorAll('form.editProduct input,form.editProduct textarea');
+  for (var input of inputs) {
+    input.onchange = function(){
+      let submit = document.getElementsByClassName('saveChanges');
+      submit[0].hidden=false;
+    }
+  }
+}
+
 removeFavoritesButton();
 productLinks();
+productUpdateAddListener();

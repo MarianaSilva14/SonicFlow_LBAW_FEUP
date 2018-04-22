@@ -9,7 +9,7 @@
 
 @section('content')
 @include('common.breadcrumb', ['currPage' => $product->title])
-<form method="post" action="{{route('product',['id'=>$product->sku])}}">
+<form>
   {{ csrf_field() }}
   <div class="form-row">
     <!-- Product Form -->
@@ -40,7 +40,6 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
-      <input type="file" @if(!$editable) hidden readonly @endif multiple class="form-control">
     </div>
     <div id="info" class="col-md-6 col-sm-12">
       <!-- cost and buttons -->

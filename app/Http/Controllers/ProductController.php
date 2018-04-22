@@ -86,19 +86,58 @@ class ProductController extends Controller
     }
 
     public function editForm($sku){
-      $this->authorize('edit');
-      return view('pages.newProduct');
+      try {
+        $this->authorize('edit',Product::class);
+      } catch (Exception $e) {
+        return redirect('homepage');
+      }
+      $product = Product::find($sku);
+      return view('pages.editProduct',['product'=>$product,
+                                        'attributes'=>$product->attributes(),
+                                        'categories'=>DB::table('category')->get()
+                                      ]);
+    }
+
+    public function update(Request $request, $sku){
+      try {
+        $this->authorize('edit',Product::class);
+      } catch (Exception $e) {
+        return redirect('homepage');
+      }
+
+      $product = Product::find($sku);
+
+      if($request->hasFile('pictures')){
+        $files = $request->file('pictures');
+        foreach ($files as $key=>$file) {
+          if($key==1){
+            $picPath .= $request->file('picture')->store('public/'.$sku, ['public']);
+          }else{
+            $picPath .= ';'.$request->file('picture')->store('public/'.$sku, ['public']);
+          }
+        }
+        $product->picture = $picPath;
+      }
+
+      $product->title = $request->input('title');
+      $product->description = $request->input('description');
+      $product->price = $request->input('price');
+      $product->discountPrice = $request->input('discountPrice');
+      $product->stock = $request->input('stock');
+
+
+      $product->save();
     }
 
     public function show($sku){
       $product = Product::find($sku);
-      return view('pages.product',['editable'=>FALSE,'product'=>$product,'attributes'=>$product->attributes()]);
+      return view('pages.product',['product'=>$product,'attributes'=>$product->attributes()]);
     }
 
     public function create(){
       try{
-        //$this->authorize('createNewProduct');
-      }catch(Execption $e){
+        $this->authorize('createNewProduct',Product::class);
+      }catch(Exception $e){
         return redirect('homepage');
       }
       return view('pages.addProduct',['categories'=>DB::table('category')->get()]);

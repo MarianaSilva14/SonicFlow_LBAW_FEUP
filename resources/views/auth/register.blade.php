@@ -18,31 +18,31 @@
 
       <input type="text" id="inputUsername" name="username" class="form-control" placeholder="Username" autofocus>
       @if ($errors->has('username'))
-        <span class="error">
+        <span class="text-danger">
       {{ $errors->first('username') }}
       </span>
       @endif
       <input type="text" id="inputFirstName" name="firstname" class="form-control" placeholder="First Name" >
       @if ($errors->has('firstname'))
-        <span class="error">
+        <span class="text-danger">
       {{ $errors->first('firstname') }}
       </span>
       @endif
       <input type="text" id="inputLastName" name="lastname" class="form-control" placeholder="Last Name" >
       @if ($errors->has('lastname'))
-        <span class="error">
+        <span class="text-danger">
       {{ $errors->first('lastname') }}
       </span>
       @endif
       <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address" >
       @if ($errors->has('email'))
-        <span class="error">
+        <span class="text-danger">
       {{ $errors->first('email') }}
       </span>
       @endif
       <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password">
       @if ($errors->has('password'))
-        <span class="error">
+        <span class="text-danger">
       {{ $errors->first('password') }}
       </span>
       @endif

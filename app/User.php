@@ -26,6 +26,7 @@ class User extends Authenticatable
     }
 
     public function isAdmin(){
+        //return $this->role == 'ADMIN';
         return DB::table('administrator')->where('user_username', $this->username)->exists();
     }
 

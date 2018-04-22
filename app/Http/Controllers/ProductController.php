@@ -86,12 +86,7 @@ class ProductController extends Controller
     }
 
     public function editForm($sku){
-      try{
-        $this->authorize('edit');
-      }catch(Execption $e){
-        return redirect('homepage');
-      }
-
+      $this->authorize('edit');
       return view('pages.newProduct');
     }
 
@@ -102,7 +97,7 @@ class ProductController extends Controller
 
     public function create(){
       try{
-        //$this->authorize('create');
+        //$this->authorize('createNewProduct');
       }catch(Execption $e){
         return redirect('homepage');
       }

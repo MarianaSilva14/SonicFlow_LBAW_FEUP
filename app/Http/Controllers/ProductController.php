@@ -141,7 +141,7 @@ class ProductController extends Controller
       }
 
 
-        return view('pages.product', ['id' => $sku, 'product' => $product, 'attributes' => $product->attributes() ]);
+        return view('pages.product', ['product' => $product, 'attributes' => $product->attributes() ]);
 
     }
 

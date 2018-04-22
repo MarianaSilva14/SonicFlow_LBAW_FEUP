@@ -4,6 +4,7 @@
 namespace App\Http\Controllers;
 
 use App\Answer;
+use App\AttributeProduct;
 use App\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -122,11 +123,26 @@ class ProductController extends Controller
       $product->title = $request->input('title');
       $product->description = $request->input('description');
       $product->price = $request->input('price');
-      $product->discountPrice = $request->input('discountPrice');
+      $product->discountprice = $request->input('discountPrice');
       $product->stock = $request->input('stock');
 
-
       $product->save();
+
+
+      $attributes_to_update = $request->input('attributes');
+      foreach ($attributes_to_update as $attribute_id => $attribute_value){
+        if ($attribute_value == '')
+            $attribute_value = 'NA';
+
+          DB::table('attribute_product')
+              ->where('product_idproduct', $sku)
+              ->where('attribute_idattribute', $attribute_id)
+              ->update(['value' => $attribute_value]);
+      }
+
+
+        return view('pages.product', ['id' => $sku, 'product' => $product, 'attributes' => $product->attributes() ]);
+
     }
 
     public function show($sku){

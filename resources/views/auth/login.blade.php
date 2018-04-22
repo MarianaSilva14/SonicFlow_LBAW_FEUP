@@ -17,13 +17,13 @@
         <span id="reauth-email" class="reauth-email"></span>
         <input type="text" id="inputUsername" name="username" class="form-control" placeholder="Username" autofocus>
         @if ($errors->has('username'))
-            <span class="error">
+            <span class="bg-warning">
               {{ $errors->first('username') }}
             </span>
         @endif
         <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password">
         @if ($errors->has('password'))
-            <span class="error">
+            <span class="bg-warning">
                 {{ $errors->first('password') }}
             </span>
         @endif

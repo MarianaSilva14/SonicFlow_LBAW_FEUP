@@ -1,13 +1,13 @@
 @extends('layouts.admin')
 
-@section('title','Moderator')
+@section('title','Administrator')
 
 @section('tab1Name','Product Management')
 @section('tab1')
 <div class="container admin-cont">
   <div class="row">
     <div class="addProduct" >
-      <button id="addProduct" class="btn btn-outline-success my-2 my-sm-0" type="submit" style="font-weight:bold"><i class="fas fa-plus"></i>   Add product</button>
+      <a id="addProduct" class="btn btn-outline-success my-2 my-sm-0" type="button" href="{{route('product_create')}}" style="font-weight:bold"><i class="fas fa-plus"></i>Add product</a>
     </div>
     <div class="col-xs-8 col-xs-offset-2 nav-search">
       <div class="input-group">

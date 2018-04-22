@@ -86,7 +86,11 @@ class ProductController extends Controller
     }
 
     public function editForm($sku){
-      $this->authorize('edit');
+      try{
+        $this->authorize('edit');
+      }catch(Execption $e){
+        return redirect('homepage');
+      }
 
       return view('pages.newProduct');
     }
@@ -94,6 +98,15 @@ class ProductController extends Controller
     public function show($sku){
       $product = Product::find($sku);
       return view('pages.product',['editable'=>FALSE,'product'=>$product,'attributes'=>$product->attributes()]);
+    }
+
+    public function create(){
+      try{
+        //$this->authorize('create');
+      }catch(Execption $e){
+        return redirect('homepage');
+      }
+      return view('pages.addProduct',['categories'=>DB::table('category')->get()]);
     }
 
     public function addComment($sku, Request $request){

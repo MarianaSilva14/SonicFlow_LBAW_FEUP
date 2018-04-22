@@ -66,7 +66,8 @@ function commentReplyAction(productId,commentId){
     replyForm=previousForm;
     previousForm.remove();
   }else{
-    replyForm = document.querySelector('div.newCommentForm');
+    oldForm = document.querySelector('div.newCommentForm');
+    replyForm = oldForm.cloneNode(true);
     replyForm.classList.remove("newCommentForm");
     replyForm.classList.add("replyForm");
   }

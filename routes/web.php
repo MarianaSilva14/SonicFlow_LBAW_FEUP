@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return redirect('login');
+    return redirect('homepage');
 });
 
 // Profile
@@ -26,11 +26,13 @@ Route::delete('/users/favorites/{sku}','CustomerController@removeFromFavoritesLi
 Route::view('products','pages.homepage')->name('products');
 
 //Single Product
-Route::get('product/{id}/edit','ProductController@editForm')->name('product_edit');
-Route::post('product/{id}/comment','ProductController@addComment')->name('product_comment');
-Route::get('product/{id}','ProductController@show')->name('product');
-Route::post('product/{id}','ProductController@show');
-Route::delete('product/{id}','ProductController@show');
+Route::get('product/{id}/edit','ProductController@editForm')->where('id','[0-9]+')->name('product_edit');
+Route::post('product/{id}/comment','ProductController@addComment')->where('id','[0-9]+')->name('product_comment');
+Route::get('product/{id}','ProductController@show')->where('id','[0-9]+')->name('product');
+Route::post('product/{id}','ProductController@show')->where('id','[0-9]+');
+Route::delete('product/{id}','ProductController@show')->where('id','[0-9]+');
+Route::get('product/create','ProductController@create')->name('product_create');
+Route::post('product/','ProductController@show')->name('product_add');
 
 // Static
 Route::view('homepage','pages.homepage')->name('homepage');

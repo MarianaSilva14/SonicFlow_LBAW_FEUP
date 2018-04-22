@@ -35,7 +35,7 @@
 <body>
   <nav class="navbar navbar-expand-xl navbar-light fixed-top bg-white">
     <!-- logo -->
-    <a class="navbar-brand" href="homepage.html">
+    <a class="navbar-brand" href="{{route('homepage')}}">
       <img src="{{asset('images/logo.png')}}" width="auto" height="64px" alt="">
     </a>
     <!-- toggle button -->

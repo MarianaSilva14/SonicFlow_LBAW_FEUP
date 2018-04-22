@@ -17,4 +17,10 @@ class ProductPolicy
       // Only a administrator can modify a Product
       return $user->isAdmin();
     }
+
+    public function create(User $user)
+    {
+      // Only a administrator can create a Product
+      return $user->isAdmin();
+    }
 }

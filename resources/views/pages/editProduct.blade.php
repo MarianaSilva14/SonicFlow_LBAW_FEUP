@@ -1,36 +1,43 @@
 @extends('layouts.app')
 
-@section('title', 'New Product')
-
-@section('head')
-<!-- <link rel="stylesheet" href="{{ asset('css/productpage.css') }}"> -->
-@endsection
+@section('title', 'Edit Product')
 
 @section('content')
-@include('common.breadcrumb', ['currPage' => 'New Product'])
+@include('common.breadcrumb', ['currPage' => 'Edit Product'])
 <form method="post" action="{{route('product_add')}}">
   {{ csrf_field() }}
-  <input type="file" multiple class="form-control">
-  <!-- cost and buttons -->
+  <!-- Pictures -->
+  <label for="pictures">Product Pictures</label>
+  <input type="file" id="pictures" name="pictures"multiple class="form-control">
   <!-- Title -->
   <label for="title">Title</label>
   <textarea class="form-control" id="title" name="title" placeholder="Product Title" rows="2"></textarea>
+  <!-- Description -->
+  <label for="description">Description</label>
+  <textarea class="form-control" id="description" name="description" placeholder="Product Description" rows="2"></textarea>
   <!-- Category -->
   <label for="category">Category</label>
-  <select class="form-control" id="category" name="category">
+  <select class="form-control" hidden id="category" name="category" value="{{$product->category_idcat}}">
     @foreach($categories as $cat)
     <option value="{{$cat->id}}">{{$cat->name}}</option>
     @endforeach
   </select>
   <!-- Price -->
   <label for="price">Standard Price</label>
-  <input id="price" name="price" type="text" class="form-control" pattern="[0-9]+" placeholder="9999" value="">
+  <input id="price" name="price" type="text" class="form-control" pattern="[0-9]+" placeholder="9999" value="{{$product->price}}">
   <label for="discountPrice">Discount Price</label>
-  <input id="discountPrice" name="discountPrice" type="text" class="form-control" pattern="[0-9]+" placeholder="9999" value="">
+  <input id="discountPrice" name="discountPrice" type="text" class="form-control" pattern="[0-9]+" placeholder="9999" value="{{$product->discountprice}}">
   <!-- Amount -->
   <label for="amount">Available Stock</label>
-  <input id="amount" name="stock" type="number" class="form-control" value="0" min="1" max="2000" step="1">
+  <input id="amount" name="stock" type="number" class="form-control" value="{{$product->stock}}" min="1" max="2000" step="1">
+  <legend>Attributes</legend>
+  <div class="form-inline">
+    @foreach($attributes as $att)
+      <label for="{{$att->name}}">Available Stock</label>
+      <input type="text" id="{{$att->name}}" name="{{$att->id}}" value="{{$att->value}}">
+    @endforeach
+  </div>
   <!-- Button -->
-  <button class="btn" style="vertical-align:middle">Add Product</button>
+  <button class="btn saveChanges" hidden style="vertical-align:middle">Save Changes Product</button>
 </form>
 @endsection

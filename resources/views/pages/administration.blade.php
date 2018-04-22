@@ -66,7 +66,7 @@
       <td class="unitCost">€2 199,99 </td>
       <td class="unitCost">€99,99 </td>
       <td class="amount"><input type="number" class="form-control text-center" value="1"></td>
-      <td class="edit_cart"><i class="far fa-edit fa-2x"></i></td>
+      <td class="edit_cart" onclick="window.location.replace('{{route('product_edit',['id'=>'186596482'])}}');"><i class="far fa-edit fa-2x"></i></td>
     </tr>
   </table>
 </div>

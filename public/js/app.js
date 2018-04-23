@@ -87,6 +87,20 @@ function productUpdateAddListener(){
   }
 }
 
+function flagCommentHandler(){
+  if(this.status != 200){
+    alert('Flag of comment went wrong');
+    alert(this.responseText);
+  }else if(this.status == 200){
+    alert('Successfully flagged comment');
+  }
+}
+
+function flagCommentAction(id){
+  sendAjaxRequest('get','/comment/'+id+'/flag',null,flagCommentHandler);
+  event.preventDefault();
+}
+
 removeFavoritesButton();
 productLinks();
 productUpdateAddListener();

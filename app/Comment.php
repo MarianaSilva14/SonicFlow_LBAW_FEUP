@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Comment extends Model
 {
@@ -28,12 +29,35 @@ class Comment extends Model
     ];
 
     public function flag(){
-      $this->increment->('flagsno');
+      $this->increment('flagsno');
+      $query = DB::table('flagged');
+      if($query->whereRaw('flagged.comment_idcomment = '.$this->id)->exists()){
+        $query->update(['hidden'=>FALSE]);
+      }else{
+        $query->insert(['comment_idcomment' => $this->id, 'hidden' => FALSE]);
+      }
     }
 
     public function deleteContent(){
+      if (Auth::user()->isCustomer()) {
+        $this->authorize();
+      }
       $this->deleted = 'true';
       $this->save();
+    }
+
+    public function addOffense(){
+      DB::table('flagged')
+        ->where('');
+    }
+
+    public static function getModView(){
+      return DB::table('comment')
+                ->join('flagged','comment.id','=','flagged.comment_idcomment')
+                ->whereRaw('flagged.hidden = FALSE')
+                ->join('user','user.username','=','comment.user_username')
+                ->select('user.picture','user.username','comment.commentary','comment.flagsno')
+                ->get();
     }
 
     public function user(){

@@ -74,50 +74,49 @@ class Product extends Model
     return explode(';',$this->picture);
   }
 
-
   public static function getProductsReference(Request $request){
-      $query = DB::table('product');
+    $query = DB::table('product');
 
-      $catgoryID = intval($request->input('categoryID'));
-      if ($catgoryID != null){
-          $query = $query->where('category_idCat', $catgoryID);
-      }
+    $catgoryID = intval($request->input('categoryID'));
+    if ($catgoryID != null){
+        $query = $query->where('category_idCat', $catgoryID);
+    }
 
-      $minPrice = floatval($request->input('minPrice'));
-      $maxPrice = floatval($request->input('maxPrice'));
-      if ( $minPrice != null && $maxPrice != null && ($minPrice < $maxPrice)){
-          $query = $query->whereBetween('price', [$minPrice, $maxPrice]);
-      }
+    $minPrice = floatval($request->input('minPrice'));
+    $maxPrice = floatval($request->input('maxPrice'));
+    if ( $minPrice != null && $maxPrice != null && ($minPrice < $maxPrice)){
+        $query = $query->whereBetween('price', [$minPrice, $maxPrice]);
+    }
 
-      $available = filter_var($request->input('productAvailability'), FILTER_VALIDATE_BOOLEAN);
-      if ( $available != null){
-          if ($available){
-              $query = $query->where('stock', '>', 0);
-          }
-          else{
-              $query = $query->where('stock', '=', 0);
-          }
-      }
+    $available = filter_var($request->input('productAvailability'), FILTER_VALIDATE_BOOLEAN);
+    if ( $available != null){
+        if ($available){
+            $query = $query->where('stock', '>', 0);
+        }
+        else{
+            $query = $query->where('stock', '=', 0);
+        }
+    }
 
-      $title = $request->input('title');
-      if ($title != null){
-          $query = $query
-              ->whereRaw('search @@ plainto_tsquery(\'english\',?)', [$title])
-              ->orderByRaw('ts_rank(search,  plainto_tsquery(\'english\',?) DESC',[$title]);
-      }
+    $title = $request->input('title');
+    if ($title != null){
+        $query = $query
+            ->whereRaw('search @@ plainto_tsquery(\'english\',?)', [$title])
+            ->orderByRaw('ts_rank(search,  plainto_tsquery(\'english\',?) DESC',[$title]);
+    }
 
-      $products = $query->get();
-      return $products;
-}
+    $products = $query->get();
+    return $products;
+  }
 
   public static function getDiscountedProducts(){
-      return DB::table('product')->whereNotNull('discountprice')->get();
-}
+    return DB::table('product')->whereNotNull('discountprice')->get();
+  }
 
-   public static function getProductByName(String $title){
-       $products = DB::table('product')
-           ->whereRaw('search @@ plainto_tsquery(\'english\',?)', [$title])->get();
-       return $products;
-   }
+  public static function getProductByName(String $title){
+    $products = DB::table('product')
+       ->whereRaw('search @@ plainto_tsquery(\'english\',?)', [$title])->get();
+    return $products;
+  }
 
 }

@@ -480,7 +480,7 @@ INSERT INTO comment VALUES (9,'glbGcBfG', '2012-05-16 15:32:38','blakhbjhiwuhdie
 INSERT INTO comment VALUES (10,'l1mtgBKN', '2012-05-16 16:26:38','blakhiwuhdie hdie', 0, FALSE, '171093287');
 INSERT INTO comment VALUES (11,'xavi123', '2012-05-18 13:36:38','i want this computer', 0, FALSE, '186596482');
 INSERT INTO comment VALUES (12,'xavi123', '2012-05-18 13:36:50','i want this computer now!', 0, FALSE, '186596482');
-INSERT INTO comment VALUES (13,'CgsHHRf', '2012-05-18 13:36:50','you stupid!', 0, FALSE, '186596482');
+INSERT INTO comment VALUES (13,'CgsHHRf', '2012-05-18 13:36:50','you stupid!', 2, FALSE, '186596482');
 
 SELECT setval(pg_get_serial_sequence('comment', 'id'), max(id)) FROM comment;
 
@@ -494,16 +494,7 @@ INSERT INTO answer VALUES (11,12);
 INSERT INTO answer VALUES (12,13);
 
 --FLAGGED
-INSERT INTO flagged VALUES (1, FALSE);
-INSERT INTO flagged VALUES (2, FALSE);
-INSERT INTO flagged VALUES (3, FALSE);
-INSERT INTO flagged VALUES (4, FALSE);
-INSERT INTO flagged VALUES (5, FALSE);
-INSERT INTO flagged VALUES (6, FALSE);
-INSERT INTO flagged VALUES (7, FALSE);
-INSERT INTO flagged VALUES (8, FALSE);
-INSERT INTO flagged VALUES (9, FALSE);
-INSERT INTO flagged VALUES (10, FALSE);
+INSERT INTO flagged values (13, FALSE);
 
 --ATTRIBUTE
 INSERT INTO attribute VALUES (1,'audio');

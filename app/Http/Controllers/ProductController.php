@@ -146,11 +146,11 @@ class ProductController extends Controller
   }
 
   public function commentFlag($id){
-    $comment -> Comment::findOrFail($id);
+    $comment = Comment::findOrFail($id);
     try {
       $comment->flag();
     } catch (\Exception $e) {
-      return response('Unable to flag comment',500);
+     return response('Unable to flag comment',500);
     }
     return response('',200);
   }

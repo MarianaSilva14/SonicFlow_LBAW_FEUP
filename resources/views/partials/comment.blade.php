@@ -8,7 +8,7 @@
       @endif
     </div>
     <div class="comment-content col-md-11 col-sm-10 col-12">
-      <h6 class="small comment-meta"><a href="#">{{$comment->user->username}}</a> {{Carbon\Carbon::parse($comment->date)->diffForHumans()}}</h6>
+      <h6 class="small comment-meta"><a class="disabled" href="#">{{$comment->user->username}}</a> {{Carbon\Carbon::parse($comment->date)->diffForHumans()}}</h6>
       <div class="comment-body">
         <p>
           @if($comment->deleted)
@@ -18,7 +18,10 @@
           @endif
           <br>
           <a href="#" onclick="commentReplyAction({{$comment->product_idproduct}},{{$comment->id}})"class="text-right small replyLink"><i class="fas fa-reply"></i> Reply</a>
-          <a href="#" class="text-right small text-danger flagLink"><i class="fas fa-flag"></i> Flag</a>
+          <a href="#" onclick="flagCommentAction({{$comment->id}})" class="text-right small text-danger flagLink"><i class="fas fa-flag"></i> Flag</a>
+          @if(Auth::user()->username == $comment->user_username)
+            <a href="#" class="text-right small text-danger flagLink"><i class="fas fa-flag"></i>Delete content</a>
+          @endif
         </p>
       </div>
     </div>

@@ -26,38 +26,8 @@ class ProductController extends Controller
    * @return JSON The products.
    */
   public function getProducts(Request $request){
-    $query = DB::table('product');
-
-    $catgoryID = intval($request->input('categoryID'));
-    if ($catgoryID != null){
-        $query = $query->where('category_idCat', $catgoryID);
-    }
-
-    $minPrice = floatval($request->input('minPrice'));
-    $maxPrice = floatval($request->input('maxPrice'));
-    if ( $minPrice != null && $maxPrice != null && ($minPrice < $maxPrice)){
-        $query = $query->whereBetween('price', [$minPrice, $maxPrice]);
-    }
-
-    $available = filter_var($request->input('productAvailability'), FILTER_VALIDATE_BOOLEAN);
-    if ( $available != null){
-        if ($available){
-            $query = $query->where('stock', '>', 0);
-        }
-        else{
-            $query = $query->where('stock', '=', 0);
-        }
-    }
-
-    $title = $request->input('title');
-    if ($title != null){
-        $query = $query
-            ->whereRaw('search @@ plainto_tsquery(\'english\',?)', [$title])
-            ->orderByRaw('ts_rank(search,  plainto_tsquery(\'english\',?) DESC',[$title]);
-    }
-
-    $products = $query->get();
-    return json_encode($products);
+      $products = Product::getProductsReference($request);
+      return json_encode($products);
   }
 
   public function getProductBySku(Integer $sku){
@@ -66,13 +36,12 @@ class ProductController extends Controller
   }
 
   public function getProductsByName(String $title){
-    $products = DB::table('product')
-        ->whereRaw('search @@ plainto_tsquery(\'english\',?)', [$title])->get();
-    return json_encode($products);
+      $products = Product::getProductByName($title);
+      return json_encode($products);
   }
 
   public function getDiscounted(){
-    $discounted_products = DB::table('product')->whereNotNull('discountprice')->get();
+    $discounted_products = Product::getDiscountedProducts();
     return json_encode($discounted_products);
   }
 

@@ -111,19 +111,4 @@ class CustomerController extends Controller
     return redirect('homepage');
   }
 
-  public function removeFromFavoritesList($sku){
-
-    if(!Auth::check()){
-        return redirect('login');
-    }
-
-    //$product = DB::table('favorite')->where([['customer_username', '=', Auth::user()->username],['product_idproduct', '=', $sku]])->first();
-
-    //        if($product == null)
-    //            return redirect('homepage');
-
-    DB::table('favorite')->where([['customer_username', '=', Auth::user()->username],['product_idproduct', '=', $sku]])->delete();
-
-    return response('',200);
-  }
 }

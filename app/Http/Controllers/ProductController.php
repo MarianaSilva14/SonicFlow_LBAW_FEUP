@@ -25,8 +25,7 @@ class ProductController extends Controller
    * @param Request $request
    * @return JSON The products.
    */
-  public function getProducts(Request $request)
-  {
+  public function getProducts(Request $request){
     $query = DB::table('product');
 
     $catgoryID = intval($request->input('categoryID'));
@@ -97,41 +96,44 @@ class ProductController extends Controller
       return redirect('homepage');
     }
 
-    $product = Product::find($sku);
+    $product = Product::findOrFail($sku);
 
     if($request->hasFile('pictures')){
       $files = $request->file('pictures');
+      $picPath = "";
       foreach ($files as $key=>$file) {
-        if($key==1){
-          $picPath .= $request->file('picture')->store('public/'.$sku, ['public']);
+        if($key==0){
+          $picPath .= $file->store('public/'.$sku, ['public']);
         }else{
-          $picPath .= ';'.$request->file('picture')->store('public/'.$sku, ['public']);
+          $picPath .= ';'.$file->store('public/'.$sku, ['public']);
         }
       }
       $product->picture = $picPath;
     }
 
-    $product->title = $request->input('title');
-    $product->description = $request->input('description');
-    $product->price = $request->input('price');
-    $product->discountprice = $request->input('discountPrice');
-    $product->stock = $request->input('stock');
+    try {
+      $product->title = $request->input('title');
+      $product->description = $request->input('description');
+      $product->price = $request->input('price');
+      $product->discountprice = $request->input('discountPrice');
+      $product->stock = $request->input('stock');
+      $product->save();
+    } catch (\Exception $e) {
+      return $e->getMessage();
+    }
 
-    $product->save();
-
-
-    $attributes_to_update = $request->input('attributes');
+    $attributes_to_update = $request->input('productAttributes');
     foreach ($attributes_to_update as $attribute_id => $attribute_value){
       if ($attribute_value == '')
         $attribute_value = 'N/A';
-      $product->setAttribute($attribute_id,$attribute_value);
+      $product->setProductAttribute($attribute_id,$attribute_value);
     }
-      return view('pages.product', ['product' => $product, 'attributes' => $product->attributes() ]);
+      return view('pages.product', ['product' => $product,'images'=>$product->getImages(),'attributes' => $product->attributes() ]);
   }
 
   public function show($sku){
-    $product = Product::find($sku);
-    return view('pages.product',['product'=>$product,'attributes'=>$product->attributes()]);
+    $product = Product::findOrFail($sku);
+    return view('pages.product',['product'=>$product,'images'=>$product->getImages(),'attributes'=>$product->attributes()]);
   }
 
   public function create(){
@@ -147,23 +149,51 @@ class ProductController extends Controller
       $user = Auth::user();
       $comment_text = $request->input('commentary');
 
-      $comment = Comment::create([
+      try {
+        $comment = Comment::create([
           'user_username' => $user->username,
           'commentary' => $comment_text,
           'flagsno' => 0,
           'product_idproduct' => $sku
-      ]);
+        ]);
+      } catch (\Exception $e) {
+        return $e->getMessage();
+      }
 
       $parent_id = intval($request->input('parent_id'));
       if ($parent_id != null){
           $child_id = $comment->id;
-
-          Answer::create([
-              'comment_idparent' => $parent_id,
-              'comment_idchild' => $child_id
-          ]);
+          try {
+            Answer::create([
+                'comment_idparent' => $parent_id,
+                'comment_idchild' => $child_id
+            ]);
+          } catch (\Exception $e) {
+            return $e->getMessage();
+          }
       }
 
-      return url('product', ['id' => $sku ]);
+      return url('product', ['id' => $sku]);
+  }
+
+  public function commentFlag($id){
+    $comment -> Comment::findOrFail($id);
+    try {
+      $comment->flag();
+    } catch (\Exception $e) {
+      return response('Unable to flag comment',500);
+    }
+    return response('',200);
+  }
+
+  public function commentDelete($id){
+    $comment -> Comment::findOrFail($id);
+    try {
+      $comment->deleteContent();
+    } catch (\Exception $e) {
+      return response('Unable to delete content',500);
+    }
+
+    return response('',200);
   }
 }

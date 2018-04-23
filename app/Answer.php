@@ -8,7 +8,9 @@ class Answer extends Model
 {
     protected $primaryKey = null; // or null
 
-    //public $incrementing = false;
+    public $incrementing = false;
+
+    public $timestamps = false;
 
     /**
      * The attributes that are mass assignable.

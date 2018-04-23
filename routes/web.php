@@ -24,15 +24,20 @@ Route::delete('/users/favorites/{sku}','CustomerController@removeFromFavoritesLi
 
 // Products
 Route::view('products','pages.homepage')->name('products');
+Route::get('product/create','ProductController@create')->name('product_create');
+Route::post('product/','ProductController@show')->name('product_add');
 
 //Single Product
 Route::get('product/{id}/edit','ProductController@editForm')->where('id','[0-9]+')->name('product_edit');
-Route::post('product/{id}/comment','ProductController@addComment')->where('id','[0-9]+')->name('product_comment');
 Route::get('product/{id}','ProductController@show')->where('id','[0-9]+')->name('product');
-Route::post('product/{id}','ProductController@update')->where('id','[0-9]+');
+Route::post('product/{id}','ProductController@update');
 Route::delete('product/{id}','ProductController@show')->where('id','[0-9]+');
-Route::get('product/create','ProductController@create')->name('product_create');
-Route::post('product/','ProductController@show')->name('product_add');
+
+//Comments
+Route::post('product/{id}/comment','ProductController@addComment')->where('id','[0-9]+')->name('product_comment');
+Route::get('comment/{id}/flag','ProductController@commentFlag')->where('id','[0-9]+')->name('comment_flag');
+Route::delete('comment/{id}','ProductController@commentDelete')->where('id','[0-9]+')->name('comment_delete');
+
 
 // Static
 Route::view('homepage','pages.homepage')->name('homepage');
@@ -57,11 +62,7 @@ Route::get('administration', 'AdministratorController@show')->name('administrati
 Route::get('moderation', 'ModeratorController@show')->name('moderation');
 
 // API new
-Route::get('api/product/{sku}', 'ProductController@getProductBySku')->where('sku', '[0-9]+')->name('api_product_sku');
-Route::get('api/product/{name}', 'ProductController@getProductsByName')->name('api_product_name');
-Route::get('api/discounts', 'ProductController@getDiscounted')->name('api_discounted');
-Route::get('api/products/', 'ProductController@getProducts')->name('api_products');
-
-Route::get('', function () {
-    return redirect('login');
-});
+Route::get('api/product/{sku}', 'ProductController@getProductBySku')->where('sku', '[0-9]+')->name('api_product_sku')->middleware('api');
+Route::get('api/product/{name}', 'ProductController@getProductsByName')->name('api_product_name')->middleware('api');
+Route::get('api/discounts', 'ProductController@getDiscounted')->name('api_discounted')->middleware('api');
+Route::get('api/products', 'ProductController@getProducts')->name('api_products')->middleware('api');

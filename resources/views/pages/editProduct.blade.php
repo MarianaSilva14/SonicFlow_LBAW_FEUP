@@ -34,7 +34,7 @@
   @foreach($attributes as $att)
     <div class="">
       <label for="{{$att->name}}" style="min-width:10em">{{$att->name}}</label>
-      <input class="form-control d-inline" style="width:auto" type="text" id="{{$att->name}}" name="attributes[{{$att->id}}]" value="{{$att->value}}">
+      <input class="form-control d-inline" style="width:auto" type="text" id="{{$att->name}}" name="productAttributes[{{$att->id}}]" value="{{$att->value}}">
     </div>
   @endforeach
   <!-- Button -->

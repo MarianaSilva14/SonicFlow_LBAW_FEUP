@@ -27,6 +27,15 @@ class Comment extends Model
          'user_username', 'commentary', 'date', 'flagsno' , 'deleted', 'product_idproduct'
     ];
 
+    public function flag(){
+      $this->increment->('flagsno');
+    }
+
+    public function deleteContent(){
+      $this->deleted = 'true';
+      $this->save();
+    }
+
     public function user(){
       return $this->belongsTo('App\User','user_username','username');
     }

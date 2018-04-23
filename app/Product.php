@@ -44,9 +44,9 @@ class Product extends Model
     return $attributes;
   }
 
-  public function setAttribute($attribute_id,$attribute_value){
+  public function setProductAttribute($attribute_id,$attribute_value){
     DB::table('attribute_product')
-        ->where('product_idproduct', $sku)
+        ->where('product_idproduct', $this->sku)
         ->where('attribute_idattribute', $attribute_id)
         ->update(['value' => $attribute_value]);
   }

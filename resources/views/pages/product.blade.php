@@ -16,12 +16,16 @@
     <div id="photos" class="col-md-6 col-sm-12">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          @foreach($images as $image)
+            @if($loop->first)
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            @else
+              <li data-target="#carouselExampleIndicators" data-slide-to="$loop->index"></li>
+            @endif
+          @endforeach
         </ol>
         <div class="carousel-inner">
-          @foreach($product->getImages() as $image)
+          @foreach($images as $image)
             @if($loop->first)
               @include('partials.productImage',['first'=>TRUE,'image'=>$image])
             @else

@@ -116,34 +116,34 @@ class ProductController extends Controller
   }
 
   public function addComment($sku, Request $request){
-      $user = Auth::user();
-      $comment_text = $request->input('commentary');
+    $user = Auth::user();
+    $comment_text = $request->input('commentary');
 
-      try {
-        $comment = Comment::create([
-          'user_username' => $user->username,
-          'commentary' => $comment_text,
-          'flagsno' => 0,
-          'product_idproduct' => $sku
-        ]);
-      } catch (\Exception $e) {
-        return $e->getMessage();
-      }
+    try {
+      $comment = Comment::create([
+        'user_username' => $user->username,
+        'commentary' => $comment_text,
+        'flagsno' => 0,
+        'product_idproduct' => $sku
+      ]);
+    } catch (\Exception $e) {
+      return $e->getMessage();
+    }
 
-      $parent_id = intval($request->input('parent_id'));
-      if ($parent_id != null){
-          $child_id = $comment->id;
-          try {
-            Answer::create([
-                'comment_idparent' => $parent_id,
-                'comment_idchild' => $child_id
-            ]);
-          } catch (\Exception $e) {
-            return $e->getMessage();
-          }
-      }
+    $parent_id = intval($request->input('parent_id'));
+    if ($parent_id != null){
+        $child_id = $comment->id;
+        try {
+          Answer::create([
+              'comment_idparent' => $parent_id,
+              'comment_idchild' => $child_id
+          ]);
+        } catch (\Exception $e) {
+          return $e->getMessage();
+        }
+    }
 
-      return url('product', ['id' => $sku]);
+    return redirect(url('product', ['id' => $sku]));
   }
 
   public function commentFlag($id){
@@ -153,18 +153,30 @@ class ProductController extends Controller
     } catch (\Exception $e) {
      return response('Unable to flag comment',500);
     }
-    return response('',200);
   }
 
   public function commentDelete($id){
-    $comment -> Comment::findOrFail($id);
+    $comment = Comment::findOrFail($id);
     try {
-      $comment->deleteContent();
+      $this->authorize('edit',$comment);
+      if (Auth::user()->isCustomer()) {
+        $comment->deleteContentCust();
+      }else if(Auth::user()->isModerator()){
+        $comment->deleteContentMod();
+      }
     } catch (\Exception $e) {
-      return response('Unable to delete content',500);
+      return response(json_encode($comment).json_encode(Auth::user()),500);
     }
+  }
 
-    return response('',200);
+  public function commentApprove($id){
+    $comment = Comment::findOrFail($id);
+    try {
+      $this->authorize('edit',$comment);
+      $comment->approve();
+    } catch (\Exception $e) {
+     return response('Unable to approve comment',500);
+    }
   }
 
   public function updateRating($sku, Request $request){

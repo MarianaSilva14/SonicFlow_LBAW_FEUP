@@ -17,10 +17,13 @@
             {{$comment->commentary}}
           @endif
           <br>
-          <a href="#" onclick="commentReplyAction({{$comment->product_idproduct}},{{$comment->id}})"class="text-right small replyLink"><i class="fas fa-reply"></i> Reply</a>
-          <a href="#" onclick="flagCommentAction({{$comment->id}})" class="text-right small text-danger flagLink"><i class="fas fa-flag"></i> Flag</a>
-          @if(Auth::user()->username == $comment->user_username)
-            <a href="#" class="text-right small text-danger flagLink"><i class="fas fa-flag"></i>Delete content</a>
+          @if(!$comment->deleted)
+            <a href="#" onclick="commentReplyAction({{$comment->product_idproduct}},{{$comment->id}})"class="text-right small replyLink"><i class="fas fa-reply"></i> Reply</a>
+            @if(Auth::user()->username == $comment->user_username)
+              <a href="#" onclick="deleteCommentAction({{$comment->id}})" class="text-right small text-danger deleteLink"><i class="fas fa-trash"></i>Delete content</a>
+            @else
+              <a href="#" onclick="flagCommentAction({{$comment->id}})" class="text-right small text-danger flagLink"><i class="fas fa-flag"></i> Flag</a>
+            @endif
           @endif
         </p>
       </div>

@@ -15,6 +15,6 @@ class CommentPolicy
     public function edit(User $user, Comment $comment)
     {
       // Only the owner can modify his comment
-      return $user->usename == $comment->user_username;
+      return $user->username == $comment->user_username || $user->isModerator();
     }
 }

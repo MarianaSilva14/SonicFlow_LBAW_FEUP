@@ -60,7 +60,7 @@ $(document).ready(function(e){
 // }
 
 function loadProducts(){
-  sendAjaxRequest('GET','api/discounts',null,loadProductsHandler)
+  //sendAjaxRequest('GET','api/discounts',null,loadProductsHandler)
 }
 
 function docOnLoad(){
@@ -145,6 +145,36 @@ function flagCommentHandler(){
 
 function flagCommentAction(id){
   sendAjaxRequest('get','/comment/'+id+'/flag',null,flagCommentHandler);
+  event.preventDefault();
+}
+
+function deleteCommentHandler(){
+  if(this.status != 200){
+    alert('Comment deletion went wrong');
+    alert(this.responseText);
+  }else if(this.status == 200){
+    alert('Successfully removed comment');
+    //delete text change
+  }
+}
+
+function deleteCommentAction(id){
+  sendAjaxRequest('DELETE','/comment/'+id,null,deleteCommentHandler);
+  event.preventDefault();
+}
+
+function approveCommentHandler(){
+  if(this.status != 200){
+    alert('Comment approval went wrong');
+    alert(this.responseText);
+  }else if(this.status == 200){
+    alert('Successfully approved comment');
+    //delete text change
+  }
+}
+
+function approveCommentAction(id){
+  sendAjaxRequest('GET','/comment/'+id+'/approve',null,approveCommentHandler);
   event.preventDefault();
 }
 

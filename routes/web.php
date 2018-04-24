@@ -37,6 +37,7 @@ Route::post('product/{id}/rating','ProductController@updateRating')->where('id',
 //Comments
 Route::post('product/{id}/comment','ProductController@addComment')->where('id','[0-9]+')->name('product_comment');
 Route::get('comment/{id}/flag','ProductController@commentFlag')->where('id','[0-9]+')->name('comment_flag');
+Route::get('comment/{id}/approve','ProductController@commentApprove')->where('id','[0-9]+')->name('comment_approve');
 Route::delete('comment/{id}','ProductController@commentDelete')->where('id','[0-9]+')->name('comment_delete');
 
 // Static

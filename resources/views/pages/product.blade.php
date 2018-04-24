@@ -55,7 +55,7 @@
           </div>
         </div>
         <!-- Rating -->
-        <div class="col-md-12 col-12">
+        <div class="col-md-12 col-12" id="stars_rating" data-id={{$product->sku}}>
           <!-- <label for="rating">Rating</label> -->
           <fieldset id="rating" class="rating form-control">
             <input type="radio" id="star5" name="rating" value="5" /><span class="fas fa-star fa-lg"></span>

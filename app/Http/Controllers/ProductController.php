@@ -169,14 +169,11 @@ class ProductController extends Controller
 
   public function updateRating($sku, Request $request){
     $user = Auth::user();
-
     $rating = Rating::where([['customer_username','=',$user->username],['product_idproduct','=',$sku]])->first();
-
     if($rating == null)
       $rating = Rating::create(['customer_username'=>$user->username, 'product_idproduct'=>$sku, 'value' => $request->input('value')]);
     else
       Rating::where([['customer_username','=',$user->username],['product_idproduct','=',$sku]])->update(['value' => $request->input('value')]);
-
-    return json_encode($rating);
+    return json_encode($request->input('value'));
   }
 }

@@ -39,7 +39,6 @@ Route::post('product/{id}/comment','ProductController@addComment')->where('id','
 Route::get('comment/{id}/flag','ProductController@commentFlag')->where('id','[0-9]+')->name('comment_flag');
 Route::delete('comment/{id}','ProductController@commentDelete')->where('id','[0-9]+')->name('comment_delete');
 
-
 // Static
 Route::view('homepage','pages.homepage')->name('homepage');
 Route::view('about','pages.about')->name('about');
@@ -47,7 +46,6 @@ Route::view('contact','pages.contact')->name('contact');
 Route::view('faq','pages.faq')->name('faq');
 Route::view('configurator','pages.homepage')->name('configurator');
 Route::view('shoppingCart','pages.homepage')->name('shoppingCart');
-
 
 // Authentication
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');

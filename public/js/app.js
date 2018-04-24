@@ -101,6 +101,33 @@ function flagCommentAction(id){
   event.preventDefault();
 }
 
+function sendRatingRequest(){
+  let value = this.getAttribute('value');
+  console.log(value);
+
+  let id_product = this.closest('#stars_rating').getAttribute('data-id');
+
+  if(value != '')
+    sendAjaxRequest('post', '/product/'+id_product+'/rating',{value:value},receiveRatingHandler);
+
+}
+
+function receiveRatingHandler(){
+  console.log(this.responseText);
+
+  if(this.status != 200)
+    window.location = '/';
+}
+
+function updateRatingOfProduct(){
+  let inputs = document.querySelectorAll('#rating .rating_input');
+
+  for(var i of inputs){
+    i.addEventListener('click', sendRatingRequest);
+  }
+}
+
+updateRatingOfProduct();
 removeFavoritesButton();
 productLinks();
 productUpdateAddListener();

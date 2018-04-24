@@ -151,7 +151,7 @@ CREATE TABLE purchase_product (
 CREATE TABLE rating (
     customer_username text REFERENCES customer ON DELETE CASCADE,
     product_idproduct INTEGER NOT NULL REFERENCES product ON DELETE CASCADE,
-    "value" INTEGER NOT NULL CHECK (("value" > 0 ) AND ("value" <= 5)),
+    value INTEGER NOT NULL CHECK ((value > 0 ) AND (value <= 5)),
     PRIMARY KEY(customer_username, product_idproduct)
 );
 

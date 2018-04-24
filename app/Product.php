@@ -17,6 +17,9 @@ class Product extends Model
 
   public $timestamps = false;
 
+  protected $fillable = ['rating']; // or null
+
+
   /**
    * The table associated with the model.
    *

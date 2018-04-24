@@ -32,6 +32,7 @@ Route::get('product/{id}/edit','ProductController@editForm')->where('id','[0-9]+
 Route::get('product/{id}','ProductController@show')->where('id','[0-9]+')->name('product');
 Route::post('product/{id}','ProductController@update');
 Route::delete('product/{id}','ProductController@show')->where('id','[0-9]+');
+Route::post('product/{id}/rating','ProductController@updateRating')->where('id','[0-9]+');
 
 //Comments
 Route::post('product/{id}/comment','ProductController@addComment')->where('id','[0-9]+')->name('product_comment');

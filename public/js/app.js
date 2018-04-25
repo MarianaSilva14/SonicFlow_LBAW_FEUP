@@ -169,7 +169,6 @@ function sendRatingRequest(event){
 }
 
 function receiveRatingHandler(){
-  console.log(this);
   if(this.status != 200){
     alert("Rating couldn't be updated");
   }else{
@@ -299,11 +298,37 @@ function homepageRecommendations() {
     sendAjaxRequest('GET','/api/recommendations?limit='+limit,null,homepageRecommendationsHandler);
 }
 
+function addFavoriteToggleHandler() {
+  console.log(this);
+  if(this.status != 200){
+    console.log(this.responseText);
+    alert("Couldn't favorite product, please retry.");
+  }else{
+    //let button = document.querySelector();
+    let button = document.querySelector(".addFavs svg");
+    if(button.dataset.prefix=='fas'){
+      button.dataset.prefix='far';
+    }else{
+      button.dataset.prefix='fas';
+    }
+  }
+}
 
+function addFavoriteToggleAction() {
+  let productId = document.querySelector("#stars_rating");
+  sendAjaxRequest('POST','/users/favorites/'+productId.dataset.id,null,addFavoriteToggleHandler);
+  event.preventDefault();
+}
+
+function addFavoriteToggleListener() {
+  let button = document.querySelector(".addFavs");
+  button.onclick = addFavoriteToggleAction;
+}
 
 updateRatingOfProduct();
 removeFavoritesButton();
 productLinks();
 productUpdateAddListener();
 addAmountChangeListener();
+addFavoriteToggleListener();
 addShowMoreClickListener();

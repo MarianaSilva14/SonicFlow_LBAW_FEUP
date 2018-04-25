@@ -32,7 +32,9 @@ var limit = 5;
 function docOnLoad(){
   locArray = window.location.href.split("/");
   if(locArray[locArray.length-1].toLowerCase()=='homepage'){
-    //loadProducts();
+      homepagePromotions();
+      homepageBestSellers();
+      homepageRecommendations();
   }
   if(locArray[locArray.length-1].toLowerCase()=='administration'){
     adminLoadProducts();
@@ -255,6 +257,49 @@ function addShowMoreClickListener() {
     button.onclick = adminLoadProducts;
   }
 }
+
+
+function homepagePromotionsHandler() {
+    alert('got promotions');
+/*    if(this.status != 200){
+        alert('Error: '+this.status);
+        return;
+    }
+    let products = JSON.parse(this.response);
+    if(products.length < limit){
+        let button = document.querySelector("#showMore");
+        button.hidden=true;
+    }else{
+        productOffset += limit;
+    }
+    for (let product of products){
+        showAdminProduct(product);
+    }*/
+}
+
+function homepageBestSellersHandler() {
+    alert('got best sellers');
+
+}
+
+function homepageRecommendationsHandler() {
+    alert('got recommendations');
+}
+
+
+function homepagePromotions() {
+    sendAjaxRequest('GET','/api/discounts?limit='+limit,null,homepagePromotionsHandler);
+}
+
+function homepageBestSellers() {
+    sendAjaxRequest('GET','/api/bestsellers?limit='+limit,null,homepageBestSellersHandler);
+}
+
+function homepageRecommendations() {
+    sendAjaxRequest('GET','/api/recommendations?limit='+limit,null,homepageRecommendationsHandler);
+}
+
+
 
 updateRatingOfProduct();
 removeFavoritesButton();

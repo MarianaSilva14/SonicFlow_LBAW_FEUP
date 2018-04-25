@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Notifications\Notifiable;
 
 class Product extends Model
@@ -27,7 +28,7 @@ class Product extends Model
   protected $table = 'product';
 
   public function favoritesList(){
-    return $this->belongsToMany('App\Customer','favorite','user_username', 'product_idproduct');
+    return $this->belongsToMany('App\Customer','favorite','product_idproduct','customer_username');
   }
 
   public function attributes(){
@@ -74,6 +75,16 @@ class Product extends Model
 
   public function getImages(){
     return explode(';',$this->picture);
+  }
+
+  public function isFavorite(){
+    if(Auth::check()){
+      return DB::table('favorite')
+        ->where([['customer_username',Auth::user()->username],['product_idproduct',$this->sku]])
+        ->exists();
+    }else{
+      return FALSE;
+    }
   }
 
   public static function getProductsReference(Request $request){
@@ -130,5 +141,4 @@ class Product extends Model
        ->whereRaw('search @@ plainto_tsquery(\'english\',?)', [$title])->get();
     return $products;
   }
-
 }

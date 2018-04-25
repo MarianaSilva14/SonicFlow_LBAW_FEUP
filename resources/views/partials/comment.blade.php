@@ -8,7 +8,7 @@
       @endif
     </div>
     <div class="comment-content col-md-11 col-sm-10 col-12">
-      <h6 class="small comment-meta"><a class="disabled" href="#">{{$comment->user->username}}</a> {{Carbon\Carbon::parse($comment->date)->diffForHumans()}}</h6>
+      <h6 class="small comment-meta"><span style="color:#007bff" class="disabled">{{$comment->user->username}}</span> {{Carbon\Carbon::parse($comment->date)->diffForHumans()}}</h6>
       <div class="comment-body">
         <p>
           @if($comment->deleted)

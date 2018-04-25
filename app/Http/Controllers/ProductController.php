@@ -102,7 +102,8 @@ class ProductController extends Controller
 
   public function show($sku){
     $product = Product::findOrFail($sku);
-    return view('pages.product',['product'=>$product,'images'=>$product->getImages(),'attributes'=>$product->attributes()]);
+    $favorite = $product->isFavorite();
+    return view('pages.product',['product'=>$product,'images'=>$product->getImages(),'attributes'=>$product->attributes(),'favorite'=>$favorite]);
   }
 
   public function create(){

@@ -82,7 +82,11 @@
           <span hidden>{{$product->stock}}</span>
         </div>
         <div class="linksBox">
-          <span class="addFavs"><i class="far fa-heart"></i><a href="#">Favorites</a></span>
+          @if($favorite)
+            <span class="addFavs"><i class="fas fa-heart"></i><a href="#">Favorites</a></span>
+          @else
+            <span class="addFavs"><i class="far fa-heart"></i><a href="#">Favorites</a></span>
+          @endif
           <div class="custom-control custom-checkbox">
             <input type="checkbox" class="custom-control-input" id="customCheck1">
             <label id="compare" class="custom-control-label" for="customCheck1">Compare</label>

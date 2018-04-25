@@ -42,13 +42,13 @@ Route::delete('comment/{id}','ProductController@commentDelete')->where('id','[0-
 
 //Homepage
 Route::get('homepage','HomepageController@show')->name('homepage');
+Route::view('shoppingCart','pages.shoppingCart')->name('shoppingCart');
 
 // Static
 Route::view('about','pages.about')->name('about');
 Route::view('contact','pages.contact')->name('contact');
 Route::view('faq','pages.faq')->name('faq');
 Route::view('configurator','pages.homepage')->name('configurator');
-Route::view('shoppingCart','pages.homepage')->name('shoppingCart');
 
 // Authentication
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');

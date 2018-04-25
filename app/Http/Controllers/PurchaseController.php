@@ -20,8 +20,9 @@ class PurchaseController extends Controller
    * @param  String  $username
    * @return Response
    */
-  public function show($username)
+  public function show()
   {
+    return view('pages.shoppingCart');
 
   }
 

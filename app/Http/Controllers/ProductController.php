@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Customer;
 use App\User;
 use App\Product;
+use Illuminate\Support\Facades\View;
 use phpDocumentor\Reflection\Types\Integer;
 use App\Rating;
 

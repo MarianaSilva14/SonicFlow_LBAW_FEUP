@@ -265,16 +265,11 @@ function homepagePromotionsHandler() {
         return;
     }
     let products = JSON.parse(this.response);
-    console.log(products);
-/*    if(products.length < limit){
-        let button = document.querySelector("#showMore");
-        button.hidden=true;
-    }else{
-        productOffset += limit;
+    let recommendations = document.querySelector('#promo > .row');
+    recommendations.innerHTML = "";
+    for (let product_html of products){
+        recommendations.innerHTML += product_html;
     }
-    for (let product of products){
-        showAdminProduct(product);
-    }*/
 }
 
 function homepageBestSellersHandler() {
@@ -285,7 +280,11 @@ function homepageBestSellersHandler() {
         return;
     }
     let products = JSON.parse(this.response);
-    console.log(products);
+    let recommendations = document.querySelector('#bestsellers > .row');
+    recommendations.innerHTML = "";
+    for (let product_html of products){
+        recommendations.innerHTML += product_html;
+    }
 
 }
 
@@ -298,7 +297,11 @@ function homepageRecommendationsHandler() {
         return;
     }
     let products = JSON.parse(this.response);
-    console.log(products);
+    let recommendations = document.querySelector('#recommended > .row');
+    recommendations.innerHTML = "";
+    for (let product_html of products){
+        recommendations.innerHTML += product_html;
+    }
 }
 
 

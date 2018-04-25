@@ -144,7 +144,7 @@ class Product extends Model
       $query->selectRaw('* , (price - discountprice)/price AS rank');
       $query->whereNotNull('discountprice');
       $query->orderBy('rank', 'desc');
-      
+
 /*      -- Get discounted products
 SELECT * , (P.price - P.discountprice)/P.price AS rank
 FROM product P
@@ -164,6 +164,8 @@ LIMIT $limit;*/
   public static function getBestSellersProducts(Request $request){
       $query = DB::table('product');
 
+      $query->orderBy('rating', 'desc');
+      
 /*      -- Get products with higher rating
 SELECT *
 FROM product P

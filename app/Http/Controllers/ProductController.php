@@ -91,6 +91,14 @@ class ProductController extends Controller
       $product->picture = $picPath;
     }
 
+    $validatedData = $request->validate([
+       'title' => 'required',
+       'description' => 'nullable',
+       'price' => 'required',
+       'discountprice' => 'nullable',
+       'stock' => 'required'
+     ]);
+
     try {
       $product->title = $request->input('title');
       $product->description = $request->input('description');

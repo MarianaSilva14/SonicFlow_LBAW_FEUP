@@ -71,6 +71,11 @@
                   <div class="col-lg-8">
                     <input type="file" name="picture" class="form-control">
                   </div>
+                  @if ($errors->has('picture'))
+                      <span class="text-danger">
+                        {{ $errors->first('picture') }}
+                      </span>
+                  @endif
                 </div>
                 <div class="form-group">
                   <label class="col-lg-3 control-label">First name:</label>
@@ -81,6 +86,11 @@
                       <input class="form-control" name="firstName" type="text" value="{{$infoCustomer->firstName()}}" readonly>
                     @endif
                   </div>
+                  @if ($errors->has('firstName'))
+                      <span class="text-danger">
+                        {{ $errors->first('firstName') }}
+                      </span>
+                  @endif
                 </div>
                 <div class="form-group">
                   <label class="col-lg-3 control-label">Last name:</label>
@@ -91,6 +101,11 @@
                       <input class="form-control" name="lastName" type="text" value="{{$infoCustomer->lastName()}}" readonly>
                     @endif
                   </div>
+                  @if ($errors->has('lastName'))
+                      <span class="text-danger">
+                        {{ $errors->first('lastName') }}
+                      </span>
+                  @endif
                 </div>
                 <div class="form-group">
                   <label class="col-lg-3 control-label">Email:</label>
@@ -101,6 +116,11 @@
                       <input class="form-control" name="email" type="text" value="{{$infoUser->email}}" readonly>
                     @endif
                   </div>
+                  @if ($errors->has('email'))
+                      <span class="text-danger">
+                        {{ $errors->first('email') }}
+                      </span>
+                  @endif
                 </div>
                 @if($editable)
                   <div class="form-group">
@@ -118,7 +138,7 @@
                   <div class="form-group">
                     <label class="col-md-3 control-label">Confirm password:</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="password" value="">
+                      <input class="form-control" name="password_confirmation" type="password" value="">
                     </div>
                   </div>
                 @endif

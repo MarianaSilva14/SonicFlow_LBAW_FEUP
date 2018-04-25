@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Customer;
 use App\User;
 use App\Product;
+use Illuminate\Support\Facades\View;
 use phpDocumentor\Reflection\Types\Integer;
 use App\Rating;
 
@@ -40,20 +41,39 @@ class ProductController extends Controller
       return json_encode($products);
   }
 
-  public function getDiscounted(Request $request){
-    $discounted_products = Product::getDiscountedProducts($request);
-    return json_encode($discounted_products);
-  }
+    public function getDiscounted(Request $request){
+        $discounted_products = Product::getDiscountedProducts($request);
+        $discounted = [];
+        foreach ($discounted_products as $dis){
+            $view = View::make('partials.product_mini', ['product' => $dis]);
+            array_push($discounted, (string) $view);
+        }
 
-  public function getBestSellers(Request $request){
-    $bestsellers_products = Product::getBestSellersProducts($request);
-    return json_encode($bestsellers_products);
-  }
+        return json_encode($discounted);
+    }
 
-  public function getRecommendations(Request $request){
-    $recommendations_products = Product::getRecommendationsProducts($request);
-    return json_encode($recommendations_products);
-  }
+    public function getBestSellers(Request $request){
+        $bestsellers_products = Product::getBestSellersProducts($request);
+        $bestsellers = [];
+        foreach ($bestsellers_products as $bs){
+            $view = View::make('partials.product_mini', ['product' => $bs]);
+            array_push($bestsellers, (string) $view);
+        }
+
+        return json_encode($bestsellers);
+    }
+
+    public function getRecommendations(Request $request){
+        $recommendations_products = Product::getRecommendationsProducts($request);
+
+        $recommendations = [];
+        foreach ($recommendations_products as $rp){
+            $view = View::make('partials.product_mini', ['product' => $rp]);
+            array_push($recommendations, (string) $view);
+        }
+
+        return json_encode($recommendations);
+    }
 
   public function editForm($sku){
     try {
@@ -89,6 +109,14 @@ class ProductController extends Controller
       }
       $product->picture = $picPath;
     }
+
+    $validatedData = $request->validate([
+       'title' => 'required',
+       'description' => 'nullable',
+       'price' => 'required',
+       'discountprice' => 'nullable',
+       'stock' => 'required'
+     ]);
 
     try {
       $product->title = $request->input('title');

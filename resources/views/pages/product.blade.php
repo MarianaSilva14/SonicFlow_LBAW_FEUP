@@ -82,10 +82,12 @@
           <span hidden>{{$product->stock}}</span>
         </div>
         <div class="linksBox">
-          @if($favorite)
-            <span class="addFavs"><i class="fas fa-heart"></i><a href="#">Favorites</a></span>
-          @else
-            <span class="addFavs"><i class="far fa-heart"></i><a href="#">Favorites</a></span>
+          @if(Auth::user() && Auth::user()->isCustomer())
+            @if($favorite)
+              <span class="addFavs"><i class="fas fa-heart"></i><a href="#">Favorites</a></span>
+            @else
+              <span class="addFavs"><i class="far fa-heart"></i><a href="#">Favorites</a></span>
+            @endif
           @endif
           <div class="custom-control custom-checkbox">
             <input type="checkbox" class="custom-control-input" id="customCheck1">

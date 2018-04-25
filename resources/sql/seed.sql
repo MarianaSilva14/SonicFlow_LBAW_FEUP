@@ -527,6 +527,7 @@ INSERT INTO category_attribute VALUES (2,2);
 INSERT INTO category_attribute VALUES (3,3);
 INSERT INTO category_attribute VALUES (4,4);
 INSERT INTO category_attribute VALUES (5,4);
+INSERT INTO category_attribute VALUES (5,5);
 INSERT INTO category_attribute VALUES (1,6);
 INSERT INTO category_attribute VALUES (2,7);
 INSERT INTO category_attribute VALUES (3,8);

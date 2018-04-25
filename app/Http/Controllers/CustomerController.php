@@ -40,6 +40,16 @@ class CustomerController extends Controller
     $user = User::find($username);
     $this->authorize('profile', $customer);
 
+    $validatedData = $request->validate([
+       'password' => 'nullable',
+       'oldPassword' => 'nullable',
+       'password_confirmation' => 'nullable',
+       'picture' => 'nullable',
+       'email' => 'required',
+       'firstName' => 'required',
+       'lastName' => 'required'
+     ]);
+
     if($request->input('oldPassword')!=""){
       if(!Hash::check($request->input('oldPassword'),$user->password) || $request->input('password') == "") {
         return view('pages.profile', ['editable'=> TRUE, 'alert' => 'Old Password is <strong>invalid</strong> or new password wasn\'t <strong>set</strong>', 'infoCustomer' => $customer,'infoUser' => Auth::user()]);
@@ -85,6 +95,12 @@ class CustomerController extends Controller
   public function create(Request $request)
   {
       $customer = new Customer();
+
+      $validatedData = $request->validate([
+         'user_username' => 'required',
+         'name' => 'required',
+         'address' => 'nullable'
+       ]);
 
       $customer->user_username = $request->input('user_username');
       $customer->name = $request->input('name');

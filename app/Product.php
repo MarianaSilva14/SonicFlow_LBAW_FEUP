@@ -139,20 +139,63 @@ class Product extends Model
   }
 
   public static function getDiscountedProducts(Request $request){
-    //TODO finish this
+      $query = DB::table('product');
 
-    return DB::table('product')->whereNotNull('discountprice')->get();
+      $query->selectRaw('* , (price - discountprice)/price AS rank');
+      $query->whereNotNull('discountprice');
+      $query->orderBy('rank', 'desc');
+      
+/*      -- Get discounted products
+SELECT * , (P.price - P.discountprice)/P.price AS rank
+FROM product P
+WHERE 	P.discountprice IS NOT NULL
+ORDER BY rank DESC
+LIMIT $limit;*/
+
+      $limit = intval($request->input('limit'));
+      if ($limit != null){
+          $query = $query->limit($limit);
+      }
+      $products = $query->get();
+      return $products;
+
   }
 
   public static function getBestSellersProducts(Request $request){
-    //TODO finish this
+      $query = DB::table('product');
 
-    return DB::table('product')->whereNotNull('discountprice')->get();
+/*      -- Get products with higher rating
+SELECT *
+FROM product P
+ORDER BY rating DESC
+LIMIT $limit;*/
+
+      $limit = intval($request->input('limit'));
+      if ($limit != null){
+          $query = $query->limit($limit);
+      }
+      $products = $query->get();
+      return $products;
   }
 
   public static function getRecommendationsProducts(Request $request){
-    //TODO finish this
+      $query = DB::table('product');
 
-    return DB::table('product')->whereNotNull('discountprice')->get();
+
+/*      -- Get best selling products
+SELECT *, SUM(PP.quantity) as sumQ
+FROM product P, purchase_product PP
+WHERE P.sku = PP.product_idproduct
+GROUP BY P.sku
+ORDER BY sumQ DESC
+LIMIT $limit;*/
+
+
+      $limit = intval($request->input('limit'));
+      if ($limit != null){
+          $query = $query->limit($limit);
+      }
+      $products = $query->get();
+      return $products;
   }
 }

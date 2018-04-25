@@ -40,7 +40,7 @@
                 @if ($infoUser->getPicture() == "")
                   <img alt="Responsive image" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" id="profile-image1" class="img-fluid">
                 @else
-                  <img alt="Responsive image" src="{{ \Illuminate\Support\Facades\Storage::url(Auth::User()->getPicture()) }}" id="profile-image1" class="img-fluid">
+                  <img alt="Responsive image" src="{{ Storage::url(Auth::User()->getPicture()) }}" id="profile-image1" class="img-fluid">
                 @endif
               </div>
             </div>
@@ -152,40 +152,7 @@
               <th>Date</th>
               <th>Expand</th>
             </tr>
-
-            <tr>
-              <td>
-                2*Apple MacBook Pro 15'', etc
-                <div id="opret-produkt" class="collapse in" style="margin-top: 10px">
-                  <div>
-                    <table class="table table-striped table-hover table-bordered">
-              				<tr class="info" style="color:#65768e;">
-              					<th>Item Name</th>
-              					<th>Cost</th>
-              				</tr>
-
-              				<tr>
-              					<td>Apple MacBook Pro 15''</td>
-              					<td>3 199,99 €</td>
-              				</tr>
-                      <tr>
-              					<td>Apple MacBook Pro 15''</td>
-              					<td>3 199,99 €</td>
-              				</tr>
-                      <tr>
-              					<td>Mouse</td>
-              					<td>10</td>
-              				</tr>
-              			</table>
-                </div>
-              </td>
-              <td>6 409,98 €</td>
-              <td>28/02/2018</td>
-              <td class="panel panel-default panel-help" href="#opret-produkt" data-toggle="collapse">
-                <i class="fas fa-minus"></i>
-                <i class="fas fa-minus"></i>
-              </td>
-            </tr>
+            
           </table>
           </div>
 

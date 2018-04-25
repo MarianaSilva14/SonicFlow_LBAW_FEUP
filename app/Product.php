@@ -185,19 +185,19 @@ LIMIT $limit;*/
   public static function getBestSellersProducts(Request $request){
       $query = DB::table('product');
 
-      $query->selectRaw('* , SUM(purchase_product.quantity) as sumQ');
+      $query->selectRaw('product.* , SUM(purchase_product.quantity) AS sumQ');
       $query->join('purchase_product', 'product.sku', '=', 'purchase_product.product_idproduct');
-      $query->groupBy('sku');
-      $query->orderBy('sumQ', 'desc');
+      $query->groupBy('product.sku');
+      $query->orderByRaw('sumQ DESC');
 
 
 /*      -- Get best selling products
-SELECT *, SUM(PP.quantity) as sumQ
+SELECT P.*, SUM(PP.quantity) as sum
 FROM product P, purchase_product PP
 WHERE P.sku = PP.product_idproduct
 GROUP BY P.sku
-ORDER BY sumQ DESC
-LIMIT $limit;*/
+ORDER BY sum DESC
+*/
 
 
       $limit = intval($request->input('limit'));

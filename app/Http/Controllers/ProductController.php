@@ -55,7 +55,6 @@ class ProductController extends Controller
     return json_encode($recommendations_products);
   }
 
-
   public function editForm($sku){
     try {
       $this->authorize('edit',Product::class);

@@ -169,7 +169,6 @@ function sendRatingRequest(event){
 }
 
 function receiveRatingHandler(){
-  console.log(this);
   if(this.status != 200){
     alert("Rating couldn't be updated");
   }else{
@@ -260,13 +259,14 @@ function addShowMoreClickListener() {
 
 
 function homepagePromotionsHandler() {
-    alert('got promotions');
-/*    if(this.status != 200){
-        alert('Error: '+this.status);
+    console.log('got promotions');
+    if(this.status != 200){
+        alert('Error promo: '+this.status);
         return;
     }
     let products = JSON.parse(this.response);
-    if(products.length < limit){
+    console.log(products);
+/*    if(products.length < limit){
         let button = document.querySelector("#showMore");
         button.hidden=true;
     }else{
@@ -278,12 +278,27 @@ function homepagePromotionsHandler() {
 }
 
 function homepageBestSellersHandler() {
-    alert('got best sellers');
+    console.log('got best sellers');
+    if(this.status != 200){
+        alert('Error bs: '+this.status);
+        console.log(this.response);
+        return;
+    }
+    let products = JSON.parse(this.response);
+    console.log(products);
 
 }
 
 function homepageRecommendationsHandler() {
-    alert('got recommendations');
+    console.log('got recommendations');
+    if(this.status != 200){
+        alert('Error reco: '+this.status);
+        console.log(this.response);
+
+        return;
+    }
+    let products = JSON.parse(this.response);
+    console.log(products);
 }
 
 
@@ -299,11 +314,38 @@ function homepageRecommendations() {
     sendAjaxRequest('GET','/api/recommendations?limit='+limit,null,homepageRecommendationsHandler);
 }
 
+function addFavoriteToggleHandler() {
+  console.log(this);
+  if(this.status != 200){
+    console.log(this.responseText);
+    alert("Couldn't favorite product, please retry.");
+  }else{
+    //let button = document.querySelector();
+    let button = document.querySelector(".addFavs svg");
+    if(button.dataset.prefix=='fas'){
+      button.dataset.prefix='far';
+    }else{
+      button.dataset.prefix='fas';
+    }
+  }
+}
 
+function addFavoriteToggleAction() {
+  let productId = document.querySelector("#stars_rating");
+  sendAjaxRequest('POST','/users/favorites/'+productId.dataset.id,null,addFavoriteToggleHandler);
+  event.preventDefault();
+}
+
+function addFavoriteToggleListener() {
+  let button = document.querySelector(".addFavs");
+  if(button != null)
+    button.onclick = addFavoriteToggleAction;
+}
 
 updateRatingOfProduct();
 removeFavoritesButton();
 productLinks();
 productUpdateAddListener();
 addAmountChangeListener();
+addFavoriteToggleListener();
 addShowMoreClickListener();

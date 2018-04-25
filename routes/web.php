@@ -71,4 +71,4 @@ Route::get('api/products', 'ProductController@getProducts')->name('api_products'
 // Homepage needed api
 Route::get('api/discounts', 'ProductController@getDiscounted')->name('api_discounted')->middleware('api');
 Route::get('api/bestsellers', 'ProductController@getBestSellers')->name('api_bestsellers')->middleware('api');
-Route::get('api/recommendations', 'ProductController@getRecommendatios')->name('api_recommendations')->middleware('api');
+Route::get('api/recommendations', 'ProductController@getRecommendations')->name('api_recommendations')->middleware('api');

@@ -123,13 +123,17 @@ function deleteCommentHandler(){
     alert('Comment deletion went wrong');
     alert(this.responseText);
   }else if(this.status == 200){
-    alert('Successfully removed comment');
-    //delete text change
+    //alert('Successfully removed comment');
+    let comment = document.getElementsByClassName('deletedComment');
+    if(comment.length!=0){
+      comment[0].innerHTML="{Content Deleted}";
+    }
   }
 }
 
 function deleteCommentAction(id){
   sendAjaxRequest('DELETE','/comment/'+id,null,deleteCommentHandler);
+  event.target.parentNode.classList.add('deletedComment');
   event.preventDefault();
 }
 

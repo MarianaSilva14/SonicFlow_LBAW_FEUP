@@ -161,28 +161,35 @@ LIMIT $limit;*/
 
   }
 
-  public static function getBestSellersProducts(Request $request){
+  public static function getRecommendationsProducts(Request $request)
+  {
       $query = DB::table('product');
 
       $query->orderBy('rating', 'desc');
-      
-/*      -- Get products with higher rating
-SELECT *
-FROM product P
-ORDER BY rating DESC
-LIMIT $limit;*/
+
+      /*      -- Get products with higher rating
+      SELECT *
+      FROM product P
+      ORDER BY rating DESC
+      LIMIT $limit;*/
 
       $limit = intval($request->input('limit'));
-      if ($limit != null){
+      if ($limit != null) {
           $query = $query->limit($limit);
       }
       $products = $query->get();
       return $products;
+
   }
 
-  public static function getRecommendationsProducts(Request $request){
+  public static function getBestSellersProducts(Request $request){
       $query = DB::table('product');
 
+      $query->selectRaw('* , SUM(purchase_product.quantity) as sumQ');
+      $query->join('purchase_product', 'product.sku', '=', 'purchase_product.product_idproduct');
+      $query->groupBy('sku');
+      $query->orderBy('sumQ', 'desc');
+      
 
 /*      -- Get best selling products
 SELECT *, SUM(PP.quantity) as sumQ

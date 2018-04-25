@@ -259,13 +259,14 @@ function addShowMoreClickListener() {
 
 
 function homepagePromotionsHandler() {
-    alert('got promotions');
-/*    if(this.status != 200){
-        alert('Error: '+this.status);
+    console.log('got promotions');
+    if(this.status != 200){
+        alert('Error promo: '+this.status);
         return;
     }
     let products = JSON.parse(this.response);
-    if(products.length < limit){
+    console.log(products);
+/*    if(products.length < limit){
         let button = document.querySelector("#showMore");
         button.hidden=true;
     }else{
@@ -277,12 +278,27 @@ function homepagePromotionsHandler() {
 }
 
 function homepageBestSellersHandler() {
-    alert('got best sellers');
+    console.log('got best sellers');
+    if(this.status != 200){
+        alert('Error bs: '+this.status);
+        console.log(this.response);
+        return;
+    }
+    let products = JSON.parse(this.response);
+    console.log(products);
 
 }
 
 function homepageRecommendationsHandler() {
-    alert('got recommendations');
+    console.log('got recommendations');
+    if(this.status != 200){
+        alert('Error reco: '+this.status);
+        console.log(this.response);
+
+        return;
+    }
+    let products = JSON.parse(this.response);
+    console.log(products);
 }
 
 
@@ -322,7 +338,8 @@ function addFavoriteToggleAction() {
 
 function addFavoriteToggleListener() {
   let button = document.querySelector(".addFavs");
-  button.onclick = addFavoriteToggleAction;
+  if(button != null)
+    button.onclick = addFavoriteToggleAction;
 }
 
 updateRatingOfProduct();

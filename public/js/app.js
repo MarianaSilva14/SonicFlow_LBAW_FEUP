@@ -179,7 +179,6 @@ function receiveRatingHandler(){
 
 function updateRatingOfProduct(){
   let inputs = document.querySelectorAll("#rating svg");
-
   for(var i of inputs){
     i.addEventListener('click', sendRatingRequest);
   }

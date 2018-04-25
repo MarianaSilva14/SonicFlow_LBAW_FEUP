@@ -41,39 +41,39 @@ class ProductController extends Controller
       return json_encode($products);
   }
 
-    public function getDiscounted(Request $request){
-        $discounted_products = Product::getDiscountedProducts($request);
-        $discounted = [];
-        foreach ($discounted_products as $dis){
-            $view = View::make('partials.product_mini', ['product' => $dis]);
-            array_push($discounted, (string) $view);
-        }
+  public function getDiscounted(Request $request){
+      $discounted_products = Product::getDiscountedProducts($request);
+      $discounted = [];
+      foreach ($discounted_products as $dis){
+          $view = View::make('partials.product_mini', ['product' => $dis]);
+          array_push($discounted, (string) $view);
+      }
 
-        return json_encode($discounted);
-    }
+      return json_encode($discounted);
+  }
 
-    public function getBestSellers(Request $request){
-        $bestsellers_products = Product::getBestSellersProducts($request);
-        $bestsellers = [];
-        foreach ($bestsellers_products as $bs){
-            $view = View::make('partials.product_mini', ['product' => $bs]);
-            array_push($bestsellers, (string) $view);
-        }
+  public function getBestSellers(Request $request){
+      $bestsellers_products = Product::getBestSellersProducts($request);
+      $bestsellers = [];
+      foreach ($bestsellers_products as $bs){
+          $view = View::make('partials.product_mini', ['product' => $bs]);
+          array_push($bestsellers, (string) $view);
+      }
 
-        return json_encode($bestsellers);
-    }
+      return json_encode($bestsellers);
+  }
 
-    public function getRecommendations(Request $request){
-        $recommendations_products = Product::getRecommendationsProducts($request);
+  public function getRecommendations(Request $request){
+      $recommendations_products = Product::getRecommendationsProducts($request);
 
-        $recommendations = [];
-        foreach ($recommendations_products as $rp){
-            $view = View::make('partials.product_mini', ['product' => $rp]);
-            array_push($recommendations, (string) $view);
-        }
+      $recommendations = [];
+      foreach ($recommendations_products as $rp){
+          $view = View::make('partials.product_mini', ['product' => $rp]);
+          array_push($recommendations, (string) $view);
+      }
 
-        return json_encode($recommendations);
-    }
+      return json_encode($recommendations);
+  }
 
   public function editForm($sku){
     try {

@@ -12,8 +12,7 @@ class CustomerPolicy
 {
     use HandlesAuthorization;
 
-    public function profile(User $user, Customer $customer)
-    {
+    public function profile(User $user, Customer $customer){
       // Only a customer can see his profile
       return $user->username == $customer->user_username;
     }

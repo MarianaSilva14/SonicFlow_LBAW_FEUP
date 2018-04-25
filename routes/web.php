@@ -14,11 +14,12 @@
 Route::get('/', function () {
     return redirect('homepage');
 });
-
+//19361
 // Profile
 Route::get('users/{id}','CustomerController@show')->name('profile');
 Route::post('users/{id}','CustomerController@update');
 Route::get('users/{id}/edit','CustomerController@edit')->name('profileEdit');
+Route::get('users/{id}/purchasehistory','PurchaseController@getPurchases');
 Route::post('/users/favorites/{sku}','CustomerController@toggleFavoritesList')->name('toggleFavoritesList');
 Route::delete('/users/favorites/{sku}','CustomerController@toggleFavoritesList')->name('removeFromFavoritesList');
 

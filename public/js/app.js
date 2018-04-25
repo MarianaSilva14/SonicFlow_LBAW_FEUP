@@ -214,7 +214,7 @@ function showAdminProduct(product) {
     let imgUrl = product.picture.split(";")[0];
     innerHTMLbuild += "src='"+imgUrl.replace("public","\/storage")+"'";
   }
-  innerHTMLbuild += "alt='product picture' class='img-fluid'/></td><td>"+product.title+"</td><td class='unitCost'>€"+product.price+"</td><td class='unitCost'>€"+product.discountprice+"</td><td class='amount'>"+product.stock+"</td><td class='edit_cart'><i class='far fa-edit fa-2x'></i></td>";
+  innerHTMLbuild += "alt='product picture' class='img-fluid'/></td><td><a href='/product/"+product.sku+"'>"+product.title+"</a></td><td class='unitCost'>€"+product.price+"</td><td class='unitCost'>€"+product.discountprice+"</td><td class='amount'>"+product.stock+"</td><td class='edit_cart' onclick=\"location.href='/product/"+product.sku+"/edit'\"><i class='far fa-edit fa-2x'></i></td>";
   row.innerHTML = innerHTMLbuild;
   let table = document.querySelector('table.table');
   table.appendChild(row);

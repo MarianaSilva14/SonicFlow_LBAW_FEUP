@@ -19,7 +19,6 @@ class Product extends Model
 
   protected $fillable = ['rating']; // or null
 
-
   /**
    * The table associated with the model.
    *

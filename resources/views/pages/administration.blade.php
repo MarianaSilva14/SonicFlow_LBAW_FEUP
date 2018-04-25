@@ -47,26 +47,8 @@
       <th>Item Name</th>
       <th>Cost</th>
       <th>Discount</th>
-      <th>Quantity</th>
+      <th>Stock</th>
       <th>Edit</th>
-    </tr>
-    <tr>
-      <td class="delete_cart"><i class="far fa-trash-alt fa-2x"></i></td>
-      <td class="productImg"><img src="http://placehold.it/100x100" alt="..." class="img-fluid"/></td>
-      <td>Apple MacBook Pro 15''</td>
-      <td class="unitCost">€3 199,99 </td>
-      <td class="unitCost">€199,99 </td>
-      <td class="amount"><input type="number" class="form-control text-center" value="1"></td>
-      <td class="edit_cart"><i class="far fa-edit fa-2x"></i></td>
-    </tr>
-    <tr>
-      <td class="delete_cart"><i class="far fa-trash-alt fa-2x"></i></td>
-      <td class="productImg"><img src="http://placehold.it/100x100" alt="..." class="img-fluid"/></td>
-      <td>Apple MacBook Air 15''</td>
-      <td class="unitCost">€2 199,99 </td>
-      <td class="unitCost">€99,99 </td>
-      <td class="amount"><input type="number" class="form-control text-center" value="1"></td>
-      <td class="edit_cart" onclick="window.location.replace('{{route('product_edit',['id'=>'186596482'])}}');"><i class="far fa-edit fa-2x"></i></td>
     </tr>
   </table>
   <button id="showMore" class="btn btn-outline-success my-2 my-sm-0" type="button" style="font-weight:bold">Show More<i class="fas fa-plus"></i></button>

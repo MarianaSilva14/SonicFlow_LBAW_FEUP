@@ -189,7 +189,7 @@ LIMIT $limit;*/
       $query->join('purchase_product', 'product.sku', '=', 'purchase_product.product_idproduct');
       $query->groupBy('sku');
       $query->orderBy('sumQ', 'desc');
-      
+
 
 /*      -- Get best selling products
 SELECT *, SUM(PP.quantity) as sumQ

@@ -66,5 +66,9 @@ Route::get('moderation', 'ModeratorController@show')->name('moderation');
 // API new
 Route::get('api/product/{sku}', 'ProductController@getProductBySku')->where('sku', '[0-9]+')->name('api_product_sku')->middleware('api');
 Route::get('api/product/{name}', 'ProductController@getProductsByName')->name('api_product_name')->middleware('api');
-Route::get('api/discounts', 'ProductController@getDiscounted')->name('api_discounted')->middleware('api');
 Route::get('api/products', 'ProductController@getProducts')->name('api_products')->middleware('api');
+
+// Homepage needed api
+Route::get('api/discounts', 'ProductController@getDiscounted')->name('api_discounted')->middleware('api');
+Route::get('api/bestsellers', 'ProductController@getBestSellers')->name('api_bestsellers')->middleware('api');
+Route::get('api/recommendations', 'ProductController@getRecommendatios')->name('api_recommendations')->middleware('api');

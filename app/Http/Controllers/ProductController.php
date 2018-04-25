@@ -40,10 +40,21 @@ class ProductController extends Controller
       return json_encode($products);
   }
 
-  public function getDiscounted(){
-    $discounted_products = Product::getDiscountedProducts();
+  public function getDiscounted(Request $request){
+    $discounted_products = Product::getDiscountedProducts($request);
     return json_encode($discounted_products);
   }
+
+  public function getBestSellers(Request $request){
+    $bestsellers_products = Product::getBestSellersProducts($request);
+    return json_encode($bestsellers_products);
+  }
+
+  public function getRecommendations(Request $request){
+    $recommendations_products = Product::getRecommendationsProducts($request);
+    return json_encode($recommendations_products);
+  }
+
 
   public function editForm($sku){
     try {

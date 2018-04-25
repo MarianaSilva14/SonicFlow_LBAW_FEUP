@@ -121,14 +121,29 @@ class Product extends Model
     return $products;
   }
 
-  public static function getDiscountedProducts(){
-    return DB::table('product')->whereNotNull('discountprice')->get();
-  }
-
   public static function getProductByName(String $title){
     $products = DB::table('product')
        ->whereRaw('search @@ plainto_tsquery(\'english\',?)', [$title])->get();
     return $products;
   }
+
+  public static function getDiscountedProducts(Request $request){
+      //TODO finish this
+
+      return DB::table('product')->whereNotNull('discountprice')->get();
+  }
+
+  public static function getBestSellersProducts(Request $request){
+      //TODO finish this
+
+      return DB::table('product')->whereNotNull('discountprice')->get();
+  }
+
+  public static function getRecommendationsProducts(Request $request){
+      //TODO finish this
+
+      return DB::table('product')->whereNotNull('discountprice')->get();
+  }
+
 
 }

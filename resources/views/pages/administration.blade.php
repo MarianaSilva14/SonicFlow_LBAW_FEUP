@@ -7,7 +7,7 @@
 <div class="container admin-cont">
   <div class="row">
     <div class="addProduct" >
-      <a id="addProduct" class="btn btn-outline-success my-2 my-sm-0" type="button" href="{{route('product_create')}}" style="font-weight:bold"><i class="fas fa-plus"></i>Add product</a>
+      <button id="addProduct" class="btn btn-outline-success my-2 my-sm-0" type="button" onclick="location.href='{{route('product_create')}}'" style="font-weight:bold"><i class="fas fa-plus"></i>Add product</button>
     </div>
     <div class="col-xs-8 col-xs-offset-2 nav-search">
       <div class="input-group">
@@ -69,6 +69,7 @@
       <td class="edit_cart" onclick="window.location.replace('{{route('product_edit',['id'=>'186596482'])}}');"><i class="far fa-edit fa-2x"></i></td>
     </tr>
   </table>
+  <button id="showMore" class="btn btn-outline-success my-2 my-sm-0" type="button" style="font-weight:bold">Show More<i class="fas fa-plus"></i></button>
 </div>
 @endsection
 

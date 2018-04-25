@@ -78,7 +78,8 @@
         <!-- Amount -->
         <div class="col-md-2 col-2">
           <!-- <label for="amount">&zwnj;</label> -->
-          <input id="amount" type="number" class="form-control" value="1" min="1" max="100" step="1">
+          <input id="amount" type="number" onchange="productAmmountCheck()" class="form-control" value="1" min="1" max="100" step="1">
+          <span hidden>{{$product->stock}}</span>
         </div>
         <div class="linksBox">
           <span class="addFavs"><i class="far fa-heart"></i><a href="#">Favorites</a></span>
@@ -92,11 +93,10 @@
           <button class="availability btn btn-outline-success" disabled><i class="fas fa-check-circle"></i><span>Available </span></button>
           <button class="availability btn btn-outline-warning" disabled hidden><i class="fas fa-phone"></i><span>On Order</span></button>
           <button class="availability btn btn-outline-danger" disabled hidden><i class="fas fa-phone"></i><span>Unavailable</span></button>
-          <p class="availability" hidden>{{$product->stock}}</p>
         </div>
         <!-- Button -->
         <div class="col-md-6 col-12">
-          <button type="button" class="addToCart" style="vertical-align:middle"><span>Add to Cart</span><i class="fas fa-cart-plus"></i></button>
+          <button type="button" onclick="location.href='homepage'" class="addToCart" style="vertical-align:middle"><span>Add to Cart</span><i class="fas fa-cart-plus"></i></button>
         </div>
       </div>
     </div>

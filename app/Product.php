@@ -108,6 +108,16 @@ class Product extends Model
             ->orderByRaw('ts_rank(search,  plainto_tsquery(\'english\',?) DESC',[$title]);
     }
 
+    $limit = intval($request->input('limit'));
+    if ($limit != null){
+      $query = $query->limit($limit);
+    }
+
+    $offset = intval($request->input('offset'));
+    if($offset != null){
+      $query = $query->offset($offset);
+    }
+
     $products = $query->get();
     return $products;
   }

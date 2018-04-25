@@ -19,7 +19,6 @@ use App\Rating;
 
 class ProductController extends Controller
 {
-
   /**
    * Gets products based on filters.
    *

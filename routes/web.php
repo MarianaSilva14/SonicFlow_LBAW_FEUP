@@ -40,8 +40,10 @@ Route::get('comment/{id}/flag','ProductController@commentFlag')->where('id','[0-
 Route::get('comment/{id}/approve','ProductController@commentApprove')->where('id','[0-9]+')->name('comment_approve');
 Route::delete('comment/{id}','ProductController@commentDelete')->where('id','[0-9]+')->name('comment_delete');
 
+//Homepage
+Route::get('homepage','HomepageController@show')->name('homepage');
+
 // Static
-Route::view('homepage','pages.homepage')->name('homepage');
 Route::view('about','pages.about')->name('about');
 Route::view('contact','pages.contact')->name('contact');
 Route::view('faq','pages.faq')->name('faq');

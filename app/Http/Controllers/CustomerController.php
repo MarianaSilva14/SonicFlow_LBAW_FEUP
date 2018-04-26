@@ -118,13 +118,12 @@ class CustomerController extends Controller
     try {
       $this->authorize('favorite',Customer::class);
     } catch (\Exception $e) {
-      return redirect('login');
+      return $e->getMessage();
     }
 
-    //todo chango to ajax request return;
     Customer::find(Auth::user()->username)->toggleFavorite($sku);
 
-    return redirect('homepage');
+    return;
   }
 
 }

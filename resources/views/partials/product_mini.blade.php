@@ -26,7 +26,7 @@
                 <br>
                 <div class="m-t text-righ row">
                     <a href="#" class="addtoCart col-8 btn btn-xs btn-outline btn-primary">Add to cart  <i class="fas fa-cart-plus"></i></a>
-                    <a href="" class="addtoFavs col-3 btn btn-xs btn-outline btn-primary" id="heart_favorite" data-id={{$product->sku}}><i class="far fa-heart"></i></a>
+                    <a href="" class="addtoFavs col-3 btn btn-xs btn-outline btn-primary heart_favorite" data-id={{$product->sku}}><i class="far fa-heart"></i></a>
                 </div>
             </div>
         </div>

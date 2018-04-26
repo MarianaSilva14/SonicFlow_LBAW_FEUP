@@ -269,6 +269,7 @@ function homepagePromotionsHandler() {
     for (let product_html of products){
         recommendations.innerHTML += product_html;
     }
+    updateFavoriteList();
 }
 
 function homepageBestSellersHandler() {
@@ -284,7 +285,7 @@ function homepageBestSellersHandler() {
     for (let product_html of products){
         recommendations.innerHTML += product_html;
     }
-
+    updateFavoriteList();
 }
 
 function homepageRecommendationsHandler() {
@@ -301,6 +302,7 @@ function homepageRecommendationsHandler() {
     for (let product_html of products){
         recommendations.innerHTML += product_html;
     }
+    updateFavoriteList();
 }
 
 
@@ -346,22 +348,27 @@ function addFavoriteToggleListener() {
 function sendFavoriteRequest(event){
   console.log("HERE");
 
-  let id_product = this.closest('#heart_favorite').getAttribute('data-id');
+  let id_product = this.closest('.heart_favorite').getAttribute('data-id');
 
-  sendAjaxRequest('POST', '/user/favorites/'+id_product,null,receiveFavoriteHandler);
+  sendAjaxRequest('POST', '/users/favorites/'+id_product,null,receiveFavoriteHandler);
 
   event.preventDefault();
 }
 
 function receiveFavoriteHandler(){
+    console.log(this);
   if(this.status != 200){
     alert("Favorites list couldn't be updated");
   }
+  else
+      alert('All good');
 }
 
 function updateFavoriteList(){
-  let input = document.querySelector("#heart_favorite");
-  input.addEventListener('click', sendFavoriteRequest);
+  let hearts = document.querySelectorAll(".heart_favorite");
+    for(var i of hearts){
+        i.addEventListener('click', sendFavoriteRequest);
+    }
 }
 
 updateRatingOfProduct();

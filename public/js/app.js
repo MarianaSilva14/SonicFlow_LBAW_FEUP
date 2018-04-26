@@ -343,6 +343,26 @@ function addFavoriteToggleListener() {
   if(button != null)
     button.onclick = addFavoriteToggleAction;
 }
+function sendFavoriteRequest(event){
+  console.log("HERE");
+
+  let id_product = this.closest('#heart_favorite').getAttribute('data-id');
+
+  sendAjaxRequest('POST', '/user/favorites/'+id_product,null,receiveFavoriteHandler);
+
+  event.preventDefault();
+}
+
+function receiveFavoriteHandler(){
+  if(this.status != 200){
+    alert("Favorites list couldn't be updated");
+  }
+}
+
+function updateFavoriteList(){
+  let input = document.querySelector("#heart_favorite");
+  input.addEventListener('click', sendFavoriteRequest);
+}
 
 updateRatingOfProduct();
 removeFavoritesButton();

@@ -26,13 +26,7 @@
                 <br>
                 <div class="m-t text-righ row">
                     <a href="#" class="addtoCart col-8 btn btn-xs btn-outline btn-primary">Add to cart  <i class="fas fa-cart-plus"></i></a>
-                    {{--TODO: Change this to ajax call later--}}
-                    <a class="addtoFavs col-3 btn btn-xs btn-outline btn-primary">
-                        <form method="post" action="{{route('toggleFavoritesList', ['sku' => $product->sku])}}">
-                            {{csrf_field()}}
-                            <button style = "background-color: transparent;border-color: transparent;color: white" role="submit"><i class="far fa-heart"></i></button>
-                        </form>
-                    </a>
+                    <a href="" class="addtoFavs col-3 btn btn-xs btn-outline btn-primary" id="heart_favorite" data-id={{$product->sku}}><i class="far fa-heart"></i></a>
                 </div>
             </div>
         </div>

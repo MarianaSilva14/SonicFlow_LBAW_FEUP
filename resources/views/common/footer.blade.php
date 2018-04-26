@@ -7,19 +7,19 @@
         <ul class="list-inline">
 
           <li class="list-inline-item">
-            <a href="homepage">Home</a>
+            <a href={{route('homepage')}}>Home</a>
           </li>
 
           <li class="list-inline-item">
-            <a href="about">About us</a>
+            <a href={{route('about')}}>About us</a>
           </li>
 
           <li class="list-inline-item">
-            <a href="contact">Contact</a>
+            <a href="{{route('contact')}}">Contact</a>
           </li>
 
           <li class="list-inline-item">
-            <a href="faq">FAQ</a>
+            <a href="{{route('faq')}}">FAQ</a>
           </li>
         </ul>
       </div>

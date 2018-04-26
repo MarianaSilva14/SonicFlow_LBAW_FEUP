@@ -313,6 +313,30 @@ code.language-yaml {
 		</td>
 	</tr>
 </table>
+<h4 class="mume-header" id="15-m05-product-and-its-attributes-values">1.5 M05: Product and its Attributes-Values</h4>
+
+<table>
+	<tr>
+		<th> SQL501</th>
+		<td> Gets all the information on a product, including its attributes and values for said attributes </td>
+	</tr>
+	<tr>
+		<td> Web Resource  </td>
+		<td class="col1"> <a href="https://github.com/xfontes42/lbaw1723/blob/artefacts/A7/A7.md#r205-single-product">205</a></td>
+	</tr>
+	<tr>
+		<td colspan="2">
+		<div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-weight: bold">SELECT</span> *
+<span style="color: #008800; font-weight: bold">FROM</span> product, category_attribute, attribute_product, attribute
+<span style="color: #008800; font-weight: bold">WHERE</span> 	product.sku = attribute_product.product_idproduct
+	<span style="color: #008800; font-weight: bold">AND</span>	attribute_product.attribute_idattribute = attribute.id
+	<span style="color: #008800; font-weight: bold">AND</span> category_attribute.attribute_idattribute = attribute.id
+	<span style="color: #008800; font-weight: bold">AND</span> category_attribute.category_idcategory = product.category_idcat
+	<span style="color: #008800; font-weight: bold">AND</span> product.sku = <span style=" background-color: #e3d2d2">$</span>sku;
+</pre></div>
+		</td>
+	</tr>
+</table>
 <h2 class="mume-header" id="2-transactions">2. Transactions</h2>
 
 <table>
@@ -326,7 +350,7 @@ code.language-yaml {
 	</tr>
 	<tr>
 		<td> Justification </td>
-		<td class="col1">  When a customer is created there is an insert at the User table and at the Customer table and any operation in between must be such that there aren't any Phantom Reads.</td>
+		<td class="col1">  When a customer is created there is an insert at the User table and at the Customer table and any operation in between must be such that there aren't any Phantom Reads. <a href="https://github.com/xfontes42/lbaw1723/blob/artefacts/A9/lbaw1723_a9.md#11-m01-registration">SQL101</a></td>
 	</tr>
 	<tr>
 		<td colspan="2">
@@ -352,7 +376,7 @@ code.language-yaml {
 	</tr>
 	<tr>
 		<td> Justification </td>
-		<td class="col1">  When a customer views it's profile, it isn't very worrysome if not all of their information is updated. As such, we don't mind dirty reads.</td>
+		<td class="col1">  When a customer views its profile, it isn't very worrysome if not all of their information is updated. As such, we don't mind dirty reads. <a href="https://github.com/xfontes42/lbaw1723/blob/artefacts/A7/A7.md#r106-view-profile">R106</a></td>
 	</tr>
 	<tr>
 		<td colspan="2">
@@ -391,7 +415,7 @@ code.language-yaml {
 	</tr>
 	<tr>
 		<td> Justification </td>
-		<td class="col1">  When a customer is in the homepage we want to display discounted and recommended products and allow the user to search products but we don't want dirty reads to happen because products might be undergoing updates.</td>
+		<td class="col1">  When a customer is in the homepage we want to display discounted and recommended products and allow the user to search products but we don't want dirty reads to happen because products might be undergoing updates. <a href="https://github.com/xfontes42/lbaw1723/blob/artefacts/A7/A7.md#r201-homepage">R201</a></td>
 	</tr>
 	<tr>
 		<td colspan="2">
@@ -422,6 +446,11 @@ code.language-yaml {
 </table>
 <h2 class="mume-header" id="revision-history">Revision history</h2>
 
+<ul>
+<li>Changed typo in T02.</li>
+<li>Added SQL501.</li>
+<li>Added resources associated with transactions.</li>
+</ul>
 <br>
 GROUP1723, 25/04/2018
 <br>

@@ -31,6 +31,7 @@ var limit = 5;
 
 function docOnLoad(){
   locArray = window.location.href.split("/");
+  console.log(locArray);
   if(locArray[locArray.length-1].toLowerCase()=='homepage'){
       homepagePromotions();
       homepageBestSellers();
@@ -39,6 +40,10 @@ function docOnLoad(){
   if(locArray[locArray.length-1].toLowerCase()=='administration'){
     adminLoadProducts();
     product_offset=0;
+  }
+  if(locArray[3].toLowerCase()=='product'){
+      setTimeout(updateRatingOfProduct, 200);
+      //updateRatingOfProduct();
   }
 }
 
@@ -179,6 +184,7 @@ function receiveRatingHandler(){
 
 function updateRatingOfProduct(){
   let inputs = document.querySelectorAll("#rating svg");
+  console.log(inputs);
   for(var i of inputs){
     i.addEventListener('click', sendRatingRequest);
   }
@@ -371,7 +377,6 @@ function updateFavoriteList(){
     }
 }
 
-updateRatingOfProduct();
 removeFavoritesButton();
 productLinks();
 productUpdateAddListener();

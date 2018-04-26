@@ -351,6 +351,7 @@ function addFavoriteToggleListener() {
   if(button != null)
     button.onclick = addFavoriteToggleAction;
 }
+
 function sendFavoriteRequest(event){
   console.log("HERE");
 
@@ -377,6 +378,40 @@ function updateFavoriteList(){
     }
 }
 
+function retreivePurchaseHistoryHandler() {
+  if(this.status != 200){
+    console.log(this.responseText);
+    alert("Couldn't get purchase history, please retry.");
+  }else{
+    let purchases = JSON.parse(this.responseText);
+    let table = document.getElementById('purchaseTable');
+    if(purchases.length!=0){
+      for (let purchase of purchases) {
+        table.children[0].innerHTML += purchase;
+      }
+    }else{
+      table.children[0].innerHTML += "<tr><td colspan='4'>No registered purchases available</td></tr>"
+    }
+  }
+}
+
+function retreivePurchaseHistoryAction(){
+  let table = document.getElementById('purchaseTable').children[0]
+  if(!this.classList.contains('show') && table.children.length<=1){
+    let userId = document.querySelector("input[name='username']").value;
+    sendAjaxRequest('GET','/users/'+userId+'/purchasehistory',null,retreivePurchaseHistoryHandler);
+  }else{
+    console.log("don't load");
+  }
+}
+
+function retreivePurchaseHistory(){
+  let input = document.getElementById('purchaseHistory-tab');
+  console.log(input);
+  input.onclick = retreivePurchaseHistoryAction;
+}
+
+retreivePurchaseHistory();
 removeFavoritesButton();
 //productLinks();
 productUpdateAddListener();

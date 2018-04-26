@@ -378,7 +378,7 @@ function updateFavoriteList(){
 }
 
 removeFavoritesButton();
-productLinks();
+//productLinks();
 productUpdateAddListener();
 addAmountChangeListener();
 addFavoriteToggleListener();

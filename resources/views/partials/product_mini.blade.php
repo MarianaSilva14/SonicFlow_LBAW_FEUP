@@ -2,7 +2,9 @@
     <div class="ibox">
         <div class="ibox-content product-box">
             <div class="product-imitation">
-                <img src="{{ Storage::url($product->picture) }}" alt="Image for {{ $product->title }}"class="img-fluid">
+                <a href="{{route('product',['id' => $product->sku])}}">
+                    <img src="{{ Storage::url($product->picture) }}" alt="Image for {{ $product->title }}"class="img-fluid">
+                </a>
             </div>
             <div class="product-desc">
                 <div class="priceTags">

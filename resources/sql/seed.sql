@@ -466,6 +466,25 @@ INSERT INTO product VALUES ('914510007','Curabitur sociis dis nisi',2,4207.41,3.
 INSERT INTO product VALUES ('542291350','eleifend Nulla',3,2673.58,5.02,3.78,1401);
 INSERT INTO product VALUES ('891931229','tempus sociis odio mattis magna',10,6118.55,8.32,2.59,630);
 INSERT INTO product VALUES ('278925974','conubia ornare lobortis',1,7101.92,7.27,1.02,290);
+INSERT INTO product VALUES ('000000001','Dell Enterprise Desktop',1,7195.11,6.39,0,200);
+INSERT INTO product VALUES ('000000002','HP Enterprise Desktop',1,500.10,null,0,500);
+INSERT INTO product VALUES ('000000003','Asus Gaming Laptop',2,1500.10,6.39,0,100);
+INSERT INTO product VALUES ('000000004','Asus Enterprise Laptop',2,500.10,null,0,75);
+INSERT INTO product VALUES ('000000005','Asus Zen Phone',3,299.99,null,0,125);
+INSERT INTO product VALUES ('000000006','Samsung Galaxy Phone',3,500.00,449.99,0,75);
+INSERT INTO product VALUES ('000000007','Western Digital 1Tb',5,100.00,null,0,75);
+INSERT INTO product VALUES ('000000008','Seagate Blue 3Tb',5,199.99,null,0,75);
+INSERT INTO product VALUES ('000000009','Kingston Mechanical Keyboard',6,99.99,null,0,75);
+INSERT INTO product VALUES ('000000010','Logitech Mechanical Keyboard RGB',6,149.99,null,0,75);
+INSERT INTO product VALUES ('000000011','Cannon EOS',7,499.99,null,0,75);
+INSERT INTO product VALUES ('000000012','Sony Alpha',7,362.00,null,0,75);
+INSERT INTO product VALUES ('000000013','Lg Ultrawide Monitor',8,800.00,699.99,0,75);
+INSERT INTO product VALUES ('000000014','Sony Bravia Television',8,499.99,null,0,75);
+INSERT INTO product VALUES ('000000015','Router D-Link',9,50.50,null,0,75);
+INSERT INTO product VALUES ('000000016','Router Asus Dual-Band',9,200.00,179.99,0,75);
+INSERT INTO product VALUES ('000000017','Windows 10 HomeEdition',10,499.99,null,0,75);
+INSERT INTO product VALUES ('000000018','Kaspersky protection System 2 years package',10,499.99,null,0,75);
+
 
 --COMMENT
 INSERT INTO comment VALUES (1,'TYTTbQf', '2012-05-16 12:36:38', 'blakhinwuhdie hdie', 0, FALSE, '901896832');

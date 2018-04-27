@@ -69,7 +69,7 @@
         <!-- Price -->
         <div class="col-md-4 col-sm-4 col-5">
           @if($product->discountprice == null)
-            <input id="price" type="text" readonly class="form-control-plaintext bg-warning" value="€{{$product->price}}">
+            <input id="price" type="text" readonly class="form-control-plaintext price" value="€{{$product->price}}">
           @else
             <input id="price" type="text" readonly class="form-control-plaintext bg-danger" value="€{{$product->discountprice}}">
             <small class="originalPrice">€{{$product->price}}</small>

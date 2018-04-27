@@ -126,4 +126,16 @@ class CustomerController extends Controller
     return;
   }
 
+  public function getFavorites($username){
+    $customer = Customer::findOrFail($username);
+    $this->authorize('profile',$customer);
+    $favorites = $customer->favoritesList;
+    $returnHTML = [];
+    foreach ($favorites as $favorite){
+        $view = View::make('partials.product_mini', ['product' => $favorite]);
+        array_push($returnHTML, (string) $view);
+    }
+    return $returnHTML;
+  }
+
 }

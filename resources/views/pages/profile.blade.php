@@ -165,14 +165,13 @@
 
           <div class="panel panel-primary">
           <div class="panel-heading"><h4 style="padding-bottom: 19px">Purchase History</h4></div>
-          <table class="table table-striped table-hover table-bordered">
+          <table id="purchaseTable" class="table table-striped table-hover table-bordered">
             <tr class="info" style="color:#65768e">
               <th>Items</th>
               <th>Cost</th>
               <th>Date</th>
               <th>Expand</th>
             </tr>
-            
           </table>
           </div>
 

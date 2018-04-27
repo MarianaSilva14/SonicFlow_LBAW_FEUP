@@ -28,11 +28,11 @@ class PurchaseController extends Controller
 
   public function getPurchases($username){
     $customer = Customer::findOrFail($username);
-    //$this->authorize('profile',$customer);
+    $this->authorize('profile',$customer);
     $purchases = Purchase::getPurchases($username);
     $returnHTML = [];
     foreach ($purchases as $purchase){
-        $view = View::make('partials.purchase', ['products' => $purchase->getProducts(),'date'=>$purchase->date,'price'=>$purchase->price]);
+        $view = View::make('partials.purchase', ['products' => $purchase->getProducts(),'date'=>$purchase->date,'price'=>$purchase->value]);
         array_push($returnHTML, (string) $view);
     }
     return $returnHTML;

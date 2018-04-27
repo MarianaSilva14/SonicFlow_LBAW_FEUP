@@ -139,30 +139,29 @@ class Product extends Model
   }
 
   public static function getDiscountedProducts(Request $request){
-      $query = DB::table('product');
+    $query = DB::table('product');
 
-      $query->selectRaw('* , (price - discountprice)/price AS rank');
-      $query->whereNotNull('discountprice');
-      $query->orderBy('rank', 'desc');
+    $query->selectRaw('* , (price - discountprice)/price AS rank');
+    $query->whereNotNull('discountprice');
+    $query->orderBy('rank', 'desc');
 
-/*      -- Get discounted products
-SELECT * , (P.price - P.discountprice)/P.price AS rank
-FROM product P
-WHERE 	P.discountprice IS NOT NULL
-ORDER BY rank DESC
-LIMIT $limit;*/
+    /*      -- Get discounted products
+    SELECT * , (P.price - P.discountprice)/P.price AS rank
+    FROM product P
+    WHERE 	P.discountprice IS NOT NULL
+    ORDER BY rank DESC
+    LIMIT $limit;*/
 
-      $limit = intval($request->input('limit'));
-      if ($limit != null){
-          $query = $query->limit($limit);
-      }
-      $products = $query->get();
-      return $products;
+    $limit = intval($request->input('limit'));
+    if ($limit != null){
+        $query = $query->limit($limit);
+    }
+    $products = $query->get();
+    return $products;
 
   }
 
-  public static function getRecommendationsProducts(Request $request)
-  {
+  public static function getRecommendationsProducts(Request $request){
       $query = DB::table('product');
 
       $query->orderBy('rating', 'desc');
@@ -183,28 +182,26 @@ LIMIT $limit;*/
   }
 
   public static function getBestSellersProducts(Request $request){
-      $query = DB::table('product');
+    $query = DB::table('product');
 
-      $query->selectRaw('product.* , SUM(purchase_product.quantity) AS sumQ');
-      $query->join('purchase_product', 'product.sku', '=', 'purchase_product.product_idproduct');
-      $query->groupBy('product.sku');
-      $query->orderByRaw('sumQ DESC');
-
-
-/*      -- Get best selling products
-SELECT P.*, SUM(PP.quantity) as sum
-FROM product P, purchase_product PP
-WHERE P.sku = PP.product_idproduct
-GROUP BY P.sku
-ORDER BY sum DESC
-*/
+    $query->selectRaw('product.* , SUM(purchase_product.quantity) AS sumQ');
+    $query->join('purchase_product', 'product.sku', '=', 'purchase_product.product_idproduct');
+    $query->groupBy('product.sku');
+    $query->orderByRaw('sumQ DESC');
+    /*      -- Get best selling products
+    SELECT P.*, SUM(PP.quantity) as sum
+    FROM product P, purchase_product PP
+    WHERE P.sku = PP.product_idproduct
+    GROUP BY P.sku
+    ORDER BY sum DESC
+    */
 
 
-      $limit = intval($request->input('limit'));
-      if ($limit != null){
-          $query = $query->limit($limit);
-      }
-      $products = $query->get();
-      return $products;
+    $limit = intval($request->input('limit'));
+    if ($limit != null){
+        $query = $query->limit($limit);
+    }
+    $products = $query->get();
+    return $products;
   }
 }

@@ -45,7 +45,7 @@ class ProductController extends Controller
       $discounted_products = Product::getDiscountedProducts($request);
       $discounted = [];
       foreach ($discounted_products as $dis){
-          $view = View::make('partials.product_mini', ['product' => $dis]);
+          $view = View::make('partials.product_mini', ['product' => $dis,'profile'=>FALSE]);
           array_push($discounted, (string) $view);
       }
 
@@ -56,7 +56,7 @@ class ProductController extends Controller
       $bestsellers_products = Product::getBestSellersProducts($request);
       $bestsellers = [];
       foreach ($bestsellers_products as $bs){
-          $view = View::make('partials.product_mini', ['product' => $bs]);
+          $view = View::make('partials.product_mini', ['product' => $bs,'profile'=>FALSE]);
           array_push($bestsellers, (string) $view);
       }
 
@@ -68,7 +68,7 @@ class ProductController extends Controller
 
       $recommendations = [];
       foreach ($recommendations_products as $rp){
-          $view = View::make('partials.product_mini', ['product' => $rp]);
+          $view = View::make('partials.product_mini', ['product' => $rp,'profile'=>FALSE]);
           array_push($recommendations, (string) $view);
       }
 

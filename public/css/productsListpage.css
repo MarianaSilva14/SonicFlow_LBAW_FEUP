@@ -3,11 +3,11 @@
     padding-left: 5px;
     padding-right: 5px;
   }
-  
+
   .filterBar{
     margin: 0;
   }
-  
+
   .filterBar .custom-control{
       border: 1px solid #ced4da;
       border-radius: .25rem;
@@ -16,18 +16,18 @@
       padding-left: 2rem;
       margin-right: 15px;
   }
-  
+
   .custom-control-label[for="productAvailable"]::before,
   .custom-control-label[for="productAvailable"]::after{
     top: 10px;
     left: 5px;
   }
-  
+
   .product-box {
     padding: 0;
     border: 3px solid #e7eaec;
   }
-  
+
   .product-box:hover,
   .product-box.active {
     border: 1px solid transparent;
@@ -35,7 +35,7 @@
     -moz-box-shadow: 0 3px 7px 0 #a8a8a8;
     box-shadow: 0 3px 7px 0 #a8a8a8;
   }
-  
+
   .product-imitation {
     text-align: center;
     padding: 0px 0;
@@ -43,20 +43,20 @@
     color: #bebec3;
     font-weight: 600;
   }
-  
+
   .product-imitation.xl {
     padding: 120px 0;
   }
-  
+
   .product-desc {
     padding: 10px;
     position: relative;
   }
-  
+
   .product-desc .row{
     margin:0;
   }
-  
+
   .product-name {
     font-size: 16px;
     font-weight: 600;
@@ -64,12 +64,12 @@
     display: block;
     margin: 2px 0 5px 0;
   }
-  
+
   .product-name:hover,
   .product-name:focus {
     color: #f8941e;
   }
-  
+
   .product-price {
     font-size: 14px;
     font-weight: 600;
@@ -80,11 +80,11 @@
     top: -20px;
     left: 10px; */
   }
-  
+
   .discount-price ~ .product-price{
     text-decoration: line-through;
   }
-  
+
   .discount-price {
     font-size: 14px;
     font-weight: 600;
@@ -96,7 +96,7 @@
     left: 100px; */
     z-index: 2;
   }
-  
+
   .ibox {
     height: 100%;
     clear: both;
@@ -104,12 +104,12 @@
     margin-top: 20px;
     padding: 0;
   }
-  
+
   .ibox:after,
   .ibox:before {
     display: table;
   }
-  
+
   .ibox-content {
     height: 100%;
     color: inherit;
@@ -120,24 +120,24 @@
     border-width: 1px;
     box-shadow: 2px 3px #D3D3D3;
   }
-  
+
   .outbox{
     margin-top: 20px;
     margin-bottom: 20px;
   }
-  
+
   #content-wrapper .btn-primary {
     padding-right: .5rem;
     padding-left: .5rem;
     background-color: #009fc8;
     border-color: #009fc8;
   }
-  
-  .btn-primary.addtoFavs,
+
+  .btn-primary.addFavs,
   .btn.rmFromFavs{
     margin-left: auto;
   }
-  
+
   .compareOverlay{
     z-index: 2000;
     background: white;
@@ -148,30 +148,30 @@
     border: 1px solid #65768e;
     border-radius: 8px 8px 0 0;
   }
-  
+
   .compareOverlay img{
     max-height: 10vh;
   }
-  
+
   .close{
     position: absolute;
     right: 5px;
     top: 5px;
   }
-  
+
   @media (max-width: 1200px) {
     .compareOverlay{
       width: 93%;
     }
   }
-  
+
   @media (min-width: 576px) {
     .priceRange{
       width: auto;
       flex: none;
     }
   }
-  
+
   @media (max-width: 575px) {
     .priceRange input{
       display: inline-block;
@@ -199,4 +199,3 @@
       font-size: 1.5em;
     }
   }
-  

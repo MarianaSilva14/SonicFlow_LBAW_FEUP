@@ -98,7 +98,6 @@ function flagCommentHandler(){
     alert('Successfully flagged comment');
   }
 }
-
 function flagCommentAction(id){
   sendAjaxRequest('get','/comment/'+id+'/flag',null,flagCommentHandler);
   event.preventDefault();
@@ -116,7 +115,6 @@ function deleteCommentHandler(){
     }
   }
 }
-
 function deleteCommentAction(id){
   sendAjaxRequest('DELETE','/comment/'+id,null,deleteCommentHandler);
   event.target.parentNode.classList.add('deletedComment');
@@ -132,7 +130,6 @@ function approveCommentHandler(){
     //delete text change
   }
 }
-
 function approveCommentAction(id){
   sendAjaxRequest('GET','/comment/'+id+'/approve',null,approveCommentHandler);
   event.preventDefault();
@@ -160,7 +157,6 @@ function receiveRatingHandler(){
     stars[0].checked=true;
   }
 }
-
 function updateRatingOfProduct(){
   let inputs = document.querySelectorAll("#rating svg");
   console.log(inputs);
@@ -187,7 +183,6 @@ function productAmmountCheck(event){
     addCart[0].children[0].style.textDecoration = 'none';
   }
 }
-
 function addAmountChangeListener() {
   let input = document.querySelector('#amount');
   if (input != undefined) {
@@ -302,11 +297,13 @@ function addFavoriteToggleHandler() {
     alert("Couldn't favorite product, please retry.");
   }else{
     //let button = document.querySelector();
-    let button = document.querySelector("a[data-id='"+this.responseText+"'].addFavs svg");
-    if(button.dataset.prefix=='fas'){
-      button.dataset.prefix='far';
-    }else{
-      button.dataset.prefix='fas';
+    let buttons = document.querySelectorAll("a[data-id='"+this.responseText+"'].addFavs svg");
+    for (let button of buttons) {
+      if(button.dataset.prefix=='fas'){
+        button.dataset.prefix='far';
+      }else{
+        button.dataset.prefix='fas';
+      }
     }
   }
 }
@@ -337,7 +334,8 @@ function removeFavoritesHandler(){
     console.log(this.responseText);
     alert("Couldn't remove favorite product, please retry.");
   }else{
-    alert("success")
+    let button = document.querySelector("a[data-id='"+this.responseText+"'].rmFromFavs");
+    button.closest(".outbox").remove();
   }
 }
 function removeFavoritesAction(){

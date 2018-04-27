@@ -26,7 +26,7 @@ Route::delete('/users/favorites/{sku}','CustomerController@toggleFavoritesList')
 // Products
 Route::view('products','pages.homepage')->name('products');
 Route::get('product/create','ProductController@create')->name('product_create');
-Route::post('product/','ProductController@show')->name('product_add');
+Route::post('product','ProductController@createProduct')->name('product_add');
 
 //Single Product
 Route::get('product/{id}/edit','ProductController@editForm')->where('id','[0-9]+')->name('product_edit');

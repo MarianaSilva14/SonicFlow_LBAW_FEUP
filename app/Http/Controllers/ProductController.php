@@ -226,4 +226,26 @@ class ProductController extends Controller
       Rating::where([['customer_username','=',$user->username],['product_idproduct','=',$sku]])->update(['value' => $request->input('value')]);
     return json_encode($request->input('value'));
   }
+
+  public function createProduct(Request $request){
+
+    $title = $request->input('title');
+    $category = $request->input('category');
+    $standard_price = $request->input('price');
+    $discount_price = $request ->input('discountPrice');
+    $available_stock = $request->input('stock');
+
+    $product = Product::create([
+      'title' => $title,
+      'category_idcat' => $category,
+      'price' => $standard_price,
+      'discountprice' => $discount_price,
+      'rating' => 0,
+      'stock' => $available_stock
+    ]);
+
+    $product->save();
+
+    //TODO: Acrescentar picture
+  }
 }

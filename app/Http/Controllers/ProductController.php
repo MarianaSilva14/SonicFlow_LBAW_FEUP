@@ -254,6 +254,8 @@ class ProductController extends Controller
 
     $product->save();
 
+    return redirect()->route('product',['id'=>$product->sku]);
+
     //TODO: Acrescentar picture
   }
 }

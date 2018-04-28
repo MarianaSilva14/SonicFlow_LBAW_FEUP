@@ -14,7 +14,7 @@ class Product extends Model
 
   protected $primaryKey = 'sku'; // or null
 
-  public $incrementing = false;
+  public $incrementing = true;
 
   public $timestamps = false;
   protected $fillable = ['sku','title','category_idcat','price','discountprice','rating','stock','description','search','picture']; // or null

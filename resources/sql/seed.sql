@@ -485,6 +485,8 @@ INSERT INTO product VALUES ('000000016','Router Asus Dual-Band',9,200.00,179.99,
 INSERT INTO product VALUES ('000000017','Windows 10 HomeEdition',10,499.99,null,0,75);
 INSERT INTO product VALUES ('000000018','Kaspersky protection System 2 years package',10,499.99,null,0,75);
 
+SELECT setval(pg_get_serial_sequence('product', 'sku'), 18) FROM product;
+
 
 --COMMENT
 INSERT INTO comment VALUES (1,'TYTTbQf', '2012-05-16 12:36:38', 'blakhinwuhdie hdie', 0, FALSE, '901896832');

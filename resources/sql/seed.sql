@@ -466,6 +466,25 @@ INSERT INTO product VALUES ('914510007','Curabitur sociis dis nisi',2,4207.41,3.
 INSERT INTO product VALUES ('542291350','eleifend Nulla',3,2673.58,5.02,3.78,1401);
 INSERT INTO product VALUES ('891931229','tempus sociis odio mattis magna',10,6118.55,8.32,2.59,630);
 INSERT INTO product VALUES ('278925974','conubia ornare lobortis',1,7101.92,7.27,1.02,290);
+INSERT INTO product VALUES ('000000001','Dell Enterprise Desktop',1,7195.11,6.39,0,200);
+INSERT INTO product VALUES ('000000002','HP Enterprise Desktop',1,500.10,null,0,500);
+INSERT INTO product VALUES ('000000003','Asus Gaming Laptop',2,1500.10,6.39,0,100);
+INSERT INTO product VALUES ('000000004','Asus Enterprise Laptop',2,500.10,null,0,75);
+INSERT INTO product VALUES ('000000005','Asus Zen Phone',3,299.99,null,0,125);
+INSERT INTO product VALUES ('000000006','Samsung Galaxy Phone',3,500.00,449.99,0,75);
+INSERT INTO product VALUES ('000000007','Western Digital 1TB',5,100.00,null,0,75);
+INSERT INTO product VALUES ('000000008','Seagate Blue 3TB',5,199.99,null,0,75);
+INSERT INTO product VALUES ('000000009','Kingston Mechanical Keyboard',6,99.99,null,0,75);
+INSERT INTO product VALUES ('000000010','Logitech Mechanical Keyboard RGB',6,149.99,null,0,75);
+INSERT INTO product VALUES ('000000011','Cannon EOS',7,499.99,null,0,75);
+INSERT INTO product VALUES ('000000012','Sony Alpha',7,362.00,null,0,75);
+INSERT INTO product VALUES ('000000013','Lg Ultrawide Monitor',8,800.00,699.99,0,75);
+INSERT INTO product VALUES ('000000014','Sony Bravia Television',8,499.99,null,0,75);
+INSERT INTO product VALUES ('000000015','Router D-Link',9,50.50,null,0,75);
+INSERT INTO product VALUES ('000000016','Router Asus Dual-Band',9,200.00,179.99,0,75);
+INSERT INTO product VALUES ('000000017','Windows 10 HomeEdition',10,499.99,null,0,75);
+INSERT INTO product VALUES ('000000018','Kaspersky protection System 2 years package',10,499.99,null,0,75);
+
 
 --COMMENT
 INSERT INTO comment VALUES (1,'TYTTbQf', '2012-05-16 12:36:38', 'blakhinwuhdie hdie', 0, FALSE, '901896832');
@@ -497,14 +516,18 @@ INSERT INTO answer VALUES (12,13);
 INSERT INTO flagged values (13, FALSE);
 
 --ATTRIBUTE
-INSERT INTO attribute VALUES (1,'audio');
-INSERT INTO attribute VALUES (2,'visual');
-INSERT INTO attribute VALUES (3,'tatil');
-INSERT INTO attribute VALUES (4,'screenSize');
-INSERT INTO attribute VALUES (5,'comprido');
+INSERT INTO attribute VALUES (1,'Processor');
+INSERT INTO attribute VALUES (2,'RAM_memory');
+INSERT INTO attribute VALUES (3,'Disk_Space');
+INSERT INTO attribute VALUES (4,'Screen_Size');
+INSERT INTO attribute VALUES (5,'Rpm');
+INSERT INTO attribute VALUES (6,'Mechanical_Keys');
+INSERT INTO attribute VALUES (7,'Max_Resolution(MP)');
+INSERT INTO attribute VALUES (8,'Dual-Band');
+INSERT INTO attribute VALUES (9,'Usability_Time');
 
 --ATTRIBUTE_PRODUCT
-INSERT INTO attribute_product VALUES (1,'901896832', 'diam');
+INSERT INTO attribute_product VALUES (5,'901896832', 'diam');
 INSERT INTO attribute_product VALUES (2,'672442768', 'diam');
 INSERT INTO attribute_product VALUES (4,'186596482', 'diam');
 INSERT INTO attribute_product VALUES (5,'186596482', 'diam');
@@ -520,19 +543,47 @@ INSERT INTO attribute_product VALUES (2,'914510007', 'diam');
 INSERT INTO attribute_product VALUES (3,'542291350', 'diam');
 INSERT INTO attribute_product VALUES (4,'891931229', 'diam');
 INSERT INTO attribute_product VALUES (5,'278925974', 'diam');
+INSERT INTO attribute_product VALUES (1,'000000001', 'Intel i7');
+INSERT INTO attribute_product VALUES (2,'000000001', '');
+INSERT INTO attribute_product VALUES (3,'000000001', '1TB');
+INSERT INTO attribute_product VALUES (1,'000000002', 'Amd Ryzen 7');
+INSERT INTO attribute_product VALUES (2,'000000002', '2*8GB');
+INSERT INTO attribute_product VALUES (3,'000000002', '3TB');
+INSERT INTO attribute_product VALUES (1,'000000003', 'Intel i7');
+INSERT INTO attribute_product VALUES (2,'000000003', '16GB');
+INSERT INTO attribute_product VALUES (3,'000000003', '256GB');
+INSERT INTO attribute_product VALUES (1,'000000004', 'Intel i5');
+INSERT INTO attribute_product VALUES (2,'000000004', '8GB');
+INSERT INTO attribute_product VALUES (3,'000000004', '500GB');
+INSERT INTO attribute_product VALUES (4,'000000005', '5.6\"');
+INSERT INTO attribute_product VALUES (4,'000000006', '5.6\"');
+INSERT INTO attribute_product VALUES (5,'000000007', '7200');
+INSERT INTO attribute_product VALUES (5,'000000008', '7200');
+INSERT INTO attribute_product VALUES (6,'000000009', 'Yes');
+INSERT INTO attribute_product VALUES (6,'000000010', 'Yes');
+INSERT INTO attribute_product VALUES (7,'000000011', '20.4');
+INSERT INTO attribute_product VALUES (7,'000000012', '14.4');
+INSERT INTO attribute_product VALUES (4,'000000013', '14.4');
+INSERT INTO attribute_product VALUES (4,'000000014', '14.4');
+INSERT INTO attribute_product VALUES (8,'000000015', 'No');
+INSERT INTO attribute_product VALUES (8,'000000016', 'Yes');
+INSERT INTO attribute_product VALUES (9,'000000017', 'Lifetime');
+INSERT INTO attribute_product VALUES (9,'000000018', '2 Years');
 
 --CATEGORY_ATTRIBUTE
 INSERT INTO category_attribute VALUES (1,1);
+INSERT INTO category_attribute VALUES (2,1);
+INSERT INTO category_attribute VALUES (3,1);
+INSERT INTO category_attribute VALUES (1,2);
 INSERT INTO category_attribute VALUES (2,2);
-INSERT INTO category_attribute VALUES (3,3);
-INSERT INTO category_attribute VALUES (4,4);
-INSERT INTO category_attribute VALUES (5,4);
+INSERT INTO category_attribute VALUES (3,2);
+INSERT INTO category_attribute VALUES (4,3);
 INSERT INTO category_attribute VALUES (5,5);
-INSERT INTO category_attribute VALUES (1,6);
-INSERT INTO category_attribute VALUES (2,7);
-INSERT INTO category_attribute VALUES (3,8);
-INSERT INTO category_attribute VALUES (4,9);
-INSERT INTO category_attribute VALUES (4,10);
+INSERT INTO category_attribute VALUES (6,6);
+INSERT INTO category_attribute VALUES (7,7);
+INSERT INTO category_attribute VALUES (4,8);
+INSERT INTO category_attribute VALUES (8,9);
+INSERT INTO category_attribute VALUES (9,10);
 
 --FAVORITE
 INSERT INTO favorite VALUES ('TYTTbQf','901896832');

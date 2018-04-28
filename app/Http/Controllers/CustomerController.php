@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\View;
 
 use App\Customer;
 use App\User;
@@ -114,28 +115,25 @@ class CustomerController extends Controller
   }
 
   public function toggleFavoritesList($sku){
-
     try {
       $this->authorize('favorite',Customer::class);
     } catch (\Exception $e) {
       return $e->getMessage();
     }
-
     Customer::find(Auth::user()->username)->toggleFavorite($sku);
 
-    return;
+    return $sku;
   }
 
   public function getFavorites($username){
     $customer = Customer::findOrFail($username);
-    $this->authorize('profile',$customer);
+    //$this->authorize('profile',$customer);
     $favorites = $customer->favoritesList;
     $returnHTML = [];
     foreach ($favorites as $favorite){
-        $view = View::make('partials.product_mini', ['product' => $favorite]);
+        $view = View::make('partials.product_mini', ['product' => $favorite,'profile'=>TRUE]);
         array_push($returnHTML, (string) $view);
     }
     return $returnHTML;
   }
-
 }

@@ -228,6 +228,14 @@ class ProductController extends Controller
   }
 
   public function createProduct(Request $request){
+    $validatedData = $request->validate([
+       'title' => 'required',
+       'category' => 'required',
+       'price' => 'required',
+       'discountPrice' => 'nullable',
+       'rating' => 'nullable',
+       'stock' => 'required',
+     ]);
 
     $title = $request->input('title');
     $category = $request->input('category');

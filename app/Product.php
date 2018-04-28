@@ -17,8 +17,7 @@ class Product extends Model
   public $incrementing = false;
 
   public $timestamps = false;
-
-  protected $fillable = ['rating']; // or null
+  protected $fillable = ['sku','title','category_idcat','price','discountprice','rating','stock','description','search','picture']; // or null
 
   /**
    * The table associated with the model.

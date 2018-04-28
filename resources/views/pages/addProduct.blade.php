@@ -8,7 +8,7 @@
 
 @section('content')
 @include('common.breadcrumb', ['currPage' => 'New Product'])
-<form method="post" action="{{route('product_add')}}">
+<form method="post" action="{{route('product_add')}}" enctype="multipart/form-data">
   {{ csrf_field() }}
   <input type="file" multiple class="form-control">
   <!-- cost and buttons -->

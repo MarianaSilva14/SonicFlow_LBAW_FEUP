@@ -31,7 +31,7 @@
                 </div>
                 <br>
                 <div class="m-t text-righ row">
-                    <a href="#" class="addtoCart col-8 btn btn-xs btn-outline btn-primary">Add to cart  <i class="fas fa-cart-plus"></i></a>
+                    <a href="#" class="addToCart col-8 btn btn-xs btn-outline btn-primary">Add to cart  <i class="fas fa-cart-plus"></i></a>
                     @if($profile)
                       <a href="javascript:void(0)" class="rmFromFavs btn btn-danger col-3" data-id={{$product->sku}}><i class="far fa-trash-alt"></i></a>
                     @else

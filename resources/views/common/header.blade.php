@@ -59,7 +59,7 @@
         </li>
       @else
         <li class="nav-item">
-          <a class="nav-link" href="{{route('shoppingCart')}}"><i class="fas fa-shopping-cart fa-lg"></i></a>
+          <a class="nav-link shoppingCart" href="{{route('shoppingCart')}}"><i class="fas fa-shopping-cart fa-lg"></i></a>
         </li>
       @endif
       <li class="nav-item">

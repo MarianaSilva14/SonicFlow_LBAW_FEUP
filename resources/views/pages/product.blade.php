@@ -84,9 +84,9 @@
         <div class="linksBox">
           @if(Auth::user() && Auth::user()->isCustomer())
             @if($favorite)
-              <span class="addFavs"><i class="fas fa-heart"></i><a href="#">Favorites</a></span>
+              <a data-id={{$product->sku}} class="addFavs"><i class="fas fa-heart"></i><span>Favorites</span></a>
             @else
-              <span class="addFavs"><i class="far fa-heart"></i><a href="#">Favorites</a></span>
+              <a data-id={{$product->sku}} class="addFavs"><i class="far fa-heart"></i><span>Favorites</span></a>
             @endif
           @endif
           <div class="custom-control custom-checkbox">

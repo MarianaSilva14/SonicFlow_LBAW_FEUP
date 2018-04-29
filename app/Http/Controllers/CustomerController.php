@@ -42,14 +42,14 @@ class CustomerController extends Controller
     $this->authorize('profile', $customer);
 
     $validatedData = $request->validate([
-       'password' => 'nullable',
-       'oldPassword' => 'nullable',
-       'password_confirmation' => 'nullable',
-       'picture' => 'nullable',
-       'email' => 'required',
-       'firstName' => 'required',
-       'lastName' => 'required'
-     ]);
+      'oldPassword' => 'nullable',
+      'password' => 'nullable|confirmed|different:oldPassword',
+      'password_confirmation' => 'nullable',
+      'picture' => 'nullable|image',
+      'email' => 'required|email',
+      'firstName' => 'required|alpha',
+      'lastName' => 'required|alpha'
+    ]);
 
     if($request->input('oldPassword')!=""){
       if(!Hash::check($request->input('oldPassword'),$user->password) || $request->input('password') == "") {
@@ -98,8 +98,8 @@ class CustomerController extends Controller
       $customer = new Customer();
 
       $validatedData = $request->validate([
-         'user_username' => 'required',
-         'name' => 'required',
+         'user_username' => 'required|max:64',
+         'name' => 'required|alpha',
          'address' => 'nullable'
        ]);
 
@@ -120,6 +120,7 @@ class CustomerController extends Controller
     } catch (\Exception $e) {
       return $e->getMessage();
     }
+
     Customer::find(Auth::user()->username)->toggleFavorite($sku);
 
     return $sku;
@@ -127,7 +128,7 @@ class CustomerController extends Controller
 
   public function getFavorites($username){
     $customer = Customer::findOrFail($username);
-    //$this->authorize('profile',$customer);
+    $this->authorize('profile',$customer);
     $favorites = $customer->favoritesList;
     $returnHTML = [];
     foreach ($favorites as $favorite){

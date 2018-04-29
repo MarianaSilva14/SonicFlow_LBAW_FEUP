@@ -14,7 +14,7 @@
 Route::get('/', function () {
     return redirect('homepage');
 });
-//19361
+
 // Profile
 Route::get('users/{id}','CustomerController@show')->name('profile');
 Route::post('users/{id}','CustomerController@update');
@@ -32,7 +32,7 @@ Route::post('product','ProductController@createProduct')->name('product_add');
 //Single Product
 Route::get('product/{id}/edit','ProductController@editForm')->where('id','[0-9]+')->name('product_edit');
 Route::get('product/{id}','ProductController@show')->where('id','[0-9]+')->name('product');
-Route::post('product/{id}','ProductController@update');
+Route::post('product/{id}','ProductController@update')->where('id','[0-9]+');
 Route::delete('product/{id}','ProductController@show')->where('id','[0-9]+');
 Route::post('product/{id}/rating','ProductController@updateRating')->where('id','[0-9]+');
 

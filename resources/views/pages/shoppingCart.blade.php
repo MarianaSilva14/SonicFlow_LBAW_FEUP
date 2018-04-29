@@ -23,6 +23,16 @@
   					<th>Quantity</th>
             <th>Subtotal</th>
   				</tr>
+          @for ($i = 0; $i < count($products); $i++)
+            <tr>
+              <td class="delete_cart"><i class="far fa-trash-alt fa-2x"></i></td>
+              <td class="productImg"><img src="{{Storage::url($products[$i]->getImages()[0])}}" alt="product thumbnail" class="img-fluid"/></td>
+              <td>{{$products[$i]->title}}</td>
+              <td class="unitCost">{{$products[$i]->price}}€</td>
+              <td class="amount"><input type="number" class="form-control text-center" value="{{$values[$i]}}"></td>
+              <td class="totalCost">{{$values[$i]*$products[$i]->price}}€</td>
+            </tr>
+          @endfor
   				<tr>
     				<td class="delete_cart"><i class="far fa-trash-alt fa-2x"></i></td>
             <td class="productImg"><img src="http://placehold.it/100x100" alt="..." class="img-fluid"/></td>
@@ -31,7 +41,6 @@
   					<td class="amount"><input type="number" class="form-control text-center" value="1"></td>
             <td class="totalCost">€3 199,99</td>
   				</tr>
-
           <tfoot>
 						<tr>
 							<td colspan="2"><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>

@@ -47,17 +47,24 @@
 
 .addFavs{
 	margin: 10px;
+}
+
+.addFavs svg{
 	color: red;
 }
 
-.addFavs a{
+.addFavs span{
 	margin: 10px;
 	color: #65768e;
 	font-weight: bold;
 }
 
+.addFavs span:hover{
+	text-decoration: underline;
+}
+
 .addFavs:hover .fa-heart{
-	font-size: 150%;
+	font-size: 125%;
 }
 
 .custom-control{

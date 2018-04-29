@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Customer;
 use App\User;
 use App\Purchase;
+use App\Product;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
@@ -20,10 +21,25 @@ class PurchaseController extends Controller
    * @param  String  $username
    * @return Response
    */
-  public function show()
+  public function show(Request $request)
   {
-    return view('pages.shoppingCart');
-
+    $product = null;
+    $values = [];
+    $products = [];
+    foreach (json_decode($request->input('shoppingCart')) as $key => $value) {
+      try {
+        $product = Product::findOrFail($key);
+        array_push($products, $product);
+        if($product->stock > $value){
+          array_push($values, $value);
+        }else{
+          array_push($values,$product->stock);
+        }
+      } catch (\Exception $e) {
+        continue;
+      }
+    }
+    return view('pages.shoppingCart',['products'=>$products,'values'=>$values]);
   }
 
   public function getPurchases($username){

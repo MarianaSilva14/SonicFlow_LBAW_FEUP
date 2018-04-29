@@ -154,8 +154,19 @@ class ProductController extends Controller
   }
 
   public function addComment($sku, Request $request){
+    if (!Auth::check()) {
+      return redirect(route('login'));
+    }
+
     $user = Auth::user();
     $comment_text = $request->input('commentary');
+
+    $validatedData = $request->validate([
+       'commentary' => 'required',
+       'parent_id' => 'nullable|'
+    ]);
+
+    Product::findOrFail($sku);
 
     try {
       $comment = Comment::create([
@@ -181,7 +192,7 @@ class ProductController extends Controller
         }
     }
 
-    return redirect(url('product', ['id' => $sku]));
+    return redirect(route('product', ['id' => $sku,'#comment']));
   }
 
   public function commentFlag($id){

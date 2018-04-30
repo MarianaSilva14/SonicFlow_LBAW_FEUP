@@ -64,7 +64,7 @@ CREATE TABLE product (
     category_idcat INTEGER NOT NULL REFERENCES category ON DELETE CASCADE,
     price REAL NOT NULL,
     discountprice REAL,
-    rating REAL NOT NULL,
+    rating REAL NOT NULL DEFAULT 0,
     stock INTEGER NOT NULL,
     description TEXT,
     search tsvector,

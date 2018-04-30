@@ -163,7 +163,7 @@ class ProductController extends Controller
 
     $validatedData = $request->validate([
        'commentary' => 'required',
-       'parent_id' => 'nullable|'
+       'parent_id' => 'nullable'
     ]);
 
     Product::findOrFail($sku);
@@ -263,10 +263,21 @@ class ProductController extends Controller
       'stock' => $available_stock
     ]);
 
+    if($request->hasFile('pictures')){
+      $files = $request->file('pictures');
+      $picPath = "";
+      foreach ($files as $key=>$file) {
+        if($key==0){
+          $picPath .= $file->store('public/'.$product->sku, ['public']);
+        }else{
+          $picPath .= ';'.$file->store('public/'.$product->sku, ['public']);
+        }
+      }
+      $product->picture = $picPath;
+    }
+
     $product->save();
 
     return redirect()->route('product',['id'=>$product->sku]);
-
-    //TODO: Acrescentar picture
   }
 }

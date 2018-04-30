@@ -55,17 +55,23 @@
           </div>
         </div>
         <!-- Rating -->
-        <div class="col-md-12 col-12" id="stars_rating" data-id={{$product->sku}}>
-          <!-- <label for="rating">Rating</label> -->
-          <fieldset id="rating" class="rating form-control">
-            <input type="radio" id="star5" name="rating" value="5" /><span class="fas fa-star fa-lg"></span>
-            <input type="radio" id="star4" name="rating" value="4" /><span class="fas fa-star fa-lg"></span>
-            <input type="radio" id="star3" name="rating" value="3" /><span class="fas fa-star fa-lg"></span>
-            <input type="radio" id="star2" name="rating" value="2" /><span class="fas fa-star fa-lg"></span>
-            <input type="radio" id="star1" name="rating" value="1" /><span class="fas fa-star fa-lg"></span>
-          </fieldset>
-          <small class="ratingLabel">Rating</small>
+        @if(Auth::user() && Auth::user()->isCustomer())
+          <div class="col-md-12 col-12" id="stars_rating" data-id={{$product->sku}}>
+            <!-- <label for="rating">Rating</label> -->
+            <fieldset id="rating" class="rating form-control">
+              <input type="radio" id="star5" name="rating" value="5" /><span class="fas fa-star fa-lg"></span>
+              <input type="radio" id="star4" name="rating" value="4" /><span class="fas fa-star fa-lg"></span>
+              <input type="radio" id="star3" name="rating" value="3" /><span class="fas fa-star fa-lg"></span>
+              <input type="radio" id="star2" name="rating" value="2" /><span class="fas fa-star fa-lg"></span>
+              <input type="radio" id="star1" name="rating" value="1" /><span class="fas fa-star fa-lg"></span>
+            </fieldset>
+            <small class="ratingLabel">Rating</small>
+          </div>
+        @else
+        <div class="col-md-12 col-12">
+          <input type="text" readonly class="form-control-plaintext" value="Rating: {{$product->rating}}">
         </div>
+        @endif
         <!-- Price -->
         <div class="col-md-4 col-sm-4 col-5">
           @if($product->discountprice == null)

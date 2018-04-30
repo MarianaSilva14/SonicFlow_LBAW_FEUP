@@ -199,6 +199,7 @@ function sendRatingRequest(event){
 function receiveRatingHandler(){
   if(this.status != 200){
     alert("Rating couldn't be updated");
+    console.log(this.responseText);
   }else{
     let stars = document.querySelectorAll("#rating input#star"+JSON.parse(this.responseText));
     stars[0].checked=true;

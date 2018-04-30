@@ -10,7 +10,7 @@
 @include('common.breadcrumb', ['currPage' => 'New Product'])
 <form method="post" action="{{route('product_add')}}" enctype="multipart/form-data">
   {{ csrf_field() }}
-  <input type="file" multiple class="form-control">
+  <input type="file" id="pictures" name="pictures[]" multiple class="form-control">
   <!-- cost and buttons -->
   <!-- Title -->
   <label for="title">Title</label>

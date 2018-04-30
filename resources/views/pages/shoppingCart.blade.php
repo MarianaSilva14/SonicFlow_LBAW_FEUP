@@ -14,7 +14,7 @@
 
     		<div class="panel panel-primary">
    			<div class="panel-heading"><h4 style="padding-bottom: 19px">Shopping Cart</h4></div>
-  			<table class="table table-striped table-hover table-bordered">
+  			<table id="shoppingCartTable" class="table table-striped table-hover table-bordered">
   				<tr class="info" style="color:#65768e">
     				<th></th>
             <th>Product</th>
@@ -33,20 +33,12 @@
               <td class="totalCost">{{$values[$i]*$products[$i]->price}}€</td>
             </tr>
           @endfor
-  				<tr>
-    				<td class="delete_cart"><i class="far fa-trash-alt fa-2x"></i></td>
-            <td class="productImg"><img src="http://placehold.it/100x100" alt="..." class="img-fluid"/></td>
-  					<td>Apple MacBook Pro 15''</td>
-  					<td class="unitCost">€3 199,99 </td>
-  					<td class="amount"><input type="number" class="form-control text-center" value="1"></td>
-            <td class="totalCost">€3 199,99</td>
-  				</tr>
           <tfoot>
 						<tr>
 							<td colspan="2">
-                <a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a>
-                <a href="#" class="btn btn-info"><i class="far fa-trash-alt"></i> Remove All</a>
-                <a href="#" class="btn btn-info"><i class="fas fa-heart"></i> Add to Wishlist</a>
+                <a href="" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a>
+                <a href="" class="btn btn-info bg-logo-blue"><i class="far fa-trash-alt"></i> Remove All</a>
+                <a href="" class="btn btn-info bg-logo-blue"><i class="fas fa-heart"></i> Add to Wishlist</a>
               </td>
 							<td colspan="3" class="hidden-xs"></td>
 							<td class="hidden-xs text-center">

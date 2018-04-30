@@ -72,7 +72,29 @@ td.amount{
     border-color: #d68322;
 }
 
-td.delete_cart {
+table#shoppingCartTable{
+  border: none;
+}
+
+table#shoppingCartTable td{
+  border: none;
+}
+
+table#shoppingCartTable td.delete_cart {
   text-align: center;
   vertical-align: middle;
+}
+
+table#shoppingCartTable tfoot tr td:last-child{
+  vertical-align: middle;
+  font-size: 1.3em;
+}
+
+table#shoppingCartTable tfoot tr td:first-child{
+  width: 100px;
+}
+
+table#shoppingCartTable tfoot tr td:first-child a{
+  width:100%;
+  margin: 5px 0;
 }

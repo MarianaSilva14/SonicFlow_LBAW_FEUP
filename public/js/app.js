@@ -277,7 +277,9 @@ function adminLoadProducts() {
 }
 function addShowMoreClickListener() {
   let button = document.querySelector('#showMore');
+  console.log("here");
   if(button!=null){
+    console.log("click")
     button.onclick = adminLoadProducts;
   }
 }
@@ -499,7 +501,9 @@ function shoppingCartAction() {
 }
 function shoppingCart() {
   let button = document.getElementsByClassName('shoppingCart');
-  button[0].onclick = shoppingCartAction;
+  if (button[0] != null) {
+    button[0].onclick = shoppingCartAction;
+  }
 }
 
 retreivePurchaseHistory();

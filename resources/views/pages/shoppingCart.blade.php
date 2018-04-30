@@ -43,7 +43,11 @@
   				</tr>
           <tfoot>
 						<tr>
-							<td colspan="2"><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+							<td colspan="2">
+                <a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a>
+                <a href="#" class="btn btn-info"><i class="far fa-trash-alt"></i> Remove All</a>
+                <a href="#" class="btn btn-info"><i class="fas fa-heart"></i> Add to Wishlist</a>
+              </td>
 							<td colspan="3" class="hidden-xs"></td>
 							<td class="hidden-xs text-center">
                 <strong class="checkoutCost">3199,90€</strong>

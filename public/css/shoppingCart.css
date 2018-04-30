@@ -92,6 +92,7 @@ table#shoppingCartTable tfoot tr td:last-child{
 
 table#shoppingCartTable tfoot tr td:first-child{
   width: 100px;
+  max-width: 100px;
 }
 
 table#shoppingCartTable tfoot tr td:first-child a{

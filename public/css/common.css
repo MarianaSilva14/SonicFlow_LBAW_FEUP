@@ -226,6 +226,12 @@ box-shadow: none;
   color:#f8941e;
 }
 
+#navbarCollapse .nav-link.shoppingCart::before{
+  content: attr(data-before);
+  color:#f8941e;
+  font-weight: bold;
+}
+
 .navbar-light .navbar-nav .login, .navbar-light .navbar-nav .register{
     margin-top: 5px;
     color: #65768e;

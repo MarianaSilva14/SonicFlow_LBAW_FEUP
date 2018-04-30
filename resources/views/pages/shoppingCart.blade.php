@@ -23,9 +23,12 @@
   					<th>Quantity</th>
             <th>Subtotal</th>
   				</tr>
+          @if(count($products)==0)
+            <td colspan="6">No products currently on shopping cart</td>
+          @endif
           @for ($i = 0; $i < count($products); $i++)
             <tr>
-              <td class="delete_cart"><i class="far fa-trash-alt fa-2x"></i></td>
+              <td class="delete_cart removeSingle" data-id="{{$products[$i]->sku}}"><i class="far fa-trash-alt fa-2x"></i></td>
               <td class="productImg"><img src="{{Storage::url($products[$i]->getImages()[0])}}" alt="product thumbnail" class="img-fluid"/></td>
               <td>{{$products[$i]->title}}</td>
               <td class="unitCost">{{$products[$i]->price}}€</td>
@@ -36,14 +39,18 @@
           <tfoot>
 						<tr>
 							<td colspan="2">
-                <a href="" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a>
-                <a href="" class="btn btn-info bg-logo-blue"><i class="far fa-trash-alt"></i> Remove All</a>
-                <a href="" class="btn btn-info bg-logo-blue"><i class="fas fa-heart"></i> Add to Wishlist</a>
+                <a href="{{route('homepage')}}" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a>
+                <a href="" class="btn btn-success btn-block removeAll"><i class="far fa-trash-alt"></i> Remove All</a>
+                <a href="" class="btn btn-success btn-block"><i class="fas fa-heart"></i> Add to Wishlist</a>
               </td>
 							<td colspan="3" class="hidden-xs"></td>
 							<td class="hidden-xs text-center">
-                <strong class="checkoutCost">3199,90€</strong>
-                <a href="#" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a>
+                <strong class="checkoutCost">
+                  <?php $total=0; for($i=0; $i < count($products); $i++) {
+                    $total += $products[$i]->price*$values[$i];
+                  } echo $total?>€
+                </strong>
+                <a href="" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a>
               </td>
 						</tr>
 					</tfoot>

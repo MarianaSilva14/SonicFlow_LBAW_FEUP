@@ -22,6 +22,11 @@ class CustomerPolicy
       return (Auth::check() && Auth::user()->isCustomer());
     }
 
+    public function purchase(User $user){
+        //only customers can purchase
+        return (Auth::check() && Auth::user()->isCustomer());
+    }
+
     public function ban(User $user){
       return (Auth::check() && Auth::user()->isModerator());
     }

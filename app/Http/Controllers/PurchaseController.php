@@ -3,6 +3,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\Request;
 
 use App\Customer;
@@ -51,12 +52,13 @@ class PurchaseController extends Controller
 
     public function showCheckout(Request $request)
     {
-
-        $customer = Customer::findOrFail($username);
-
-        // authorize pa autenticado
-
-        // loyalty points
+        $user = Auth::user();
+        $customer = Customer::findOrFail($user->username);
+        try{
+            $this->authorize('purchase',$customer);
+        } catch (AuthorizationException $e) {
+            return view('pages.homepage');
+        }
 
         $json_object = json_decode($request->input('shoppingCart'));
         if($json_object==null){

@@ -76,6 +76,7 @@
       </tr>
 
     @foreach($moderators as $moderator)
+      {{--TODO: put here to go delete moderators--}}
         <td class='delete_cart'><i class='far fa-trash-alt fa-2x'></i></td>
         <td>{{$moderator->user_username}}</td>
         <td>{{$moderator->email}}</td>

@@ -336,10 +336,13 @@ function searchProductHanlder() {
   if(this.status != 200){
     alert('Search for a product went wrong');
     console.log(this.responseText);
-  }
-  else{
+  }else{
     console.log(JSON.parse(this.responseText));
-    alert('Search for a product successfully')
+    products = JSON.parse(this.responseText);
+    for (let product of products){
+      showAdminProduct(product);
+    }
+    alert('Search for a product successfully');
   }
 }
 function adminLoadProducts() {
@@ -352,8 +355,7 @@ function addShowMoreClickListener() {
   }
 }
 function searchProductAction(){
-  sendAjaxRequest('GET','api/products',null,searchProductHanlder);
-  console.log(this);
+  sendAjaxRequest('GET','api/products?title='+this.previousElementSibling.value,null,searchProductHanlder);
   event.preventDefault();
 }
 function searchProduct(){

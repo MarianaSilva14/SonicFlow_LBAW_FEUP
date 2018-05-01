@@ -578,6 +578,7 @@ retreivePurchaseHistory();
 retreiveFavorites();
 shoppingCart();
 amountAdjust();
+deleteComment();
 //productLinks();
 addAmountChangeListener();
 addFavoriteToggleListener();

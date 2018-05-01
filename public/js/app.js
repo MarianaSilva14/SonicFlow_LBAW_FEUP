@@ -598,6 +598,15 @@ function amountAdjustAction(){
   this.parentNode.nextElementSibling.innerHTML = newValue+'€';
   let total = document.querySelector('strong.checkoutCost');
   total.innerHTML = Math.round((parseFloat(total.innerHTML)-previousValue+newValue)*100)/100+'€';
+
+  // parent node - > first child
+
+  let id = this.parentNode.parentNode.firstElementChild.dataset.id;
+  let productArray = JSON.parse(getCookie('shoppingCart'));
+  productArray[id] = parseInt(this.value);
+  setCookie('shoppingCart',JSON.stringify(productArray));
+  console.log(id);
+
 }
 function amountAdjust(){
   let inputs = document.querySelectorAll("td.amount input");

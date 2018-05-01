@@ -541,11 +541,31 @@ function removeItemInCart(){
   }
 }
 
+
+function amountAdjustAction(){
+  let previousValue = parseFloat(this.parentNode.nextElementSibling.innerHTML);
+  if(parseInt(this.value)>parseInt(this.max)){
+    this.value = this.max;
+  }
+  let newValue = Math.round(parseFloat(this.parentNode.previousElementSibling.innerHTML)*parseInt(this.value)*100)/100;
+  this.parentNode.nextElementSibling.innerHTML = newValue+'€';
+  let total = document.querySelector('strong.checkoutCost');
+  total.innerHTML = Math.round((parseFloat(total.innerHTML)-previousValue+newValue)*100)/100+'€';
+}
+function amountAdjust(){
+  let inputs = document.querySelectorAll("td.amount input");
+  for (let input of inputs) {
+    input.onchange = amountAdjustAction;
+  }
+}
+
+
 removeAllItemsInCart();
 removeItemInCart();
 retreivePurchaseHistory();
 retreiveFavorites();
 shoppingCart();
+amountAdjust();
 //productLinks();
 addAmountChangeListener();
 addFavoriteToggleListener();

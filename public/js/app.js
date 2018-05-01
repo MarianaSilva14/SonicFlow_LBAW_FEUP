@@ -159,19 +159,31 @@ function flagCommentAction(id){
 function deleteCommentHandler(){
   if(this.status != 200){
     alert('Comment deletion went wrong');
-    alert(this.responseText);
+    console.log(this.responseText);
   }else if(this.status == 200){
     //alert('Successfully removed comment');
     let comment = document.getElementsByClassName('deletedComment');
     if(comment.length!=0){
-      comment[0].innerHTML="{Content Deleted}";
+      if(comment[0].tagName == 'TR')
+        comment[0].remove();
+      else
+        comment[0].innerHTML="{Content Deleted}";
     }
   }
 }
-function deleteCommentAction(id){
-  sendAjaxRequest('DELETE','/comment/'+id,null,deleteCommentHandler);
-  event.target.parentNode.classList.add('deletedComment');
+function deleteCommentAction(){
+  sendAjaxRequest('DELETE','/comment/'+this.dataset.id,null,deleteCommentHandler);
+  console.log(this);
+  this.parentNode.classList.add('deletedComment');
   event.preventDefault();
+}
+
+function deleteComment() {
+  let commentDeleted = document.querySelectorAll('.offense, .deleteLink');
+
+  for (let comment of commentDeleted) {
+    comment.onclick = deleteCommentAction;
+  }
 }
 
 function approveCommentHandler(){

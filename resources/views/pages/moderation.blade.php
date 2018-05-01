@@ -27,7 +27,7 @@
       <td>{{$comment->flagsno}}</td>
       <td>TODO</td>
       <td class="edit_cart ignore" onclick="approveCommentAction({{$comment->id}})"><i class="far fa-thumbs-up fa-2x"></i></td>
-      <td class="edit_cart offense" onclick="deleteCommentAction({{$comment->id}})"><i class="far fa-thumbs-down fa-2x"></i></td>
+      <td class="edit_cart offense" data-id={{$comment->id}}><i class="far fa-thumbs-down fa-2x"></i></td>
       <td class="edit_cart ban"><i class="fas fa-lock fa-2x"></i></td>
     </tr>
   @endforeach

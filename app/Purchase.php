@@ -35,4 +35,24 @@ class Purchase extends Model
   public static function getPurchases($username){
     return Purchase::where('customer_username',$username)->get();
   }
+
+    public static function getPurchaseInfoFromJSON($json_object){
+        $product = null;
+        $values = [];
+        $products = [];
+        foreach ($json_object as $key => $value){
+            try {
+                $product = Product::findOrFail($key);
+                array_push($products, $product);
+                if($product->stock > $value){
+                    array_push($values, $value);
+                }else{
+                    array_push($values,$product->stock);
+                }
+            } catch (\Exception $e) {
+                continue;
+            }
+        }
+        return [$products, $values];
+    }
 }

@@ -23,26 +23,18 @@ class PurchaseController extends Controller
    */
   public function show(Request $request)
   {
-    $product = null;
-    $values = [];
-    $products = [];
-    if(json_decode($request->input('shoppingCart'))==null){
-      return view('pages.shoppingCart',['products'=>$products,'values'=>$values]);
+//    $product = null;
+//    $values = [];
+//    $products = [];
+
+    $json_object = json_decode($request->input('shoppingCart'));
+    if($json_object==null){
+      return view('pages.shoppingCart',['products'=>[],'values'=>[]]);
     }
-    foreach (json_decode($request->input('shoppingCart')) as $key => $value) {
-      try {
-        $product = Product::findOrFail($key);
-        array_push($products, $product);
-        if($product->stock > $value){
-          array_push($values, $value);
-        }else{
-          array_push($values,$product->stock);
-        }
-      } catch (\Exception $e) {
-        continue;
-      }
-    }
-    return view('pages.shoppingCart',['products'=>$products,'values'=>$values]);
+
+    $json_object_result = Purchase::getPurchaseInfoFromJSON($json_object);
+
+    return view('pages.shoppingCart',['products'=>$json_object_result[0],'values'=>$json_object_result[1]]);
   }
 
   public function getPurchases($username){
@@ -56,4 +48,23 @@ class PurchaseController extends Controller
     }
     return $returnHTML;
   }
+
+    public function showCheckout(Request $request)
+    {
+
+        $customer = Customer::findOrFail($username);
+
+        // authorize pa autenticado
+
+        // loyalty points
+
+        $json_object = json_decode($request->input('shoppingCart'));
+        if($json_object==null){
+            return view('pages.shoppingCart',['products'=>[],'values'=>[]]);
+        }
+
+        $json_object_result = Purchase::getPurchaseInfoFromJSON($json_object);
+                // view da purchase
+        return view('pages.purchase',['products'=>$json_object_result[0],'values'=>$json_object_result[1], 'customer'=>$customer]);
+    }
 }

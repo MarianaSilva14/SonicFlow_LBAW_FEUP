@@ -147,6 +147,16 @@ class CustomerController extends Controller
       $customer = Customer::findOrFail($username);
       $customer->ban();
     }
+  }
 
+  public function unBanUser($username){
+    $this->authorize('ban',Customer::class);
+
+    $exists = DB::table('banned')->where('customer_username_customer', '=', $username)->exists();
+
+    if($exists){
+      $customer = Customer::findOrFail($username);
+      $customer->unBan();
+    }
   }
 }

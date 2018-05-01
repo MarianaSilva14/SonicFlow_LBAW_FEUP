@@ -194,20 +194,47 @@ function banUserHandler(){
     alert('User banned successfully');
   }
 }
-
 function banUserAction(){
-  console.log("username customer" + this.dataset.id);
   sendAjaxRequest('PUT', 'users/'+this.dataset.id+'/ban',null,banUserHandler);
   console.log(this);
 
   event.preventDefault();
 }
-
 function banUser(){
   let banUser = document.querySelectorAll('.ban');
 
   for(let ban of banUser){
     ban.onclick = banUserAction;
+  }
+}
+
+function unBanUserHandler(){
+  if(this.status != 200){
+    alert('User unbanned unsuccessfully');
+    console.log(this.responseText);
+  }
+  else{
+    let unBan = document.getElementsByClassName('unBanUser');
+
+    if(unBan.length != 0){
+      if(unBan[0].tagName == 'TR')
+        unBan[0].remove();
+    }
+    alert('User unbanned successfully');
+
+  }
+}
+function unBanUserAction(){
+  sendAjaxRequest('DELETE', 'banned/'+this.dataset.id,null,unBanUserHandler);
+  console.log(this);
+  this.parentNode.classList.add('unBanUser');
+  event.preventDefault();
+}
+function unBanUser(){
+  let unBanUser = document.querySelectorAll('.unban');
+
+  for(let unBan of unBanUser){
+    unBan.onclick = unBanUserAction;
   }
 }
 
@@ -588,7 +615,7 @@ function removeItemInCart(){
 function amountAdjustAction(){
   let previousValue = parseFloat(this.parentNode.nextElementSibling.innerHTML);
 
-  if(this.value == "" || this.value == null)
+  if(this.value == "" || this.value == null || this.value == '0')
       this.value = "1";
 
   if(parseInt(this.value)>parseInt(this.max)){
@@ -623,6 +650,7 @@ shoppingCart();
 amountAdjust();
 deleteComment();
 banUser();
+unBanUser();
 //productLinks();
 addAmountChangeListener();
 addFavoriteToggleListener();

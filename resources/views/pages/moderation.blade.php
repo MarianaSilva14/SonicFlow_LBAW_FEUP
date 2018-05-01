@@ -50,7 +50,7 @@
     <td>{{$ban->username}}</td>
     <td>{{Carbon\Carbon::parse($ban->banneddate)->toDateTimeString()}}</td>
     <td>{{Carbon\Carbon::parse($ban->banneddate)->diffForHumans()}}</td>
-    <td class="edit_cart"><i class="fas fa-unlock-alt fa-2x"></i></td>
+    <td class="edit_cart unban" data-id={{$ban->username}}><i class="fas fa-unlock-alt fa-2x"></i></td>
   </tr>
   @endforeach
 </table>

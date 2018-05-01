@@ -34,6 +34,7 @@ class AdministratorController extends Controller
       if ($user->role === 'ADMIN'){
         $mods = DB::table('moderator')
                   ->join('user','moderator.user_username','=','user.username')
+                  ->orderBy('joindate', 'desc')
                   ->get();
 
         return $mods;

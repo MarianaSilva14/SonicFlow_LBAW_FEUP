@@ -598,9 +598,9 @@ function checkoutAction(event) {
   event.preventDefault();
 }
 function checkout() {
-  let button = document.getElementsByClassName('shoppingCart');
-  if (button[0] != null) {
-    button[0].onclick = shoppingCartAction;
+  let button = document.querySelector('.checkoutCost + a');
+  if (button != null) {
+    button.onclick = checkoutAction;
   }
 }
 
@@ -685,6 +685,7 @@ removeItemInCart();
 retreivePurchaseHistory();
 retreiveFavorites();
 shoppingCart();
+checkout();
 amountAdjust();
 deleteComment();
 banUser();

@@ -10,6 +10,7 @@
 @include('common.breadcrumb', ['currPage' => 'New Product'])
 <form method="post" action="{{route('product_add')}}" enctype="multipart/form-data">
   {{ csrf_field() }}
+  <label for="pictures">Product Pictures</label>
   <input type="file" id="pictures" name="pictures[]" multiple class="form-control">
   <!-- cost and buttons -->
   <!-- Title -->
@@ -31,6 +32,7 @@
   <label for="amount">Available Stock</label>
   <input id="amount" name="stock" type="number" class="form-control" value="0" min="1" max="2000" step="1">
   <!-- Button -->
+  <br>
   <button class="btn" style="vertical-align:middle">Add Product</button>
 </form>
 @endsection

@@ -55,7 +55,8 @@ CREATE TABLE banned (
 
 CREATE TABLE category (
     id SERIAL PRIMARY KEY,
-    "name" text NOT NULL
+    "name" text NOT NULL,
+    icon text NOT NULL DEFAULT TEXT 'far fa-square'
 );
 
 CREATE TABLE product (
@@ -439,16 +440,16 @@ INSERT INTO banned VALUES ('CgsHHRf','2018-04-06 15:30:22','jcl');
 INSERT INTO banned VALUES ('j5zBk','2018-04-19 23:05:45','jcl');
 
 --CATEGORY
-INSERT INTO category VALUES (1, 'Computers');
-INSERT INTO category VALUES (2, 'Laptops');
-INSERT INTO category VALUES (3, 'Mobile');
-INSERT INTO category VALUES (4, 'Components');
-INSERT INTO category VALUES (5, 'Storage');
-INSERT INTO category VALUES (6, 'Peripherals');
-INSERT INTO category VALUES (7, 'Photo');
-INSERT INTO category VALUES (8, 'Video');
-INSERT INTO category VALUES (9, 'Network');
-INSERT INTO category VALUES (10, 'Software');
+INSERT INTO category VALUES (1, 'Computers','fas fa-desktop');
+INSERT INTO category VALUES (2, 'Laptops','fas fa-laptop');
+INSERT INTO category VALUES (3, 'Mobile','fas fa-mobile-alt');
+INSERT INTO category VALUES (4, 'Components','fas fa-camera-retro');
+INSERT INTO category VALUES (5, 'Storage','fas fa-hdd');
+INSERT INTO category VALUES (6, 'Peripherals','fas fa-keyboard');
+INSERT INTO category VALUES (7, 'Photo','fas fa-camera-retro');
+INSERT INTO category VALUES (8, 'Video','fas fa-camera-retro');
+INSERT INTO category VALUES (9, 'Network','fas fa-rss');
+INSERT INTO category VALUES (10, 'Software','far fa-window-maximize');
 
 --PRODUCT
 INSERT INTO product VALUES ('901896832','diam blandit',5,7195.11,6.39,1.86,245);

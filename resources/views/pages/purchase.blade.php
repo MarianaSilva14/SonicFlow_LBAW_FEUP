@@ -20,36 +20,15 @@
         <li class="list-group-item d-flex justify-content-between lh-condensed">
           <div>
             <h6 class="my-0">{{$products[$i]->title}}</h6>
-            <small class="text-muted">{{$values[$i]}} Units</small>
+            <small class="text-muted">{{$values[$i]}} Unit(s)</small>
           </div>
           @if($products[$i]->discountprice != "")
-            <span class="text-muted">{{$products[$i]->discountprice}}</span>
+            <span class="text-muted">{{$products[$i]->discountprice}}€</span>
           @else
-            <span class="text-muted">{{$products[$i]->price}}</span>
+            <span class="text-muted">{{$products[$i]->price}}€</span>
           @endif
         </li>
       @endfor
-      <li class="list-group-item d-flex justify-content-between lh-condensed">
-        <div>
-          <h6 class="my-0">Second product</h6>
-          <small class="text-muted">Brief description</small>
-        </div>
-        <span class="text-muted">$8</span>
-      </li>
-      <li class="list-group-item d-flex justify-content-between lh-condensed">
-        <div>
-          <h6 class="my-0">Third item</h6>
-          <small class="text-muted">Brief description</small>
-        </div>
-        <span class="text-muted">$5</span>
-      </li>
-      <li class="list-group-item d-flex justify-content-between bg-light">
-        <div class="text-success">
-          <h6 class="my-0">Promo code</h6>
-          <small>EXAMPLECODE</small>
-        </div>
-        <span class="text-success">-$5</span>
-      </li>
       <li class="list-group-item d-flex justify-content-between">
         <span>Total (Euro)</span>
         <strong>

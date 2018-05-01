@@ -50,23 +50,22 @@ class PurchaseController extends Controller
     return $returnHTML;
   }
 
-    public function showCheckout(Request $request)
-    {
-        $user = Auth::user();
-        $customer = Customer::findOrFail($user->username);
-        try{
-            $this->authorize('purchase',$customer);
-        } catch (AuthorizationException $e) {
-            return view('pages.homepage');
-        }
-
-        $json_object = json_decode($request->input('shoppingCart'));
-        if($json_object==null){
-            return view('pages.shoppingCart',['products'=>[],'values'=>[]]);
-        }
-
-        $json_object_result = Purchase::getPurchaseInfoFromJSON($json_object);
-                // view da purchase
-        return view('pages.purchase',['products'=>$json_object_result[0],'values'=>$json_object_result[1], 'customer'=>$customer]);
+  public function showCheckout(Request $request)
+  {
+    try{
+      $this->authorize('purchase',Customer::class);
+    } catch (AuthorizationException $e) {
+      return view('auth.login');
     }
+    $customer = Customer::findOrFail(Auth::user()->username);
+
+    $json_object = json_decode($request->input('shoppingCart'));
+    if($json_object==null){
+        return view('pages.shoppingCart',['products'=>[],'values'=>[]]);
+    }
+
+    $json_object_result = Purchase::getPurchaseInfoFromJSON($json_object);
+            // view da purchase
+    return view('pages.purchase',['products'=>$json_object_result[0],'values'=>$json_object_result[1], 'customer'=>$customer]);
+  }
 }

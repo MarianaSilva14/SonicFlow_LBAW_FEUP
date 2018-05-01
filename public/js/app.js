@@ -544,18 +544,25 @@ function shoppingCart() {
 function removeAllItemsInCartAction() {
   setCookie('shoppingCart',JSON.stringify({}));
   let table = document.querySelector('table#shoppingCartTable tbody');
-  let max = table.children.length;
-  for (var i = max-1; i >= 1; i--) {
-    table.children[i].remove();
+  if(table!=null){
+    let max = table.children.length;
+    for (var i = max-1; i >= 1; i--) {
+      table.children[i].remove();
+    }
+    let row = document.createElement('TR');
+    if(row!=null){
+      row.innerHTML = "<td colspan = 6>No products currently on shopping cart</td>";
+      table.appendChild(row);
+    }
   }
-  let row = document.createElement('TR');
-  row.innerHTML = "<td colspan = 6>No products currently on shopping cart</td>";
-  table.appendChild(row);
-  event.preventDefault();
+  console.log(this);
+  if(!this.classList.contains('logout')){
+    event.preventDefault();
+  }
 }
 function removeAllItemsInCart() {
-  let button = document.getElementsByClassName('removeAll')[0];
-  if (button!=null) {
+  let buttons = document.querySelectorAll('.removeAll,.logout');
+  for (let button of buttons) {
     button.onclick = removeAllItemsInCartAction;
   }
 }
@@ -577,7 +584,6 @@ function removeItemInCart(){
     button.onclick = removeItemInCartAction;
   }
 }
-
 
 function amountAdjustAction(){
   let previousValue = parseFloat(this.parentNode.nextElementSibling.innerHTML);

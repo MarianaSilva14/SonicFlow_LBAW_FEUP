@@ -32,7 +32,7 @@
               <td class="productImg"><img src="{{Storage::url($products[$i]->getImages()[0])}}" alt="product thumbnail" class="img-fluid"/></td>
               <td>{{$products[$i]->title}}</td>
               <td class="unitCost">{{$products[$i]->price}}€</td>
-              <td class="amount"><input type="number" class="form-control text-center" value="{{$values[$i]}}"></td>
+              <td class="amount"><input type="number" class="form-control text-center" min=1 max={{$products[$i]->stock}} value="{{$values[$i]}}"></td>
               <td class="totalCost">{{$values[$i]*$products[$i]->price}}€</td>
             </tr>
           @endfor

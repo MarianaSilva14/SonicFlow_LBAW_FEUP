@@ -78,7 +78,7 @@
       </li>
       <li class="nav-item">
         @if (Auth::check())
-          <a class="nav-link login" href="{{route('logout')}}">Logout</a>
+          <a class="nav-link logout" href="{{route('logout')}}">Logout</a>
         @else
           <a class="nav-link register" href="{{route('register')}}">Register</a>
         @endif

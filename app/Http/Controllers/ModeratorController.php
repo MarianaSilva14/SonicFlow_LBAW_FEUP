@@ -29,7 +29,7 @@ class ModeratorController extends Controller
 
   // return form to fill out to create a new moderator
   public function create(){
-
+      return view('pages.addModerator',[]);
   }
 
   // post here to insert into db

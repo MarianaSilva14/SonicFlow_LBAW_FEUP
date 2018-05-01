@@ -23,6 +23,8 @@ Route::get('users/{id}/purchasehistory','PurchaseController@getPurchases');
 Route::get('users/{id}/favorites','CustomerController@getFavorites');
 Route::post('/users/favorites/{sku}','CustomerController@toggleFavoritesList')->name('toggleFavoritesList');
 Route::delete('/users/favorites/{sku}','CustomerController@toggleFavoritesList')->name('removeFromFavoritesList');
+Route::put('users/{id}/ban','CustomerController@banUser')->name('ban');
+Route::delete('banned/{id}','CustomerController@unBanUser')->where('id','[0-9]+')->name('unban');
 
 // Products
 Route::view('products','pages.homepage')->name('products');

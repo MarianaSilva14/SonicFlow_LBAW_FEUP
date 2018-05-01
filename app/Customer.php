@@ -40,6 +40,10 @@ class Customer extends Model
     return explode(' ',$this->name,2)[1];
   }
 
+  public function ban(){
+    DB::table('banned')->insert(['customer_username_customer' => $this->user_username, 'moderator_username_moderator' => Auth::user()->username]);
+  }
+
   public function toggleFavorite($sku){
     $exists = DB::table('favorite')->where([['customer_username', '=', Auth::user()->username],['product_idproduct', '=', $sku]])->exists();
     if(!$exists){

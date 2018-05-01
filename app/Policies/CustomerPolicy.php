@@ -22,6 +22,10 @@ class CustomerPolicy
       return (Auth::check() && Auth::user()->isCustomer());
     }
 
+    public function ban(User $user){
+      return (Auth::check() && Auth::user()->isModerator());
+    }
+
     public function list(User $user)
     {
       // Any user can list its own cards

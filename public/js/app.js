@@ -177,12 +177,37 @@ function deleteCommentAction(){
   this.parentNode.classList.add('deletedComment');
   event.preventDefault();
 }
-
 function deleteComment() {
   let commentDeleted = document.querySelectorAll('.offense, .deleteLink');
 
   for (let comment of commentDeleted) {
     comment.onclick = deleteCommentAction;
+  }
+}
+
+function banUserHandler(){
+  if(this.status != 200){
+    alert('User banned unsuccessfully');
+    console.log(this.responseText);
+  }
+  else{
+    alert('User banned successfully');
+  }
+}
+
+function banUserAction(){
+  console.log("username customer" + this.dataset.id);
+  sendAjaxRequest('PUT', 'users/'+this.dataset.id+'/ban',null,banUserHandler);
+  console.log(this);
+
+  event.preventDefault();
+}
+
+function banUser(){
+  let banUser = document.querySelectorAll('.ban');
+
+  for(let ban of banUser){
+    ban.onclick = banUserAction;
   }
 }
 
@@ -571,7 +596,6 @@ function amountAdjust(){
   }
 }
 
-
 removeAllItemsInCart();
 removeItemInCart();
 retreivePurchaseHistory();
@@ -579,6 +603,7 @@ retreiveFavorites();
 shoppingCart();
 amountAdjust();
 deleteComment();
+banUser();
 //productLinks();
 addAmountChangeListener();
 addFavoriteToggleListener();

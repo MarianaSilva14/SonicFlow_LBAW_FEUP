@@ -305,7 +305,7 @@
                   The Graphics Card is a board which includes all the necessary components
                   to do graphic processing, these processors are required mainly for gaming
                   but in general they can perform very distributed tasks for their high amount
-                  of cores and they do this tasks very fast as they only process specialized
+                  of cores and they do these tasks very fast as they only process specialized
                   workloads. If you don't need to do any specialized workloads you might want
                   to consider a CPU with an integrated graphics processor as it can reduce
                   your system's overall cost. Something to note here is the VRAM available.
@@ -488,10 +488,10 @@
                   A CPU(Central Processing Unit) is the required processor for a computer
                   to operate. A CPU consists in one or more independant processing cores
                   but they can still work together so the more cores your CPU has the more
-                  the more calculations you can make per time unit. Each core can have one
+                  calculations you can make per time unit. Each core can have one
                   or two threads(separate logical processing units) so as with cores the
                   same rule aplies. Intel developed Hyperthreading technology and AMD "...".
-                  If your CPU has one of these technology them the number of threads in your
+                  If your CPU has one of these technology then the number of threads in your
                   CPU is 2 per core otherwise it's 1. It's worth noting that some CPU's
                   include a graphics processor aswell.
                   Suggestions:

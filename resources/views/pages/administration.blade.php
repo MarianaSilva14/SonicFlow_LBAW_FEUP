@@ -7,7 +7,7 @@
 <div class="container admin-cont">
   <div class="row">
     <div class="addProduct" >
-      <button id="addProduct" class="btn btn-outline-success my-2 my-sm-0" type="button" onclick="location.href='{{route('product_create')}}'" style="font-weight:bold"><i class="fas fa-plus"></i>Add product</button>
+      <button id="addProduct" class="btn btn-outline-success my-2 my-sm-0" type="button" onclick="location.href='{{route('product_create')}}'" style="font-weight:bold"><i class="fas fa-plus"></i>Add Product</button>
     </div>
     <div class="col-xs-8 col-xs-offset-2 nav-search">
       <div class="input-group">
@@ -57,6 +57,14 @@
 
 @section('tab2Name','Moderators')
 @section('tab2')
+
+  <div class="container admin-cont">
+    <div class="row">
+      <div class="addProduct" >
+        <button id="addModerator" class="btn btn-outline-success my-2 my-sm-0" type="button" onclick="location.href='{{route('moderator_create')}}'" style="font-weight:bold"><i class="fas fa-plus"></i>Add Moderator</button>
+      </div>
+    </div>
+  </div>
 
   <div class="panel panel-primary">
     <table class="table table-hover table-bordered">

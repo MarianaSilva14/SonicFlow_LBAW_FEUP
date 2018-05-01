@@ -46,7 +46,11 @@
   </tr>
   @foreach($banned as $ban)
   <tr>
-    <td class="productImg"><img src="http://placehold.it/100x100" alt="..." class="img-fluid"/></td>
+    @if($comment->picture=="")
+      <td class="productImg"><img src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" alt="User Picture" style="max-width:70px" class="img-fluid"/></td>
+    @else
+      <td class="productImg"><img src="{{Storage::url($comment->picture)}}" alt="User Picture" style="max-width:70px" class="img-fluid"/></td>
+    @endif
     <td>{{$ban->username}}</td>
     <td>{{Carbon\Carbon::parse($ban->banneddate)->toDateTimeString()}}</td>
     <td>{{Carbon\Carbon::parse($ban->banneddate)->diffForHumans()}}</td>

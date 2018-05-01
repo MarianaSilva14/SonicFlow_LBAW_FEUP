@@ -151,7 +151,7 @@ function flagCommentHandler(){
     alert('Successfully flagged comment');
   }
 }
-function flagCommentAction(id){
+function flagCommentAction(event, id){
   sendAjaxRequest('get','/comment/'+id+'/flag',null,flagCommentHandler);
   event.preventDefault();
 }
@@ -339,6 +339,10 @@ function searchProductHanlder() {
   }else{
     console.log(JSON.parse(this.responseText));
     products = JSON.parse(this.responseText);
+
+    let table = document.querySelector('table.table');
+    table.innerHTML = "";
+
     for (let product of products){
       showAdminProduct(product);
     }
@@ -354,7 +358,7 @@ function addShowMoreClickListener() {
     button.onclick = adminLoadProducts;
   }
 }
-function searchProductAction(){
+function searchProductAction(event){
   sendAjaxRequest('GET','api/products?title='+this.previousElementSibling.value,null,searchProductHanlder);
   event.preventDefault();
 }
@@ -446,7 +450,7 @@ function addFavoriteToggleAction(event){
   sendAjaxRequest('POST', '/users/favorites/'+id_product,null,addFavoriteToggleHandler);
   event.preventDefault();
 }
-function addFavoriteToggleActionProduct(){
+function addFavoriteToggleActionProduct(event){
   productId = document.querySelector("#stars_rating");
   sendAjaxRequest('POST','/users/favorites/'+productId.dataset.id,null,addFavoriteToggleHandler);
   event.preventDefault();
@@ -472,7 +476,7 @@ function removeFavoritesHandler(){
     button.closest(".outbox").remove();
   }
 }
-function removeFavoritesAction(){
+function removeFavoritesAction(event){
   sendAjaxRequest('delete','/users/favorites/'+this.dataset.id,null,removeFavoritesHandler);
   event.preventDefault();
 }
@@ -600,7 +604,7 @@ function checkout() {
   }
 }
 
-function removeAllItemsInCartAction() {
+function removeAllItemsInCartAction(event) {
   setCookie('shoppingCart',JSON.stringify({}));
   let table = document.querySelector('table#shoppingCartTable tbody');
   if(table!=null){

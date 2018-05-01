@@ -114,7 +114,7 @@ class Product extends Model
     if ($title != null){
         $query = $query
             ->whereRaw('search @@ plainto_tsquery(\'english\',?)', [$title])
-            ->orderByRaw('ts_rank(search,  plainto_tsquery(\'english\',?) DESC',[$title]);
+            ->orderByRaw('ts_rank(search,  plainto_tsquery(\'english\',?)) DESC',[$title]);
     }
 
     $limit = intval($request->input('limit'));

@@ -22,7 +22,7 @@
             @if(Auth::check() && Auth::user()->username == $comment->user_username)
               <a href="#" data-id={{$comment->id}} class="text-right small text-danger deleteLink"><i class="fas fa-trash"></i>Delete content</a>
             @else
-              <a href="#" onclick="flagCommentAction({{$comment->id}})" class="text-right small text-danger flagLink"><i class="fas fa-flag"></i> Flag</a>
+              <a href="#" onclick="flagCommentAction(event, {{$comment->id}})" class="text-right small text-danger flagLink"><i class="fas fa-flag"></i> Flag</a>
             @endif
           @endif
         </p>

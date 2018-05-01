@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.add_items')
 
 @section('title', 'New Product')
 
@@ -7,7 +7,6 @@
 @endsection
 
 @section('content')
-@include('common.breadcrumb', ['currPage' => 'New Product'])
 <form method="post" action="{{route('product_add')}}" enctype="multipart/form-data">
   {{ csrf_field() }}
   <label for="pictures">Product Pictures</label>

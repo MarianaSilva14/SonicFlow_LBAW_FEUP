@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.add_items')
 
 @section('title', 'New Moderator')
 
@@ -7,7 +7,6 @@
 @endsection
 
 @section('content')
-    @include('common.breadcrumb', ['currPage' => 'New Moderator'])
     <form method="post" action="{{route('moderator_create_post')}}" enctype="multipart/form-data">
         {{ csrf_field() }}
         {{--<label for="pictures">Product Pictures</label>--}}

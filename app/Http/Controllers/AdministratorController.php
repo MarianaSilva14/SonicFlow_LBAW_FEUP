@@ -20,8 +20,10 @@ class AdministratorController extends Controller
     {
         $user = Auth::user();
 
-        if ($user->role === 'ADMIN')
-            return view('pages.administration', ['moderators'=>$this->getModerators()]);
+        if ($user->role === 'ADMIN'){
+            $mods = $this->getModerators();
+            return view('pages.administration', ['moderators'=> $mods]);
+        }
         else
             return redirect(url('homepage'));
     }
@@ -34,10 +36,10 @@ class AdministratorController extends Controller
                   ->join('user','moderator.user_username','=','user.username')
                   ->get();
 
-        return json_encode($mods);
+        return $mods;
       }
       else
-        return "{}";
+        return [];
     }
 
 

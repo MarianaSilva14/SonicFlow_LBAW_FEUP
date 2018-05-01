@@ -332,8 +332,15 @@ function allProductLoadHandler() {
     showAdminProduct(product);
   }
 }
-function searchProductLoadHanlder() {
-
+function searchProductHanlder() {
+  if(this.status != 200){
+    alert('Search for a product went wrong');
+    console.log(this.responseText);
+  }
+  else{
+    console.log(JSON.parse(this.responseText));
+    alert('Search for a product successfully')
+  }
 }
 function adminLoadProducts() {
   sendAjaxRequest('GET','/api/products?limit='+limit+'&offset='+productOffset,null,allProductLoadHandler);
@@ -342,6 +349,17 @@ function addShowMoreClickListener() {
   let button = document.querySelector('#showMore');
   if(button!=null){
     button.onclick = adminLoadProducts;
+  }
+}
+function searchProductAction(){
+  sendAjaxRequest('GET','api/products',null,searchProductHanlder);
+  console.log(this);
+  event.preventDefault();
+}
+function searchProduct(){
+  let searchProduct = document.querySelectorAll('#searchBtn');
+  for (let search of searchProduct) {
+    search.onclick = searchProductAction;
   }
 }
 
@@ -654,6 +672,8 @@ function amountAdjust(){
   }
 }
 
+
+searchProduct();
 removeAllItemsInCart();
 removeItemInCart();
 retreivePurchaseHistory();

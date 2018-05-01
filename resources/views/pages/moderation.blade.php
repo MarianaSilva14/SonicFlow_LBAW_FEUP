@@ -44,12 +44,14 @@
     <th>Time Elapsed (Days)</th>
     <th>Unban</th>
   </tr>
+  @foreach($banned as $ban)
   <tr>
     <td class="productImg"><img src="http://placehold.it/100x100" alt="..." class="img-fluid"/></td>
-    <td>Joao Castanheira Cig</td>
-    <td>27-02-2017</td>
-    <td>20</td>
+    <td>{{$ban->username}}</td>
+    <td>{{Carbon\Carbon::parse($ban->banneddate)->toDateTimeString()}}</td>
+    <td>{{Carbon\Carbon::parse($ban->banneddate)->diffForHumans()}}</td>
     <td class="edit_cart"><i class="fas fa-unlock-alt fa-2x"></i></td>
   </tr>
+  @endforeach
 </table>
 @endsection

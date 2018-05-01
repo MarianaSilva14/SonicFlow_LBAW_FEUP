@@ -44,6 +44,14 @@ class Customer extends Model
     DB::table('banned')->insert(['customer_username_customer' => $this->user_username, 'moderator_username_moderator' => Auth::user()->username]);
   }
 
+  public static function getUsersBanned(){
+    return DB::table('banned')
+              ->join('user','banned.customer_username_customer','=','user.username')
+              ->join('moderator','banned.moderator_username_moderator','=','moderator.user_username')
+              ->get();
+  }
+
+
   public function toggleFavorite($sku){
     $exists = DB::table('favorite')->where([['customer_username', '=', Auth::user()->username],['product_idproduct', '=', $sku]])->exists();
     if(!$exists){

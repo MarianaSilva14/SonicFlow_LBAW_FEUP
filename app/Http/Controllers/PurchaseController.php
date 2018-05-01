@@ -26,6 +26,9 @@ class PurchaseController extends Controller
     $product = null;
     $values = [];
     $products = [];
+    if(json_decode($request->input('shoppingCart'))==null){
+      return view('pages.shoppingCart',['products'=>$products,'values'=>$values]);
+    }
     foreach (json_decode($request->input('shoppingCart')) as $key => $value) {
       try {
         $product = Product::findOrFail($key);

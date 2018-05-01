@@ -26,4 +26,14 @@ class ModeratorController extends Controller
     else
       return redirect(url('homepage'));
   }
+
+  // return form to fill out to create a new moderator
+  public function create(){
+
+  }
+
+  // post here to insert into db
+    public function createModerator(){
+
+    }
 }

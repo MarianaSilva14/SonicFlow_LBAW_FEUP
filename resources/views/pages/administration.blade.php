@@ -60,7 +60,7 @@
 
   <div class="container admin-cont">
     <div class="row">
-      <div class="addProduct" >
+      <div class="addModerator" >
         <button id="addModerator" class="btn btn-outline-success my-2 my-sm-0" type="button" onclick="location.href='{{route('moderator_create')}}'" style="font-weight:bold"><i class="fas fa-plus"></i>Add Moderator</button>
       </div>
     </div>

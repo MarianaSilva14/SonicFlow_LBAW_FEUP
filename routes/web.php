@@ -64,10 +64,13 @@ Route::post('register', 'Auth\RegisterController@register');
 
 // Administration
 Route::get('administration', 'AdministratorController@show')->name('administration');
+Route::get('moderator/create','ModeratorController@create')->name('moderator_create');
+Route::post('moderator/create','ModeratorController@createModerator')->name('moderator_create_post');
 
 // Moderation
 Route::get('moderation', 'ModeratorController@show')->name('moderation');
 Route::get('api/moderators', 'AdministratorController@getModerators')->name('moderators');
+
 
 // API new
 Route::get('api/product/{sku}', 'ProductController@getProductBySku')->where('sku', '[0-9]+')->name('api_product_sku')->middleware('api');

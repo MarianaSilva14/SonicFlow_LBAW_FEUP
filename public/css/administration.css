@@ -146,6 +146,45 @@ padding-bottom: 25px;
   -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 159, 200,.5);
 }
 
+/* this part of css is replicated (see above), will be improved */
+.addModerator{
+    text-align: center;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+#addModerator {
+    border-color: #009fc8;
+    font-size: 15px;
+    color: #009fc8;
+    border-color: #009fc8;
+    margin: 10px 50px 10px 10px;
+    padding: 5px 50px 5px 50px;
+}
+
+#addModerator:hover, #addModerator:active{
+    background-color: #009fc8;
+    border-color: #009fc8;
+    color: white;
+}
+
+#addModerator:not(:disabled):not(.disabled):active, .show>#addModerator.dropdown-toggle{
+    background-color: #009fc8;
+    border-color: #009fc8;
+}
+
+#addModerator:focus{
+    box-shadow: none;
+}
+
+#addModerator:not(:disabled):not(.disabled).active:focus,
+#addModerator:not(:disabled):not(.disabled):active:focus,
+.show>#addModerator.dropdown-toggle:focus{
+    box-shadow: 0 0 0 0.2rem rgba(0, 159, 200,.5);
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 159, 200,.5);
+}
+/* until here */
+
 .nav-search {
   padding-top: 7px;
 }

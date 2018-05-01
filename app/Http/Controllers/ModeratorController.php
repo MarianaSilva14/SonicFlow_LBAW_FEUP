@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
 use App\User;
+use App\Comment;
+use App\Customer;
 
 class ModeratorController extends Controller
 {
@@ -21,7 +22,7 @@ class ModeratorController extends Controller
     $user = Auth::user();
 
     if ($user->role === 'MOD')
-      return view('pages.moderation',['comments'=>Comment::getModView()]);
+      return view('pages.moderation',['comments'=>Comment::getModView(), 'banned'=>Customer::getUsersBanned()]);
     else
       return redirect(url('homepage'));
   }

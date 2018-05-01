@@ -568,6 +568,18 @@ function shoppingCart() {
   }
 }
 
+// TODO: fix this
+function checkoutAction(event) {
+  window.location.href = this.href+"?shoppingCart="+getCookie('shoppingCart');
+  event.preventDefault();
+}
+function checkout() {
+  let button = document.getElementsByClassName('shoppingCart');
+  if (button[0] != null) {
+    button[0].onclick = shoppingCartAction;
+  }
+}
+
 function removeAllItemsInCartAction() {
   setCookie('shoppingCart',JSON.stringify({}));
   let table = document.querySelector('table#shoppingCartTable tbody');

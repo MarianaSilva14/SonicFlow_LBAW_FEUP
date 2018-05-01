@@ -66,7 +66,7 @@
                           $total += $products[$i]->price*$values[$i];
                     } echo $total?>€
                 </strong>
-                <a href="" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a>
+                <a href="{{route('checkout')}}" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a>
               </td>
 						</tr>
 					</tfoot>

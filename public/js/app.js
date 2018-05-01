@@ -65,6 +65,7 @@ if(getCookie('shoppingCart') == ""){
 var productOffset = 0;
 var limit = 5;
 var cartItemAmount;
+var currentProducts = [];
 
 function docOnLoad(){
   locArray = window.location.href.split("/");
@@ -311,7 +312,7 @@ function showAdminProduct(product) {
     let imgUrl = product.picture.split(";")[0];
     innerHTMLbuild += "src='"+imgUrl.replace("public","\/storage")+"'";
   }
-  innerHTMLbuild += "alt='product picture' class='img-fluid'/></td><td><a href='/product/"+product.sku+"'>"+product.title+"</a></td><td class='unitCost'>€"+product.price+"</td><td class='unitCost'>€"+product.discountprice+"</td><td class='amount'>"+product.stock+"</td><td class='edit_cart' onclick=\"location.href='/product/"+product.sku+"/edit'\"><i class='far fa-edit fa-2x'></i></td>";
+  innerHTMLbuild += "alt='product picture' class='img-fluid'/></td><td><a href='/product/"+product.sku+"'>"+product.title+"</a></td><td class='unitCost'>"+product.price+"€</td><td class='unitCost'>"+((product.discountprice != null) ? (product.discountprice+'€') : 'undefined')+"</td><td class='amount'>"+product.stock+"</td><td class='edit_cart' onclick=\"location.href='/product/"+product.sku+"/edit'\"><i class='far fa-edit fa-2x'></i></td>";
   row.innerHTML = innerHTMLbuild;
   let table = document.querySelector('table.table');
   table.appendChild(row);
@@ -332,21 +333,31 @@ function allProductLoadHandler() {
     showAdminProduct(product);
   }
 }
-function searchProductHanlder() {
+function adminSearchProductHanlder() {
   if(this.status != 200){
     alert('Search for a product went wrong');
     console.log(this.responseText);
+  }
+  let products = JSON.parse(this.responseText);
+  let button = document.querySelector("#showMore");
+  if(products.length != limit){
+    button.hidden=true;
   }else{
-    console.log(JSON.parse(this.responseText));
-    products = JSON.parse(this.responseText);
-
-    let table = document.querySelector('table.table');
-    table.innerHTML = "";
-
+    productOffset += limit;
+    button.hidden=false;
+  }
+  let table = document.querySelector('table.table');
+  let header = table.firstElementChild;
+  table.innerHTML = "";
+  table.appendChild(header);
+  if(products.length==0){
+    let newRow = document.createElement('TR');
+    newRow.innerHTML = "<td colspan=7>No products available</td>";
+    table.appendChild(newRow);
+  }else{
     for (let product of products){
       showAdminProduct(product);
     }
-    alert('Search for a product successfully');
   }
 }
 function adminLoadProducts() {
@@ -358,14 +369,50 @@ function addShowMoreClickListener() {
     button.onclick = adminLoadProducts;
   }
 }
-function searchProductAction(event){
-  sendAjaxRequest('GET','api/products?title='+this.previousElementSibling.value,null,searchProductHanlder);
+function adminSearchProductAction(event){
+  productOffset = 0;
+  let cat = this.parentNode.children[1].value;
+  console.log('Category:'+cat+':');
+  let title = this.previousElementSibling.value;
+  console.log('Title:'+title+':');
+  let newLimit = "";
+  if(cat == "" || title == ""){
+    newLimit = 5;
+  }
+  console.log('Limit:'+newLimit+':');
+  sendAjaxRequest('GET','api/products?categoryID='+cat+'&title='+title+'&limit='+limit,null,adminSearchProductHanlder);
   event.preventDefault();
 }
-function searchProduct(){
-  let searchProduct = document.querySelectorAll('#searchBtn');
+function adminSearchProduct(){
+  let searchProduct = document.querySelectorAll('.adminSearchBtn');
   for (let search of searchProduct) {
-    search.onclick = searchProductAction;
+    search.onclick = adminSearchProductAction;
+    search.previousElementSibling.onkeyup = function(event){
+      if(event.key=='Enter'){
+        $(this.nextElementSibling).trigger('click');
+      }
+    }
+  }
+}
+
+function headerSearchProductAction() {
+  productOffset = 0;
+  let cat = this.parentNode.children[1].value;
+  console.log('Category:'+cat+':');
+  let title = this.previousElementSibling.value;
+  console.log('Title:'+title+':');
+  window.location.href = $(this).attr('href')+'?categoryID='+cat+'&title='+title;
+  event.preventDefault();
+}
+function headerSearchProduct() {
+  let searchProduct = document.querySelectorAll('.headerSearchBtn');
+  for (let search of searchProduct) {
+    search.onclick = headerSearchProductAction;
+    search.previousElementSibling.onkeyup = function(event){
+      if(event.key=='Enter'){
+        $(this.nextElementSibling).trigger('click');
+      }
+    }
   }
 }
 
@@ -679,7 +726,8 @@ function amountAdjust(){
 }
 
 
-searchProduct();
+adminSearchProduct();
+headerSearchProduct();
 removeAllItemsInCart();
 removeItemInCart();
 retreivePurchaseHistory();

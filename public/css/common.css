@@ -148,11 +148,8 @@ footer a:hover{
     box-shadow: none;
 }
 
-#searchBtn {
-  border-radius: 0px;
-}
-
 #searchBtn{
+  border-radius: 0 7px 7px 0;
   color: #009fc8;
   border-color: #009fc8;
 }
@@ -189,10 +186,6 @@ box-shadow: none;
 
 #catSelectButton{
   border-radius: 7px 0 0 7px;
-}
-
-#searchBtn{
-  border-radius: 0 7px 7px 0;
 }
 
 .dropdown-menu{

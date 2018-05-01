@@ -91,7 +91,7 @@ class Product extends Model
 
     $catgoryID = intval($request->input('categoryID'));
     if ($catgoryID != null){
-        $query = $query->where('category_idCat', $catgoryID);
+        $query = $query->where('category_idcat', $catgoryID);
     }
 
     $minPrice = floatval($request->input('minPrice'));

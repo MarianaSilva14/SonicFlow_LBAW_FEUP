@@ -15,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-      View::composer('common.header', function ($view) {
+      View::composer(['common.header','pages.administration'], function ($view) {
             $view->with('categories',DB::table('category')->get());
         });
     }

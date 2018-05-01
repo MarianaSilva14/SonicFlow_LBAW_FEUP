@@ -47,6 +47,7 @@ Route::delete('comment/{id}','ProductController@commentDelete')->where('id','[0-
 //Homepage
 Route::get('homepage','HomepageController@show')->name('homepage');
 Route::get('shoppingCart','PurchaseController@show')->name('shoppingCart');
+Route::view('checkout','pages.purchase')->name('checkout');
 
 // Static
 Route::view('about','pages.about')->name('about');

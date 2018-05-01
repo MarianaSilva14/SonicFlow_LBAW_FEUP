@@ -57,5 +57,19 @@
 
 @section('tab2Name','Moderators')
 @section('tab2')
-Add some moderators
+@foreach($moderators as $moderator)
+<div class="panel panel-primary">
+  <table class="table table-hover table-bordered">
+    <tr class="info" style="color:#65768e">
+      <th>Delete</th>
+      <th>Product</th>
+      <th>Item Name</th>
+      <th>Cost</th>
+      <th>Discount</th>
+      <th>Stock</th>
+      <th>Edit</th>
+    </tr>
+  </table>
+</div>
+@endforeach
 @endsection

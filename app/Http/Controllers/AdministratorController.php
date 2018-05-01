@@ -21,9 +21,23 @@ class AdministratorController extends Controller
         $user = Auth::user();
 
         if ($user->role === 'ADMIN')
-            return view('pages.administration');
+            return view('pages.administration', ['moderators'=>$this->getModerators()]);
         else
             return redirect(url('homepage'));
+    }
+
+    public function getModerators(){
+      $user = Auth::user();
+
+      if ($user->role === 'ADMIN'){
+        $mods = DB::table('moderator')
+                  ->join('user','moderator.user_username','=','user.username')
+                  ->get();
+
+        return json_encode($mods);
+      }
+      else
+        return "{}";
     }
 
 

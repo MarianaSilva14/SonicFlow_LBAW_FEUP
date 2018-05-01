@@ -7,7 +7,7 @@
 <div class="container admin-cont">
   <div class="row">
     <div class="addProduct" >
-      <button id="addProduct" class="btn btn-outline-success my-2 my-sm-0" type="button" onclick="location.href='{{route('product_create')}}'" style="font-weight:bold"><i class="fas fa-plus"></i>Add Product</button>
+      <button id="addProduct" class="btn btn-outline-success my-2 my-sm-0" type="button" onclick="location.href='{{route('product_create')}}'" style="font-weight:bold"><i class="fas fa-plus"></i> Add Product</button>
     </div>
     <div class="col-xs-8 col-xs-offset-2 nav-search">
       <div class="input-group">
@@ -51,7 +51,7 @@
       <th>Edit</th>
     </tr>
   </table>
-  <button id="showMore" class="btn btn-outline-success my-2 my-sm-0" type="button" style="font-weight:bold">Show More<i class="fas fa-plus"></i></button>
+  <button id="showMore" class="btn btn-outline-success my-2 my-sm-0" type="button" style="font-weight:bold">Show More <i class="fas fa-plus"></i></button>
 </div>
 @endsection
 
@@ -61,7 +61,7 @@
   <div class="container admin-cont">
     <div class="row">
       <div class="addModerator" >
-        <button id="addModerator" class="btn btn-outline-success my-2 my-sm-0" type="button" onclick="location.href='{{route('moderator_create')}}'" style="font-weight:bold"><i class="fas fa-plus"></i>Add Moderator</button>
+        <button id="addModerator" class="btn btn-outline-success my-2 my-sm-0" type="button" onclick="location.href='{{route('moderator_create')}}'" style="font-weight:bold"><i class="fas fa-plus"></i> Add Moderator</button>
       </div>
     </div>
   </div>

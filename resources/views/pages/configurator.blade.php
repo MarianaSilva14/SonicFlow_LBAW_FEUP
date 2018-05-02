@@ -30,14 +30,14 @@
               <select id="caseInput" class="form-control" name="pc-case">
                 <option value="">None</option>
                 @foreach($productsByCategory[1] as $product)
-                  <option>{{$product->title}}</option>
+                  <option value="{{$product->price}}">{{$product->title}} ({{$product->price}}€)</option>
                 @endforeach
               </select>
               <small id="emailHelp" class="form-text text-muted"><b>PN</b>:&ltpart number&gt , <b>REF</b>:&ltreference&gt</small>
             </div>
             <div id="labelUnity" class="col-xl-2 col-sm-2 col-6">
               <label  for="caseUnitPrice">Unit</label>
-              <input id="caseUnitPrice" type="text" readonly class="form-control-plaintext" value="€9999.99">
+              <input id="caseUnitPrice" type="text" readonly class="form-control-plaintext" value="10,00€">
             </div>
             <div class="col-xl-1 col-sm-2 col-4">
               <label for="caseAmount">&zwnj;</label>
@@ -49,9 +49,10 @@
             </div>
             <div class="col-xl-1 col-sm-2 col-6">
               <label for="caseTotalPrice">&zwnj;</label>
-              <input id="caseTotalPrice" type="text" readonly class="form-control-plaintext" value="€9999.99">
+              <input id="caseTotalPrice" type="text" readonly class="form-control-plaintext" value="0,00€">
             </div>
           </div>
+
           <br> <hr> <br>
           <!-- Item Division Cooler -->
           <div class="form-row">
@@ -69,7 +70,7 @@
             </div>
             <div id="labelUnity" class="col-xl-2 col-sm-2 col-6">
               <label  for="caseUnitPrice">Unit</label>
-              <input id="caseUnitPrice" type="text" readonly class="form-control-plaintext" value="€9999.99">
+              <input id="caseUnitPrice" type="text" readonly class="form-control-plaintext" value="5,00€">
             </div>
             <div class="col-xl-1 col-sm-2 col-4">
               <label for="caseAmount">&zwnj;</label>
@@ -81,7 +82,7 @@
             </div>
             <div class="col-xl-1 col-sm-2 col-6">
               <label for="caseTotalPrice">&zwnj;</label>
-              <input id="caseTotalPrice" type="text" readonly class="form-control-plaintext" value="€9999.99">
+              <input id="caseTotalPrice" type="text" readonly class="form-control-plaintext" value="0,00€">
             </div>
           </div>
           <br> <hr> <br>
@@ -101,7 +102,7 @@
             </div>
             <div id="labelUnity" class="col-xl-2 col-sm-2 col-6">
               <label  for="caseUnitPrice">Unit</label>
-              <input id="caseUnitPrice" type="text" readonly class="form-control-plaintext" value="€9999.99">
+              <input id="caseUnitPrice" type="text" readonly class="form-control-plaintext" value="0,00€">
             </div>
             <div class="col-xl-1 col-sm-2 col-4">
               <label for="caseAmount">&zwnj;</label>
@@ -113,7 +114,7 @@
             </div>
             <div class="col-xl-1 col-sm-2 col-6">
               <label for="caseTotalPrice">&zwnj;</label>
-              <input id="caseTotalPrice" type="text" readonly class="form-control-plaintext" value="€9999.99">
+              <input id="caseTotalPrice" type="text" readonly class="form-control-plaintext" value="0,00€">
             </div>
           </div>
           <br> <hr> <br>
@@ -133,7 +134,7 @@
             </div>
             <div id="labelUnity" class="col-xl-2 col-sm-2 col-6">
               <label  for="caseUnitPrice">Unit</label>
-              <input id="caseUnitPrice" type="text" readonly class="form-control-plaintext" value="€9999.99">
+              <input id="caseUnitPrice" type="text" readonly class="form-control-plaintext" value="0,00€">
             </div>
             <div class="col-xl-1 col-sm-2 col-4">
               <label for="caseAmount">&zwnj;</label>
@@ -145,7 +146,7 @@
             </div>
             <div class="col-xl-1 col-sm-2 col-6">
               <label for="caseTotalPrice">&zwnj;</label>
-              <input id="caseTotalPrice" type="text" readonly class="form-control-plaintext" value="€9999.99">
+              <input id="caseTotalPrice" type="text" readonly class="form-control-plaintext" value="0,00€">
             </div>
           </div>
           <br> <hr> <br>
@@ -169,7 +170,7 @@
             </div>
             <div id="labelUnity" class="col-xl-2 col-sm-2 col-6">
               <label  for="caseUnitPrice">Unit</label>
-              <input id="caseUnitPrice" type="text" readonly class="form-control-plaintext" value="€9999.99">
+              <input id="caseUnitPrice" type="text" readonly class="form-control-plaintext" value="0,00€">
             </div>
             <div class="col-xl-1 col-sm-2 col-4">
               <label for="caseAmount">&zwnj;</label>
@@ -181,7 +182,7 @@
             </div>
             <div class="col-xl-1 col-sm-2 col-6">
               <label for="caseTotalPrice">&zwnj;</label>
-              <input id="caseTotalPrice" type="text" readonly class="form-control-plaintext" value="€9999.99">
+              <input id="caseTotalPrice" type="text" readonly class="form-control-plaintext" value="0,00€">
             </div>
           </div>
           <br> <hr> <br>
@@ -215,7 +216,7 @@
             </div>
             <div id="labelUnity" class="col-xl-2 col-sm-2 col-6">
               <label  for="caseUnitPrice">Unit</label>
-              <input id="caseUnitPrice" type="text" readonly class="form-control-plaintext" value="€9999.99">
+              <input id="caseUnitPrice" type="text" readonly class="form-control-plaintext" value="0,00€">
             </div>
             <div class="col-xl-1 col-sm-2 col-4">
               <label for="caseAmount">&zwnj;</label>
@@ -227,7 +228,7 @@
             </div>
             <div class="col-xl-1 col-sm-2 col-6">
               <label for="caseTotalPrice">&zwnj;</label>
-              <input id="caseTotalPrice" type="text" readonly class="form-control-plaintext" value="€9999.99">
+              <input id="caseTotalPrice" type="text" readonly class="form-control-plaintext" value="0,00€">
             </div>
           </div>
           <br> <hr> <br>
@@ -252,7 +253,7 @@
             </div>
             <div id="labelUnity" class="col-xl-2 col-sm-2 col-6">
               <label  for="caseUnitPrice">Unit</label>
-              <input id="caseUnitPrice" type="text" readonly class="form-control-plaintext" value="€9999.99">
+              <input id="caseUnitPrice" type="text" readonly class="form-control-plaintext" value="0,00€">
             </div>
             <div class="col-xl-1 col-sm-2 col-4">
               <label for="caseAmount">&zwnj;</label>
@@ -264,7 +265,7 @@
             </div>
             <div class="col-xl-1 col-sm-2 col-6">
               <label for="caseTotalPrice">&zwnj;</label>
-              <input id="caseTotalPrice" type="text" readonly class="form-control-plaintext" value="€9999.99">
+              <input id="caseTotalPrice" type="text" readonly class="form-control-plaintext" value="0,00€">
             </div>
           </div>
           <br> <hr> <br>
@@ -289,7 +290,7 @@
             </div>
             <div id="labelUnity" class="col-xl-2 col-sm-2 col-6">
               <label  for="caseUnitPrice">Unit</label>
-              <input id="caseUnitPrice" type="text" readonly class="form-control-plaintext" value="€9999.99">
+              <input id="caseUnitPrice" type="text" readonly class="form-control-plaintext" value="0,00€">
             </div>
             <div class="col-xl-1 col-sm-2 col-4">
               <label for="caseAmount">&zwnj;</label>
@@ -301,7 +302,7 @@
             </div>
             <div class="col-xl-1 col-sm-2 col-6">
               <label for="caseTotalPrice">&zwnj;</label>
-              <input id="caseTotalPrice" type="text" readonly class="form-control-plaintext" value="€9999.99">
+              <input id="caseTotalPrice" type="text" readonly class="form-control-plaintext" value="0,00€">
             </div>
           </div>
           <br> <hr> <br>
@@ -361,7 +362,7 @@
             </div>
             <div id="labelUnity" class="col-xl-2 col-sm-2 col-6">
               <label  for="caseUnitPrice">Unit</label>
-              <input id="caseUnitPrice" type="text" readonly class="form-control-plaintext" value="€9999.99">
+              <input id="caseUnitPrice" type="text" readonly class="form-control-plaintext" value="0,00€">
             </div>
             <div class="col-xl-1 col-sm-2 col-4">
               <label for="caseAmount">&zwnj;</label>
@@ -373,7 +374,7 @@
             </div>
             <div class="col-xl-1 col-sm-2 col-6">
               <label for="caseTotalPrice">&zwnj;</label>
-              <input id="caseTotalPrice" type="text" readonly class="form-control-plaintext" value="€9999.99">
+              <input id="caseTotalPrice" type="text" readonly class="form-control-plaintext" value="0,00€">
             </div>
           </div>
         </div>
@@ -418,7 +419,7 @@
             </div>
             <div id="labelUnity" class="col-xl-2 col-sm-2 col-6">
               <label  for="caseUnitPrice">Unit</label>
-              <input id="caseUnitPrice" type="text" readonly class="form-control-plaintext" value="€9999.99">
+              <input id="caseUnitPrice" type="text" readonly class="form-control-plaintext" value="0,00€">
             </div>
             <div class="col-xl-1 col-sm-2 col-4">
               <label for="caseAmount">&zwnj;</label>
@@ -430,7 +431,7 @@
             </div>
             <div class="col-xl-1 col-sm-2 col-6">
               <label for="caseTotalPrice">&zwnj;</label>
-              <input id="caseTotalPrice" type="text" readonly class="form-control-plaintext" value="€9999.99">
+              <input id="caseTotalPrice" type="text" readonly class="form-control-plaintext" value="0,00€">
             </div>
           </div>
           <br> <hr> <br>
@@ -472,7 +473,7 @@
             </div>
             <div id="labelUnity" class="col-xl-2 col-sm-2 col-6">
               <label  for="caseUnitPrice">Unit</label>
-              <input id="caseUnitPrice" type="text" readonly class="form-control-plaintext" value="€9999.99">
+              <input id="caseUnitPrice" type="text" readonly class="form-control-plaintext" value="0,00€">
             </div>
             <div class="col-xl-1 col-sm-2 col-4">
               <label for="caseAmount">&zwnj;</label>
@@ -484,7 +485,7 @@
             </div>
             <div class="col-xl-1 col-sm-2 col-6">
               <label for="caseTotalPrice">&zwnj;</label>
-              <input id="caseTotalPrice" type="text" readonly class="form-control-plaintext" value="€9999.99">
+              <input id="caseTotalPrice" type="text" readonly class="form-control-plaintext" value="0,00€">
             </div>
           </div>
           <br> <hr> <br>
@@ -526,7 +527,7 @@
             </div>
             <div id="labelUnity" class="col-xl-2 col-sm-2 col-6">
               <label  for="caseUnitPrice">Unit</label>
-              <input id="caseUnitPrice" type="text" readonly class="form-control-plaintext" value="€9999.99">
+              <input id="caseUnitPrice" type="text" readonly class="form-control-plaintext" value="0,00€">
             </div>
             <div class="col-xl-1 col-sm-2 col-4">
               <label for="caseAmount">&zwnj;</label>
@@ -538,7 +539,7 @@
             </div>
             <div class="col-xl-1 col-sm-2 col-6">
               <label for="caseTotalPrice">&zwnj;</label>
-              <input id="caseTotalPrice" type="text" readonly class="form-control-plaintext" value="€9999.99">
+              <input id="caseTotalPrice" type="text" readonly class="form-control-plaintext" value="0,00€">
             </div>
           </div>
           <br> <hr> <br>
@@ -580,7 +581,7 @@
             </div>
             <div id="labelUnity" class="col-xl-2 col-sm-2 col-6">
               <label  for="caseUnitPrice">Unit</label>
-              <input id="caseUnitPrice" type="text" readonly class="form-control-plaintext" value="€9999.99">
+              <input id="caseUnitPrice" type="text" readonly class="form-control-plaintext" value="0,00€">
             </div>
             <div class="col-xl-1 col-sm-2 col-4">
               <label for="caseAmount">&zwnj;</label>
@@ -592,7 +593,7 @@
             </div>
             <div class="col-xl-1 col-sm-2 col-6">
               <label for="caseTotalPrice">&zwnj;</label>
-              <input id="caseTotalPrice" type="text" readonly class="form-control-plaintext" value="€9999.99">
+              <input id="caseTotalPrice" type="text" readonly class="form-control-plaintext" value="0,00€">
             </div>
           </div>
           <br> <hr> <br>
@@ -638,7 +639,7 @@
             </div>
             <div id="labelUnity" class="col-xl-2 col-sm-2 col-6">
               <label  for="caseUnitPrice">Unit</label>
-              <input id="caseUnitPrice" type="text" readonly class="form-control-plaintext" value="€9999.99">
+              <input id="caseUnitPrice" type="text" readonly class="form-control-plaintext" value="0,00€">
             </div>
             <div class="col-xl-1 col-sm-2 col-4">
               <label for="caseAmount">&zwnj;</label>
@@ -650,7 +651,7 @@
             </div>
             <div class="col-xl-1 col-sm-2 col-6">
               <label for="caseTotalPrice">&zwnj;</label>
-              <input id="caseTotalPrice" type="text" readonly class="form-control-plaintext" value="€9999.99">
+              <input id="caseTotalPrice" type="text" readonly class="form-control-plaintext" value="0,00€">
             </div>
           </div>
           <br> <hr> <br>
@@ -693,7 +694,7 @@
             </div>
             <div id="labelUnity" class="col-xl-2 col-sm-2 col-6">
               <label  for="caseUnitPrice">Unit</label>
-              <input id="caseUnitPrice" type="text" readonly class="form-control-plaintext" value="€9999.99">
+              <input id="caseUnitPrice" type="text" readonly class="form-control-plaintext" value="0,00€">
             </div>
             <div class="col-xl-1 col-sm-2 col-4">
               <label for="caseAmount">&zwnj;</label>
@@ -705,7 +706,7 @@
             </div>
             <div class="col-xl-1 col-sm-2 col-6">
               <label for="caseTotalPrice">&zwnj;</label>
-              <input id="caseTotalPrice" type="text" readonly class="form-control-plaintext" value="€9999.99">
+              <input id="caseTotalPrice" type="text" readonly class="form-control-plaintext" value="0,00€">
             </div>
           </div>
           <br> <hr> <br>
@@ -751,7 +752,7 @@
             </div>
             <div id="labelUnity" class="col-xl-2 col-sm-2 col-6">
               <label  for="caseUnitPrice">Unit</label>
-              <input id="caseUnitPrice" type="text" readonly class="form-control-plaintext" value="€9999.99">
+              <input id="caseUnitPrice" type="text" readonly class="form-control-plaintext" value="0,00€">
             </div>
             <div class="col-xl-1 col-sm-2 col-4">
               <label for="caseAmount">&zwnj;</label>
@@ -763,7 +764,7 @@
             </div>
             <div class="col-xl-1 col-sm-2 col-6">
               <label for="caseTotalPrice">&zwnj;</label>
-              <input id="caseTotalPrice" type="text" readonly class="form-control-plaintext" value="€9999.99">
+              <input id="caseTotalPrice" type="text" readonly class="form-control-plaintext" value="0,00€">
             </div>
           </div>
           <br> <hr> <br>
@@ -809,7 +810,7 @@
             </div>
             <div id="labelUnity" class="col-xl-2 col-sm-2 col-6">
               <label  for="caseUnitPrice">Unit</label>
-              <input id="caseUnitPrice" type="text" readonly class="form-control-plaintext" value="€9999.99">
+              <input id="caseUnitPrice" type="text" readonly class="form-control-plaintext" value="0,00€">
             </div>
             <div class="col-xl-1 col-sm-2 col-4">
               <label for="caseAmount">&zwnj;</label>
@@ -821,7 +822,7 @@
             </div>
             <div class="col-xl-1 col-sm-2 col-6">
               <label for="caseTotalPrice">&zwnj;</label>
-              <input id="caseTotalPrice" type="text" readonly class="form-control-plaintext" value="€9999.99">
+              <input id="caseTotalPrice" type="text" readonly class="form-control-plaintext" value="0,00€">
             </div>
           </div>
           <br> <hr> <br>
@@ -864,7 +865,7 @@
             </div>
             <div id="labelUnity" class="col-xl-2 col-sm-2 col-6">
               <label  for="caseUnitPrice">Unit</label>
-              <input id="caseUnitPrice" type="text" readonly class="form-control-plaintext" value="€9999.99">
+              <input id="caseUnitPrice" type="text" readonly class="form-control-plaintext" value="0,00€">
             </div>
             <div class="col-xl-1 col-sm-2 col-4">
               <label for="caseAmount">&zwnj;</label>
@@ -876,11 +877,11 @@
             </div>
             <div class="col-xl-1 col-sm-2 col-6">
               <label for="caseTotalPrice">&zwnj;</label>
-              <input id="caseTotalPrice" type="text" readonly class="form-control-plaintext" value="€9999.99">
+              <input id="caseTotalPrice" type="text" readonly class="form-control-plaintext" value="0,00€">
             </div>
           </div>
         </div>
         <!-- Outer Form Division -->
-        <h3 class="sectionTitle total"><span>€9999,99</span></h3>
+        <h3 class="sectionTitle total"><span>0,00€</span></h3>
         <form/>
     @endsection

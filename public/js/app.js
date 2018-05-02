@@ -725,6 +725,28 @@ function amountAdjust(){
   }
 }
 
+function configuratorAmountAdjustAction(){
+  let previousValue = parseFloat(this.closest('div.form-row').lastElementChild.children[1].value);
+  console.log("previousValue: "+previousValue);
+
+  if(this.value == "" || this.value == null || this.value == '0')
+      this.value = "1";
+
+  if(parseInt(this.value)>parseInt(this.max)){
+    this.value = this.max;
+  }
+  let newValue = Math.round(parseFloat(this.parentNode.previousElementSibling.children[1].value)*parseInt(this.value)*100)/100;
+  this.closest('div.form-row').lastElementChild.children[1].value = newValue+'€';
+  console.log("newValue: "+newValue);
+  let total = document.querySelector('.sectionTitle.total span');
+  total.innerHTML = Math.round((parseFloat(total.innerHTML)-previousValue+newValue)*100)/100+'€';
+}
+function configuratorAmountAdjust(){
+  let inputs = document.querySelectorAll("input#caseAmount");
+  for (let input of inputs) {
+    input.onchange = configuratorAmountAdjustAction;
+  }
+}
 
 adminSearchProduct();
 headerSearchProduct();
@@ -735,6 +757,7 @@ retreiveFavorites();
 shoppingCart();
 checkout();
 amountAdjust();
+configuratorAmountAdjust()
 deleteComment();
 banUser();
 unBanUser();

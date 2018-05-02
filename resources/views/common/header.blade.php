@@ -24,7 +24,7 @@
               @endforeach
             </ul>
           </div>
-          <input type="hidden" name="search_param" value="all" id="search_param">
+          <input type="hidden" name="search_param" value="" id="search_param">
           <input type="text" class="form-control" name="x" placeholder="Search...">
           <button id="searchBtn" href="products" class="btn btn-outline-success headerSearchBtn" type="submit"><i class="fas fa-search"></i></button>
         </div>
@@ -85,7 +85,7 @@
 
       @foreach($categories as $category)
         <li class="nav-item">
-          <a class="nav-link mobileNav" href="{{route('products')}}?cat={{$category->id}}"><span class="sub_icon"><i class="{{$category->icon}} fa-lg"></i></span>{{$category->name}}</a>
+          <a class="nav-link mobileNav" href="{{route('products')}}?categoryID={{$category->id}}"><span class="sub_icon"><i class="{{$category->icon}} fa-lg"></i></span>{{$category->name}}</a>
         </li>
       @endforeach
     </ul>
@@ -99,7 +99,7 @@
     <ul class="sidebar-nav" id="sidebar">
       <li><a  id="configurator" href="{{route('configurator')}}"><span class="sub_icon"><i class="fas fa-cogs fa-lg"></i></span>Configurator</a></li>
       @foreach($categories as $category)
-        <li><a href="{{route('products')}}?cat={{$category->id}}"><span class="sub_icon"><i class="{{$category->icon}} fa-lg"></i></span>{{$category->name}}</a></li>
+        <li><a href="{{route('products')}}?categoryID={{$category->id}}"><span class="sub_icon"><i class="{{$category->icon}} fa-lg"></i></span>{{$category->name}}</a></li>
       @endforeach
     </ul>
   </div>

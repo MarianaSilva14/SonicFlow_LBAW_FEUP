@@ -53,7 +53,7 @@ Route::get('checkout','PurchaseController@showCheckout')->name('checkout');
 Route::view('about','pages.about')->name('about');
 Route::view('contact','pages.contact')->name('contact');
 Route::view('faq','pages.faq')->name('faq');
-Route::view('configurator','pages.configurator')->name('configurator');
+Route::get('configurator','ConfiguratorController@show')->name('configurator');
 
 // Authentication
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');

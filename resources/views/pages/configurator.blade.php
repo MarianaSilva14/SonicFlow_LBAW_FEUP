@@ -29,31 +29,9 @@
               </label>
               <select id="caseInput" class="form-control" name="pc-case">
                 <option value="">None</option>
-
-                <option value="4054_4054" data-html="<img src='/Client/CL000000/Temp/CAIXA1306_1_636448035191081453_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1306" data-link="/pt-PT/produto/4054/Caixa-Aerocool-AERO-300-Preta/AERO300.html" data-part="AERO300" data-stock="yellow" data-price="33.900030">Caixa Aerocool AERO-300 Preta (33,90 €)</option>
-
-                <option value="4055_4055" data-html="<img src='/Client/CL000000/Temp/CAIXA1323_1_636448035193181456_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1323" data-link="/pt-PT/produto/4055/Caixa-Aerocool-AERO-300-Window-Preta/AERO300FAW.html" data-part="AERO300FAW" data-stock="blue" data-price="40.999959">Caixa Aerocool AERO-300 Window Preta (41,00 €)</option>
-
-                <option value="4060_4060" data-html="<img src='/Client/CL000000/Temp/CAIXA1177_1_636448033900479646_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1177" data-link="/pt-PT/produto/4060/Caixa-Aerocool-AERO-800-Window-Preta/AERO800BK.html" data-part="AERO800BK" data-stock="blue" data-price="67.900059">Caixa Aerocool AERO-800 Window Preta (67,90 €)</option>
-
-                <option value="4059_4059" data-html="<img src='/Client/CL000000/Temp/CAIXA1325_1_636448035193781457_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1325" data-link="/pt-PT/produto/4059/Caixa-Aerocool-BattleHawk-Branca/BATTLEHAWKWH.html" data-part="BATTLEHAWKWH" data-stock="blue" data-price="58.900026">Caixa Aerocool BattleHawk Branca (58,90 €)</option>
-
-                <option value="30842_11543" data-html="<img src='/Client/CL000000/Temp/CAIXA1357_1_636448035616282048_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1357" data-link="/pt-PT/produto/30842/Caixa-Aerocool-CyberX/CYBERX.html" data-part="CYBERX" data-stock="blue" data-price="39.899970">Caixa Aerocool CyberX (39,90 €)</option>
-
-                <option value="30841_11542" data-html="<img src='/Client/CL000000/Temp/CAIXA1356_1_636448035616082048_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1356" data-link="/pt-PT/produto/30841/Caixa-Aerocool-CyberX-Advance/CYBERXAD.html" data-part="CYBERXAD" data-stock="blue" data-price="46.900023">Caixa Aerocool CyberX Advance (46,90 €)</option>
-
-                <option value="31971_12673" data-html="<img src='/Client/CL000000/Temp/CAIXA1408_1_636523300096187892_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1408" data-link="/pt-PT/produto/31971/Caixa-Aerocool-Cylon-RGB-Flow-Lighting/CYLON.html" data-part="CYLON" data-stock="yellow" data-price="40.999959">Caixa Aerocool Cylon RGB Flow Lighting (41,00 €)</option>
-
-                <option value="31972_12674" data-html="<img src='/Client/CL000000/Temp/CAIXA1409_1_636523300096500393_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1409" data-link="/pt-PT/produto/31972/Caixa-Aerocool-DS-230/DS230BK.html" data-part="DS230BK" data-stock="blue" data-price="94.900035">Caixa Aerocool DS 230 (94,90 €)</option>
-
-                <option value="4053_4053" data-html="<img src='/Client/CL000000/Temp/CAIXA957_1_636448033258878748_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA957" data-link="/pt-PT/produto/4053/Caixa-Aerocool-GT-Advance-Preta/GTADBK.html" data-part="GTADBK" data-stock="blue" data-price="36.900000">Caixa Aerocool GT Advance Preta (36,90 €)</option>
-
-                <option value="30838_11539" data-html="<img src='/Client/CL000000/Temp/CAIXA1361_1_636448035617482050_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1361" data-link="/pt-PT/produto/30838/Caixa-Aerocool-Project-7-P7-C0-Pro/P7C0PRO.html" data-part="P7C0PRO" data-stock="blue" data-price="112.899978">Caixa Aerocool Project 7 P7-C0 Pro (112,90 €)</option>
-
-                <option value="4063_4063" data-html="<img src='/Client/CL000000/Temp/CAIXA1328_1_636448035194681458_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1328" data-link="/pt-PT/produto/4063/Caixa-Aerocool-Project-7-P7-C1-Branca/P7C1WG.html" data-part="P7C1WG" data-stock="blue" data-price="112.899978">Caixa Aerocool Project 7 P7-C1 Branca (112,90 €)</option>
-
-                <option value="4062_4062" data-html="<img src='/Client/CL000000/Temp/CAIXA1327_1_636448035194381458_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1327" data-link="/pt-PT/produto/4062/Caixa-Aerocool-Project-7-P7-C1-Preta/P7C1BG.html" data-part="P7C1BG" data-stock="blue" data-price="112.899978">Caixa Aerocool Project 7 P7-C1 Preta (112,90 €)</option>
-
+                @foreach($productsByCategory[1] as $product)
+                  <option>{{$product->title}}</option>
+                @endforeach
               </select>
               <small id="emailHelp" class="form-text text-muted"><b>PN</b>:&ltpart number&gt , <b>REF</b>:&ltreference&gt</small>
             </div>
@@ -83,31 +61,9 @@
               </label>
               <select id="coolerInput" class="form-control" name="cooler">
                 <option value="">None</option>
-
-                <option value="4054_4054" data-html="<img src='/Client/CL000000/Temp/CAIXA1306_1_636448035191081453_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1306" data-link="/pt-PT/produto/4054/Caixa-Aerocool-AERO-300-Preta/AERO300.html" data-part="AERO300" data-stock="yellow" data-price="33.900030">Caixa Aerocool AERO-300 Preta (33,90 €)</option>
-
-                <option value="4055_4055" data-html="<img src='/Client/CL000000/Temp/CAIXA1323_1_636448035193181456_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1323" data-link="/pt-PT/produto/4055/Caixa-Aerocool-AERO-300-Window-Preta/AERO300FAW.html" data-part="AERO300FAW" data-stock="blue" data-price="40.999959">Caixa Aerocool AERO-300 Window Preta (41,00 €)</option>
-
-                <option value="4060_4060" data-html="<img src='/Client/CL000000/Temp/CAIXA1177_1_636448033900479646_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1177" data-link="/pt-PT/produto/4060/Caixa-Aerocool-AERO-800-Window-Preta/AERO800BK.html" data-part="AERO800BK" data-stock="blue" data-price="67.900059">Caixa Aerocool AERO-800 Window Preta (67,90 €)</option>
-
-                <option value="4059_4059" data-html="<img src='/Client/CL000000/Temp/CAIXA1325_1_636448035193781457_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1325" data-link="/pt-PT/produto/4059/Caixa-Aerocool-BattleHawk-Branca/BATTLEHAWKWH.html" data-part="BATTLEHAWKWH" data-stock="blue" data-price="58.900026">Caixa Aerocool BattleHawk Branca (58,90 €)</option>
-
-                <option value="30842_11543" data-html="<img src='/Client/CL000000/Temp/CAIXA1357_1_636448035616282048_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1357" data-link="/pt-PT/produto/30842/Caixa-Aerocool-CyberX/CYBERX.html" data-part="CYBERX" data-stock="blue" data-price="39.899970">Caixa Aerocool CyberX (39,90 €)</option>
-
-                <option value="30841_11542" data-html="<img src='/Client/CL000000/Temp/CAIXA1356_1_636448035616082048_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1356" data-link="/pt-PT/produto/30841/Caixa-Aerocool-CyberX-Advance/CYBERXAD.html" data-part="CYBERXAD" data-stock="blue" data-price="46.900023">Caixa Aerocool CyberX Advance (46,90 €)</option>
-
-                <option value="31971_12673" data-html="<img src='/Client/CL000000/Temp/CAIXA1408_1_636523300096187892_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1408" data-link="/pt-PT/produto/31971/Caixa-Aerocool-Cylon-RGB-Flow-Lighting/CYLON.html" data-part="CYLON" data-stock="yellow" data-price="40.999959">Caixa Aerocool Cylon RGB Flow Lighting (41,00 €)</option>
-
-                <option value="31972_12674" data-html="<img src='/Client/CL000000/Temp/CAIXA1409_1_636523300096500393_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1409" data-link="/pt-PT/produto/31972/Caixa-Aerocool-DS-230/DS230BK.html" data-part="DS230BK" data-stock="blue" data-price="94.900035">Caixa Aerocool DS 230 (94,90 €)</option>
-
-                <option value="4053_4053" data-html="<img src='/Client/CL000000/Temp/CAIXA957_1_636448033258878748_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA957" data-link="/pt-PT/produto/4053/Caixa-Aerocool-GT-Advance-Preta/GTADBK.html" data-part="GTADBK" data-stock="blue" data-price="36.900000">Caixa Aerocool GT Advance Preta (36,90 €)</option>
-
-                <option value="30838_11539" data-html="<img src='/Client/CL000000/Temp/CAIXA1361_1_636448035617482050_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1361" data-link="/pt-PT/produto/30838/Caixa-Aerocool-Project-7-P7-C0-Pro/P7C0PRO.html" data-part="P7C0PRO" data-stock="blue" data-price="112.899978">Caixa Aerocool Project 7 P7-C0 Pro (112,90 €)</option>
-
-                <option value="4063_4063" data-html="<img src='/Client/CL000000/Temp/CAIXA1328_1_636448035194681458_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1328" data-link="/pt-PT/produto/4063/Caixa-Aerocool-Project-7-P7-C1-Branca/P7C1WG.html" data-part="P7C1WG" data-stock="blue" data-price="112.899978">Caixa Aerocool Project 7 P7-C1 Branca (112,90 €)</option>
-
-                <option value="4062_4062" data-html="<img src='/Client/CL000000/Temp/CAIXA1327_1_636448035194381458_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1327" data-link="/pt-PT/produto/4062/Caixa-Aerocool-Project-7-P7-C1-Preta/P7C1BG.html" data-part="P7C1BG" data-stock="blue" data-price="112.899978">Caixa Aerocool Project 7 P7-C1 Preta (112,90 €)</option>
-
+                @foreach($productsByCategory[2] as $product)
+                  <option>{{$product->title}}</option>
+                @endforeach
               </select>
               <small id="coolerInfo" class="form-text text-muted"><b>PN</b>:&ltpart number&gt , <b>REF</b>:&ltreference&gt</small>
             </div>
@@ -137,31 +93,9 @@
               </label>
               <select id="hddInput" class="form-control" name="hdd">
                 <option value="">None</option>
-
-                <option value="4054_4054" data-html="<img src='/Client/CL000000/Temp/CAIXA1306_1_636448035191081453_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1306" data-link="/pt-PT/produto/4054/Caixa-Aerocool-AERO-300-Preta/AERO300.html" data-part="AERO300" data-stock="yellow" data-price="33.900030">Caixa Aerocool AERO-300 Preta (33,90 €)</option>
-
-                <option value="4055_4055" data-html="<img src='/Client/CL000000/Temp/CAIXA1323_1_636448035193181456_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1323" data-link="/pt-PT/produto/4055/Caixa-Aerocool-AERO-300-Window-Preta/AERO300FAW.html" data-part="AERO300FAW" data-stock="blue" data-price="40.999959">Caixa Aerocool AERO-300 Window Preta (41,00 €)</option>
-
-                <option value="4060_4060" data-html="<img src='/Client/CL000000/Temp/CAIXA1177_1_636448033900479646_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1177" data-link="/pt-PT/produto/4060/Caixa-Aerocool-AERO-800-Window-Preta/AERO800BK.html" data-part="AERO800BK" data-stock="blue" data-price="67.900059">Caixa Aerocool AERO-800 Window Preta (67,90 €)</option>
-
-                <option value="4059_4059" data-html="<img src='/Client/CL000000/Temp/CAIXA1325_1_636448035193781457_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1325" data-link="/pt-PT/produto/4059/Caixa-Aerocool-BattleHawk-Branca/BATTLEHAWKWH.html" data-part="BATTLEHAWKWH" data-stock="blue" data-price="58.900026">Caixa Aerocool BattleHawk Branca (58,90 €)</option>
-
-                <option value="30842_11543" data-html="<img src='/Client/CL000000/Temp/CAIXA1357_1_636448035616282048_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1357" data-link="/pt-PT/produto/30842/Caixa-Aerocool-CyberX/CYBERX.html" data-part="CYBERX" data-stock="blue" data-price="39.899970">Caixa Aerocool CyberX (39,90 €)</option>
-
-                <option value="30841_11542" data-html="<img src='/Client/CL000000/Temp/CAIXA1356_1_636448035616082048_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1356" data-link="/pt-PT/produto/30841/Caixa-Aerocool-CyberX-Advance/CYBERXAD.html" data-part="CYBERXAD" data-stock="blue" data-price="46.900023">Caixa Aerocool CyberX Advance (46,90 €)</option>
-
-                <option value="31971_12673" data-html="<img src='/Client/CL000000/Temp/CAIXA1408_1_636523300096187892_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1408" data-link="/pt-PT/produto/31971/Caixa-Aerocool-Cylon-RGB-Flow-Lighting/CYLON.html" data-part="CYLON" data-stock="yellow" data-price="40.999959">Caixa Aerocool Cylon RGB Flow Lighting (41,00 €)</option>
-
-                <option value="31972_12674" data-html="<img src='/Client/CL000000/Temp/CAIXA1409_1_636523300096500393_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1409" data-link="/pt-PT/produto/31972/Caixa-Aerocool-DS-230/DS230BK.html" data-part="DS230BK" data-stock="blue" data-price="94.900035">Caixa Aerocool DS 230 (94,90 €)</option>
-
-                <option value="4053_4053" data-html="<img src='/Client/CL000000/Temp/CAIXA957_1_636448033258878748_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA957" data-link="/pt-PT/produto/4053/Caixa-Aerocool-GT-Advance-Preta/GTADBK.html" data-part="GTADBK" data-stock="blue" data-price="36.900000">Caixa Aerocool GT Advance Preta (36,90 €)</option>
-
-                <option value="30838_11539" data-html="<img src='/Client/CL000000/Temp/CAIXA1361_1_636448035617482050_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1361" data-link="/pt-PT/produto/30838/Caixa-Aerocool-Project-7-P7-C0-Pro/P7C0PRO.html" data-part="P7C0PRO" data-stock="blue" data-price="112.899978">Caixa Aerocool Project 7 P7-C0 Pro (112,90 €)</option>
-
-                <option value="4063_4063" data-html="<img src='/Client/CL000000/Temp/CAIXA1328_1_636448035194681458_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1328" data-link="/pt-PT/produto/4063/Caixa-Aerocool-Project-7-P7-C1-Branca/P7C1WG.html" data-part="P7C1WG" data-stock="blue" data-price="112.899978">Caixa Aerocool Project 7 P7-C1 Branca (112,90 €)</option>
-
-                <option value="4062_4062" data-html="<img src='/Client/CL000000/Temp/CAIXA1327_1_636448035194381458_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1327" data-link="/pt-PT/produto/4062/Caixa-Aerocool-Project-7-P7-C1-Preta/P7C1BG.html" data-part="P7C1BG" data-stock="blue" data-price="112.899978">Caixa Aerocool Project 7 P7-C1 Preta (112,90 €)</option>
-
+                @foreach($productsByCategory[3] as $product)
+                  <option>{{$product->title}}</option>
+                @endforeach
               </select>
               <small id="hddInfo" class="form-text text-muted"><b>PN</b>:&ltpart number&gt , <b>REF</b>:&ltreference&gt</small>
             </div>
@@ -191,31 +125,9 @@
               </label>
               <select id="ssdInput" class="form-control" name="ssd">
                 <option value="">None</option>
-
-                <option value="4054_4054" data-html="<img src='/Client/CL000000/Temp/CAIXA1306_1_636448035191081453_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1306" data-link="/pt-PT/produto/4054/Caixa-Aerocool-AERO-300-Preta/AERO300.html" data-part="AERO300" data-stock="yellow" data-price="33.900030">Caixa Aerocool AERO-300 Preta (33,90 €)</option>
-
-                <option value="4055_4055" data-html="<img src='/Client/CL000000/Temp/CAIXA1323_1_636448035193181456_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1323" data-link="/pt-PT/produto/4055/Caixa-Aerocool-AERO-300-Window-Preta/AERO300FAW.html" data-part="AERO300FAW" data-stock="blue" data-price="40.999959">Caixa Aerocool AERO-300 Window Preta (41,00 €)</option>
-
-                <option value="4060_4060" data-html="<img src='/Client/CL000000/Temp/CAIXA1177_1_636448033900479646_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1177" data-link="/pt-PT/produto/4060/Caixa-Aerocool-AERO-800-Window-Preta/AERO800BK.html" data-part="AERO800BK" data-stock="blue" data-price="67.900059">Caixa Aerocool AERO-800 Window Preta (67,90 €)</option>
-
-                <option value="4059_4059" data-html="<img src='/Client/CL000000/Temp/CAIXA1325_1_636448035193781457_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1325" data-link="/pt-PT/produto/4059/Caixa-Aerocool-BattleHawk-Branca/BATTLEHAWKWH.html" data-part="BATTLEHAWKWH" data-stock="blue" data-price="58.900026">Caixa Aerocool BattleHawk Branca (58,90 €)</option>
-
-                <option value="30842_11543" data-html="<img src='/Client/CL000000/Temp/CAIXA1357_1_636448035616282048_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1357" data-link="/pt-PT/produto/30842/Caixa-Aerocool-CyberX/CYBERX.html" data-part="CYBERX" data-stock="blue" data-price="39.899970">Caixa Aerocool CyberX (39,90 €)</option>
-
-                <option value="30841_11542" data-html="<img src='/Client/CL000000/Temp/CAIXA1356_1_636448035616082048_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1356" data-link="/pt-PT/produto/30841/Caixa-Aerocool-CyberX-Advance/CYBERXAD.html" data-part="CYBERXAD" data-stock="blue" data-price="46.900023">Caixa Aerocool CyberX Advance (46,90 €)</option>
-
-                <option value="31971_12673" data-html="<img src='/Client/CL000000/Temp/CAIXA1408_1_636523300096187892_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1408" data-link="/pt-PT/produto/31971/Caixa-Aerocool-Cylon-RGB-Flow-Lighting/CYLON.html" data-part="CYLON" data-stock="yellow" data-price="40.999959">Caixa Aerocool Cylon RGB Flow Lighting (41,00 €)</option>
-
-                <option value="31972_12674" data-html="<img src='/Client/CL000000/Temp/CAIXA1409_1_636523300096500393_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1409" data-link="/pt-PT/produto/31972/Caixa-Aerocool-DS-230/DS230BK.html" data-part="DS230BK" data-stock="blue" data-price="94.900035">Caixa Aerocool DS 230 (94,90 €)</option>
-
-                <option value="4053_4053" data-html="<img src='/Client/CL000000/Temp/CAIXA957_1_636448033258878748_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA957" data-link="/pt-PT/produto/4053/Caixa-Aerocool-GT-Advance-Preta/GTADBK.html" data-part="GTADBK" data-stock="blue" data-price="36.900000">Caixa Aerocool GT Advance Preta (36,90 €)</option>
-
-                <option value="30838_11539" data-html="<img src='/Client/CL000000/Temp/CAIXA1361_1_636448035617482050_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1361" data-link="/pt-PT/produto/30838/Caixa-Aerocool-Project-7-P7-C0-Pro/P7C0PRO.html" data-part="P7C0PRO" data-stock="blue" data-price="112.899978">Caixa Aerocool Project 7 P7-C0 Pro (112,90 €)</option>
-
-                <option value="4063_4063" data-html="<img src='/Client/CL000000/Temp/CAIXA1328_1_636448035194681458_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1328" data-link="/pt-PT/produto/4063/Caixa-Aerocool-Project-7-P7-C1-Branca/P7C1WG.html" data-part="P7C1WG" data-stock="blue" data-price="112.899978">Caixa Aerocool Project 7 P7-C1 Branca (112,90 €)</option>
-
-                <option value="4062_4062" data-html="<img src='/Client/CL000000/Temp/CAIXA1327_1_636448035194381458_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1327" data-link="/pt-PT/produto/4062/Caixa-Aerocool-Project-7-P7-C1-Preta/P7C1BG.html" data-part="P7C1BG" data-stock="blue" data-price="112.899978">Caixa Aerocool Project 7 P7-C1 Preta (112,90 €)</option>
-
+                @foreach($productsByCategory[4] as $product)
+                  <option>{{$product->title}}</option>
+                @endforeach
               </select>
               <small id="ssdInfo" class="form-text text-muted"><b>PN</b>:&ltpart number&gt , <b>REF</b>:&ltreference&gt</small>
             </div>
@@ -249,31 +161,9 @@
               </label>
               <select id="psuInput" class="form-control" name="psu">
                 <option value="">None</option>
-
-                <option value="4054_4054" data-html="<img src='/Client/CL000000/Temp/CAIXA1306_1_636448035191081453_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1306" data-link="/pt-PT/produto/4054/Caixa-Aerocool-AERO-300-Preta/AERO300.html" data-part="AERO300" data-stock="yellow" data-price="33.900030">Caixa Aerocool AERO-300 Preta (33,90 €)</option>
-
-                <option value="4055_4055" data-html="<img src='/Client/CL000000/Temp/CAIXA1323_1_636448035193181456_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1323" data-link="/pt-PT/produto/4055/Caixa-Aerocool-AERO-300-Window-Preta/AERO300FAW.html" data-part="AERO300FAW" data-stock="blue" data-price="40.999959">Caixa Aerocool AERO-300 Window Preta (41,00 €)</option>
-
-                <option value="4060_4060" data-html="<img src='/Client/CL000000/Temp/CAIXA1177_1_636448033900479646_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1177" data-link="/pt-PT/produto/4060/Caixa-Aerocool-AERO-800-Window-Preta/AERO800BK.html" data-part="AERO800BK" data-stock="blue" data-price="67.900059">Caixa Aerocool AERO-800 Window Preta (67,90 €)</option>
-
-                <option value="4059_4059" data-html="<img src='/Client/CL000000/Temp/CAIXA1325_1_636448035193781457_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1325" data-link="/pt-PT/produto/4059/Caixa-Aerocool-BattleHawk-Branca/BATTLEHAWKWH.html" data-part="BATTLEHAWKWH" data-stock="blue" data-price="58.900026">Caixa Aerocool BattleHawk Branca (58,90 €)</option>
-
-                <option value="30842_11543" data-html="<img src='/Client/CL000000/Temp/CAIXA1357_1_636448035616282048_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1357" data-link="/pt-PT/produto/30842/Caixa-Aerocool-CyberX/CYBERX.html" data-part="CYBERX" data-stock="blue" data-price="39.899970">Caixa Aerocool CyberX (39,90 €)</option>
-
-                <option value="30841_11542" data-html="<img src='/Client/CL000000/Temp/CAIXA1356_1_636448035616082048_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1356" data-link="/pt-PT/produto/30841/Caixa-Aerocool-CyberX-Advance/CYBERXAD.html" data-part="CYBERXAD" data-stock="blue" data-price="46.900023">Caixa Aerocool CyberX Advance (46,90 €)</option>
-
-                <option value="31971_12673" data-html="<img src='/Client/CL000000/Temp/CAIXA1408_1_636523300096187892_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1408" data-link="/pt-PT/produto/31971/Caixa-Aerocool-Cylon-RGB-Flow-Lighting/CYLON.html" data-part="CYLON" data-stock="yellow" data-price="40.999959">Caixa Aerocool Cylon RGB Flow Lighting (41,00 €)</option>
-
-                <option value="31972_12674" data-html="<img src='/Client/CL000000/Temp/CAIXA1409_1_636523300096500393_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1409" data-link="/pt-PT/produto/31972/Caixa-Aerocool-DS-230/DS230BK.html" data-part="DS230BK" data-stock="blue" data-price="94.900035">Caixa Aerocool DS 230 (94,90 €)</option>
-
-                <option value="4053_4053" data-html="<img src='/Client/CL000000/Temp/CAIXA957_1_636448033258878748_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA957" data-link="/pt-PT/produto/4053/Caixa-Aerocool-GT-Advance-Preta/GTADBK.html" data-part="GTADBK" data-stock="blue" data-price="36.900000">Caixa Aerocool GT Advance Preta (36,90 €)</option>
-
-                <option value="30838_11539" data-html="<img src='/Client/CL000000/Temp/CAIXA1361_1_636448035617482050_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1361" data-link="/pt-PT/produto/30838/Caixa-Aerocool-Project-7-P7-C0-Pro/P7C0PRO.html" data-part="P7C0PRO" data-stock="blue" data-price="112.899978">Caixa Aerocool Project 7 P7-C0 Pro (112,90 €)</option>
-
-                <option value="4063_4063" data-html="<img src='/Client/CL000000/Temp/CAIXA1328_1_636448035194681458_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1328" data-link="/pt-PT/produto/4063/Caixa-Aerocool-Project-7-P7-C1-Branca/P7C1WG.html" data-part="P7C1WG" data-stock="blue" data-price="112.899978">Caixa Aerocool Project 7 P7-C1 Branca (112,90 €)</option>
-
-                <option value="4062_4062" data-html="<img src='/Client/CL000000/Temp/CAIXA1327_1_636448035194381458_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1327" data-link="/pt-PT/produto/4062/Caixa-Aerocool-Project-7-P7-C1-Preta/P7C1BG.html" data-part="P7C1BG" data-stock="blue" data-price="112.899978">Caixa Aerocool Project 7 P7-C1 Preta (112,90 €)</option>
-
+                @foreach($productsByCategory[5] as $product)
+                  <option>{{$product->title}}</option>
+                @endforeach
               </select>
               <small id="psuInfo" class="form-text text-muted"><b>PN</b>:&ltpart number&gt , <b>REF</b>:&ltreference&gt</small>
             </div>
@@ -317,30 +207,9 @@
               <select id="gpuInput" class="form-control" name="gpu">
                 <option value="">None</option>
 
-                <option value="4054_4054" data-html="<img src='/Client/CL000000/Temp/CAIXA1306_1_636448035191081453_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1306" data-link="/pt-PT/produto/4054/Caixa-Aerocool-AERO-300-Preta/AERO300.html" data-part="AERO300" data-stock="yellow" data-price="33.900030">Caixa Aerocool AERO-300 Preta (33,90 €)</option>
-
-                <option value="4055_4055" data-html="<img src='/Client/CL000000/Temp/CAIXA1323_1_636448035193181456_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1323" data-link="/pt-PT/produto/4055/Caixa-Aerocool-AERO-300-Window-Preta/AERO300FAW.html" data-part="AERO300FAW" data-stock="blue" data-price="40.999959">Caixa Aerocool AERO-300 Window Preta (41,00 €)</option>
-
-                <option value="4060_4060" data-html="<img src='/Client/CL000000/Temp/CAIXA1177_1_636448033900479646_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1177" data-link="/pt-PT/produto/4060/Caixa-Aerocool-AERO-800-Window-Preta/AERO800BK.html" data-part="AERO800BK" data-stock="blue" data-price="67.900059">Caixa Aerocool AERO-800 Window Preta (67,90 €)</option>
-
-                <option value="4059_4059" data-html="<img src='/Client/CL000000/Temp/CAIXA1325_1_636448035193781457_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1325" data-link="/pt-PT/produto/4059/Caixa-Aerocool-BattleHawk-Branca/BATTLEHAWKWH.html" data-part="BATTLEHAWKWH" data-stock="blue" data-price="58.900026">Caixa Aerocool BattleHawk Branca (58,90 €)</option>
-
-                <option value="30842_11543" data-html="<img src='/Client/CL000000/Temp/CAIXA1357_1_636448035616282048_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1357" data-link="/pt-PT/produto/30842/Caixa-Aerocool-CyberX/CYBERX.html" data-part="CYBERX" data-stock="blue" data-price="39.899970">Caixa Aerocool CyberX (39,90 €)</option>
-
-                <option value="30841_11542" data-html="<img src='/Client/CL000000/Temp/CAIXA1356_1_636448035616082048_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1356" data-link="/pt-PT/produto/30841/Caixa-Aerocool-CyberX-Advance/CYBERXAD.html" data-part="CYBERXAD" data-stock="blue" data-price="46.900023">Caixa Aerocool CyberX Advance (46,90 €)</option>
-
-                <option value="31971_12673" data-html="<img src='/Client/CL000000/Temp/CAIXA1408_1_636523300096187892_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1408" data-link="/pt-PT/produto/31971/Caixa-Aerocool-Cylon-RGB-Flow-Lighting/CYLON.html" data-part="CYLON" data-stock="yellow" data-price="40.999959">Caixa Aerocool Cylon RGB Flow Lighting (41,00 €)</option>
-
-                <option value="31972_12674" data-html="<img src='/Client/CL000000/Temp/CAIXA1409_1_636523300096500393_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1409" data-link="/pt-PT/produto/31972/Caixa-Aerocool-DS-230/DS230BK.html" data-part="DS230BK" data-stock="blue" data-price="94.900035">Caixa Aerocool DS 230 (94,90 €)</option>
-
-                <option value="4053_4053" data-html="<img src='/Client/CL000000/Temp/CAIXA957_1_636448033258878748_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA957" data-link="/pt-PT/produto/4053/Caixa-Aerocool-GT-Advance-Preta/GTADBK.html" data-part="GTADBK" data-stock="blue" data-price="36.900000">Caixa Aerocool GT Advance Preta (36,90 €)</option>
-
-                <option value="30838_11539" data-html="<img src='/Client/CL000000/Temp/CAIXA1361_1_636448035617482050_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1361" data-link="/pt-PT/produto/30838/Caixa-Aerocool-Project-7-P7-C0-Pro/P7C0PRO.html" data-part="P7C0PRO" data-stock="blue" data-price="112.899978">Caixa Aerocool Project 7 P7-C0 Pro (112,90 €)</option>
-
-                <option value="4063_4063" data-html="<img src='/Client/CL000000/Temp/CAIXA1328_1_636448035194681458_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1328" data-link="/pt-PT/produto/4063/Caixa-Aerocool-Project-7-P7-C1-Branca/P7C1WG.html" data-part="P7C1WG" data-stock="blue" data-price="112.899978">Caixa Aerocool Project 7 P7-C1 Branca (112,90 €)</option>
-
-                <option value="4062_4062" data-html="<img src='/Client/CL000000/Temp/CAIXA1327_1_636448035194381458_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1327" data-link="/pt-PT/produto/4062/Caixa-Aerocool-Project-7-P7-C1-Preta/P7C1BG.html" data-part="P7C1BG" data-stock="blue" data-price="112.899978">Caixa Aerocool Project 7 P7-C1 Preta (112,90 €)</option>
-
+                @foreach($productsByCategory[6] as $product)
+                  <option>{{$product->title}}</option>
+                @endforeach
               </select>
               <small id="gpuInfo" class="form-text text-muted"><b>PN</b>:&ltpart number&gt , <b>REF</b>:&ltreference&gt</small>
             </div>
@@ -375,30 +244,9 @@
               <select id="ramInput" class="form-control" name="ram">
                 <option value="">None</option>
 
-                <option value="4054_4054" data-html="<img src='/Client/CL000000/Temp/CAIXA1306_1_636448035191081453_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1306" data-link="/pt-PT/produto/4054/Caixa-Aerocool-AERO-300-Preta/AERO300.html" data-part="AERO300" data-stock="yellow" data-price="33.900030">Caixa Aerocool AERO-300 Preta (33,90 €)</option>
-
-                <option value="4055_4055" data-html="<img src='/Client/CL000000/Temp/CAIXA1323_1_636448035193181456_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1323" data-link="/pt-PT/produto/4055/Caixa-Aerocool-AERO-300-Window-Preta/AERO300FAW.html" data-part="AERO300FAW" data-stock="blue" data-price="40.999959">Caixa Aerocool AERO-300 Window Preta (41,00 €)</option>
-
-                <option value="4060_4060" data-html="<img src='/Client/CL000000/Temp/CAIXA1177_1_636448033900479646_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1177" data-link="/pt-PT/produto/4060/Caixa-Aerocool-AERO-800-Window-Preta/AERO800BK.html" data-part="AERO800BK" data-stock="blue" data-price="67.900059">Caixa Aerocool AERO-800 Window Preta (67,90 €)</option>
-
-                <option value="4059_4059" data-html="<img src='/Client/CL000000/Temp/CAIXA1325_1_636448035193781457_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1325" data-link="/pt-PT/produto/4059/Caixa-Aerocool-BattleHawk-Branca/BATTLEHAWKWH.html" data-part="BATTLEHAWKWH" data-stock="blue" data-price="58.900026">Caixa Aerocool BattleHawk Branca (58,90 €)</option>
-
-                <option value="30842_11543" data-html="<img src='/Client/CL000000/Temp/CAIXA1357_1_636448035616282048_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1357" data-link="/pt-PT/produto/30842/Caixa-Aerocool-CyberX/CYBERX.html" data-part="CYBERX" data-stock="blue" data-price="39.899970">Caixa Aerocool CyberX (39,90 €)</option>
-
-                <option value="30841_11542" data-html="<img src='/Client/CL000000/Temp/CAIXA1356_1_636448035616082048_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1356" data-link="/pt-PT/produto/30841/Caixa-Aerocool-CyberX-Advance/CYBERXAD.html" data-part="CYBERXAD" data-stock="blue" data-price="46.900023">Caixa Aerocool CyberX Advance (46,90 €)</option>
-
-                <option value="31971_12673" data-html="<img src='/Client/CL000000/Temp/CAIXA1408_1_636523300096187892_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1408" data-link="/pt-PT/produto/31971/Caixa-Aerocool-Cylon-RGB-Flow-Lighting/CYLON.html" data-part="CYLON" data-stock="yellow" data-price="40.999959">Caixa Aerocool Cylon RGB Flow Lighting (41,00 €)</option>
-
-                <option value="31972_12674" data-html="<img src='/Client/CL000000/Temp/CAIXA1409_1_636523300096500393_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1409" data-link="/pt-PT/produto/31972/Caixa-Aerocool-DS-230/DS230BK.html" data-part="DS230BK" data-stock="blue" data-price="94.900035">Caixa Aerocool DS 230 (94,90 €)</option>
-
-                <option value="4053_4053" data-html="<img src='/Client/CL000000/Temp/CAIXA957_1_636448033258878748_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA957" data-link="/pt-PT/produto/4053/Caixa-Aerocool-GT-Advance-Preta/GTADBK.html" data-part="GTADBK" data-stock="blue" data-price="36.900000">Caixa Aerocool GT Advance Preta (36,90 €)</option>
-
-                <option value="30838_11539" data-html="<img src='/Client/CL000000/Temp/CAIXA1361_1_636448035617482050_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1361" data-link="/pt-PT/produto/30838/Caixa-Aerocool-Project-7-P7-C0-Pro/P7C0PRO.html" data-part="P7C0PRO" data-stock="blue" data-price="112.899978">Caixa Aerocool Project 7 P7-C0 Pro (112,90 €)</option>
-
-                <option value="4063_4063" data-html="<img src='/Client/CL000000/Temp/CAIXA1328_1_636448035194681458_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1328" data-link="/pt-PT/produto/4063/Caixa-Aerocool-Project-7-P7-C1-Branca/P7C1WG.html" data-part="P7C1WG" data-stock="blue" data-price="112.899978">Caixa Aerocool Project 7 P7-C1 Branca (112,90 €)</option>
-
-                <option value="4062_4062" data-html="<img src='/Client/CL000000/Temp/CAIXA1327_1_636448035194381458_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1327" data-link="/pt-PT/produto/4062/Caixa-Aerocool-Project-7-P7-C1-Preta/P7C1BG.html" data-part="P7C1BG" data-stock="blue" data-price="112.899978">Caixa Aerocool Project 7 P7-C1 Preta (112,90 €)</option>
-
+                @foreach($productsByCategory[7] as $product)
+                  <option>{{$product->title}}</option>
+                @endforeach
               </select>
               <small id="ramInfo" class="form-text text-muted"><b>PN</b>:&ltpart number&gt , <b>REF</b>:&ltreference&gt</small>
             </div>
@@ -433,30 +281,9 @@
               <select id="mbInput" class="form-control" name="mb">
                 <option value="">None</option>
 
-                <option value="4054_4054" data-html="<img src='/Client/CL000000/Temp/CAIXA1306_1_636448035191081453_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1306" data-link="/pt-PT/produto/4054/Caixa-Aerocool-AERO-300-Preta/AERO300.html" data-part="AERO300" data-stock="yellow" data-price="33.900030">Caixa Aerocool AERO-300 Preta (33,90 €)</option>
-
-                <option value="4055_4055" data-html="<img src='/Client/CL000000/Temp/CAIXA1323_1_636448035193181456_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1323" data-link="/pt-PT/produto/4055/Caixa-Aerocool-AERO-300-Window-Preta/AERO300FAW.html" data-part="AERO300FAW" data-stock="blue" data-price="40.999959">Caixa Aerocool AERO-300 Window Preta (41,00 €)</option>
-
-                <option value="4060_4060" data-html="<img src='/Client/CL000000/Temp/CAIXA1177_1_636448033900479646_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1177" data-link="/pt-PT/produto/4060/Caixa-Aerocool-AERO-800-Window-Preta/AERO800BK.html" data-part="AERO800BK" data-stock="blue" data-price="67.900059">Caixa Aerocool AERO-800 Window Preta (67,90 €)</option>
-
-                <option value="4059_4059" data-html="<img src='/Client/CL000000/Temp/CAIXA1325_1_636448035193781457_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1325" data-link="/pt-PT/produto/4059/Caixa-Aerocool-BattleHawk-Branca/BATTLEHAWKWH.html" data-part="BATTLEHAWKWH" data-stock="blue" data-price="58.900026">Caixa Aerocool BattleHawk Branca (58,90 €)</option>
-
-                <option value="30842_11543" data-html="<img src='/Client/CL000000/Temp/CAIXA1357_1_636448035616282048_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1357" data-link="/pt-PT/produto/30842/Caixa-Aerocool-CyberX/CYBERX.html" data-part="CYBERX" data-stock="blue" data-price="39.899970">Caixa Aerocool CyberX (39,90 €)</option>
-
-                <option value="30841_11542" data-html="<img src='/Client/CL000000/Temp/CAIXA1356_1_636448035616082048_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1356" data-link="/pt-PT/produto/30841/Caixa-Aerocool-CyberX-Advance/CYBERXAD.html" data-part="CYBERXAD" data-stock="blue" data-price="46.900023">Caixa Aerocool CyberX Advance (46,90 €)</option>
-
-                <option value="31971_12673" data-html="<img src='/Client/CL000000/Temp/CAIXA1408_1_636523300096187892_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1408" data-link="/pt-PT/produto/31971/Caixa-Aerocool-Cylon-RGB-Flow-Lighting/CYLON.html" data-part="CYLON" data-stock="yellow" data-price="40.999959">Caixa Aerocool Cylon RGB Flow Lighting (41,00 €)</option>
-
-                <option value="31972_12674" data-html="<img src='/Client/CL000000/Temp/CAIXA1409_1_636523300096500393_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1409" data-link="/pt-PT/produto/31972/Caixa-Aerocool-DS-230/DS230BK.html" data-part="DS230BK" data-stock="blue" data-price="94.900035">Caixa Aerocool DS 230 (94,90 €)</option>
-
-                <option value="4053_4053" data-html="<img src='/Client/CL000000/Temp/CAIXA957_1_636448033258878748_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA957" data-link="/pt-PT/produto/4053/Caixa-Aerocool-GT-Advance-Preta/GTADBK.html" data-part="GTADBK" data-stock="blue" data-price="36.900000">Caixa Aerocool GT Advance Preta (36,90 €)</option>
-
-                <option value="30838_11539" data-html="<img src='/Client/CL000000/Temp/CAIXA1361_1_636448035617482050_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1361" data-link="/pt-PT/produto/30838/Caixa-Aerocool-Project-7-P7-C0-Pro/P7C0PRO.html" data-part="P7C0PRO" data-stock="blue" data-price="112.899978">Caixa Aerocool Project 7 P7-C0 Pro (112,90 €)</option>
-
-                <option value="4063_4063" data-html="<img src='/Client/CL000000/Temp/CAIXA1328_1_636448035194681458_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1328" data-link="/pt-PT/produto/4063/Caixa-Aerocool-Project-7-P7-C1-Branca/P7C1WG.html" data-part="P7C1WG" data-stock="blue" data-price="112.899978">Caixa Aerocool Project 7 P7-C1 Branca (112,90 €)</option>
-
-                <option value="4062_4062" data-html="<img src='/Client/CL000000/Temp/CAIXA1327_1_636448035194381458_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1327" data-link="/pt-PT/produto/4062/Caixa-Aerocool-Project-7-P7-C1-Preta/P7C1BG.html" data-part="P7C1BG" data-stock="blue" data-price="112.899978">Caixa Aerocool Project 7 P7-C1 Preta (112,90 €)</option>
-
+                @foreach($productsByCategory[8] as $product)
+                  <option>{{$product->title}}</option>
+                @endforeach
               </select>
               <small id="mbInfo" class="form-text text-muted"><b>PN</b>:&ltpart number&gt , <b>REF</b>:&ltreference&gt</small>
             </div>
@@ -526,30 +353,9 @@
               <select id="mbInput" class="form-control" name="mb">
                 <option value="">None</option>
 
-                <option value="4054_4054" data-html="<img src='/Client/CL000000/Temp/CAIXA1306_1_636448035191081453_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1306" data-link="/pt-PT/produto/4054/Caixa-Aerocool-AERO-300-Preta/AERO300.html" data-part="AERO300" data-stock="yellow" data-price="33.900030">Caixa Aerocool AERO-300 Preta (33,90 €)</option>
-
-                <option value="4055_4055" data-html="<img src='/Client/CL000000/Temp/CAIXA1323_1_636448035193181456_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1323" data-link="/pt-PT/produto/4055/Caixa-Aerocool-AERO-300-Window-Preta/AERO300FAW.html" data-part="AERO300FAW" data-stock="blue" data-price="40.999959">Caixa Aerocool AERO-300 Window Preta (41,00 €)</option>
-
-                <option value="4060_4060" data-html="<img src='/Client/CL000000/Temp/CAIXA1177_1_636448033900479646_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1177" data-link="/pt-PT/produto/4060/Caixa-Aerocool-AERO-800-Window-Preta/AERO800BK.html" data-part="AERO800BK" data-stock="blue" data-price="67.900059">Caixa Aerocool AERO-800 Window Preta (67,90 €)</option>
-
-                <option value="4059_4059" data-html="<img src='/Client/CL000000/Temp/CAIXA1325_1_636448035193781457_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1325" data-link="/pt-PT/produto/4059/Caixa-Aerocool-BattleHawk-Branca/BATTLEHAWKWH.html" data-part="BATTLEHAWKWH" data-stock="blue" data-price="58.900026">Caixa Aerocool BattleHawk Branca (58,90 €)</option>
-
-                <option value="30842_11543" data-html="<img src='/Client/CL000000/Temp/CAIXA1357_1_636448035616282048_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1357" data-link="/pt-PT/produto/30842/Caixa-Aerocool-CyberX/CYBERX.html" data-part="CYBERX" data-stock="blue" data-price="39.899970">Caixa Aerocool CyberX (39,90 €)</option>
-
-                <option value="30841_11542" data-html="<img src='/Client/CL000000/Temp/CAIXA1356_1_636448035616082048_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1356" data-link="/pt-PT/produto/30841/Caixa-Aerocool-CyberX-Advance/CYBERXAD.html" data-part="CYBERXAD" data-stock="blue" data-price="46.900023">Caixa Aerocool CyberX Advance (46,90 €)</option>
-
-                <option value="31971_12673" data-html="<img src='/Client/CL000000/Temp/CAIXA1408_1_636523300096187892_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1408" data-link="/pt-PT/produto/31971/Caixa-Aerocool-Cylon-RGB-Flow-Lighting/CYLON.html" data-part="CYLON" data-stock="yellow" data-price="40.999959">Caixa Aerocool Cylon RGB Flow Lighting (41,00 €)</option>
-
-                <option value="31972_12674" data-html="<img src='/Client/CL000000/Temp/CAIXA1409_1_636523300096500393_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1409" data-link="/pt-PT/produto/31972/Caixa-Aerocool-DS-230/DS230BK.html" data-part="DS230BK" data-stock="blue" data-price="94.900035">Caixa Aerocool DS 230 (94,90 €)</option>
-
-                <option value="4053_4053" data-html="<img src='/Client/CL000000/Temp/CAIXA957_1_636448033258878748_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA957" data-link="/pt-PT/produto/4053/Caixa-Aerocool-GT-Advance-Preta/GTADBK.html" data-part="GTADBK" data-stock="blue" data-price="36.900000">Caixa Aerocool GT Advance Preta (36,90 €)</option>
-
-                <option value="30838_11539" data-html="<img src='/Client/CL000000/Temp/CAIXA1361_1_636448035617482050_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1361" data-link="/pt-PT/produto/30838/Caixa-Aerocool-Project-7-P7-C0-Pro/P7C0PRO.html" data-part="P7C0PRO" data-stock="blue" data-price="112.899978">Caixa Aerocool Project 7 P7-C0 Pro (112,90 €)</option>
-
-                <option value="4063_4063" data-html="<img src='/Client/CL000000/Temp/CAIXA1328_1_636448035194681458_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1328" data-link="/pt-PT/produto/4063/Caixa-Aerocool-Project-7-P7-C1-Branca/P7C1WG.html" data-part="P7C1WG" data-stock="blue" data-price="112.899978">Caixa Aerocool Project 7 P7-C1 Branca (112,90 €)</option>
-
-                <option value="4062_4062" data-html="<img src='/Client/CL000000/Temp/CAIXA1327_1_636448035194381458_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1327" data-link="/pt-PT/produto/4062/Caixa-Aerocool-Project-7-P7-C1-Preta/P7C1BG.html" data-part="P7C1BG" data-stock="blue" data-price="112.899978">Caixa Aerocool Project 7 P7-C1 Preta (112,90 €)</option>
-
+                @foreach($productsByCategory[9] as $product)
+                  <option>{{$product->title}}</option>
+                @endforeach
               </select>
               <small id="mbInfo" class="form-text text-muted"><b>PN</b>:&ltpart number&gt , <b>REF</b>:&ltreference&gt</small>
             </div>

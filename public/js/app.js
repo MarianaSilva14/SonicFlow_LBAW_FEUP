@@ -748,6 +748,21 @@ function configuratorAmountAdjust(){
   }
 }
 
+
+function configuratorUnitCostAdjustAction() {
+  let unitCost = this.parentNode.nextElementSibling.children[1];
+  unitCost.value = this.value+"€";
+  let amount = this.parentNode.nextElementSibling.nextElementSibling.children[1];
+  amount.value=1;
+  $(amount).trigger('onchange');
+}
+function configuratorUnitCostAdjust() {
+  let inputs = document.querySelectorAll("select.prodChoice");
+  for (let input of inputs) {
+    input.onchange = configuratorUnitCostAdjustAction;
+  }
+}
+
 adminSearchProduct();
 headerSearchProduct();
 removeAllItemsInCart();
@@ -757,7 +772,8 @@ retreiveFavorites();
 shoppingCart();
 checkout();
 amountAdjust();
-configuratorAmountAdjust()
+configuratorAmountAdjust();
+configuratorUnitCostAdjust();
 deleteComment();
 banUser();
 unBanUser();

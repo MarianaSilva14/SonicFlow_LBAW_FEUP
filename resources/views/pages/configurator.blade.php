@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'FAQ\'s')
+@section('title', 'Configurator')
 
 @section('head')
 <link rel="stylesheet" href="{{ asset('css/common.css') }}">
@@ -27,8 +27,8 @@
               <label for="caseInput" class="mainLabel">
                 Case
               </label>
-              <select id="caseInput" class="form-control" name="pc-case">
-                <option value="">None</option>
+              <select id="caseInput" class="form-control prodChoice" name="pc-case">
+                <option value="0,00€">None</option>
                 @foreach($productsByCategory[1] as $product)
                   <option value="{{$product->price}}">{{$product->title}} ({{$product->price}}€)</option>
                 @endforeach
@@ -37,7 +37,7 @@
             </div>
             <div id="labelUnity" class="col-xl-2 col-sm-2 col-6">
               <label  for="caseUnitPrice">Unit</label>
-              <input id="caseUnitPrice" type="text" readonly class="form-control-plaintext" value="10,00€">
+              <input id="caseUnitPrice" type="text" readonly class="form-control-plaintext" value="0,00€">
             </div>
             <div class="col-xl-1 col-sm-2 col-4">
               <label for="caseAmount">&zwnj;</label>
@@ -60,17 +60,17 @@
               <label for="coolerInput" class="mainLabel">
                 Cooler
               </label>
-              <select id="coolerInput" class="form-control" name="cooler">
-                <option value="">None</option>
+              <select id="coolerInput" class="form-control prodChoice" name="cooler">
+                <option value="0,00€">None</option>
                 @foreach($productsByCategory[2] as $product)
-                  <option>{{$product->title}}</option>
+                <option value="{{$product->price}}">{{$product->title}} ({{$product->price}}€)</option>
                 @endforeach
               </select>
               <small id="coolerInfo" class="form-text text-muted"><b>PN</b>:&ltpart number&gt , <b>REF</b>:&ltreference&gt</small>
             </div>
             <div id="labelUnity" class="col-xl-2 col-sm-2 col-6">
               <label  for="caseUnitPrice">Unit</label>
-              <input id="caseUnitPrice" type="text" readonly class="form-control-plaintext" value="5,00€">
+              <input id="caseUnitPrice" type="text" readonly class="form-control-plaintext" value="0,00€">
             </div>
             <div class="col-xl-1 col-sm-2 col-4">
               <label for="caseAmount">&zwnj;</label>
@@ -92,10 +92,10 @@
               <label for="hddInput" class="mainLabel">
                 Hard Disk Drive
               </label>
-              <select id="hddInput" class="form-control" name="hdd">
-                <option value="">None</option>
+              <select id="hddInput" class="form-control prodChoice" name="hdd">
+                <option value="0,00€">None</option>
                 @foreach($productsByCategory[3] as $product)
-                  <option>{{$product->title}}</option>
+                <option value="{{$product->price}}">{{$product->title}} ({{$product->price}}€)</option>
                 @endforeach
               </select>
               <small id="hddInfo" class="form-text text-muted"><b>PN</b>:&ltpart number&gt , <b>REF</b>:&ltreference&gt</small>
@@ -124,10 +124,10 @@
               <label for="ssdInput" class="mainLabel">
                 Solid State Drive
               </label>
-              <select id="ssdInput" class="form-control" name="ssd">
-                <option value="">None</option>
+              <select id="ssdInput" class="form-control prodChoice" name="ssd">
+                <option value="0,00€">None</option>
                 @foreach($productsByCategory[4] as $product)
-                  <option>{{$product->title}}</option>
+                <option value="{{$product->price}}">{{$product->title}} ({{$product->price}}€)</option>
                 @endforeach
               </select>
               <small id="ssdInfo" class="form-text text-muted"><b>PN</b>:&ltpart number&gt , <b>REF</b>:&ltreference&gt</small>
@@ -160,10 +160,10 @@
                   PSU(Power Supply Unit)
                 </div>
               </label>
-              <select id="psuInput" class="form-control" name="psu">
-                <option value="">None</option>
+              <select id="psuInput" class="form-control prodChoice" name="psu">
+                <option value="0,00€">None</option>
                 @foreach($productsByCategory[5] as $product)
-                  <option>{{$product->title}}</option>
+                <option value="{{$product->price}}">{{$product->title}} ({{$product->price}}€)</option>
                 @endforeach
               </select>
               <small id="psuInfo" class="form-text text-muted"><b>PN</b>:&ltpart number&gt , <b>REF</b>:&ltreference&gt</small>
@@ -205,11 +205,11 @@
                   account when choosing between memory amount.
                 </div>
               </label>
-              <select id="gpuInput" class="form-control" name="gpu">
-                <option value="">None</option>
+              <select id="gpuInput" class="form-control prodChoice" name="gpu">
+                <option value="0,00€">None</option>
 
                 @foreach($productsByCategory[6] as $product)
-                  <option>{{$product->title}}</option>
+                <option value="{{$product->price}}">{{$product->title}} ({{$product->price}}€)</option>
                 @endforeach
               </select>
               <small id="gpuInfo" class="form-text text-muted"><b>PN</b>:&ltpart number&gt , <b>REF</b>:&ltreference&gt</small>
@@ -242,11 +242,11 @@
                   RAM(Random Access Memory)
                 </div>
               </label>
-              <select id="ramInput" class="form-control" name="ram">
-                <option value="">None</option>
+              <select id="ramInput" class="form-control prodChoice" name="ram">
+                <option value="0,00€">None</option>
 
                 @foreach($productsByCategory[7] as $product)
-                  <option>{{$product->title}}</option>
+                <option value="{{$product->price}}">{{$product->title}} ({{$product->price}}€)</option>
                 @endforeach
               </select>
               <small id="ramInfo" class="form-text text-muted"><b>PN</b>:&ltpart number&gt , <b>REF</b>:&ltreference&gt</small>
@@ -279,11 +279,11 @@
                   Motherboard
                 </div>
               </label>
-              <select id="mbInput" class="form-control" name="mb">
-                <option value="">None</option>
+              <select id="mbInput" class="form-control prodChoice" name="mb">
+                <option value="0,00€">None</option>
 
                 @foreach($productsByCategory[8] as $product)
-                  <option>{{$product->title}}</option>
+                <option value="{{$product->price}}">{{$product->title}} ({{$product->price}}€)</option>
                 @endforeach
               </select>
               <small id="mbInfo" class="form-text text-muted"><b>PN</b>:&ltpart number&gt , <b>REF</b>:&ltreference&gt</small>
@@ -351,11 +351,11 @@
                   </ul>
                 </div>
               </label>
-              <select id="mbInput" class="form-control" name="mb">
-                <option value="">None</option>
+              <select id="mbInput" class="form-control prodChoice" name="mb">
+                <option value="0,00€">None</option>
 
                 @foreach($productsByCategory[9] as $product)
-                  <option>{{$product->title}}</option>
+                <option value="{{$product->price}}">{{$product->title}} ({{$product->price}}€)</option>
                 @endforeach
               </select>
               <small id="mbInfo" class="form-text text-muted"><b>PN</b>:&ltpart number&gt , <b>REF</b>:&ltreference&gt</small>
@@ -387,8 +387,8 @@
               <label for="caseInput" class="mainLabel">
                 Case
               </label>
-              <select id="caseInput" class="form-control" name="pc-case">
-                <option value="">None</option>
+              <select id="caseInput" class="form-control prodChoice" name="pc-case">
+                <option value="0,00€">None</option>
 
                 <option value="4054_4054" data-html="<img src='/Client/CL000000/Temp/CAIXA1306_1_636448035191081453_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1306" data-link="/pt-PT/produto/4054/Caixa-Aerocool-AERO-300-Preta/AERO300.html" data-part="AERO300" data-stock="yellow" data-price="33.900030">Caixa Aerocool AERO-300 Preta (33,90 €)</option>
 
@@ -441,8 +441,8 @@
               <label for="coolerInput" class="mainLabel">
                 Cooler
               </label>
-              <select id="coolerInput" class="form-control" name="cooler">
-                <option value="">None</option>
+              <select id="coolerInput" class="form-control prodChoice" name="cooler">
+                <option value="0,00€">None</option>
 
                 <option value="4054_4054" data-html="<img src='/Client/CL000000/Temp/CAIXA1306_1_636448035191081453_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1306" data-link="/pt-PT/produto/4054/Caixa-Aerocool-AERO-300-Preta/AERO300.html" data-part="AERO300" data-stock="yellow" data-price="33.900030">Caixa Aerocool AERO-300 Preta (33,90 €)</option>
 
@@ -495,8 +495,8 @@
               <label for="hddInput" class="mainLabel">
                 Hard Disk Drive
               </label>
-              <select id="hddInput" class="form-control" name="hdd">
-                <option value="">None</option>
+              <select id="hddInput" class="form-control prodChoice" name="hdd">
+                <option value="0,00€">None</option>
 
                 <option value="4054_4054" data-html="<img src='/Client/CL000000/Temp/CAIXA1306_1_636448035191081453_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1306" data-link="/pt-PT/produto/4054/Caixa-Aerocool-AERO-300-Preta/AERO300.html" data-part="AERO300" data-stock="yellow" data-price="33.900030">Caixa Aerocool AERO-300 Preta (33,90 €)</option>
 
@@ -549,8 +549,8 @@
               <label for="ssdInput" class="mainLabel">
                 Solid State Drive
               </label>
-              <select id="ssdInput" class="form-control" name="ssd">
-                <option value="">None</option>
+              <select id="ssdInput" class="form-control prodChoice" name="ssd">
+                <option value="0,00€">None</option>
 
                 <option value="4054_4054" data-html="<img src='/Client/CL000000/Temp/CAIXA1306_1_636448035191081453_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1306" data-link="/pt-PT/produto/4054/Caixa-Aerocool-AERO-300-Preta/AERO300.html" data-part="AERO300" data-stock="yellow" data-price="33.900030">Caixa Aerocool AERO-300 Preta (33,90 €)</option>
 
@@ -607,8 +607,8 @@
                 </div>
                 <a href="#" class="toggle-tips"><i class="fas fa-angle-double-down"></i> Tips</a>
               </label>
-              <select id="psuInput" class="form-control" name="psu">
-                <option value="">None</option>
+              <select id="psuInput" class="form-control prodChoice" name="psu">
+                <option value="0,00€">None</option>
 
                 <option value="4054_4054" data-html="<img src='/Client/CL000000/Temp/CAIXA1306_1_636448035191081453_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1306" data-link="/pt-PT/produto/4054/Caixa-Aerocool-AERO-300-Preta/AERO300.html" data-part="AERO300" data-stock="yellow" data-price="33.900030">Caixa Aerocool AERO-300 Preta (33,90 €)</option>
 
@@ -662,8 +662,8 @@
                 Graphics Card
                 <a href="#" class="toggle-tips"><i class="fas fa-angle-double-down"></i> Tips</a>
               </label>
-              <select id="gpuInput" class="form-control" name="gpu">
-                <option value="">None</option>
+              <select id="gpuInput" class="form-control prodChoice" name="gpu">
+                <option value="0,00€">None</option>
 
                 <option value="4054_4054" data-html="<img src='/Client/CL000000/Temp/CAIXA1306_1_636448035191081453_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1306" data-link="/pt-PT/produto/4054/Caixa-Aerocool-AERO-300-Preta/AERO300.html" data-part="AERO300" data-stock="yellow" data-price="33.900030">Caixa Aerocool AERO-300 Preta (33,90 €)</option>
 
@@ -720,8 +720,8 @@
                 </div>
                 <a href="#" class="toggle-tips"><i class="fas fa-angle-double-down"></i> Tips</a>
               </label>
-              <select id="ramInput" class="form-control" name="ram">
-                <option value="">None</option>
+              <select id="ramInput" class="form-control prodChoice" name="ram">
+                <option value="0,00€">None</option>
 
                 <option value="4054_4054" data-html="<img src='/Client/CL000000/Temp/CAIXA1306_1_636448035191081453_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1306" data-link="/pt-PT/produto/4054/Caixa-Aerocool-AERO-300-Preta/AERO300.html" data-part="AERO300" data-stock="yellow" data-price="33.900030">Caixa Aerocool AERO-300 Preta (33,90 €)</option>
 
@@ -778,8 +778,8 @@
                 </div>
                 <a href="#" class="toggle-tips"><i class="fas fa-angle-double-down"></i> Tips</a>
               </label>
-              <select id="mbInput" class="form-control" name="mb">
-                <option value="">None</option>
+              <select id="mbInput" class="form-control prodChoice" name="mb">
+                <option value="0,00€">None</option>
 
                 <option value="4054_4054" data-html="<img src='/Client/CL000000/Temp/CAIXA1306_1_636448035191081453_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1306" data-link="/pt-PT/produto/4054/Caixa-Aerocool-AERO-300-Preta/AERO300.html" data-part="AERO300" data-stock="yellow" data-price="33.900030">Caixa Aerocool AERO-300 Preta (33,90 €)</option>
 
@@ -833,8 +833,8 @@
                 CPU
                 <a href="#" class="toggle-tips"><i class="fas fa-angle-double-down"></i> Tips</a>
               </label>
-              <select id="mbInput" class="form-control" name="mb">
-                <option value="">None</option>
+              <select id="mbInput" class="form-control prodChoice" name="mb">
+                <option value="0,00€">None</option>
 
                 <option value="4054_4054" data-html="<img src='/Client/CL000000/Temp/CAIXA1306_1_636448035191081453_crop_100x100_False_False.jpg' class='img-center img-responsive'>" data-ref="CAIXA1306" data-link="/pt-PT/produto/4054/Caixa-Aerocool-AERO-300-Preta/AERO300.html" data-part="AERO300" data-stock="yellow" data-price="33.900030">Caixa Aerocool AERO-300 Preta (33,90 €)</option>
 

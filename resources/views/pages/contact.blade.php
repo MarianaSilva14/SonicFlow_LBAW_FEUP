@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'About Us')
+@section('title', 'Contact Us')
 
 @section('head')
 <link rel="stylesheet" href="{{ asset('css/contacts.css') }}">

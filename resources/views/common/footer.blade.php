@@ -1,6 +1,5 @@
 <!--Footer-->
 <footer>
-  <hr style="width:75%">
   <div class="container">
     <div class="row text-center">
       <div class="col-md-6 col-sm-6 col-xs-12">
@@ -15,7 +14,7 @@
           </li>
 
           <li class="list-inline-item">
-            <a href="{{route('contact')}}">Contact</a>
+            <a href="{{route('404')}}">Contact</a>
           </li>
 
           <li class="list-inline-item">

@@ -27,7 +27,7 @@ Route::put('users/{id}/ban','CustomerController@banUser')->name('ban');
 Route::delete('banned/{id}','CustomerController@unBanUser')->name('unban');
 
 // Products
-Route::view('products','pages.homepage')->name('products');
+Route::get('products','ProductController@listProducts')->name('products');
 Route::get('product/create','ProductController@create')->name('product_create');
 Route::post('product','ProductController@createProduct')->name('product_add');
 

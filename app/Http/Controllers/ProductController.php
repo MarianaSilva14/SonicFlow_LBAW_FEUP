@@ -281,4 +281,11 @@ class ProductController extends Controller
 
     return redirect()->route('product',['id'=>$product->sku]);
   }
+
+  public function listProducts(Request $request){
+      $query_products = Product::getProductsReference($request);
+      $products = $query_products->paginate(12);
+
+      return view('pages.listProducts',['products'=>$products]);
+  }
 }

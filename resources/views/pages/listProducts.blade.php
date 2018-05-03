@@ -8,7 +8,7 @@
 @endsection
 
 @section('content')
-@include('common.breadcrumb', ['currPage' => 'Homepage'])
+@include('common.breadcrumb', ['currPage' => 'List Products'])
 
 
     <div class="row form-inline filterBar">
@@ -32,5 +32,14 @@
           <option value="">option</option>
           <option value="">option</option>
         </select>
-      </div>
-      @endsection
+    </div>
+
+    <div class="row">
+
+    @foreach($products as $product)
+        @include('partials.product_mini', ['product' => $product])
+    @endforeach
+
+    </div>
+    {{ $products->links() }}
+@endsection

@@ -286,6 +286,6 @@ class ProductController extends Controller
       $query_products = Product::getProductsReference($request);
       $products = $query_products->paginate(12);
 
-      return view('pages.listProducts',['products'=>$products]);
+      return view('pages.listProducts',['products'=>$products, 'profile'=>false]);
   }
 }

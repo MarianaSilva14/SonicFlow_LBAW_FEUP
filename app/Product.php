@@ -124,7 +124,7 @@ class Product extends Model
               array_push($titles_result, 'plainto_tsquery(\'english\',\'' . $title . '\')');
           }
           $titles_result = implode($titles_result, ' || ');
-          
+
           $query = $query
               ->whereRaw('search @@ (' . $titles_result . ')')
               ->orderByRaw('ts_rank(search, ' . $titles_result .' ) DESC');
@@ -148,7 +148,7 @@ class Product extends Model
       $query = $query->offset($offset);
     }
 
-    $products = $query->get();
+    $products = $query;
     return $products;
   }
 

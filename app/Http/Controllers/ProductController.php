@@ -28,7 +28,8 @@ class ProductController extends Controller
    */
   public function getProducts(Request $request){
       $products = Product::getProductsReference($request);
-      return json_encode($products);
+
+      return json_encode($products->get());
   }
 
   public function getProductBySku(Integer $sku){

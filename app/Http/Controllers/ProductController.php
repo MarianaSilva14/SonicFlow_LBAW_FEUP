@@ -28,7 +28,6 @@ class ProductController extends Controller
    */
   public function getProducts(Request $request){
       $products = Product::getProductsReference($request);
-
       return json_encode($products->get());
   }
 
@@ -284,6 +283,17 @@ class ProductController extends Controller
 
   public function listProducts(Request $request){
       $query_products = Product::getProductsReference($request);
+
+      $query_products->leftJoin('favorite',function ($join) {
+          if(Auth::check())
+              $username = Auth::user()->username;
+          else
+              $username = "";
+          $join->on('product.sku','=','favorite.product_idproduct')
+              ->where('favorite.customer_username','=', $username);
+      });
+      $query_products->join('category','category.id','=','product.category_idcat');
+
       $products = $query_products->paginate(12);
 
       return view('pages.listProducts',['products'=>$products, 'profile'=>false]);

@@ -3,7 +3,11 @@
         <div class="ibox-content product-box">
             <div class="product-imitation">
                 <a href="{{route('product',['id' => $product->sku])}}">
-                    <img src="{{ Storage::url($product->picture) }}" alt="Image for {{ $product->title }}"class="img-fluid">
+                    @if( $product->picture == null)
+                        <img src="https://cdn0.iconfinder.com/data/icons/business-mix/512/cargo-512.png" alt="Image for {{ $product->title }}"class="img-fluid">
+                    @else
+                        <img src="{{ Storage::url($product->picture) }}" alt="Image for {{ $product->title }}"class="img-fluid">
+                    @endif
                 </a>
             </div>
             <div class="product-desc">

@@ -110,12 +110,33 @@ class Product extends Model
         }
     }
 
-    $title = $request->input('title');
-    if ($title != null){
-        $query = $query
-            ->whereRaw('search @@ plainto_tsquery(\'english\',?)', [$title])
-            ->orderByRaw('ts_rank(search,  plainto_tsquery(\'english\',?)) DESC',[$title]);
-    }
+
+
+//      select * from product
+//      where search @@ (plainto_tsquery('english','router') || plainto_tsquery('english','d') )
+//      order by ts_rank(search,  plainto_tsquery('english','router') || plainto_tsquery('english','d')) DESC
+
+      $titles = $request->input('title');
+      $titles_result = [];
+      if ($titles != null){
+          $titles = explode(" ", $titles);
+          foreach ($titles as $title){
+              array_push($titles_result, 'plainto_tsquery(\'english\',\'' . $title . '\')');
+          }
+          $titles_result = implode($titles_result, ' || ');
+          
+          $query = $query
+              ->whereRaw('search @@ (' . $titles_result . ')')
+              ->orderByRaw('ts_rank(search, ' . $titles_result .' ) DESC');
+      }
+    
+      
+//    $title = $request->input('title');
+//    if ($title != null){
+//        $query = $query
+//            ->whereRaw('search @@ plainto_tsquery(\'english\',?)', [$title])
+//            ->orderByRaw('ts_rank(search,  plainto_tsquery(\'english\',?)) DESC',[$title]);
+//    }
 
     $limit = intval($request->input('limit'));
     if ($limit != null){

@@ -26,7 +26,7 @@
           </div>
           <input type="hidden" name="search_param" value="" id="search_param">
           <input type="text" class="form-control" name="x" placeholder="Search...">
-          <button id="searchBtn" href="products" class="btn btn-outline-success headerSearchBtn" type="submit"><i class="fas fa-search"></i></button>
+          <button id="searchBtn" href="/products" class="btn btn-outline-success headerSearchBtn" type="submit"><i class="fas fa-search"></i></button>
         </div>
       </div>
     </div>

@@ -736,10 +736,10 @@ function configuratorAmountAdjustAction(){
     this.value = this.max;
   }
   let newValue = Math.round(parseFloat(this.parentNode.previousElementSibling.children[1].value)*parseInt(this.value)*100)/100;
-  this.closest('div.form-row').lastElementChild.children[1].value = newValue+'€';
+  this.closest('div.form-row').lastElementChild.children[1].value = parseFloat(newValue).toFixed(2)+'€';
   console.log("newValue: "+newValue);
   let total = document.querySelector('.sectionTitle.total span');
-  total.innerHTML = Math.round((parseFloat(total.innerHTML)-previousValue+newValue)*100)/100+'€';
+  total.innerHTML = parseFloat(Math.round((parseFloat(total.innerHTML)-previousValue+newValue)*100)/100).toFixed(2)+'€';
 }
 function configuratorAmountAdjust(){
   let inputs = document.querySelectorAll("input#caseAmount");
@@ -747,7 +747,6 @@ function configuratorAmountAdjust(){
     input.onchange = configuratorAmountAdjustAction;
   }
 }
-
 
 function configuratorUnitCostAdjustAction() {
   let unitCost = this.parentNode.nextElementSibling.children[1];

@@ -72,7 +72,6 @@ Route::post('moderator/create','ModeratorController@createModerator')->name('mod
 Route::get('moderation', 'ModeratorController@show')->name('moderation');
 Route::get('api/moderators', 'AdministratorController@getModerators')->name('moderators');
 
-
 // API new
 Route::get('api/product/{sku}', 'ProductController@getProductBySku')->where('sku', '[0-9]+')->name('api_product_sku')->middleware('api');
 Route::get('api/product/{name}', 'ProductController@getProductsByName')->name('api_product_name')->middleware('api');

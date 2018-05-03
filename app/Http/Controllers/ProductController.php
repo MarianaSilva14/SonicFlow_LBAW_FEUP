@@ -296,6 +296,13 @@ class ProductController extends Controller
 
       $products = $query_products->paginate(12);
 
-      return view('pages.listProducts',['products'=>$products, 'profile'=>false]);
+      $products->appends(['categoryID' => $request->input('categoryID'),
+                          'title' => $request->input('title'),
+                          'productAvailability' => $request->input('productAvailability'),
+                          'minPrice' => $request->input('minPrice'),
+                          'maxPrice' => $request->input('maxPrice')
+                        ]);
+
+      return view('pages.listProducts',['products'=>$products, 'profile'=>false,'request'=>$request]);
   }
 }

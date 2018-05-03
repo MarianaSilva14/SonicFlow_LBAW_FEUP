@@ -639,7 +639,6 @@ function shoppingCart() {
   }
 }
 
-// TODO: fix this
 function checkoutAction(event) {
   window.location.href = this.href+"?shoppingCart="+getCookie('shoppingCart');
   event.preventDefault();

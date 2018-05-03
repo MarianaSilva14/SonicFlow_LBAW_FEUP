@@ -96,8 +96,9 @@ class Product extends Model
 
     $minPrice = floatval($request->input('minPrice'));
     $maxPrice = floatval($request->input('maxPrice'));
-    if ( $minPrice != null && $maxPrice != null && ($minPrice < $maxPrice)){
-        $query = $query->whereBetween('price', [$minPrice, $maxPrice]);
+    if ( $minPrice !== null && $maxPrice !== null && ($minPrice < $maxPrice)){
+      $query = $query->whereRaw("((discountprice IS NULL AND price BETWEEN $minPrice AND $maxPrice) OR (discountprice IS NOT NULL AND discountprice BETWEEN $minPrice AND $maxPrice))");
+      //$query = $query->whereBetween('price', [$minPrice, $maxPrice]);
     }
 
     $available = filter_var($request->input('productAvailability'), FILTER_VALIDATE_BOOLEAN);
@@ -109,8 +110,6 @@ class Product extends Model
             $query = $query->where('stock', '=', 0);
         }
     }
-
-
 
 //      select * from product
 //      where search @@ (plainto_tsquery('english','router') || plainto_tsquery('english','d') )
@@ -129,8 +128,8 @@ class Product extends Model
               ->whereRaw('search @@ (' . $titles_result . ')')
               ->orderByRaw('ts_rank(search, ' . $titles_result .' ) DESC');
       }
-    
-      
+
+
 //    $title = $request->input('title');
 //    if ($title != null){
 //        $query = $query

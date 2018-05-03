@@ -18,9 +18,8 @@ class AdministratorController extends Controller
      */
     public function show()
     {
-        $user = Auth::user();
 
-        if ($user->role === 'ADMIN'){
+        if (Auth::check() && Auth::user()->role === 'ADMIN'){
             $mods = $this->getModerators();
             return view('pages.administration', ['moderators'=> $mods]);
         }

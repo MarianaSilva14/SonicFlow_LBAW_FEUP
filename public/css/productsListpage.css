@@ -19,7 +19,6 @@
 }
 
 .filterBar .custom-control{
-    border: 1px solid #ced4da;
     border-radius: .25rem;
     line-height: 1.5;
     padding: .375rem .75rem;
@@ -208,4 +207,10 @@
     margin-left: 0;
     font-size: 1.5em;
   }
+}
+
+.filter{
+  margin-left: 2%;
+  background-color: #009fc8;
+  border-color: #009fc8;
 }

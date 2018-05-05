@@ -28,7 +28,7 @@
           <option value="">option</option>
           <option value="">option</option>
         </select>
-        <button type="submit" name="button">Filter</button>
+        <button type="submit" name="button" class="filter btn btn-primary">Filter</button>
       </form>
     </form>
 

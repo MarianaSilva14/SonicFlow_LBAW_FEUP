@@ -127,6 +127,30 @@ class Product extends Model
           $query = $query
               ->whereRaw('search @@ (' . $titles_result . ')')
               ->orderByRaw('ts_rank(search, ' . $titles_result .' ) DESC');
+      } // TODO: maybe not order by ts_rank but only allow items with ts_rank bigger than X
+
+      $sortByChoice = $request->input('sortBy');
+      switch ($sortByChoice){
+          case 'priceASC':
+              $query = $query->orderByRaw(' CASE
+                                            WHEN discountprice IS NULL THEN price
+                                            ELSE discountprice
+                                            END ASC');
+            break;
+          case 'priceDESC':
+              $query = $query->orderByRaw(' CASE
+                                            WHEN discountprice IS NULL THEN price
+                                            ELSE discountprice
+                                            END DESC');
+              break;
+          case 'ratingASC':
+              $query = $query->orderByRaw('rating ASC');
+              break;
+          case 'ratingDESC':
+              $query = $query->orderByRaw('rating DESC');
+              break;
+          default:
+              break;
       }
 
 

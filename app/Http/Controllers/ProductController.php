@@ -300,7 +300,8 @@ class ProductController extends Controller
                           'title' => $request->input('title'),
                           'productAvailability' => $request->input('productAvailability'),
                           'minPrice' => $request->input('minPrice'),
-                          'maxPrice' => $request->input('maxPrice')
+                          'maxPrice' => $request->input('maxPrice'),
+                          'sortBy' => $request->input('sortBy')
                         ]);
 
       return view('pages.listProducts',['products'=>$products, 'profile'=>false,'request'=>$request]);

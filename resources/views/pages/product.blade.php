@@ -67,6 +67,9 @@
             </fieldset>
             <small class="ratingLabel">Rating</small>
           </div>
+          <div class="col-md-12 col-12">
+            <input type="text" readonly class="form-control-plaintext" value="Rating: {{$product->rating}}">
+          </div>
         @else
         <div class="col-md-12 col-12">
           <input type="text" readonly class="form-control-plaintext" value="Rating: {{$product->rating}}">

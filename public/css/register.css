@@ -128,3 +128,7 @@ body {
 .forgot-password:focus{
     color: rgb(0,159,200);
 }
+
+.form-signin input:required {
+  border-left-color: red;
+}

@@ -16,37 +16,37 @@
       {{ csrf_field() }}
       <span id="reauth-email" class="reauth-email"></span>
 
-      <input type="text" id="inputUsername" name="username" class="form-control" placeholder="Username" autofocus>
+      <input type="text" id="inputUsername" name="username" class="form-control" placeholder="Username" autofocus required>
       @if ($errors->has('username'))
         <span class="text-danger">
       {{ $errors->first('username') }}
       </span>
       @endif
-      <input type="text" id="inputFirstName" name="firstname" class="form-control" placeholder="First Name" >
+      <input type="text" id="inputFirstName" name="firstname" class="form-control" placeholder="First Name"  required>
       @if ($errors->has('firstname'))
         <span class="text-danger">
       {{ $errors->first('firstname') }}
       </span>
       @endif
-      <input type="text" id="inputLastName" name="lastname" class="form-control" placeholder="Last Name" >
+      <input type="text" id="inputLastName" name="lastname" class="form-control" placeholder="Last Name" required>
       @if ($errors->has('lastname'))
         <span class="text-danger">
       {{ $errors->first('lastname') }}
       </span>
       @endif
-      <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address" >
+      <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address" required>
       @if ($errors->has('email'))
         <span class="text-danger">
       {{ $errors->first('email') }}
       </span>
       @endif
-      <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password">
+      <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
       @if ($errors->has('password'))
         <span class="text-danger">
       {{ $errors->first('password') }}
       </span>
       @endif
-      <input type="password" id="inputConfirmPassword" name='password_confirmation' class="form-control" placeholder="Confirm Password">
+      <input type="password" id="inputConfirmPassword" name='password_confirmation' class="form-control" placeholder="Confirm Password" required>
 
       <textarea class="form-control" style="resize:none;" name="address" placeholder="Address" rows="2"></textarea>
       @if ($errors->has('address'))

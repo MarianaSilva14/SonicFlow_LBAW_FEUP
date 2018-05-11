@@ -24,11 +24,7 @@
             @for ($i = 0; $i < $product->quantity; $i++)
               <tr>
                 <td>{{$product->title}}</td>
-                @if($product->discountprice != "")
-                  <td>{{$product->discountprice}}</td>
-                @else
-                  <td>{{$product->price}}</td>
-                @endif
+                <td>{{$product->realprice}}</td>
               </tr>
             @endfor
           @endforeach

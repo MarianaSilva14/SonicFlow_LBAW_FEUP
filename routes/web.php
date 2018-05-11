@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 // Profile
-Route::view('users/deleteAccount','auth.deleteAccount');
+Route::view('users/deleteAccount','auth.deleteAccount',['error1' => ''])->name('accountDeleteView');
 Route::get('users/{id}','CustomerController@show')->name('profile');
 Route::post('users/{id}','CustomerController@update');
 Route::post('users/{id}/delete','CustomerController@delete');

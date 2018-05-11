@@ -171,4 +171,25 @@ class CustomerController extends Controller
           ->delete();
     }
   }
+
+  public function delete(Request $request){
+    if(!Auth::check()){
+      return view('auth.deleteAccount', ['errors'=> ['password'=>"You must be logged in to delete your account"]]);
+    }
+
+    $validatedData = $request->validate([
+      'password' => 'required'
+    ]);
+
+    if(!Hash::check($request->input('password'), Auth::user()->password)){
+      return view('auth.deleteAccount', ['error1'=> "That password does not match the current user."]);
+    }else{
+      $username = Auth::user()->username;
+      Auth::logout();
+      DB::table('user')
+          ->where('username',$username)
+          ->delete();
+      return view('pages.homepage');
+    }
+  }
 }

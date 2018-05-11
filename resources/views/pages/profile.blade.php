@@ -151,6 +151,7 @@
                       <a href="{{route('profile',['id' => Auth::user()->username])}}" class="btn btn-default">Cancel</a>
                     @else
                       <a href="{{route('profileEdit',['id' => Auth::user()->username])}}" class="btn btn-primary">Edit</a>
+                      <a href="{{route('accountDeleteView',['error1' => ''])}}" style="margin-left:5%;" class="btn btn-danger">Delete Account</a>
                     @endif
                   </div>
                 </div>

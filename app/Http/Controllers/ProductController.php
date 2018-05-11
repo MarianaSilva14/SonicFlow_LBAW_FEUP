@@ -159,6 +159,9 @@ class ProductController extends Controller
     }
 
     $user = Auth::user();
+    if($user->isBanned()){
+      return redirect(route('product',['id'=>$sku]));
+    }
     $comment_text = $request->input('commentary');
 
     $validatedData = $request->validate([

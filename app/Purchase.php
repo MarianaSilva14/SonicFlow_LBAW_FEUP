@@ -29,6 +29,7 @@ class Purchase extends Model
     return DB::table('purchase_product')
               ->join('product','purchase_product.product_idproduct','=','product.sku') // ALTER THIS TO JOIN ON PURCHASE_PRODUCT
               ->where('purchase_idpurchase',$this->id)
+              ->selectRaw('product.*, purchase_product.price AS realprice, purchase_product.quantity')
               ->get();
   }
 

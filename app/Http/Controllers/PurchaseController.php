@@ -153,10 +153,12 @@ class PurchaseController extends Controller
                 "quantity" => $values[$i]
             ]);
 
-            // UPDATE PRODUCTS
+            // UPDATE PRODUCTS STOCK
         }
 
 
+        // DELETE CART COOKIE
+//        unset($_COOKIE['shoppingCart']);     // this did not work
 
         //validar cart   -> usar funcao ja feita
         // validar loyalty points -> verificar para ver se paga menos

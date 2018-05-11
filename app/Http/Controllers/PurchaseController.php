@@ -160,49 +160,7 @@ class PurchaseController extends Controller
         // DELETE CART COOKIE
 //        unset($_COOKIE['shoppingCart']);     // this did not work
 
-        //validar cart   -> usar funcao ja feita
-        // validar loyalty points -> verificar para ver se paga menos
 
-//
-//        CREATE TABLE purchase (
-    //    id SERIAL PRIMARY KEY,
-    //    customer_username TEXT NOT NULL REFERENCES customer ON DELETE CASCADE,
-    //    "date" TIMESTAMP DEFAULT now() NOT NULL,
-    //    "value" REAL NOT NULL,
-    //    method text NOT NULL,
-    //
-    //    CONSTRAINT value_positive CHECK ("value" > 0),
-    //    CONSTRAINT method_check CHECK (method in ('Credit', 'Debit' , 'Paypal' ))
-//      );
-        //
-        //CREATE TABLE purchase_product (
-        //    purchase_idpurchase INTEGER NOT NULL REFERENCES purchase ON DELETE CASCADE,
-        //    product_idproduct INTEGER NOT NULL REFERENCES product ON DELETE CASCADE,
-        //    price REAL NOT NULL,
-        //    quantity INTEGER NOT NULL,
-        //
-        //    CONSTRAINT quantity_positive CHECK (quantity > 0),
-        //    CONSTRAINT price_positive CHECK (price > 0),
-        //
-        //    UNIQUE(purchase_idpurchase, product_idproduct)
-
-
-
-//        try{
-//            $this->authorize('purchase',Customer::class);
-//        } catch (AuthorizationException $e) {
-//            return view('auth.login');
-//        }
-//        $customer = Customer::findOrFail(Auth::user()->username);
-//
-//        $json_object = json_decode($request->input('shoppingCart'));
-//        if($json_object==null){
-//            return view('pages.shoppingCart',['products'=>[],'values'=>[]]);
-//        }
-//
-//        $json_object_result = Purchase::getPurchaseInfoFromJSON($json_object);
-//        // view da purchase
-//        return view('pages.purchase',['products'=>$json_object_result[0],'values'=>$json_object_result[1], 'customer'=>$customer]);
 
 
         return view('pages.profile', ['editable'=> FALSE, 'alert' => '', 'infoCustomer' => $customer,'infoUser' => Auth::user()]);

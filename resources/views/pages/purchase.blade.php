@@ -31,7 +31,7 @@
       @endfor
       <li class="list-group-item d-flex justify-content-between">
         <span>Total (Euro)</span>
-        <strong>
+        <strong id="totalPriceToPay">
           <?php $total = 0; ?>
 
           <?php ; for($i=0; $i < count($products); $i++) {
@@ -39,9 +39,10 @@
                   $total += $products[$i]->discountprice*$values[$i];
               else
                   $total += $products[$i]->price*$values[$i];
-            } echo $total?>€
+            } echo $total?></strong><strong>€
 
         </strong>
+        <input hidden type="number" id="totalPriceToPayBeforeDiscount" value="<?php echo $total?>">
         You get <?php echo intval($total)?> LP.
       </li>
     </ul>
@@ -122,10 +123,7 @@
 
       <div class="input-group">
 
-        <input name="loyaltyPoints" type="number" min="0" max="{{  $customer->loyaltypoints }}" step="100" class="form-control" placeholder="For Each 100 LP you get 1 € discount." onchange="updatePriceLoyaltyPoints()">
-        <div class="input-group-append">
-          <button type="submit" class="btn btn-secondary">Use LP</button>
-        </div>
+        <input id="loyaltyPointsInput" name="loyaltyPoints" type="number" min="0" max="{{  min([$customer->loyaltypoints, intval($total)*100]) }}" onchange="updatePriceLoyaltyPoints(event)" step="100" class="form-control" placeholder="For Each 100 LP you get 1 € discount.">
       </div>
 
       <hr class="mb-4">

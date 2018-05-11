@@ -765,8 +765,22 @@ function configuratorUnitCostAdjust() {
   }
 }
 
-function updatePriceLoyaltyPoints(){
-  alert("Used LP");
+function updatePriceLoyaltyPoints(evt){
+  let lpoints = Math.trunc(document.querySelector("#loyaltyPointsInput").valueAsNumber/100);
+  let real_price = parseFloat(document.querySelector("#totalPriceToPayBeforeDiscount").value);
+
+
+  let price = document.querySelector("#totalPriceToPay");
+  let number = real_price - lpoints;
+  number =number.toFixed(2);
+
+  if(number < 0){
+    price.innerHTML = "0";
+  }else{
+    price.innerHTML = number.toString();
+  }
+
+
 }
 
 adminSearchProduct();

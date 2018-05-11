@@ -370,7 +370,7 @@ INSERT INTO "user" VALUES ('xavi123', '$2y$10$ov5gkUSHX79k6Gnhl.izP.fYWS4B8wARqp
 INSERT INTO "user" VALUES ('edu123', '$2y$10$L6r7FmhS30ehMpxoSjqkxeuCcMkN167VdcJxWXYu7AsbdKCPtczna', 'edu@edu.com', '2018-04-14 15:37:32.106099','ADMIN');
 
 --CUSTOMER
-INSERT INTO customer VALUES ('xavi123', 'Xavier Fontes', 'lole stree', 0, 'TRUE', 'FALSE');
+INSERT INTO customer VALUES ('xavi123', 'Xavier Fontes', 'lole stree', 1200, 'TRUE', 'FALSE');
 INSERT INTO customer VALUES ('TYTTbQf','Harlan Colon','12414  Argentina Ln.',16,'TRUE','FALSE');
 INSERT INTO customer VALUES ('KXiAxRukz','Brenden Sharp','69233 North Saint Helena Ln.',74,'TRUE','FALSE');
 INSERT INTO customer VALUES ('5zkyn6n5U','Hammett Warner','27023  Anguilla St.',97,'FALSE','FALSE');

@@ -68,4 +68,23 @@ class PurchaseController extends Controller
             // view da purchase
     return view('pages.purchase',['products'=>$json_object_result[0],'values'=>$json_object_result[1], 'customer'=>$customer]);
   }
+
+    public function payCheckout(Request $request)
+    {
+//        try{
+//            $this->authorize('purchase',Customer::class);
+//        } catch (AuthorizationException $e) {
+//            return view('auth.login');
+//        }
+//        $customer = Customer::findOrFail(Auth::user()->username);
+//
+//        $json_object = json_decode($request->input('shoppingCart'));
+//        if($json_object==null){
+//            return view('pages.shoppingCart',['products'=>[],'values'=>[]]);
+//        }
+//
+//        $json_object_result = Purchase::getPurchaseInfoFromJSON($json_object);
+//        // view da purchase
+//        return view('pages.purchase',['products'=>$json_object_result[0],'values'=>$json_object_result[1], 'customer'=>$customer]);
+    }
 }

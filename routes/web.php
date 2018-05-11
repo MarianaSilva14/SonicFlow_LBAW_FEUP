@@ -50,6 +50,8 @@ Route::delete('comment/{id}','ProductController@commentDelete')->where('id','[0-
 Route::get('homepage','HomepageController@show')->name('homepage');
 Route::get('shoppingCart','PurchaseController@show')->name('shoppingCart');
 Route::get('checkout','PurchaseController@showCheckout')->name('checkout');
+Route::post('checkout','PurchaseController@payCheckout')->name('purchase');
+
 
 // Static
 Route::view('about','pages.about')->name('about');

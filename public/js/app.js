@@ -765,6 +765,10 @@ function configuratorUnitCostAdjust() {
   }
 }
 
+function updatePriceLoyaltyPoints(){
+  alert("Used LP");
+}
+
 adminSearchProduct();
 headerSearchProduct();
 removeAllItemsInCart();

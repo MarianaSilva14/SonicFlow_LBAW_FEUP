@@ -32,26 +32,31 @@
       <li class="list-group-item d-flex justify-content-between">
         <span>Total (Euro)</span>
         <strong>
-          <?php $total=0; for($i=0; $i < count($products); $i++) {
+          <?php $total = 0; ?>
+
+          <?php ; for($i=0; $i < count($products); $i++) {
               if($products[$i]->discountprice != "")
                   $total += $products[$i]->discountprice*$values[$i];
               else
                   $total += $products[$i]->price*$values[$i];
             } echo $total?>€
+
         </strong>
+        You get <?php echo intval($total)?> LP.
       </li>
     </ul>
 
     <form class="card p-2">
       <div class="input-group">
-        <input type="text" class="form-control" placeholder="Promo code">
+        <input type="text" class="form-control" placeholder="Promo Code">
         <div class="input-group-append">
           <button type="submit" class="btn btn-secondary">Redeem</button>
         </div>
       </div>
     </form>
+
   </div>
-  <div class="col-md-8 order-md-1">
+  <div class="col-md-8 order-md-1" >
 
     <h4 class="mb-3">Payment</h4>
 
@@ -66,7 +71,7 @@
       <label class="custom-control-label" for="save-info">Save this information for next time</label>
     </div>
     <hr class="mb-4">
-    <form class="" action="index.html" method="post">
+    <form class="" action="{{route('purchase')}}" method="post">
       <div class="d-block my-3">
         <div class="custom-control custom-radio">
           <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
@@ -101,21 +106,44 @@
       <div class="row">
         <div class="col-md-3 mb-3">
           <label for="cc-expiration">Expiration</label>
-          <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+          <input type="text" class="form-control" id="cc-expiration" placeholder="" pattern="^(0[1-9]|1[0-2])\/?([0-9]{4}|[0-9]{2})$" required>
           <div class="invalid-feedback">
             Expiration date required
           </div>
         </div>
         <div class="col-md-3 mb-3">
           <label for="cc-expiration">CVV</label>
-          <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+          <input type="text" class="form-control" id="cc-cvv" placeholder="" pattern="[1-9]{3}" required>
           <div class="invalid-feedback">
             Security code required
           </div>
         </div>
       </div>
+
+      <div class="input-group">
+
+        <input name="loyaltyPoints" type="number" min="0" max="{{  $customer->loyaltypoints }}" step="100" class="form-control" placeholder="For Each 100 LP you get 1 € discount." onchange="updatePriceLoyaltyPoints()">
+        <div class="input-group-append">
+          <button type="submit" class="btn btn-secondary">Use LP</button>
+        </div>
+      </div>
+
       <hr class="mb-4">
+
+      <select name="products" mulitple style="display: none !important">
+        @for ($i = 0; $i < count($products); $i++)
+          <option value="{{$products[$i]->sku}}">
+        @endfor
+      </select>
+
+      <select name="values" mulitple style="display: none !important">
+        @for ($i = 0; $i < count($values); $i++)
+          <option value="{{$values[$i]}}">
+        @endfor
+      </select>
+
       <button class="btn btn-primary btn-lg btn-block" type="submit">Purchase</button>
+
     </form>
   </div>
 </div>

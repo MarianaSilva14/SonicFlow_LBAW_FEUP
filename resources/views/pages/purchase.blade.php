@@ -77,15 +77,15 @@
 
       <div class="d-block my-3">
         <div class="custom-control custom-radio">
-          <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+          <input id="credit" name="paymentMethod" value="Credit" type="radio" class="custom-control-input" checked required>
           <label class="custom-control-label" for="credit">Credit card</label>
         </div>
         <div class="custom-control custom-radio">
-          <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
+          <input id="debit" name="paymentMethod" value="Debit" type="radio" class="custom-control-input" required>
           <label class="custom-control-label" for="debit">Debit card</label>
         </div>
         <div class="custom-control custom-radio">
-          <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
+          <input id="paypal" name="paymentMethod" value="Paypal" type="radio" class="custom-control-input" required>
           <label class="custom-control-label" for="paypal">Paypal</label>
         </div>
       </div>

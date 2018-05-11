@@ -16,7 +16,7 @@ class Purchase extends Model
 
   public $timestamps = false;
 
-  //protected $fillable = ['rating']; // or null
+  protected $fillable = ['customer_username', 'value', 'method']; // or null
 
   /**
    * The table associated with the model.

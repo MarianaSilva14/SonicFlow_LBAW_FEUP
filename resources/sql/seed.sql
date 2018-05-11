@@ -619,6 +619,7 @@ INSERT INTO purchase VALUES (14,'UaUyY7HgDC', '2012-05-01 12:36:38', 899.02,'Pay
 INSERT INTO purchase VALUES (15,'x2CW', '2012-05-16 12:36:38', 899.02,'Paypal');
 INSERT INTO purchase VALUES (16,'xavi123', '2012-05-16 12:36:38', 899.02,'Credit');
 
+SELECT setval(pg_get_serial_sequence('purchase', 'id'), 17) FROM purchase;
 
 --PURCHASE_PRODUCT
 INSERT INTO purchase_product VALUES (1,'901896832', 899.02, 1);

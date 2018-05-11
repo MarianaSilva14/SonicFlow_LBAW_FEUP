@@ -775,7 +775,7 @@ function updatePriceLoyaltyPoints(evt){
   number =number.toFixed(2);
 
   if(number < 0){
-    price.innerHTML = "0";
+    price.innerHTML = "0.01";
   }else{
     price.innerHTML = number.toString();
   }

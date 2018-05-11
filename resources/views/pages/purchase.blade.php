@@ -73,6 +73,8 @@
     </div>
     <hr class="mb-4">
     <form class="" action="{{route('purchase')}}" method="post">
+      {{ csrf_field() }}
+
       <div class="d-block my-3">
         <div class="custom-control custom-radio">
           <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
@@ -127,18 +129,6 @@
       </div>
 
       <hr class="mb-4">
-
-      <select name="products" mulitple style="display: none !important">
-        @for ($i = 0; $i < count($products); $i++)
-          <option value="{{$products[$i]->sku}}">
-        @endfor
-      </select>
-
-      <select name="values" mulitple style="display: none !important">
-        @for ($i = 0; $i < count($values); $i++)
-          <option value="{{$values[$i]}}">
-        @endfor
-      </select>
 
       <button class="btn btn-primary btn-lg btn-block" type="submit">Purchase</button>
 

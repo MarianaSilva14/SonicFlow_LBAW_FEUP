@@ -3,6 +3,7 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\Request;
 
@@ -71,6 +72,11 @@ class PurchaseController extends Controller
 
     public function payCheckout(Request $request)
     {
+        $json_cart = $_COOKIE['shoppingCart'];
+        $loyaltyPointsUsed = $request->input("loyaltyPoints");
+
+        throw new Exception();
+
 //        try{
 //            $this->authorize('purchase',Customer::class);
 //        } catch (AuthorizationException $e) {

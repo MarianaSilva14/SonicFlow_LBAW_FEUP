@@ -16,8 +16,10 @@ Route::get('/', function () {
 });
 
 // Profile
+Route::view('users/deleteAccount','auth.deleteAccount');
 Route::get('users/{id}','CustomerController@show')->name('profile');
 Route::post('users/{id}','CustomerController@update');
+Route::post('users/{id}/delete','CustomerController@delete');
 Route::get('users/{id}/edit','CustomerController@edit')->name('profileEdit');
 Route::get('users/{id}/purchasehistory','PurchaseController@getPurchases');
 Route::get('users/{id}/favorites','CustomerController@getFavorites');

@@ -193,12 +193,14 @@ function banUserHandler(){
   }
   else{
     alert('User banned successfully');
+    let rows = document.querySelectorAll("td[data-id='"+this.responseText+"']");
+    for (let row of rows) {
+      row.parentNode.remove();
+    }
   }
 }
 function banUserAction(){
   sendAjaxRequest('PUT', 'users/'+this.dataset.id+'/ban',null,banUserHandler);
-  console.log(this);
-
   event.preventDefault();
 }
 function banUser(){
@@ -239,12 +241,14 @@ function unBanUser(){
   }
 }
 
-function approveCommentHandler(){
+function approveCommentHandler(event){
   if(this.status != 200){
     alert('Comment approval went wrong');
     alert(this.responseText);
   }else if(this.status == 200){
     alert('Successfully approved comment');
+    let tableRow = document.querySelector("td[data-id='"+this.responseText+"']").parentNode;
+    tableRow.remove();
     //delete text change
   }
 }

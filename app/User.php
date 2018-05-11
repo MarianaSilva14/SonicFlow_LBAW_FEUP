@@ -34,6 +34,10 @@ class User extends Authenticatable
       return DB::table('moderator')->where('user_username', $this->username)->exists();
   }
 
+  public function isBanned(){
+      return DB::table('banned')->where('customer_username_customer', $this->username)->exists();
+  }
+
   public $incrementing = false;
 
   /**

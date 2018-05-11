@@ -62,7 +62,7 @@ class Comment extends Model
   public function approve(){
     DB::table('flagged')
       ->where('comment_idcomment',$this->id)
-      ->update(['hidden'=>TRUE]);
+      ->delete();
   }
 
   public static function getModView(){

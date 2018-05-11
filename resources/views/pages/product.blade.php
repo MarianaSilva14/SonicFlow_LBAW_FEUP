@@ -161,8 +161,12 @@
           <form action="{{route('product_comment',['id'=>$product->sku])}}" method="post">
             {{ csrf_field() }}
             <input type="text" hidden name="parent_id" class="parentId">
-            <textarea name="commentary" class="w-100" rows="5" placeholder="Write your opinion!"></textarea><br>
-            <button class="btn btn-sm btn-primary">Comment</button>
+            @if(Auth::user() && Auth::user()->isBanned())
+              <textarea name="commentary" disabled class="w-100" rows="2" placeholder="You have been banned from the comment section, please contact the administration to resolve the situation"></textarea><br>
+            @else
+              <textarea name="commentary" class="w-100" rows="5" placeholder="Write your opinion!"></textarea><br>
+              <button class="btn btn-sm btn-primary">Comment</button>
+            @endif
           </form>
         </div>
       </div>

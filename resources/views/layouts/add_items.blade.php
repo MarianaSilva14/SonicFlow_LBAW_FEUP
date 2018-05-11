@@ -23,9 +23,7 @@
     <link rel="stylesheet" href="{{ asset('css/common.css') }}">
     <link rel="stylesheet" href="{{asset('css/administration.css')}}">
     @yield('head')
-    <script src="js/common.js" defer></script>
-
-    <script type="text/javascript">
+      <script type="text/javascript">
         // Fix for Firefox autofocus CSS bug
         // See: http://stackoverflow.com/questions/18943276/html-5-autofocus-messes-up-css-loading/18945951#18945951
     </script>

@@ -226,6 +226,7 @@ class ProductController extends Controller
     } catch (\Exception $e) {
      return response('Unable to approve comment',500);
     }
+    return response($comment->id,200);
   }
 
   public function updateRating($sku, Request $request){

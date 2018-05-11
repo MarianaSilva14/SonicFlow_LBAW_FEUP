@@ -146,6 +146,14 @@ class CustomerController extends Controller
     if(!$exists){
       $customer = Customer::findOrFail($username);
       $customer->ban();
+      DB::table('flagged')
+          ->join('comment','comment.id','=','flagged.comment_idcomment')
+          ->where('comment.user_username',$customer->user_username)
+          ->update(['hidden'=>TRUE]);
+      DB::table('comment')
+          ->where('comment.user_username',$customer->user_username)
+          ->update(['deleted'=>TRUE]);
+      return response($customer->user_username,200);
     }
   }
 
@@ -157,6 +165,10 @@ class CustomerController extends Controller
     if($exists){
       $customer = Customer::findOrFail($username);
       $customer->unBan();
+      DB::table('flagged')
+          ->join('comment','comment.id','=','flagged.comment_idcomment')
+          ->where('comment.user_username',$customer->user_username)
+          ->delete();
     }
   }
 }

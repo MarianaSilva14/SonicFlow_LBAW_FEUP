@@ -113,15 +113,18 @@ class PurchaseController extends Controller
                 $price_paid += $products[$i]->price*$values[$i];
         }
 
-        // validate points used
-        $points_earned = intval($price_paid);
-        // UPDATE CUSTOMER MORE POINTS AND TAKE OFF THE ONES USED
+
 
         $loyaltyPointsUsed = $request->input("loyaltyPoints");
 
         if ($loyaltyPointsUsed == null || $loyaltyPointsUsed > min([$customer->loyaltypoints, intval($price_paid)*100])){
             throw new Exception("loyalty points conflict");
         }
+
+        // validate points used
+        $points_earned = intval($price_paid);
+        $customer->loyaltypoints -= ($loyaltyPointsUsed - $points_earned);
+        $customer->save();
 
         $method = $request->input("paymentMethod");
         if ($method == null){
@@ -154,7 +157,8 @@ class PurchaseController extends Controller
                 "quantity" => $values[$i]
             ]);
 
-            // UPDATE PRODUCTS STOCK
+            $products[$i]->stock -= $values[$i];
+            $products[$i]->save();
         }
 
 

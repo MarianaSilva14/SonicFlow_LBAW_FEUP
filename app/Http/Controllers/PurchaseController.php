@@ -47,7 +47,7 @@ class PurchaseController extends Controller
     $purchases = Purchase::getPurchases($username);
     $returnHTML = [];
     foreach ($purchases as $purchase){
-        $view = View::make('partials.purchase', ['products' => $purchase->getProducts(),'date'=>$purchase->date,'price'=>$purchase->value]);
+        $view = View::make('partials.purchase', ['id_purchase' => $purchase->id, 'products' => $purchase->getProducts(),'date'=>$purchase->date,'price'=>$purchase->value]);
         array_push($returnHTML, (string) $view);
     }
     return $returnHTML;
@@ -90,7 +90,7 @@ class PurchaseController extends Controller
         foreach ($json_cart as $key => $value){
             $product = null;
                 try {
-                    $product = Product::findOrFail($key[0]);
+                    $product = Product::findOrFail($key);
                     array_push($products, $product);
                     if($product->stock > $value){
                         array_push($values, $value);
@@ -114,7 +114,8 @@ class PurchaseController extends Controller
         }
 
         // validate points used
-        $points_earned = intval($price_paid/100);
+        $points_earned = intval($price_paid);
+        // UPDATE CUSTOMER MORE POINTS AND TAKE OFF THE ONES USED
 
         $loyaltyPointsUsed = $request->input("loyaltyPoints");
 

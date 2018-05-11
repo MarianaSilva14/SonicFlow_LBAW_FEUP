@@ -27,7 +27,7 @@ class Purchase extends Model
 
   public function getProducts(){
     return DB::table('purchase_product')
-              ->join('product','purchase_product.product_idproduct','=','product.sku')
+              ->join('product','purchase_product.product_idproduct','=','product.sku') // ALTER THIS TO JOIN ON PURCHASE_PRODUCT
               ->where('purchase_idpurchase',$this->id)
               ->get();
   }

@@ -13,7 +13,7 @@
         ,
       @endif
     @endforeach
-    <div id="opret-produkt" class="collapse in" style="margin-top: 10px">
+    <div id="{{$id_purchase}}" class="collapse in" style="margin-top: 10px">
       <div>
         <table class="table table-striped table-hover table-bordered">
           <tr class="info" style="color:#65768e;">
@@ -24,7 +24,11 @@
             @for ($i = 0; $i < $product->quantity; $i++)
               <tr>
                 <td>{{$product->title}}</td>
-                <td>{{$product->price}}</td>
+                @if($product->discountprice != "")
+                  <td>{{$product->discountprice}}</td>
+                @else
+                  <td>{{$product->price}}</td>
+                @endif
               </tr>
             @endfor
           @endforeach
@@ -33,7 +37,7 @@
   </td>
   <td>{{$price}}</td>
   <td>{{$date}}</td>
-  <td class="panel panel-default panel-help" href="#opret-produkt" data-toggle="collapse">
+  <td class="panel panel-default panel-help" href="#{{$id_purchase}}" data-toggle="collapse">
     <i class="fas fa-minus"></i>
     <i class="fas fa-minus"></i>
   </td>

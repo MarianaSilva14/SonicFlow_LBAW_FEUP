@@ -149,7 +149,7 @@ function flagCommentHandler(){
     alert('Flag of comment went wrong');
     alert(this.responseText);
   }else if(this.status == 200){
-    alert('Successfully flagged comment');
+      swal('Flag comment successfully!');
   }
 }
 function flagCommentAction(event, id){

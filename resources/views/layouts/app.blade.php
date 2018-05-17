@@ -24,6 +24,10 @@
     @yield('head')
     <script src={{ asset('js/app.js') }} defer>
     </script>
+    <script   src={{ asset('js/sweetalert2.all.min.js') }}></script>
+  <!-- Optional: include a polyfill for ES6 Promises for IE11 and Android browser -->
+  <script src="https://unpkg.com/promise-polyfill"></script>
+
   </head>
   <body>
     @include('common.header')

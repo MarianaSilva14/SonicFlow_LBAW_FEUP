@@ -159,7 +159,7 @@ class ProductController extends Controller
     }
 
     $user = Auth::user();
-    if($user->isBanned()){
+    if($user->isBanned() || !$user->isCustomer()){
       return redirect(route('product',['id'=>$sku]));
     }
     $comment_text = $request->input('commentary');

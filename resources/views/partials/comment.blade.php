@@ -25,7 +25,9 @@
           @endif
           <br>
           @if(!$comment->deleted)
-            <a href="#" onclick="commentReplyAction(event, {{$comment->product_idproduct}},{{$comment->id}})" class="text-right small replyLink"><i class="fas fa-reply"></i> Reply</a>
+              @if(Auth::check() && Auth::user()->isCustomer())
+                <a href="#" onclick="commentReplyAction(event, {{$comment->product_idproduct}},{{$comment->id}})" class="text-right small replyLink"><i class="fas fa-reply"></i> Reply</a>
+              @endif
             @if(Auth::check() && Auth::user()->username == $comment->user_username)
               <a href="#" data-id={{$comment->id}} class="text-right small text-danger deleteLink"><i class="fas fa-trash"></i>Delete content</a>
             @else

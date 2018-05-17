@@ -9,7 +9,7 @@
 
 @section('content')
 @include('common.breadcrumb', ['currPage' => 'Homepage'])
-      <div class="justify-content-center" class="col-4 mx-auto">
+      <div class="justify-content-center">
 
         <div id="highlight">
           <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -47,31 +47,33 @@
         <div id="highlights-products">
           <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">
-              <a class="nav-link active" id="promo-tab" data-toggle="tab" href="#promo" role="tab" aria-controls="home" aria-selected="true"> Promotions </a>
+              <a class="nav-link active" id="promo-tab" data-toggle="tab" href="#promo" role="tab" aria-controls="promo" aria-selected="true"> Promotions </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" id="bests-tab" data-toggle="tab" href="#bestsellers" role="tab" aria-controls="profile1" aria-selected="false"> Best sellers</a>
+              <a class="nav-link" id="bests-tab" data-toggle="tab" href="#bestsellers" role="tab" aria-controls="bestsellers" aria-selected="false"> Best sellers</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" id="recommended-tab" data-toggle="tab" href="#recommended" role="tab" aria-controls="profile2" aria-selected="false"> Recommended </a>
+              <a class="nav-link" id="recommended-tab" data-toggle="tab" href="#recommended" role="tab" aria-controls="recommended" aria-selected="false"> Recommended </a>
             </li>
           </ul>
           <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="promo" role="tabpanel" aria-labelledby="home-tab">
+            <div class="tab-pane fade show active" id="promo" role="tabpanel" aria-labelledby="promo-tab">
               <div class="row">
 
               </div>
             </div>
-            <div class="tab-pane fade" id="bestsellers" role="tabpanel" aria-labelledby="profile1-tab">
+            <div class="tab-pane fade" id="bestsellers" role="tabpanel" aria-labelledby="bests-tab">
               <div class="row">
 
               </div>
             </div>
-            <div class="tab-pane fade" id="recommended" role="tabpanel" aria-labelledby="profile2-tab">
+            <div class="tab-pane fade" id="recommended" role="tabpanel" aria-labelledby="recommended-tab">
               <div class="row">
               
               </div>
             </div>
           </div>
         </div>
+
+      </div>
 @endsection

@@ -80,7 +80,7 @@ CREATE TABLE product (
 
 CREATE TABLE comment (
     id SERIAL PRIMARY KEY,
-    user_username TEXT NOT NULL REFERENCES "user" ON DELETE CASCADE,
+    user_username TEXT REFERENCES "user" ON DELETE SET NULL,
     "date" TIMESTAMP DEFAULT now() NOT NULL,
     commentary text NOT NULL,
     flagsno INTEGER NOT NULL DEFAULT 0,

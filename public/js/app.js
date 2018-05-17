@@ -115,7 +115,7 @@ function productLinks(){
   }
 }
 
-function commentReplyAction(productId,commentId){
+function commentReplyAction(evt, productId,commentId){
   let replyForm;
   let previousForm = document.querySelector('div.replyForm');
   if (previousForm != undefined) {
@@ -127,7 +127,7 @@ function commentReplyAction(productId,commentId){
     replyForm.classList.remove("newCommentForm");
     replyForm.classList.add("replyForm");
   }
-  let commentRow = event.target.closest("div.row");
+  let commentRow = evt.target.closest("div.row");
   insertAfter(replyForm,commentRow);
   let input = document.getElementsByClassName('parentId');
   input[0].setAttribute('value',commentId);

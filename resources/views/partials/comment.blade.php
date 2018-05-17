@@ -18,14 +18,14 @@
         </span> {{Carbon\Carbon::parse($comment->date)->diffForHumans()}}</h6>
       <div class="comment-body">
         <p>
-          @if($comment->deleted)
+          @if($comment->deleted || $comment->user == null)
             {Content Deleted}
           @else
             {{$comment->commentary}}
           @endif
           <br>
           @if(!$comment->deleted)
-            <a href="#" onclick="commentReplyAction({{$comment->product_idproduct}},{{$comment->id}})"class="text-right small replyLink"><i class="fas fa-reply"></i> Reply</a>
+            <a href="#" onclick="commentReplyAction(event, {{$comment->product_idproduct}},{{$comment->id}})" class="text-right small replyLink"><i class="fas fa-reply"></i> Reply</a>
             @if(Auth::check() && Auth::user()->username == $comment->user_username)
               <a href="#" data-id={{$comment->id}} class="text-right small text-danger deleteLink"><i class="fas fa-trash"></i>Delete content</a>
             @else

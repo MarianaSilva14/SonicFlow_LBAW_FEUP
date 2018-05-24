@@ -416,7 +416,7 @@ function headerSearchProductAction() {
   console.log('Category:'+cat+':');
   let title = this.previousElementSibling.value;
   console.log('Title:'+title+':');
-  window.location.href = $(this).attr('href')+'?categoryID='+cat+'&title='+title;
+  window.location.href = '/products'+'?categoryID='+cat+'&title='+title;
   event.preventDefault();
 }
 function headerSearchProduct() {

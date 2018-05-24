@@ -130,7 +130,7 @@
       <a class="nav-link" id="comment-tab" data-toggle="tab" href="#comment" role="tab" aria-controls="comment" aria-selected="false">Comments</a>
     </li>
   </ul>
-  <div  id="specs-form" class="tab-content" id="myTabContent">
+  <div  id="specs-form" class="tab-content" >
     <div class="tab-pane fade show active" id="descr" role="tabpanel" aria-labelledby="descr-tab">
       @if($product->description==null)
         No description available for this product.

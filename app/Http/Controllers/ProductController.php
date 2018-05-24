@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Customer;
 use App\User;
 use App\Product;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\View;
 use phpDocumentor\Reflection\Types\Integer;
 use App\Rating;
@@ -79,7 +80,8 @@ class ProductController extends Controller
     try {
       $this->authorize('edit',Product::class);
     } catch (Exception $e) {
-      return redirect('homepage');
+        Log::error($e->getMessage());
+        return redirect('homepage');
     }
     $product = Product::find($sku);
     return view('pages.editProduct',['product'=>$product,
@@ -92,6 +94,7 @@ class ProductController extends Controller
     try {
       $this->authorize('edit',Product::class);
     } catch (Exception $e) {
+        Log::error($e->getMessage());
       return redirect('homepage');
     }
 
@@ -126,7 +129,8 @@ class ProductController extends Controller
       $product->stock = $request->input('stock');
       $product->save();
     } catch (\Exception $e) {
-      return $e->getMessage();
+        Log::error($e->getMessage());
+        return $e->getMessage();
     }
 
     $attributes_to_update = $request->input('productAttributes');
@@ -148,7 +152,8 @@ class ProductController extends Controller
     try{
       $this->authorize('createNewProduct',Product::class);
     }catch(Exception $e){
-      return redirect('homepage');
+        Log::error($e->getMessage());
+        return redirect('homepage');
     }
     return view('pages.addProduct',['categories'=>DB::table('category')->get()]);
   }
@@ -179,7 +184,8 @@ class ProductController extends Controller
         'product_idproduct' => $sku
       ]);
     } catch (\Exception $e) {
-      return $e->getMessage();
+        Log::error($e->getMessage());
+        return $e->getMessage();
     }
 
     $parent_id = intval($request->input('parent_id'));
@@ -191,7 +197,8 @@ class ProductController extends Controller
               'comment_idchild' => $child_id
           ]);
         } catch (\Exception $e) {
-          return $e->getMessage();
+            Log::error($e->getMessage());
+            return $e->getMessage();
         }
     }
 
@@ -203,7 +210,8 @@ class ProductController extends Controller
     try {
       $comment->flag();
     } catch (\Exception $e) {
-     return response('Unable to flag comment',500);
+        Log::error($e->getMessage());
+        return response('Unable to flag comment',500);
     }
   }
 
@@ -217,7 +225,8 @@ class ProductController extends Controller
         $comment->deleteContentMod();
       }
     } catch (\Exception $e) {
-      return response(json_encode($comment).json_encode(Auth::user()),500);
+        Log::error($e->getMessage());
+        return response(json_encode($comment).json_encode(Auth::user()),500);
     }
   }
 
@@ -227,7 +236,8 @@ class ProductController extends Controller
       $this->authorize('edit',$comment);
       $comment->approve();
     } catch (\Exception $e) {
-     return response('Unable to approve comment',500);
+        Log::error($e->getMessage());
+        return response('Unable to approve comment',500);
     }
     return response($comment->id,200);
   }

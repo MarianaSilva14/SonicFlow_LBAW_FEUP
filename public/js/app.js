@@ -146,10 +146,21 @@ function productUpdateAddListener(){
 
 function flagCommentHandler(){
   if(this.status != 200){
-    alert('Flag of comment went wrong');
+    swal({
+      type: 'error',
+      title: 'Oops...',
+      text: 'Flag of comment went wrong!',
+    })
     alert(this.responseText);
   }else if(this.status == 200){
-      swal('Flag comment successfully!');
+     swal({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        type: 'success',
+        title: 'Flag comment successfully!'
+      });
   }
 }
 function flagCommentAction(event, id){

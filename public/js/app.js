@@ -147,10 +147,13 @@ function productUpdateAddListener(){
 function flagCommentHandler(){
   if(this.status != 200){
     swal({
-      type: 'error',
-      title: 'Oops...',
-      text: 'Flag of comment went wrong!',
-    })
+       toast: true,
+       position: 'top-end',
+       showConfirmButton: false,
+       timer: 3000,
+       type: 'error',
+       title: 'Flag comment unsuccessfully!'
+     });
     alert(this.responseText);
   }else if(this.status == 200){
      swal({
@@ -170,10 +173,25 @@ function flagCommentAction(event, id){
 
 function deleteCommentHandler(){
   if(this.status != 200){
-    alert('Comment deletion went wrong');
+    swal({
+       toast: true,
+       position: 'top-end',
+       showConfirmButton: false,
+       timer: 3000,
+       type: 'error',
+       title: 'Comment deletion went wrong!'
+     });
     console.log(this.responseText);
   }else if(this.status == 200){
-    //alert('Successfully removed comment');
+    swal({
+       toast: true,
+       position: 'top-end',
+       showConfirmButton: false,
+       timer: 3000,
+       type: 'success',
+       title: 'Successfully removed comment!'
+     });
+
     let comment = document.getElementsByClassName('deletedComment');
     if(comment.length!=0){
       if(comment[0].tagName == 'TR')
@@ -199,11 +217,25 @@ function deleteComment() {
 
 function banUserHandler(){
   if(this.status != 200){
-    alert('User banned unsuccessfully');
+    swal({
+       toast: true,
+       position: 'top-end',
+       showConfirmButton: false,
+       timer: 3000,
+       type: 'error',
+       title: 'User banned unsuccessfully!'
+     });
     console.log(this.responseText);
   }
   else{
-    alert('User banned successfully');
+    swal({
+       toast: true,
+       position: 'top-end',
+       showConfirmButton: false,
+       timer: 3000,
+       type: 'success',
+       title: 'User banned successfully!'
+     });
     let rows = document.querySelectorAll("td[data-id='"+this.responseText+"']");
     for (let row of rows) {
       row.parentNode.remove();
@@ -224,7 +256,14 @@ function banUser(){
 
 function unBanUserHandler(){
   if(this.status != 200){
-    alert('User unbanned unsuccessfully');
+    swal({
+       toast: true,
+       position: 'top-end',
+       showConfirmButton: false,
+       timer: 3000,
+       type: 'error',
+       title: 'User unbanned unsuccessfully!'
+     });
     console.log(this.responseText);
   }
   else{
@@ -234,8 +273,14 @@ function unBanUserHandler(){
       if(unBan[0].tagName == 'TR')
         unBan[0].remove();
     }
-    alert('User unbanned successfully');
-
+    swal({
+       toast: true,
+       position: 'top-end',
+       showConfirmButton: false,
+       timer: 3000,
+       type: 'success',
+       title: 'User unbanned successfully!'
+     });
   }
 }
 function unBanUserAction(){
@@ -254,10 +299,24 @@ function unBanUser(){
 
 function approveCommentHandler(event){
   if(this.status != 200){
-    alert('Comment approval went wrong');
+    swal({
+       toast: true,
+       position: 'top-end',
+       showConfirmButton: false,
+       timer: 3000,
+       type: 'success',
+       title: 'Comment approval went wrong!'
+     });
     alert(this.responseText);
   }else if(this.status == 200){
-    alert('Successfully approved comment');
+    swal({
+       toast: true,
+       position: 'top-end',
+       showConfirmButton: false,
+       timer: 3000,
+       type: 'success',
+       title: 'Successfully approved comment!'
+     });
     let tableRow = document.querySelector("td[data-id='"+this.responseText+"']").parentNode;
     tableRow.remove();
     //delete text change
@@ -280,7 +339,14 @@ function sendRatingRequest(event){
 
 function receiveRatingHandler(){
   if(this.status != 200){
-    alert("Rating couldn't be updated");
+    swal({
+       toast: true,
+       position: 'top-end',
+       showConfirmButton: false,
+       timer: 3000,
+       type: 'success',
+       title: "Rating couldn't be updated!"
+     });
     console.log(this.responseText);
   }else{
     let stars = document.querySelectorAll("#rating input#star"+JSON.parse(this.responseText));
@@ -350,7 +416,14 @@ function allProductLoadHandler() {
 }
 function adminSearchProductHanlder() {
   if(this.status != 200){
-    alert('Search for a product went wrong');
+    swal({
+       toast: true,
+       position: 'top-end',
+       showConfirmButton: false,
+       timer: 3000,
+       type: 'success',
+       title: "Search for a product went wrong!"
+     });
     console.log(this.responseText);
   }
   let products = JSON.parse(this.responseText);
@@ -434,7 +507,14 @@ function headerSearchProduct() {
 function homepagePromotionsHandler() {
   console.log('got promotions');
   if(this.status != 200){
-      alert('Error promo: '+this.status);
+       swal({
+          toast: true,
+          position: 'top-end',
+          showConfirmButton: false,
+          timer: 3000,
+          type: 'error',
+          title: "Error promo "+this.status
+        });
       return;
   }
   let products = JSON.parse(this.response);
@@ -449,7 +529,14 @@ function homepagePromotionsHandler() {
 function homepageBestSellersHandler() {
   console.log('got best sellers');
   if(this.status != 200){
-      alert('Error bs: '+this.status);
+      swal({
+         toast: true,
+         position: 'top-end',
+         showConfirmButton: false,
+         timer: 3000,
+         type: 'error',
+         title: "Error bs "+this.status
+       });
       console.log(this.response);
       return;
   }
@@ -465,9 +552,15 @@ function homepageBestSellersHandler() {
 function homepageRecommendationsHandler() {
   console.log('got recommendations');
   if(this.status != 200){
-      alert('Error reco: '+this.status);
+      swal({
+         toast: true,
+         position: 'top-end',
+         showConfirmButton: false,
+         timer: 3000,
+         type: 'error',
+         title: "Error reco: "+this.status
+       });
       console.log(this.response);
-
       return;
   }
   let products = JSON.parse(this.response);
@@ -494,7 +587,16 @@ function addFavoriteToggleHandler() {
   console.log(this);
   if(this.status != 200){
     console.log(this.responseText);
-    alert("Couldn't favorite product, please retry.");
+
+    swal({
+       toast: true,
+       position: 'top-end',
+       showConfirmButton: false,
+       timer: 3000,
+       type: 'error',
+       title: "Couldn't favorite product, please retry"
+     });
+
   }else{
     //let button = document.querySelector();
     let buttons = document.querySelectorAll("a[data-id='"+this.responseText+"'].addFavs svg");
@@ -509,6 +611,17 @@ function addFavoriteToggleHandler() {
 }
 function addFavoriteToggleAction(event){
   let id_product = this.closest('.heart_favorite').getAttribute('data-id');
+  if(id_product == null){
+
+    swal({
+       toast: true,
+       position: 'top-end',
+       showConfirmButton: false,
+       timer: 3000,
+       type: 'success',
+       title: 'Product added to wish list'
+     });
+  }
   sendAjaxRequest('POST', '/users/favorites/'+id_product,null,addFavoriteToggleHandler);
   event.preventDefault();
 }
@@ -532,7 +645,15 @@ function addFavoriteToggleListenerProduct(){
 function removeFavoritesHandler(){
   if(this.status != 200){
     console.log(this.responseText);
-    alert("Couldn't remove favorite product, please retry.");
+    swal({
+       toast: true,
+       position: 'top-end',
+       showConfirmButton: false,
+       timer: 3000,
+       type: 'error',
+       title: "Couldn't remove favorite product, please retry."
+     });
+
   }else{
     let button = document.querySelector("a[data-id='"+this.responseText+"'].rmFromFavs");
     button.closest(".outbox").remove();
@@ -552,7 +673,15 @@ function removeFavoritesButton(){
 function retreivePurchaseHistoryHandler() {
   if(this.status != 200){
     console.log(this.responseText);
-    alert("Couldn't get purchase history, please retry.");
+    swal({
+       toast: true,
+       position: 'top-end',
+       showConfirmButton: false,
+       timer: 3000,
+       type: 'error',
+       title: "Couldn't get purchase history, please retry."
+     });
+
   }else{
     let purchases = JSON.parse(this.responseText);
     let table = document.getElementById('purchaseTable');
@@ -571,7 +700,7 @@ function retreivePurchaseHistoryAction(){
     let userId = document.querySelector("input[name='username']").value;
     sendAjaxRequest('GET','/users/'+userId+'/purchasehistory',null,retreivePurchaseHistoryHandler);
   }else{
-    console.log("don't load");
+    console.log("No need to load");
   }
 }
 function retreivePurchaseHistory(){
@@ -583,7 +712,15 @@ function retreivePurchaseHistory(){
 function retreiveFavoritesHandler() {
   if(this.status != 200){
     console.log(this.responseText);
-    alert("Couldn't get favorite products, please retry.");
+    swal({
+       toast: true,
+       position: 'top-end',
+       showConfirmButton: false,
+       timer: 3000,
+       type: 'error',
+       title: "Couldn't get favorite products, please retry."
+     });
+
   }else{
     let favorites = JSON.parse(this.responseText);
     let row = document.getElementById('favorites');
@@ -603,7 +740,9 @@ function retreiveFavoritesAction(){
     let userId = document.querySelector("input[name='username']").value;
     sendAjaxRequest('GET','/users/'+userId+'/favorites',null,retreiveFavoritesHandler);
   }else{
-    console.log("Don't load favorites");
+
+    console.log("No need to load");
+
   }
 }
 function retreiveFavorites(){

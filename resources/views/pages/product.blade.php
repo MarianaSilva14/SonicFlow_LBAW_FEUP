@@ -111,7 +111,7 @@
         </div>
         <!-- Button -->
         <div class="col-md-6 col-12">
-          <button type="button" onclick="location.href='homepage'" class="addToCart" style="vertical-align:middle"><span>Add to Cart</span><i class="fas fa-cart-plus"></i></button>
+          <button data-id={{$product->sku}} type="button" onclick="location.href='homepage'" class="addToCart" style="vertical-align:middle"><span>Add to Cart</span><i class="fas fa-cart-plus"></i></button>
         </div>
       </div>
     </div>

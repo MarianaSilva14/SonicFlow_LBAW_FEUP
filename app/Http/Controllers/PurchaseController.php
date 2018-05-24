@@ -58,7 +58,7 @@ class PurchaseController extends Controller
     try{
       $this->authorize('purchase',Customer::class);
     } catch (AuthorizationException $e) {
-      return view('auth.login');
+        return view('auth.login');
     }
     $customer = Customer::findOrFail(Auth::user()->username);
 

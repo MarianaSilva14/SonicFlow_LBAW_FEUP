@@ -755,7 +755,7 @@ function addProductToCartAction(){
   let id;
   let amount = 1;
   if (this.tagName == 'BUTTON') {
-    id = document.querySelector('.addFavs').dataset.id;
+    id = document.querySelector('.addToCart').dataset.id;
     amount = parseInt(document.getElementById('amount').value);
     console.log('id ='+id);
     console.log('amount:'+amount);

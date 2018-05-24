@@ -31,7 +31,6 @@
     </select>
     <button type="submit" name="button" class="filter btn btn-primary">Filter</button>
 </form>
-</form>
 
     <div class="row">
       @foreach($products as $product)

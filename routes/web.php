@@ -59,6 +59,7 @@ Route::view('contact','pages.contact')->name('contact');
 Route::view('faq','pages.faq')->name('faq');
 Route::view('404','errors.404')->name('404');
 Route::get('configurator','ConfiguratorController@show')->name('configurator');
+Route::get('comparator','ProductController@compare')->name('comparator');
 
 // Authentication
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');

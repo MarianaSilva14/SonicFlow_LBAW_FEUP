@@ -320,4 +320,8 @@ class ProductController extends Controller
 
       return view('pages.listProducts',['products'=>$products, 'profile'=>false,'request'=>$request]);
   }
+
+  public function compare(){
+    return view('pages.comparator');
+  }
 }

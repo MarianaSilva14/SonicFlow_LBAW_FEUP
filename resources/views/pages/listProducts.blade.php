@@ -23,11 +23,31 @@
         <label class="custom-control-label" for="productAvailable">Available</label>
     </div>
     <select class="col-xl-2 col-lg-4 col-sm-5 form-control" name="sortBy">
-        <option value="">None</option>
+      @if($request->input('sortBy') == "")
+        <option value="" selected>No Sort</option>
+      @else
+        <option value="">No Sort</option>
+      @endif
+      @if($request->input('sortBy') == "priceASC")
+        <option value="priceASC" selected>Price Ascending</option>
+      @else
         <option value="priceASC">Price Ascending</option>
+      @endif
+      @if($request->input('sortBy') == "priceDESC")
+        <option value="priceDESC" selected>Price Descending</option>
+      @else
         <option value="priceDESC">Price Descending</option>
+      @endif
+      @if($request->input('sortBy') == "ratingASC")
+        <option value="ratingASC" selected>Rating Ascending</option>
+      @else
         <option value="ratingASC">Rating Ascending</option>
+      @endif
+      @if($request->input('sortBy') == "ratingDESC")
+        <option value="ratingDESC" selected>Rating Descending</option>
+      @else
         <option value="ratingDESC">Rating Descending</option>
+      @endif
     </select>
     <button type="submit" name="button" class="filter btn btn-primary">Filter</button>
 </form>

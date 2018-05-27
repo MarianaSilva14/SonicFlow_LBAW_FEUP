@@ -5,6 +5,8 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\DB;
+use App\Product;
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -17,6 +19,14 @@ class AppServiceProvider extends ServiceProvider
     {
       View::composer(['common.header','pages.administration'], function ($view) {
             $view->with('categories',DB::table('category')->get());
+        });
+      View::composer(['partials.compareOverlay'], function ($view) {
+          $compareProducts = array();
+          $temp = json_decode($_COOKIE['compareProducts'],TRUE);
+          foreach ($temp as $key => $value) {
+            array_push($compareProducts,Product::find($key));
+          }
+          $view->with('compareProds',$compareProducts);
         });
     }
 

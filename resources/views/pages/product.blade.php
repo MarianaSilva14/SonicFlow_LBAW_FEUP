@@ -99,7 +99,7 @@
             @endif
           @endif
           <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="customCheck1">
+            <input type="checkbox" class="custom-control-input" id="customCheck1" data-sku="{{$product->sku}}" data-cat="{{$product->category_idcat}}" @if(strpos($_COOKIE['compareProducts'],"\"".$product->sku."\"") != false)checked @endif>
             <label id="compare" class="custom-control-label" for="customCheck1">Compare</label>
           </div>
         </div>

@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <link rel="stylesheet" href="{{ asset('css/common.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/productsListPage.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/comparator.css') }}">
     @yield('head')
     <script src={{ asset('js/app.js') }} defer>
     </script>
@@ -31,6 +33,9 @@
   </head>
   <body>
     @include('common.header')
+    @if(strlen($_COOKIE['compareProducts'])>2)
+      @include('partials.compareOverlay')
+    @endif
     @yield('content')
     @include('common.footer')
   </body>

@@ -6,7 +6,7 @@
 	text-align: center;
 }
 
-.thumbnails svg{
+.thumbnails span{
 	position: absolute;
 	right: 10%;
 	color: #dc3545;

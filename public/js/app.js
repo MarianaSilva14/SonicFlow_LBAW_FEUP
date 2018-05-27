@@ -58,7 +58,10 @@ $(document).ready(function(e){
 });
 
 if(getCookie('shoppingCart') == ""){
-  setCookie('shoppingCart',JSON.stringify({}));
+  setCookie('shoppingCart',JSON.stringify({}),1);
+}
+if(getCookie('compareProducts') == ""){
+  setCookie('compareProducts',JSON.stringify({}),1);
 }
 
 //GLOBALS
@@ -933,6 +936,89 @@ function updatePriceLoyaltyPoints(evt){
 
 }
 
+function addToCompare(event){
+  // TODO: check if banner exists
+  let cat = event.target.dataset.cat;
+  let sku = event.target.dataset.sku;
+  let products = JSON.parse(getCookie('compareProducts'));
+  if(Object.keys(products).length < 4){
+    if(!products[sku]){
+      let canAdd = true;
+      for(let category in products){
+        if(products[category] != -cat){
+          canAdd = false;
+          break;
+        }
+      }
+      if (canAdd) {
+        console.log('Added Sku:'+sku+' Category:'+cat);
+        products[sku] = -cat;
+        setCookie('compareProducts',JSON.stringify(products),1);
+      }else{
+        alert('Cannot add products with different category')
+      }
+      // TODO: add info to banner
+    }else{
+      alert('Products already in comparable products');
+    }
+  }else{
+    alert('Cannot compare any more products');
+    event.target.checked = false;
+  }
+}
+function removeFromCompare(event){
+  let span = event.target.closest("span");
+  let sku;
+  if(span == null){
+    sku = event.target.dataset.sku;
+    span = document.querySelector("span.compareItemRemove[data-sku=\""+sku+"\"]");
+  }else{
+    sku = span.dataset.sku;
+  }
+  let products = JSON.parse(getCookie('compareProducts'));
+  delete products[sku];
+  setCookie('compareProducts',JSON.stringify(products),1);
+  let banner = span.closest("div");
+  if(banner.parentNode.childElementCount==2){
+    let fullBanner = banner.closest(".compareOverlay");
+    fullBanner.remove();
+  }else{
+    banner.remove();
+  }
+}
+function onchangeCompare(event){
+  if(event.target.checked){
+    addToCompare(event);
+  }else{
+    removeFromCompare(event);
+  }
+  console.log(getCookie('compareProducts'));
+}
+function closeBanner(event) {
+  let fullBanner = event.target.closest(".compareOverlay");
+  fullBanner.remove();
+  setCookie('compareProducts',JSON.stringify({}),1);
+}
+function addCompareToggleListener() {
+  let check = document.getElementById('customCheck1');
+  if(check)
+    check.onchange = onchangeCompare;
+}
+function addRemoveFromCompareListener() {
+  let remove = document.getElementsByClassName('compareItemRemove');
+  for (let cross of remove) {
+    cross.onclick = removeFromCompare;
+  }
+}
+function addCompareCloseListener() {
+  let cross = document.getElementById('compareOverlayClose');
+  if(cross!=null)
+    cross.onclick = closeBanner;
+}
+
+setTimeout(addCompareCloseListener,200);
+addRemoveFromCompareListener();
+addCompareToggleListener();
 adminSearchProduct();
 headerSearchProduct();
 removeAllItemsInCart();

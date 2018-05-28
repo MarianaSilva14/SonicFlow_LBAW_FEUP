@@ -182,94 +182,135 @@ class Product extends Model
   }
 
   public static function getDiscountedProducts(Request $request){
-    $query = DB::table('product');
 
-    $query->selectRaw('* , (price - discountprice)/price AS rank');
-    $query->leftJoin('favorite',function ($join) {
-            if(Auth::check())
-              $username = Auth::user()->username;
-            else
-              $username = "";
-            $join->on('product.sku','=','favorite.product_idproduct')
-                 ->where('favorite.customer_username','=', $username);
-        });
-    $query->join('category','category.id','=','product.category_idcat');
-    $query->whereNotNull('discountprice');
-    $query->orderBy('rank', 'desc');
+      $products = null;
 
-    /*      -- Get discounted products
-    SELECT * , (P.price - P.discountprice)/P.price AS rank
-    FROM product P
-    WHERE 	P.discountprice IS NOT NULL
-    ORDER BY rank DESC
-    LIMIT $limit;*/
+      try{
+          DB::beginTransaction();
 
-    $limit = intval($request->input('limit'));
-    if ($limit != null){
-        $query = $query->limit($limit);
-    }
-    $products = $query->get();
-    return $products;
+            $query = DB::table('product');
+
+            $query->selectRaw('* , (price - discountprice)/price AS rank');
+            $query->leftJoin('favorite',function ($join) {
+                    if(Auth::check())
+                      $username = Auth::user()->username;
+                    else
+                      $username = "";
+                    $join->on('product.sku','=','favorite.product_idproduct')
+                         ->where('favorite.customer_username','=', $username);
+                });
+            $query->join('category','category.id','=','product.category_idcat');
+            $query->whereNotNull('discountprice');
+            $query->orderBy('rank', 'desc');
+
+            /*      -- Get discounted products
+            SELECT * , (P.price - P.discountprice)/P.price AS rank
+            FROM product P
+            WHERE 	P.discountprice IS NOT NULL
+            ORDER BY rank DESC
+            LIMIT $limit;*/
+
+            $limit = intval($request->input('limit'));
+            if ($limit != null){
+                $query = $query->limit($limit);
+            }
+            $products = $query->get();
+
+          DB::commit();
+
+      }
+      catch(\Exception $e){
+          DB::rollBack();
+      }
+
+      return $products;
   }
 
   public static function getRecommendationsProducts(Request $request){
-      $query = DB::table('product');
 
-      $query->orderBy('rating', 'desc');
-      $query->leftJoin('favorite',function ($join) {
-              if(Auth::check())
-                $username = Auth::user()->username;
-              else
-                $username = "";
-              $join->on('product.sku','=','favorite.product_idproduct')
-                   ->where('favorite.customer_username','=', $username);
-          });
-      $query->join('category','category.id','=','product.category_idcat');
-      /*      -- Get products with higher rating
-      SELECT *
-      FROM product P
-      ORDER BY rating DESC
-      LIMIT $limit;*/
+      $products = null;
 
-      $limit = intval($request->input('limit'));
-      if ($limit != null) {
-          $query = $query->limit($limit);
+      try{
+          DB::beginTransaction();
+          $query = DB::table('product');
+
+          $query->orderBy('rating', 'desc');
+          $query->leftJoin('favorite',function ($join) {
+                  if(Auth::check())
+                    $username = Auth::user()->username;
+                  else
+                    $username = "";
+                  $join->on('product.sku','=','favorite.product_idproduct')
+                       ->where('favorite.customer_username','=', $username);
+              });
+          $query->join('category','category.id','=','product.category_idcat');
+          /*      -- Get products with higher rating
+          SELECT *
+          FROM product P
+          ORDER BY rating DESC
+          LIMIT $limit;*/
+
+          $limit = intval($request->input('limit'));
+          if ($limit != null) {
+              $query = $query->limit($limit);
+          }
+          $products = $query->get();
+          DB::commit();
+
       }
-      $products = $query->get();
+      catch(\Exception $e){
+          DB::rollBack();
+      }
+
       return $products;
 
   }
 
   public static function getBestSellersProducts(Request $request){
-    $query = DB::table('product');
 
-    $query->selectRaw('product.*,customer_username,category.name, SUM(purchase_product.quantity) AS sumQ');
-    $query->join('purchase_product', 'product.sku', '=', 'purchase_product.product_idproduct');
-    $query->orderByRaw('sumQ DESC');
-    $query->leftJoin('favorite',function ($join) {
-            if(Auth::check())
-              $username =Auth::user()->username;
-            else
-              $username = "";
-            $join->on('product.sku','=','favorite.product_idproduct')
-                 ->where('favorite.customer_username','=', $username);
-        });
-    $query->join('category','category.id','=','product.category_idcat');
-    $query->groupBy('product.sku','favorite.customer_username','category.name');
-    /*      -- Get best selling products
-    SELECT P.*, SUM(PP.quantity) as sum
-    FROM product P, purchase_product PP
-    WHERE P.sku = PP.product_idproduct
-    GROUP BY P.sku
-    ORDER BY sum DESC
-    */
+      $products = null;
+
+      try{
+          DB::beginTransaction();
+
+          $query = DB::table('product');
+
+          $query->selectRaw('product.*,customer_username,category.name, SUM(purchase_product.quantity) AS sumQ');
+          $query->join('purchase_product', 'product.sku', '=', 'purchase_product.product_idproduct');
+          $query->orderByRaw('sumQ DESC');
+          $query->leftJoin('favorite',function ($join) {
+              if(Auth::check())
+                  $username =Auth::user()->username;
+              else
+                  $username = "";
+              $join->on('product.sku','=','favorite.product_idproduct')
+                  ->where('favorite.customer_username','=', $username);
+          });
+          $query->join('category','category.id','=','product.category_idcat');
+          $query->groupBy('product.sku','favorite.customer_username','category.name');
+          /*      -- Get best selling products
+          SELECT P.*, SUM(PP.quantity) as sum
+          FROM product P, purchase_product PP
+          WHERE P.sku = PP.product_idproduct
+          GROUP BY P.sku
+          ORDER BY sum DESC
+          */
 
 
-    $limit = intval($request->input('limit'));
-    if ($limit != null){
-        $query = $query->limit($limit);
-    }
-    $products = $query->get();
+          $limit = intval($request->input('limit'));
+          if ($limit != null){
+              $query = $query->limit($limit);
+          }
+
+          $products = $query->get();
+
+          DB::commit();
+
+      }
+      catch(\Exception $e){
+          DB::rollBack();
+      }
+
     return $products;
   }
 }

@@ -954,6 +954,10 @@ function updatePriceLoyaltyPoints(evt){
 function addToCompare(event){
   let cat = event.target.dataset.cat;
   let sku = event.target.dataset.sku;
+  let title = document.querySelector(".productTitle").value;
+  console.log("title: "+title);
+  let image = document.querySelector("img.d-block.w-100").src;
+  console.log("image: "+image);
   let products = JSON.parse(getCookie('compareProducts'));
   if(Object.keys(products).length < 4){
     if(!products[sku]){
@@ -970,18 +974,23 @@ function addToCompare(event){
         setCookie('compareProducts',JSON.stringify(products),1);
         console.log(document.getElementsByClassName('compareOverlay')[0]);
         banner = document.getElementsByClassName('compareOverlay')[0];
-        if(banner.hidden){
-          banner.hidden = false;
-        }
         let newCompareProd = document.createElement("DIV");
         console.log(banner.children[3]);
-        newCompareProd.classList.add('col-sm-2','offset-1','thumbnails');
         newCompareProd.innerHTML = `
           <span class="compareItemRemove" data-sku="10"><i class="fas fa-times"></i></span>
-          <img src="https://cdn0.iconfinder.com/data/icons/business-mix/512/cargo-512.png" alt="Product Image" class="img-fluid">
-          <p> this is a product </p>
+          <img src="${image}" alt="Image for title" class="img-fluid">
+          <p>${title}</p>
         `;
-        banner.children[3].insertBefore(newCompareProd,banner.children[3].lastElementChild);
+        if(banner.hidden){
+          banner.hidden = false;
+          newCompareProd.classList.add('col-sm-2','offset-1','thumbnails');
+          banner.children[3].insertBefore(newCompareProd,banner.children[3].children[0]);
+        }else{
+          newCompareProd.classList.add('col-sm-2','thumbnails');
+          banner.children[3].insertBefore(newCompareProd,banner.children[3].children[1]);
+        }
+        banner.classList.remove('minimized');
+        banner.children[0].hidden = true;
         return;
       }else{
         alert('Cannot add products with different category');

@@ -46,7 +46,7 @@
                           <a href="javascript:void(0)" class="addFavs col-3 btn btn-xs btn-outline btn-primary heart_favorite" data-id={{$product->sku}}><i class="far fa-heart"></i></a>
                         @endif
                       @else
-                        <a href="javascript:void(0)" class="addFavs col-3 btn btn-xs btn-outline btn-primary heart_favorite"><i class="far fa-heart"></i></a>
+                        <a href="javascript:void(0)" class="addFavs col-3 btn btn-xs btn-outline btn-primary heart_favorite" data-id={{$product->sku}}><i class="far fa-heart"></i></a>
                       @endif
                     @endif
                 </div>

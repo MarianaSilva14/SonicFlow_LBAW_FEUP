@@ -81,9 +81,9 @@
                   <label class="col-lg-3 control-label">First name:</label>
                   <div class="col-lg-8">
                     @if($editable)
-                      <input class="form-control" name="firstName" type="text" value="{{$infoCustomer->firstName()}}">
+                      <input class="form-control" name="firstName" type="text" pattern="[a-zA-Z]+" value="{{$infoCustomer->firstName()}}">
                     @else
-                      <input class="form-control" name="firstName" type="text" value="{{$infoCustomer->firstName()}}" readonly>
+                      <input class="form-control" name="firstName" type="text" pattern="[a-zA-Z]+" value="{{$infoCustomer->firstName()}}" readonly>
                     @endif
                   </div>
                   @if ($errors->has('firstName'))
@@ -96,9 +96,9 @@
                   <label class="col-lg-3 control-label">Last name:</label>
                   <div class="col-lg-8">
                     @if($editable)
-                      <input class="form-control" name="lastName" type="text" value="{{$infoCustomer->lastName()}}">
+                      <input class="form-control" name="lastName" type="text" pattern="[a-zA-Z]+( [a-zA-Z]+)*" value="{{$infoCustomer->lastName()}}">
                     @else
-                      <input class="form-control" name="lastName" type="text" value="{{$infoCustomer->lastName()}}" readonly>
+                      <input class="form-control" name="lastName" type="text" pattern="[a-zA-Z]+( [a-zA-Z]+)*" value="{{$infoCustomer->lastName()}}" readonly>
                     @endif
                   </div>
                   @if ($errors->has('lastName'))
@@ -111,9 +111,9 @@
                   <label class="col-lg-3 control-label">Email:</label>
                   <div class="col-lg-8">
                     @if($editable)
-                      <input class="form-control" name="email" type="text" value="{{$infoUser->email}}">
+                      <input class="form-control" name="email" type="email" value="{{$infoUser->email}}">
                     @else
-                      <input class="form-control" name="email" type="text" value="{{$infoUser->email}}" readonly>
+                      <input class="form-control" name="email" type="email" value="{{$infoUser->email}}" readonly>
                     @endif
                   </div>
                   @if ($errors->has('email'))

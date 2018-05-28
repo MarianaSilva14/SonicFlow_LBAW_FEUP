@@ -143,7 +143,12 @@ class ProductController extends Controller
   }
 
   public function show($sku){
-    $product = Product::findOrFail($sku);
+    try {
+      $product = Product::findOrFail($sku);
+    } catch (\Exception $e) {
+      Log::error($e->getMessage());
+      throw new \Exception("Could not find product SKU", 404);
+    }
     $favorite = $product->isFavorite();
     return view('pages.product',['product'=>$product,'images'=>$product->getImages(),'attributes'=>$product->attributes(),'favorite'=>$favorite]);
   }

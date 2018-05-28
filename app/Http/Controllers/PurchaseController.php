@@ -27,10 +27,6 @@ class PurchaseController extends Controller
    */
   public function show(Request $request)
   {
-//    $product = null;
-//    $values = [];
-//    $products = [];
-
     $json_object = json_decode($request->input('shoppingCart'));
     if($json_object==null){
       return view('pages.shoppingCart',['products'=>[],'values'=>[]]);

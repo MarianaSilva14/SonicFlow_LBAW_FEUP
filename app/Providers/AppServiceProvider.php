@@ -21,13 +21,15 @@ class AppServiceProvider extends ServiceProvider
             $view->with('categories',DB::table('category')->get());
         });
       View::composer(['partials.compareOverlay'], function ($view) {
-          $compareProducts = array();
+        $compareProducts = array();
+        if(array_key_exists('compareProducts',$_COOKIE)){
           $temp = json_decode($_COOKIE['compareProducts'],TRUE);
           foreach ($temp as $key => $value) {
             array_push($compareProducts,Product::find($key));
           }
-          $view->with('compareProds',$compareProducts);
-        });
+        }
+        $view->with('compareProds',$compareProducts);
+      });
     }
 
     /**

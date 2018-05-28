@@ -63,9 +63,6 @@ if(getCookie('shoppingCart') == ""){
 if(getCookie('compareProducts') == ""){
   setCookie('compareProducts',JSON.stringify({}),1);
 }
-if(getCookie('compareMin') == ""){
-  setCookie('compareMin',false,0.5);
-}
 
 //GLOBALS
 var productOffset = 0;
@@ -76,12 +73,13 @@ var currentProducts = [];
 function docOnLoad(){
   locArray = window.location.href.split("/");
   console.log(locArray);
+  let currPage = locArray[locArray.length-1].toLowerCase();
   if(locArray[locArray.length-1].toLowerCase().includes('homepage')){
     homepagePromotions();
     homepageBestSellers();
     homepageRecommendations();
   }
-  if(locArray[locArray.length-1].toLowerCase().includes('administration')){
+  if(currPage.includes('administration')){
     adminLoadProducts();
     product_offset=0;
   }
@@ -89,8 +87,7 @@ function docOnLoad(){
     setTimeout(updateRatingOfProduct, 200);
     addProductToCart();
   }
-  if(locArray[locArray.length-1].toLowerCase().includes('comparator')){
-    console.log('here');
+  if(currPage.includes('comparator')||currPage.includes('configurator')){
     let banner = document.getElementsByClassName('compareOverlay');
     banner[0].hidden = true;
   }
@@ -955,7 +952,6 @@ function updatePriceLoyaltyPoints(evt){
 }
 
 function addToCompare(event){
-  // TODO: check if banner exists
   let cat = event.target.dataset.cat;
   let sku = event.target.dataset.sku;
   let products = JSON.parse(getCookie('compareProducts'));
@@ -972,10 +968,37 @@ function addToCompare(event){
         console.log('Added Sku:'+sku+' Category:'+cat);
         products[sku] = -cat;
         setCookie('compareProducts',JSON.stringify(products),1);
+        console.log(document.getElementsByClassName('compareOverlay')[0]);
+        banner = document.getElementsByClassName('compareOverlay')[0];
+        if(banner.hidden){
+          banner.hidden = false;
+        }
+        let newCompareProd = document.createElement("DIV");
+        console.log(banner.children[3]);
+        newCompareProd.classList.add('col-sm-2','offset-1','thumbnails');
+        newCompareProd.innerHTML = `
+          <span class="compareItemRemove" data-sku="10"><i class="fas fa-times"></i></span>
+          <img src="https://cdn0.iconfinder.com/data/icons/business-mix/512/cargo-512.png" alt="Image for title" class="img-fluid">
+          <p> this is a product </p>
+        `;
+        banner.children[3].insertBefore(newCompareProd,banner.children[3].lastElementChild);
+        return;
+        //newCompareProd.classList.add('col-sm-2','thumbnails')
+        // <div class="col-sm-2 @if($loop->first)offset-1 @endif thumbnails">
+        //   <span class="compareItemRemove" data-sku="{{$prod->sku}}"><i class="fas fa-times"></i></span>
+        //   <!-- <img src="https://static.fnac-static.com/multimedia/Images/PT/NR/fa/44/14/1328378/1505-1.jpg" alt="100x100" class="img-fluid"> -->
+        //   @if( $prod->picture == null)
+        //   <img src="https://cdn0.iconfinder.com/data/icons/business-mix/512/cargo-512.png" alt="Image for {{ $prod->title }}" class="img-fluid">
+        //   @else
+        //   <img src="{{ Storage::url($prod->picture) }}" alt="Image for {{ $prod->title }}" class="img-fluid">
+        //   @endif
+        //   <p> {{$prod->title}} </p>
+        // </div>
+        // TODO: fill banner
       }else{
-        alert('Cannot add products with different category')
+        alert('Cannot add products with different category');
+        event.target.checked = false;
       }
-      // TODO: add info to banner
     }else{
       alert('Products already in comparable products');
     }
@@ -1021,10 +1044,8 @@ function compareOverlayMinimize(event) {
   let banner = event.target.closest("div.compareOverlay");
   banner.classList.toggle('minimized');
   if(banner.children[0].hidden){
-    setCookie('compareMin',true,0.5);
     setTimeout(()=>{banner.children[0].hidden = false},700);
   }else{
-    setCookie('compareMin',false,0.5);
     banner.children[0].hidden = true;
   }
 }

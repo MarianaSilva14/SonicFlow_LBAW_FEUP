@@ -33,9 +33,7 @@
   </head>
   <body>
     @include('common.header')
-    @if(strlen($_COOKIE['compareProducts'])>2)
-      @include('partials.compareOverlay')
-    @endif
+    @include('partials.compareOverlay')
     @yield('content')
     @include('common.footer')
   </body>

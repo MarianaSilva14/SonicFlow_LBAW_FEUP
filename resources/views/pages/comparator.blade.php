@@ -20,7 +20,7 @@
         <img class="img-fluid" src="{{Storage::url($prod->picture)}}" alt="Product Image">
       @endif
       <!-- <img src="https://static.fnac-static.com/multimedia/Images/PT/NR/fa/44/14/1328378/1505-1.jpg" alt="100x100" class="img-fluid"> -->
-      <p> {{$prod->title}} </p>
+      <p style="margin-left: 0"> {{$prod->title}} </p>
     </div>
   @endforeach
 

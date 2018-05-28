@@ -318,7 +318,11 @@ class ProductController extends Controller
                           'sortBy' => $request->input('sortBy')
                         ]);
 
-      return view('pages.listProducts',['products'=>$products, 'profile'=>false,'request'=>$request]);
+      $title = 'Products List';
+      if(array_key_exists('categoryID',$_GET) && $_GET['categoryID'] != null)
+        $title = DB::table('category')->where('id', '=', $_GET['categoryID'])->first()->name;
+
+      return view('pages.listProducts',['products'=>$products, 'title'=>$title, 'profile'=>false,'request'=>$request]);
   }
 
   public function compare(){

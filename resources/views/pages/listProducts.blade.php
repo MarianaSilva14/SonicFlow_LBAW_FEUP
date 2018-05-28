@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'List Products')
+@section('title', $title)
 
 @section('head')
 <link rel="stylesheet" href="{{ asset('css/productsListpage.css') }}">

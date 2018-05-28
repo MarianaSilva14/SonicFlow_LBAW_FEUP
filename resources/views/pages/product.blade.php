@@ -105,9 +105,15 @@
         </div>
         <!-- Availability -->
         <div class="col-md-3 col-6">
-          <button class="availability btn btn-outline-success" disabled><i class="fas fa-check-circle"></i><span>Available </span></button>
-          <button class="availability btn btn-outline-warning" disabled hidden><i class="fas fa-phone"></i><span>On Order</span></button>
-          <button class="availability btn btn-outline-danger" disabled hidden><i class="fas fa-phone"></i><span>Unavailable</span></button>
+          @if($product->stock > 0)
+            <button class="availability btn btn-outline-success" disabled><i class="fas fa-check-circle"></i><span>Available </span></button>
+            <button class="availability btn btn-outline-warning" disabled hidden><i class="fas fa-phone"></i><span>On Order</span></button>
+            <button class="availability btn btn-outline-danger" disabled hidden><i class="fas fa-phone"></i><span>Unavailable</span></button>
+          @else
+            <button class="availability btn btn-outline-success" disabled hidden><i class="fas fa-check-circle"></i><span>Available </span></button>
+            <button class="availability btn btn-outline-warning" disabled hidden><i class="fas fa-phone"></i><span>On Order</span></button>
+            <button class="availability btn btn-outline-danger" disabled><i class="fas fa-phone"></i><span>Unavailable</span></button>
+          @endif
         </div>
         <!-- Button -->
         <div class="col-md-6 col-12">

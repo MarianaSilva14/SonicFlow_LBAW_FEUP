@@ -6,6 +6,7 @@ use App\User;
 use App\Customer;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -66,23 +67,35 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $user = User::create([
-            'username' => $data['username'],
-            'password' => bcrypt($data['password']),
-            'email' => $data['email'],
-            'role' => 'CUST'
+        $user = null;
 
-        ]);
+        try{
+            DB::beginTransaction();
 
-        $customer = Customer::create([
-            'user_username' => $user['username'],
-            'name' => $data['firstname'] . " " . $data['lastname'],
-            'address' => $data['address'],
-            'loyaltypoints' => 0,
-            'newsletter' => true,
-            'inactive' => false
-        ]);
-        $customer->save();
+            $user = User::create([
+                'username' => $data['username'],
+                'password' => bcrypt($data['password']),
+                'email' => $data['email'],
+                'role' => 'CUST'
+
+            ]);
+
+            $customer = Customer::create([
+                'user_username' => $user['username'],
+                'name' => $data['firstname'] . " " . $data['lastname'],
+                'address' => $data['address'],
+                'loyaltypoints' => 0,
+                'newsletter' => true,
+                'inactive' => false
+            ]);
+            $customer->save();
+
+            DB::commit();
+
+        } catch(\Exception $e){
+            DB::rollBack();
+        }
+
 
         Auth::setUser($user);
         return $user;

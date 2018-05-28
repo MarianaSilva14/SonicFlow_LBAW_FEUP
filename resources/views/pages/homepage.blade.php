@@ -69,7 +69,7 @@
             </div>
             <div class="tab-pane fade" id="recommended" role="tabpanel" aria-labelledby="recommended-tab">
               <div class="row">
-              
+
               </div>
             </div>
           </div>

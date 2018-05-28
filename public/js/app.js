@@ -977,7 +977,7 @@ function addToCompare(event){
         let newCompareProd = document.createElement("DIV");
         console.log(banner.children[3]);
         newCompareProd.innerHTML = `
-          <span class="compareItemRemove" data-sku="10"><i class="fas fa-times"></i></span>
+          <span class="compareItemRemove" data-sku="${sku}"><i class="fas fa-times"></i></span>
           <img src="${image}" alt="Image for title" class="img-fluid">
           <p>${title}</p>
         `;
@@ -1019,7 +1019,9 @@ function removeFromCompare(event){
   let banner = span.closest("div");
   if(banner.parentNode.childElementCount==2){
     let fullBanner = banner.closest(".compareOverlay");
-    fullBanner.remove();
+    // fullBanner.remove();
+    banner.remove();
+    fullBanner.hidden = true;
   }else{
     banner.remove();
   }

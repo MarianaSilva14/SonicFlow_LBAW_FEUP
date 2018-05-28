@@ -11,6 +11,9 @@
 |
 */
 
+use App\Mail\TestEmail;
+use Illuminate\Support\Facades\Mail;
+
 Route::get('/', function () {
     return redirect('homepage');
 });
@@ -86,3 +89,11 @@ Route::get('api/products', 'ProductController@getProducts')->name('api_products'
 Route::get('api/discounts', 'ProductController@getDiscounted')->name('api_discounted')->middleware('api');
 Route::get('api/bestsellers', 'ProductController@getBestSellers')->name('api_bestsellers')->middleware('api');
 Route::get('api/recommendations', 'ProductController@getRecommendations')->name('api_recommendations')->middleware('api');
+
+
+Route::get('testEmail', function (){
+    $data = ['message' => 'This is a test!'];
+
+    Mail::to('lbaw1723@gmail.com')->send(new TestEmail($data));
+
+}) ->name("testEmail");

@@ -2,9 +2,9 @@
   <div class="row">
     <div class="comment-avatar col-md-1 col-sm-2 text-center pr-1">
       @if($comment->user == null || $comment->user->getPicture()=="")
-        <img class="mx-auto rounded-circle img-fluid" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" alt="avatar">
+        <img class="mx-auto rounded-circle img-fluid" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" alt="Profile Picture">
       @else
-        <img class="mx-auto rounded-circle img-fluid" src="{{\Illuminate\Support\Facades\Storage::url($comment->user->getPicture())}}" alt="avatar">
+        <img class="mx-auto rounded-circle img-fluid" src="{{\Illuminate\Support\Facades\Storage::url($comment->user->getPicture())}}" alt="Profile Picture">
       @endif
     </div>
     <div class="comment-content col-md-11 col-sm-10 col-12">

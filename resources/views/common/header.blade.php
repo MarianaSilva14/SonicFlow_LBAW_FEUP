@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-xl navbar-light fixed-top bg-white">
   <!-- logo -->
   <a class="navbar-brand" href="{{route('homepage')}}">
-    <img src="{{asset('images/logo.png')}}" height="64" alt="">
+    <img src="{{asset('images/logo.png')}}" height="64" alt="Logo">
   </a>
   <!-- toggle button -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,9 +59,9 @@
         @if (Auth::check())
           <a class="nav-link profile" href="{{route('profile', ['id' => Auth::user()->username])}}">
             @if( Auth::user()->picture == "")
-              <img id="profile_picture" alt="Responsive image" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" class="img-fluid">
+              <img id="profile_picture" alt="Profile Image" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" class="img-fluid">
             @else
-              <img id="profile_picture" alt="Responsive image" src="{{ \Illuminate\Support\Facades\Storage::url(Auth::User()->getPicture()) }}" class="img-fluid">
+              <img id="profile_picture" alt="Profile Image" src="{{ \Illuminate\Support\Facades\Storage::url(Auth::User()->getPicture()) }}" class="img-fluid">
             @endif
             {{Auth::user()->getName()}}
           </a>

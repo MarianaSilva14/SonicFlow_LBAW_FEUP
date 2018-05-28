@@ -29,7 +29,7 @@
           @for ($i = 0; $i < count($products); $i++)
             <tr>
               <td class="delete_cart removeSingle" data-id="{{$products[$i]->sku}}"><i class="far fa-trash-alt fa-2x"></i></td>
-              <td class="productImg"><img src="{{Storage::url($products[$i]->getImages()[0])}}" alt="product thumbnail" class="img-fluid"/></td>
+              <td class="productImg"><img src="{{Storage::url($products[$i]->getImages()[0])}}" alt="Product Image" class="img-fluid"/></td>
               <td>{{$products[$i]->title}}</td>
               <td class="unitCost">
                   @if($products[$i]->discountprice != "")

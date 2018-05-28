@@ -152,9 +152,11 @@
     <div class="tab-pane fade" id="comment" role="tabpanel" aria-labelledby="comment-tab">
       <br>
       <!-- COMMENTS START -->
-      @foreach($product->getTopComments() as $comment)
+      @forelse($product->getTopComments() as $comment)
         @include('partials.comment',['reply'=>FALSE,'comment'=>$comment])
-      @endforeach
+      @empty
+        No comments have been posted for this products yet.
+      @endforelse
       <!-- COMMENTS END -->
       <div class="row pt-2 newCommentForm">
         <div class="col-md-10 offset-md-1 commentForm">
@@ -166,6 +168,9 @@
             @elseif(Auth::check() && Auth::user()->isCustomer())
               <textarea name="commentary" class="w-100" rows="5" placeholder="Write your opinion!"></textarea><br>
               <button class="btn btn-sm btn-primary">Comment</button>
+            @elseif(!Auth::check())
+              <br>
+              <span name="commentary" class="w-100" style="text-decoration: underline; font-size:1rem" rows="2">You must first login before making a comment, you can do it here <a href="/login">Login</a></span><br>
             @endif
           </form>
         </div>

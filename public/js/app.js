@@ -63,6 +63,9 @@ if(getCookie('shoppingCart') == ""){
 if(getCookie('compareProducts') == ""){
   setCookie('compareProducts',JSON.stringify({}),1);
 }
+if(getCookie('compareMin') == ""){
+  setCookie('compareMin',false,0.5);
+}
 
 //GLOBALS
 var productOffset = 0;
@@ -85,6 +88,11 @@ function docOnLoad(){
   if(locArray[3].toLowerCase().includes('product')){
     setTimeout(updateRatingOfProduct, 200);
     addProductToCart();
+  }
+  if(locArray[locArray.length-1].toLowerCase().includes('comparator')){
+    console.log('here');
+    let banner = document.getElementsByClassName('compareOverlay');
+    banner[0].hidden = true;
   }
   cartItemAmount = Object.keys(JSON.parse(getCookie('shoppingCart'))).length;
   if(cartItemAmount!=0){
@@ -590,17 +598,27 @@ function addFavoriteToggleHandler() {
   console.log(this);
   if(this.status != 200){
     console.log(this.responseText);
-
+    let message = "Couldn't favorite product, please retry";
+    if(this.status == 401)
+      message = "In order to favorite a product you must be logged in";
     swal({
        toast: true,
        position: 'top-end',
        showConfirmButton: false,
        timer: 3000,
        type: 'error',
-       title: "Couldn't favorite product, please retry"
+       title: message
      });
 
   }else{
+    swal({
+       toast: true,
+       position: 'top-end',
+       showConfirmButton: false,
+       timer: 3000,
+       type: 'success',
+       title: 'Succesfully changed product favorite status'
+     });
     //let button = document.querySelector();
     let buttons = document.querySelectorAll("a[data-id='"+this.responseText+"'].addFavs svg");
     for (let button of buttons) {
@@ -615,15 +633,15 @@ function addFavoriteToggleHandler() {
 function addFavoriteToggleAction(event){
   let id_product = this.closest('.heart_favorite').getAttribute('data-id');
   if(id_product == null){
-
     swal({
        toast: true,
        position: 'top-end',
        showConfirmButton: false,
        timer: 3000,
-       type: 'success',
-       title: 'Product added to wish list'
+       type: 'error',
+       title: "In order to favorite a product you must be logged in"
      });
+     return;
   }
   sendAjaxRequest('POST', '/users/favorites/'+id_product,null,addFavoriteToggleHandler);
   event.preventDefault();
@@ -994,10 +1012,21 @@ function onchangeCompare(event){
   }
   console.log(getCookie('compareProducts'));
 }
-function closeBanner(event) {
+function compareOverlayClose(event) {
   let fullBanner = event.target.closest(".compareOverlay");
   fullBanner.remove();
   setCookie('compareProducts',JSON.stringify({}),1);
+}
+function compareOverlayMinimize(event) {
+  let banner = event.target.closest("div.compareOverlay");
+  banner.classList.toggle('minimized');
+  if(banner.children[0].hidden){
+    setCookie('compareMin',true,0.5);
+    setTimeout(()=>{banner.children[0].hidden = false},700);
+  }else{
+    setCookie('compareMin',false,0.5);
+    banner.children[0].hidden = true;
+  }
 }
 function addCompareToggleListener() {
   let check = document.getElementById('customCheck1');
@@ -1010,13 +1039,42 @@ function addRemoveFromCompareListener() {
     cross.onclick = removeFromCompare;
   }
 }
-function addCompareCloseListener() {
+function addCloseListener() {
   let cross = document.getElementById('compareOverlayClose');
   if(cross!=null)
-    cross.onclick = closeBanner;
+    cross.onclick = compareOverlayClose;
+}
+function addMinimizeListener() {
+  let button = document.getElementById("compareOverlayMinimize");
+  if(button!=null)
+    button.onclick = compareOverlayMinimize;
 }
 
-setTimeout(addCompareCloseListener,200);
+function removeFromComparator(event) {
+  if(event.target.closest('.compareHeader').childElementCount == 2){
+    alert('You must comare at least one product');
+    return;
+  }
+  let sku = event.target.closest(".thumbnails").dataset.sku;
+  let column = document.querySelectorAll("*[data-sku=\""+sku+"\"]");
+  for (let element of column) {
+    element.remove();
+  }
+  let products = JSON.parse(getCookie('compareProducts'));
+  delete products[sku];
+  setCookie('compareProducts',JSON.stringify(products),1);
+}
+function addRemoveFromComparatorListener() {
+  let buttons = document.getElementsByClassName("removeColumn");
+  for (let button of buttons) {
+    button.onclick = removeFromComparator;
+  }
+}
+
+
+setTimeout(addCloseListener,200);
+setTimeout(addMinimizeListener,200);
+setTimeout(addRemoveFromComparatorListener,200);
 addRemoveFromCompareListener();
 addCompareToggleListener();
 adminSearchProduct();

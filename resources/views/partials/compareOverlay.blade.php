@@ -1,5 +1,7 @@
 <div class="compareOverlay">
+  <p hidden>Compare</p>
   <i id="compareOverlayClose" class="fas fa-times close"></i>
+  <i id="compareOverlayMinimize" class="fas fa-minus close"></i>
   <div class="form-group row mx-0">
     @foreach($compareProds as $prod)
     <div class="col-sm-2 @if($loop->first)offset-1 @endif thumbnails">

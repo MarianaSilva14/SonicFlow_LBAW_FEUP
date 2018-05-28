@@ -118,7 +118,7 @@ class CustomerController extends Controller
     try {
       $this->authorize('favorite',Customer::class);
     } catch (\Exception $e) {
-        return $e->getMessage();
+        return response($e->getMessage(),401);
     }
 
     Customer::find(Auth::user()->username)->toggleFavorite($sku);

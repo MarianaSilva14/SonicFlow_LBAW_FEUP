@@ -119,6 +119,10 @@ body {
     background-color: #b6bdce;
 }
 
+a.btn-register{
+  line-height: 2.5
+}
+
 .forgot-password {
     color: rgb(104, 145, 162);
 }

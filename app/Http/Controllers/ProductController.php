@@ -322,6 +322,22 @@ class ProductController extends Controller
   }
 
   public function compare(){
-    return view('pages.comparator');
+    $products = array();
+    $prodAttributes = array();
+    $temp = json_decode($_COOKIE['compareProducts'],TRUE);
+    foreach ($temp as $key => $value) {
+      $tempProd = Product::find($key);
+      if($tempProd){
+        array_push($products,$tempProd);
+        $attributes = $tempProd->attributes();
+        $attributes->sku = $tempProd->sku;
+        array_push($prodAttributes,$attributes);
+      }
+    }
+    if (empty($products)) {
+      return redirect(route('homepage'));
+    }else{
+      return view('pages.comparator',['products'=>$products,'prodAttributes'=>$prodAttributes]);
+    }
   }
 }

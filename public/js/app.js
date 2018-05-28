@@ -978,23 +978,11 @@ function addToCompare(event){
         newCompareProd.classList.add('col-sm-2','offset-1','thumbnails');
         newCompareProd.innerHTML = `
           <span class="compareItemRemove" data-sku="10"><i class="fas fa-times"></i></span>
-          <img src="https://cdn0.iconfinder.com/data/icons/business-mix/512/cargo-512.png" alt="Image for title" class="img-fluid">
+          <img src="https://cdn0.iconfinder.com/data/icons/business-mix/512/cargo-512.png" alt="Product Image" class="img-fluid">
           <p> this is a product </p>
         `;
         banner.children[3].insertBefore(newCompareProd,banner.children[3].lastElementChild);
         return;
-        //newCompareProd.classList.add('col-sm-2','thumbnails')
-        // <div class="col-sm-2 @if($loop->first)offset-1 @endif thumbnails">
-        //   <span class="compareItemRemove" data-sku="{{$prod->sku}}"><i class="fas fa-times"></i></span>
-        //   <!-- <img src="https://static.fnac-static.com/multimedia/Images/PT/NR/fa/44/14/1328378/1505-1.jpg" alt="100x100" class="img-fluid"> -->
-        //   @if( $prod->picture == null)
-        //   <img src="https://cdn0.iconfinder.com/data/icons/business-mix/512/cargo-512.png" alt="Image for {{ $prod->title }}" class="img-fluid">
-        //   @else
-        //   <img src="{{ Storage::url($prod->picture) }}" alt="Image for {{ $prod->title }}" class="img-fluid">
-        //   @endif
-        //   <p> {{$prod->title}} </p>
-        // </div>
-        // TODO: fill banner
       }else{
         alert('Cannot add products with different category');
         event.target.checked = false;

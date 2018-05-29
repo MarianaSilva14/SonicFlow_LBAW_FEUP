@@ -553,48 +553,111 @@ INSERT INTO attribute VALUES (8,'Dual-Band');
 INSERT INTO attribute VALUES (9,'Usability_Time');
 
 --ATTRIBUTE_PRODUCT
-INSERT INTO attribute_product VALUES (5,'901896832', 'diam');
-INSERT INTO attribute_product VALUES (2,'672442768', 'diam');
-INSERT INTO attribute_product VALUES (4,'186596482', 'diam');
-INSERT INTO attribute_product VALUES (5,'186596482', 'diam');
-INSERT INTO attribute_product VALUES (4,'556397271', 'diam');
-INSERT INTO attribute_product VALUES (5,'696296971', 'diam');
-INSERT INTO attribute_product VALUES (1,'841341724', 'diam');
-INSERT INTO attribute_product VALUES (2,'780741675', 'diam');
-INSERT INTO attribute_product VALUES (3,'410469648', 'diam');
-INSERT INTO attribute_product VALUES (4,'901889798', 'diam');
-INSERT INTO attribute_product VALUES (5,'171093287', 'diam');
-INSERT INTO attribute_product VALUES (1,'083108184', 'diam');
-INSERT INTO attribute_product VALUES (2,'914510007', 'diam');
-INSERT INTO attribute_product VALUES (3,'542291350', 'diam');
-INSERT INTO attribute_product VALUES (4,'891931229', 'diam');
-INSERT INTO attribute_product VALUES (5,'278925974', 'diam');
+
+--COMPUTERS
 INSERT INTO attribute_product VALUES (1,'000000001', 'Intel i7');
-INSERT INTO attribute_product VALUES (2,'000000001', '');
+INSERT INTO attribute_product VALUES (2,'000000001', '8GB');
 INSERT INTO attribute_product VALUES (3,'000000001', '1TB');
 INSERT INTO attribute_product VALUES (1,'000000002', 'Amd Ryzen 7');
 INSERT INTO attribute_product VALUES (2,'000000002', '2*8GB');
 INSERT INTO attribute_product VALUES (3,'000000002', '3TB');
+INSERT INTO attribute_product VALUES (1,'841341724', 'Amd Ryzen 7');
+INSERT INTO attribute_product VALUES (2,'841341724', '2*8GB');
+INSERT INTO attribute_product VALUES (3,'841341724', '3TB');
+INSERT INTO attribute_product VALUES (1,'780741675', 'Amd Ryzen 7');
+INSERT INTO attribute_product VALUES (2,'780741675', '2*8GB');
+INSERT INTO attribute_product VALUES (3,'780741675', '3TB');
+INSERT INTO attribute_product VALUES (1,'410469648', 'Amd Ryzen 7');
+INSERT INTO attribute_product VALUES (2,'410469648', '2*8GB');
+INSERT INTO attribute_product VALUES (3,'410469648', '3TB');
+INSERT INTO attribute_product VALUES (1,'901889798', 'Amd Ryzen 7');
+INSERT INTO attribute_product VALUES (2,'901889798', '2*8GB');
+INSERT INTO attribute_product VALUES (3,'901889798', '3TB');
+INSERT INTO attribute_product VALUES (1,'171093287', 'Amd Ryzen 7');
+INSERT INTO attribute_product VALUES (2,'171093287', '2*8GB');
+INSERT INTO attribute_product VALUES (3,'171093287', '3TB');
+INSERT INTO attribute_product VALUES (1,'278925974', 'Amd Ryzen 7');
+INSERT INTO attribute_product VALUES (2,'278925974', '2*8GB');
+INSERT INTO attribute_product VALUES (3,'278925974', '3TB');
+
+--LAPTOPS
 INSERT INTO attribute_product VALUES (1,'000000003', 'Intel i7');
 INSERT INTO attribute_product VALUES (2,'000000003', '16GB');
 INSERT INTO attribute_product VALUES (3,'000000003', '256GB');
 INSERT INTO attribute_product VALUES (1,'000000004', 'Intel i5');
 INSERT INTO attribute_product VALUES (2,'000000004', '8GB');
 INSERT INTO attribute_product VALUES (3,'000000004', '500GB');
+INSERT INTO attribute_product VALUES (1,'901896832', 'Intel i5');
+INSERT INTO attribute_product VALUES (2,'901896832', '8GB');
+INSERT INTO attribute_product VALUES (3,'901896832', '500GB');
+INSERT INTO attribute_product VALUES (1,'672442768', 'Intel i5');
+INSERT INTO attribute_product VALUES (2,'672442768', '8GB');
+INSERT INTO attribute_product VALUES (3,'672442768', '500GB');
+INSERT INTO attribute_product VALUES (1,'186596482', 'Intel i5');
+INSERT INTO attribute_product VALUES (2,'186596482', '8GB');
+INSERT INTO attribute_product VALUES (3,'186596482', '500GB');
+INSERT INTO attribute_product VALUES (1,'556397271', 'Intel i5');
+INSERT INTO attribute_product VALUES (2,'556397271', '8GB');
+INSERT INTO attribute_product VALUES (3,'556397271', '500GB');
+INSERT INTO attribute_product VALUES (1,'696296971', 'Intel i5');
+INSERT INTO attribute_product VALUES (2,'696296971', '8GB');
+INSERT INTO attribute_product VALUES (3,'696296971', '500GB');
+INSERT INTO attribute_product VALUES (1,'914510007', 'Intel i5');
+INSERT INTO attribute_product VALUES (2,'914510007', '8GB');
+INSERT INTO attribute_product VALUES (3,'914510007', '500GB');
+
+--MOBILE
+INSERT INTO attribute_product VALUES (4,'542291350', '5.6\"');
 INSERT INTO attribute_product VALUES (4,'000000005', '5.6\"');
-INSERT INTO attribute_product VALUES (4,'000000006', '5.6\"');
-INSERT INTO attribute_product VALUES (5,'000000007', '7200');
-INSERT INTO attribute_product VALUES (5,'000000008', '7200');
+INSERT INTO attribute_product VALUES (4,'000000006', '14.4');
+INSERT INTO attribute_product VALUES (4,'000000019', '14.4');
+INSERT INTO attribute_product VALUES (4,'000000020', '14.4');
+INSERT INTO attribute_product VALUES (4,'000000021', '14.4');
+
+--COMPONENTS
+INSERT INTO attribute_product VALUES (4,'000000022', '5.6\"');
+INSERT INTO attribute_product VALUES (4,'000000023', '5.6\"');
+INSERT INTO attribute_product VALUES (4,'000000024', '5.6\"');
+INSERT INTO attribute_product VALUES (4,'000000025', '5.6\"');
+
+--STORAGE
+INSERT INTO attribute_product VALUES (5,'000000026', '7200');
+INSERT INTO attribute_product VALUES (6,'000000026', 'Yes');
+INSERT INTO attribute_product VALUES (7,'000000026', '20.4');
+INSERT INTO attribute_product VALUES (5,'000000027', '7200');
+INSERT INTO attribute_product VALUES (6,'000000027', 'Yes');
+INSERT INTO attribute_product VALUES (7,'000000027', '20.4');
+INSERT INTO attribute_product VALUES (5,'000000028', '7200');
+INSERT INTO attribute_product VALUES (6,'000000028', 'Yes');
+INSERT INTO attribute_product VALUES (7,'000000028', '14.4');
+INSERT INTO attribute_product VALUES (5,'000000029', '7200');
+INSERT INTO attribute_product VALUES (6,'000000029', 'Yes');
+INSERT INTO attribute_product VALUES (7,'000000029', '14.4');
+
+--PERIPHERALS
 INSERT INTO attribute_product VALUES (6,'000000009', 'Yes');
 INSERT INTO attribute_product VALUES (6,'000000010', 'Yes');
-INSERT INTO attribute_product VALUES (7,'000000011', '20.4');
+INSERT INTO attribute_product VALUES (6,'000000030', 'Yes');
+
+--PHOTO
+INSERT INTO attribute_product VALUES (7,'000000011', '14.4');
 INSERT INTO attribute_product VALUES (7,'000000012', '14.4');
-INSERT INTO attribute_product VALUES (4,'000000013', '14.4');
-INSERT INTO attribute_product VALUES (4,'000000014', '14.4');
+INSERT INTO attribute_product VALUES (7,'000000008', '14.4');
+INSERT INTO attribute_product VALUES (7,'000000007', '14.4');
+
+--VIDEO
+INSERT INTO attribute_product VALUES (4,'000000013', '5.6\"');
+INSERT INTO attribute_product VALUES (4,'000000014', '5.6\"');
+INSERT INTO attribute_product VALUES (4,'083108184', '5.6\"');
+
+--NETWORK
 INSERT INTO attribute_product VALUES (8,'000000015', 'No');
 INSERT INTO attribute_product VALUES (8,'000000016', 'Yes');
+
+--SOFTWARE
 INSERT INTO attribute_product VALUES (9,'000000017', 'Lifetime');
 INSERT INTO attribute_product VALUES (9,'000000018', '2 Years');
+INSERT INTO attribute_product VALUES (9,'891931229', '2 Years');
 
 --CATEGORY_ATTRIBUTE
 INSERT INTO category_attribute VALUES (1,1);
@@ -604,6 +667,7 @@ INSERT INTO category_attribute VALUES (1,2);
 INSERT INTO category_attribute VALUES (2,2);
 INSERT INTO category_attribute VALUES (3,2);
 INSERT INTO category_attribute VALUES (4,3);
+INSERT INTO category_attribute VALUES (4,4);
 INSERT INTO category_attribute VALUES (5,5);
 INSERT INTO category_attribute VALUES (6,6);
 INSERT INTO category_attribute VALUES (7,7);

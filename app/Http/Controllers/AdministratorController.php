@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Auth\Access\AuthorizationException as AuthorizationException;
 
 use App\User;
 
@@ -24,7 +25,7 @@ class AdministratorController extends Controller
             return view('pages.administration', ['moderators'=> $mods]);
         }
         else
-            return redirect(url('homepage'));
+            throw new AuthorizationException('Trying to access administration level page.');
     }
 
     public function getModerators(){

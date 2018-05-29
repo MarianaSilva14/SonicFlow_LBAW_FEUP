@@ -98,13 +98,13 @@ nav{
   left: -5px;
 }
 
-#sidebar-wrapper::-webkit-scrollbar,
+#sidebar-wrapper:hover::-webkit-scrollbar,
 #content-wrapper::-webkit-scrollbar-thumb{
   background-color: #65768e;
   border-radius: 20px;
 }
 
-#sidebar-wrapper::-webkit-scrollbar-thumb,
+#sidebar-wrapper:hover::-webkit-scrollbar-thumb,
 #content-wrapper::-webkit-scrollbar{
     background: #b6bdce;
     border-radius: 20px;
@@ -124,7 +124,7 @@ footer{
   padding-top: 1.2%;
   margin-top: 2%;
   position: relative;
-  left:7.5%;
+  left:2%;
 }
 
 footer a{

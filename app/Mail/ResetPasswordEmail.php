@@ -11,23 +11,27 @@ class ResetPasswordEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    /**
-     * Create a new message instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    public $data;
+
+    public function __construct($data)
     {
-        //
+        $this->data = $data;
     }
 
-    /**
-     * Build the message.
-     *
-     * @return $this
-     */
     public function build()
     {
-        return $this->view('view.name');
+
+        $address = 'team@sonicflow.com';
+        $subject = 'Sonic Flow: Recover Password';
+        $name = 'SonicFlow Team';
+
+        return $this->view('emails.recoverPasswordEmail')
+            ->from($address, $name)
+            ->cc($address, $name)
+            ->bcc($address, $name)
+            ->replyTo($address, $name)
+            ->subject($subject)
+            ->with([ 'message_text' => $this->data['message_text'], 'link' => $this->data['link']]);
     }
+
 }

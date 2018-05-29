@@ -21,11 +21,10 @@ class TestEmail extends Mailable
 
     public function build()
     {
-        global $data;
 
-        $address = 'janeexampexample@example.com';
-        $subject = 'This is a demo!';
-        $name = 'Jane Doe';
+        $address = 'team@sonicflow.com';
+        $subject = 'Sonic Flow: Recover Password';
+        $name = 'SonicFlow Team';
 
         return $this->view('emails.test')
             ->from($address, $name)

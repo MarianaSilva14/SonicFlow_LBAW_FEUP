@@ -9,9 +9,11 @@
 @section('content')
     <div class="container">
         <div class="card card-container">
-
-            An email was sent to you, please check your inbox.
-
+            @if( $error )
+                There was an error with the password recovery, please contact us.
+            @else
+                An email was sent to you, please check your inbox.
+            @endif
         </div>
     </div>
 @endsection

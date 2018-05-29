@@ -93,11 +93,3 @@ Route::get('api/recommendations', 'ProductController@getRecommendations')->name(
 
 Route::view('resetPassword','auth.recoverPassword')->name('recoverPasswordConfirmation');
 Route::post('resetPasswordPost','Auth\LoginController@resetPassword')->name('recoverPassword');
-
-
-Route::get('testEmail', function (){
-    $data = ['message' => 'This is a test!'];
-
-    Mail::to('lbaw1723@gmail.com')->send(new TestEmail($data));
-
-}) ->name("testEmail");

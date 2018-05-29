@@ -3,9 +3,13 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Mail\ResetPasswordEmail;
+use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class LoginController extends Controller
 {
@@ -61,11 +65,26 @@ class LoginController extends Controller
         $username = $request->input("username");
 
         // check if user exists
+        $user = DB::table('user')->where([
+            ['username', '=', $username],
+            ['email', '=', $email]
+            ])->get();
+
+        if($user == null)
+            return view("auth.recoveredPassword", ['error' => true ]);
 
 
         // send email
+        $data = ['message_text' => "To recover your password for the SonicFlow platform please click the link below or past it in your browser.",
+                    'link' => "google.com"];
 
-        return view("auth.recoveredPassword");
+        try {
+            Mail::to($email)->send(new ResetPasswordEmail($data));
+
+        } catch(\Exception $e){
+            return view("auth.recoveredPassword", ['error' => true ]);
+        }
+        return view("auth.recoveredPassword", ['error' => false ]);
     }
 
 }

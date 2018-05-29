@@ -45,10 +45,10 @@
             <br>
             <h3 class="title">MAIL & WEBSITE</h3>
             <p>
-              <i class="fas fa-envelope"></i> &nbsp sonicflow@gmail.com
+              <i class="fas fa-envelope"></i> &nbsp; sonicflow@gmail.com
               <br>
               <br>
-              <i class="fas fa-globe"></i> &nbsp http://lbaw1723.lbaw-prod.fe.up.pt
+              <i class="fas fa-globe"></i> &nbsp; http://lbaw1723.lbaw-prod.fe.up.pt
             </p>
           </div>
         </div>
@@ -63,10 +63,10 @@
             <br>
             <h3 class="title">CONTACT</h3>
             <p>
-              <i class="fas fa-mobile" aria-hidden="true"></i> &nbsp (+351)- 22 508 1400
+              <i class="fas fa-mobile" aria-hidden="true"></i> &nbsp; (+351)- 22 508 1400
               <br>
               <br>
-              <i class="fas fa-mobile" aria-hidden="true"></i> &nbsp  (+351)- 22 041 3508
+              <i class="fas fa-mobile" aria-hidden="true"></i> &nbsp;  (+351)- 22 041 3508
             </p>
           </div>
         </div>
@@ -81,7 +81,7 @@
             <br>
             <h3 class="title">ADDRESS</h3>
             <p>
-              <i class="fas fa-map-marker" aria-hidden="true"></i> &nbsp s/n, R. Dr. Roberto Frias, 4200-465 Porto
+              <i class="fas fa-map-marker" aria-hidden="true"></i> &nbsp; s/n, R. Dr. Roberto Frias, 4200-465 Porto
             </p>
           </div>
         </div>

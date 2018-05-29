@@ -98,15 +98,12 @@
   <div class="panel panel-primary">
     <table class="table table-hover table-bordered">
       <tr class="info" style="color:#65768e">
-        <th>Delete</th>
         <th>Username</th>
         <th>Email</th>
         <th>Join Date</th>
       </tr>
 
     @foreach($moderators as $moderator)
-      {{--TODO: put here to go delete moderators--}}
-        <td class='delete_cart'><i class='far fa-trash-alt fa-2x'></i></td>
         <td>{{$moderator->user_username}}</td>
         <td>{{$moderator->email}}</td>
         <td>{{$moderator->joindate}}</td>

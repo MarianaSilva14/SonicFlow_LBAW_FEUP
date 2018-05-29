@@ -14,7 +14,7 @@
                 {{ csrf_field() }}
 
                 <input type="email" name="email" placeholder="Email" required>
-                <input type="text" name="username" placeholder="Username" pattern="[a-zA-Z0-9]+" required>
+                <input type="text" name="username" placeholder="Username" required>
                 <button type="submit" class="btn btn-info">Recover</button>
             </form>
 

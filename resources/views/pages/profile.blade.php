@@ -58,12 +58,12 @@
                   {!!$alert!!}
                 </div>
               @endif
-              <form method="post" action="{{route('profile',['id' => Auth::user()->username])}}" class="form-horizontal" role="form" enctype="multipart/form-data">
+              <form method="post" name="editProfile" onsubmit="return checkFormPasswords(event)" action="{{route('profile',['id' => Auth::user()->username])}}" class="form-horizontal" role="form" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="form-group">
-                  <label for="Username" class="col-md-3 control-label">Username:</label>
+                  <label for="username" class="col-md-3 control-label">Username:</label>
                   <div class="col-md-8">
-                    <input class="form-control" name="username" type="text" value="{{$infoUser->username}}" readonly>
+                    <input class="form-control" id="username" name="username" type="text" value="{{$infoUser->username}}" readonly>
                   </div>
                 </div>
                 @if($editable)
@@ -71,9 +71,9 @@
                 @else
                   <div class="form-group" hidden>
                 @endif
-                  <label for="Profile Picture" class="col-lg-3 control-label">Profile Picture:</label>
+                  <label for="picture" class="col-lg-3 control-label">Profile Picture:</label>
                   <div class="col-lg-8">
-                    <input type="file" name="picture" class="form-control">
+                    <input type="file" id="picture" name="picture" class="form-control">
                   </div>
                   @if ($errors->has('picture'))
                       <span class="text-danger">
@@ -82,12 +82,12 @@
                   @endif
                 </div>
                 <div class="form-group">
-                  <label for="First name:" class="col-lg-3 control-label">First name:</label>
+                  <label for="firstname" class="col-lg-3 control-label">First name:</label>
                   <div class="col-lg-8">
                     @if($editable)
-                      <input class="form-control" name="firstName" type="text" pattern="[a-zA-Z]+" value="{{$infoCustomer->firstName()}}">
+                      <input class="form-control" id="firstname" name="firstName" type="text" pattern="[a-zA-Z]+" value="{{$infoCustomer->firstName()}}">
                     @else
-                      <input class="form-control" name="firstName" type="text" pattern="[a-zA-Z]+" value="{{$infoCustomer->firstName()}}" readonly>
+                      <input class="form-control" id="firstname" name="firstName" type="text" pattern="[a-zA-Z]+" value="{{$infoCustomer->firstName()}}" readonly>
                     @endif
                   </div>
                   @if ($errors->has('firstName'))
@@ -97,12 +97,12 @@
                   @endif
                 </div>
                 <div class="form-group">
-                  <label for="Last name:" class="col-lg-3 control-label">Last name:</label>
+                  <label for="lastname" class="col-lg-3 control-label">Last name:</label>
                   <div class="col-lg-8">
                     @if($editable)
-                      <input class="form-control" name="lastName" type="text" pattern="[a-zA-Z]+( [a-zA-Z]+)*" value="{{$infoCustomer->lastName()}}">
+                      <input class="form-control" id="lastname" name="lastName" type="text" pattern="[a-zA-Z]+( [a-zA-Z]+)*" value="{{$infoCustomer->lastName()}}">
                     @else
-                      <input class="form-control" name="lastName" type="text" pattern="[a-zA-Z]+( [a-zA-Z]+)*" value="{{$infoCustomer->lastName()}}" readonly>
+                      <input class="form-control" id="lastname" name="lastName" type="text" pattern="[a-zA-Z]+( [a-zA-Z]+)*" value="{{$infoCustomer->lastName()}}" readonly>
                     @endif
                   </div>
                   @if ($errors->has('lastName'))
@@ -112,12 +112,12 @@
                   @endif
                 </div>
                 <div class="form-group">
-                  <label for="Email:" class="col-lg-3 control-label">Email:</label>
+                  <label for="email" class="col-lg-3 control-label">Email:</label>
                   <div class="col-lg-8">
                     @if($editable)
-                      <input class="form-control" name="email" type="email" value="{{$infoUser->email}}">
+                      <input class="form-control" id="email" name="email" type="email" value="{{$infoUser->email}}">
                     @else
-                      <input class="form-control" name="email" type="email" value="{{$infoUser->email}}" readonly>
+                      <input class="form-control" id="email" name="email" type="email" value="{{$infoUser->email}}" readonly>
                     @endif
                   </div>
                   @if ($errors->has('email'))
@@ -128,21 +128,21 @@
                 </div>
                 @if($editable)
                   <div class="form-group">
-                    <label for="Old Password:" class="col-md-3 control-label">Old Password:</label>
+                    <label for="oldpass" class="col-md-3 control-label">Old Password:</label>
                     <div class="col-md-8">
-                      <input class="form-control" name="oldPassword" type="password" value="">
+                      <input class="form-control" id="oldpass" name="oldPassword" type="password" value="">
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="Password:" class="col-md-3 control-label">Password:</label>
+                    <label for="pass" class="col-md-3 control-label">Password:</label>
                     <div class="col-md-8">
-                      <input class="form-control" name="password" type="password" value="">
+                      <input class="form-control" id="pass" name="password" type="password" value="">
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="Confirm password:" class="col-md-3 control-label">Confirm password:</label>
+                    <label for="passConf" class="col-md-3 control-label">Confirm password:</label>
                     <div class="col-md-8">
-                      <input class="form-control" name="password_confirmation" type="password" value="">
+                      <input class="form-control" id="passConf" name="password_confirmation" type="password" value="">
                     </div>
                   </div>
                 @endif

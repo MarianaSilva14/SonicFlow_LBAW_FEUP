@@ -8,7 +8,7 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Facades\Mail;
 
-class TestEmail extends Mailable
+class NewsletterEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -23,22 +23,15 @@ class TestEmail extends Mailable
     {
 
         $address = 'team@sonicflow.com';
-        $subject = 'Sonic Flow: Recover Password';
+        $subject = $this->data['title'];
         $name = 'SonicFlow Team';
 
-        return $this->view('emails.test')
+        return $this->view('emails.newsletterEmail')
             ->from($address, $name)
             ->cc($address, $name)
             ->bcc($address, $name)
             ->replyTo($address, $name)
             ->subject($subject)
-            ->with([ 'message' => $data['message'] ]);
-    }
-
-    public function send_stuff(){
-
-        $data = ['message' => 'This is a test!'];
-
-        Mail::to('lbaw1723@gmail.com')->send(new TestEmail($data));
+            ->with([ 'message_text' => $this->data['message_text']]);
     }
 }

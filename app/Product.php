@@ -26,6 +26,10 @@ class Product extends Model
    */
   protected $table = 'product';
 
+  public function delete(){
+    $this->stock=0;
+  }
+
   public function favoritesList(){
     return $this->belongsToMany('App\Customer','favorite','product_idproduct','customer_username');
   }
@@ -101,8 +105,8 @@ class Product extends Model
       //$query = $query->whereBetween('price', [$minPrice, $maxPrice]);
     }
 
-    $available = filter_var($request->input('productAvailability'), FILTER_VALIDATE_BOOLEAN);
-    if ( $available != null){
+    $available = $request->input('productAvailability');
+    if ( $available !== null){
         if ($available){
             $query = $query->where('stock', '>', 0);
         }
@@ -111,9 +115,9 @@ class Product extends Model
         }
     }
 
-//      select * from product
-//      where search @@ (plainto_tsquery('english','router') || plainto_tsquery('english','d') )
-//      order by ts_rank(search,  plainto_tsquery('english','router') || plainto_tsquery('english','d')) DESC
+     // select * from product
+     // where search @@ (plainto_tsquery('english','router') || plainto_tsquery('english','d') )
+     // order by ts_rank(search,  plainto_tsquery('english','router') || plainto_tsquery('english','d')) DESC
 
       $titles = $request->input('title');
       $titles_result = [];
@@ -154,12 +158,12 @@ class Product extends Model
       }
 
 
-//    $title = $request->input('title');
-//    if ($title != null){
-//        $query = $query
-//            ->whereRaw('search @@ plainto_tsquery(\'english\',?)', [$title])
-//            ->orderByRaw('ts_rank(search,  plainto_tsquery(\'english\',?)) DESC',[$title]);
-//    }
+   // $title = $request->input('title');
+   // if ($title != null){
+   //     $query = $query
+   //         ->whereRaw('search @@ plainto_tsquery(\'english\',?)', [$title])
+   //         ->orderByRaw('ts_rank(search,  plainto_tsquery(\'english\',?)) DESC',[$title]);
+   // }
 
     $limit = intval($request->input('limit'));
     if ($limit != null){

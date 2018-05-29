@@ -73,6 +73,8 @@ var currentProducts = [];
 function checkOverflow(){
     var container = document.getElementById ("content-wrapper");
     let footer = document.getElementsByTagName('footer');
+    if(container == null || footer.length == 0)
+      return;
     if(container.clientHeight == container.scrollHeight){
       console.log(container);
       footer[0].style.position = "absolute";
@@ -231,7 +233,6 @@ function deleteCommentHandler(){
 }
 function deleteCommentAction(){
   sendAjaxRequest('DELETE','/comment/'+this.dataset.id,null,deleteCommentHandler);
-  console.log(this);
   this.parentNode.classList.add('deletedComment');
   event.preventDefault();
 }
@@ -413,10 +414,36 @@ function addAmountChangeListener() {
   }
 }
 
+function adminDeleteProductHandle() {
+  if(this.status != 200){
+    swal({
+       toast: true,
+       position: 'top-end',
+       showConfirmButton: false,
+       timer: 3000,
+       type: 'error',
+       title: 'Could not find that product in the database'
+     });
+    console.log(this.responseText);
+  }else{
+    swal({
+       toast: true,
+       position: 'top-end',
+       showConfirmButton: false,
+       timer: 3000,
+       type: 'success',
+       title: "Successfully deleted product"
+     });
+  }
+}
+function adminDeleteProduct(event) {
+  //console.log(event.target.closest('.delete_cart').dataset.sku);
+  sendAjaxRequest('DELETE','/product/'+event.target.closest('.delete_cart').dataset.sku,null,adminDeleteProductHandle);
+}
 function showAdminProduct(product) {
   let row = document.createElement('tr');
   console.log(row);
-  let innerHTMLbuild = "<td class='delete_cart'><i class='far fa-trash-alt fa-2x'></i></td><td class='productImg'><img style='max-width:70px'";
+  let innerHTMLbuild = "<td class='delete_cart' data-sku='"+product.sku+"'><i class='far fa-trash-alt fa-2x'></i></td><td class='productImg'><img style='max-width:70px'";
   if(product.picture != null){
     let imgUrl = product.picture.split(";")[0];
     innerHTMLbuild += "src='"+imgUrl.replace("public","\/storage")+"'";
@@ -425,12 +452,16 @@ function showAdminProduct(product) {
   row.innerHTML = innerHTMLbuild;
   let table = document.querySelector('table.table');
   table.appendChild(row);
+  for (let trash of document.querySelectorAll('.delete_cart')) {
+    trash.onclick = adminDeleteProduct;
+  }
 }
 function allProductLoadHandler() {
   if(this.status != 200){
     alert('Error: '+this.status);
     return;
   }
+  console.log(this);
   let products = JSON.parse(this.response);
   if(products.length < limit){
     let button = document.querySelector("#showMore");
@@ -477,8 +508,9 @@ function adminSearchProductHanlder() {
   }
 }
 function adminLoadProducts() {
-  sendAjaxRequest('GET','/api/products?limit='+limit+'&offset='+productOffset,null,allProductLoadHandler);
+  sendAjaxRequest('GET','/api/products?limit='+limit+'&offset='+productOffset+'&productAvailability=1',null,allProductLoadHandler);
 }
+
 function addShowMoreClickListener() {
   let button = document.querySelector('#showMore');
   if(button!=null){

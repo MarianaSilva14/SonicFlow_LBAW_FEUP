@@ -81,7 +81,7 @@ class ProductController extends Controller
       $this->authorize('edit',Product::class);
     } catch (Exception $e) {
         Log::error($e->getMessage());
-        return redirect('homepage');
+        throw $e;
     }
     $product = Product::find($sku);
     return view('pages.editProduct',['product'=>$product,
@@ -95,7 +95,7 @@ class ProductController extends Controller
       $this->authorize('edit',Product::class);
     } catch (Exception $e) {
         Log::error($e->getMessage());
-      return redirect('homepage');
+        throw $e;
     }
 
     $product = Product::findOrFail($sku);
@@ -144,6 +144,19 @@ class ProductController extends Controller
       return view('pages.product', ['product' => $product,'images'=>$product->getImages(),'attributes' => $product->attributes() ]);
   }
 
+  public function delete(Request $request,$sku){
+    try {
+      $product = Product::findOrFail($sku);
+      $product->delete();
+      $product->save();
+    } catch (\Exception $e) {
+        Log::error($e->getMessage());
+        //return response('Unable to delete product',500);
+        return response('Could not find that product id in the database',404);
+    }
+    return response('Succesfully Deleted Product',200);
+  }
+
   public function show($sku){
     try {
       $product = Product::findOrFail($sku);
@@ -160,7 +173,7 @@ class ProductController extends Controller
       $this->authorize('createNewProduct',Product::class);
     }catch(Exception $e){
         Log::error($e->getMessage());
-        return redirect('homepage');
+        throw $e;
     }
     return view('pages.addProduct',['categories'=>DB::table('category')->get()]);
   }
@@ -208,7 +221,6 @@ class ProductController extends Controller
             return $e->getMessage();
         }
     }
-
     return redirect(route('product', ['id' => $sku,'#comment']));
   }
 

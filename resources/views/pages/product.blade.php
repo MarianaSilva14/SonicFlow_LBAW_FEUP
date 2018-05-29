@@ -13,7 +13,7 @@
   {{ csrf_field() }}
   <div class="form-row">
     <!-- Product Form -->
-    <div id="photos" class="col-md-6 col-sm-12">
+    <div id="photos" class="col-md-5 col-sm-12">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
           @foreach($images as $image)
@@ -45,7 +45,7 @@
         </a>
       </div>
     </div>
-    <div id="info" class="col-md-6 col-sm-12">
+    <div id="info" class="col-md-7 col-sm-12">
       <!-- cost and buttons -->
       <div class="form-row">
         <!-- Title -->

@@ -134,10 +134,12 @@ class ProductController extends Controller
     }
 
     $attributes_to_update = $request->input('productAttributes');
-    foreach ($attributes_to_update as $attribute_id => $attribute_value){
-      if ($attribute_value == '')
-        $attribute_value = 'N/A';
-      $product->setProductAttribute($attribute_id,$attribute_value);
+    if($attributes_to_update != null){
+      foreach ($attributes_to_update as $attribute_id => $attribute_value){
+        if ($attribute_value == '')
+          $attribute_value = 'N/A';
+        $product->setProductAttribute($attribute_id,$attribute_value);
+      }
     }
       return view('pages.product', ['product' => $product,'images'=>$product->getImages(),'attributes' => $product->attributes() ]);
   }

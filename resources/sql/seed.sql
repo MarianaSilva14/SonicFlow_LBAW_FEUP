@@ -452,39 +452,62 @@ INSERT INTO category VALUES (9, 'Network','fas fa-rss');
 INSERT INTO category VALUES (10, 'Software','far fa-window-maximize');
 
 --PRODUCT
-INSERT INTO product VALUES ('901896832','diam blandit',5,7195.11,6.39,1.86,245);
-INSERT INTO product VALUES ('672442768','dolor taciti',5,3608.78,8.96,1.88,965);
-INSERT INTO product VALUES ('186596482','Pellentesque',4,8215.91,4.96,4.66,800);
-INSERT INTO product VALUES ('556397271','diam',6,3170.98,7.66,2.27,935);
-INSERT INTO product VALUES ('696296971','Cras mattis lectus',1,4329.14,8.12,1.19,454);
-INSERT INTO product VALUES ('841341724','erat nostra',9,3940.47,7.28,2.66,914);
-INSERT INTO product VALUES ('780741675','Curabitur',2,4758.14,2.02,4.78,1026);
-INSERT INTO product VALUES ('410469648','montes pellentesque',7,8552.68,8.42,1.18,929);
-INSERT INTO product VALUES ('901889798','elementum suscipi',9,409.62,8.15,4.22,1138);
-INSERT INTO product VALUES ('171093287','risus sollicitudin',7,4699.83,6.70,3.75,451);
-INSERT INTO product VALUES ('083108184','lacinia fringilla',8,9117.49,5.60,4.93,964);
-INSERT INTO product VALUES ('914510007','Curabitur sociis dis nisi',2,4207.41,3.23,2.27,1342);
-INSERT INTO product VALUES ('542291350','eleifend Nulla',3,2673.58,5.02,3.78,1401);
-INSERT INTO product VALUES ('891931229','tempus sociis odio mattis magna',10,6118.55,8.32,2.59,630);
-INSERT INTO product VALUES ('278925974','conubia ornare lobortis',1,7101.92,7.27,1.02,290);
-INSERT INTO product VALUES ('000000001','Dell Enterprise Desktop',1,7195.11,6.39,0,200);
-INSERT INTO product VALUES ('000000002','HP Enterprise Desktop',1,500.10,null,0,500);
-INSERT INTO product VALUES ('000000003','Asus Gaming Laptop',2,1500.10,6.39,0,100);
-INSERT INTO product VALUES ('000000004','Asus Enterprise Laptop',2,500.10,null,0,75);
-INSERT INTO product VALUES ('000000005','Asus Zen Phone',3,299.99,null,0,125);
-INSERT INTO product VALUES ('000000006','Samsung Galaxy Phone',3,500.00,449.99,0,75);
-INSERT INTO product VALUES ('000000007','Western Digital 1TB',5,100.00,null,0,75);
-INSERT INTO product VALUES ('000000008','Seagate Blue 3TB',5,199.99,null,0,75);
-INSERT INTO product VALUES ('000000009','Kingston Mechanical Keyboard',6,99.99,null,0,75);
-INSERT INTO product VALUES ('000000010','Logitech Mechanical Keyboard RGB',6,149.99,null,0,75);
-INSERT INTO product VALUES ('000000011','Cannon EOS',7,499.99,null,0,75);
-INSERT INTO product VALUES ('000000012','Sony Alpha',7,362.00,null,0,75);
-INSERT INTO product VALUES ('000000013','Lg Ultrawide Monitor',8,800.00,699.99,0,75);
-INSERT INTO product VALUES ('000000014','Sony Bravia Television',8,499.99,null,0,75);
-INSERT INTO product VALUES ('000000015','Router D-Link',9,50.50,null,0,75);
-INSERT INTO product VALUES ('000000016','Router Asus Dual-Band',9,200.00,179.99,0,75);
-INSERT INTO product VALUES ('000000017','Windows 10 HomeEdition',10,499.99,null,0,75);
-INSERT INTO product VALUES ('000000018','Kaspersky protection System 2 years package',10,499.99,null,0,75);
+-- sku, title, category_idcat, price, discountprice, rating, stock, description, search, picture
+INSERT INTO product VALUES ('841341724','Desktop All-in-One HP Pavilion PC 24-b200np',1,999.99,950.99,2.66,914,'Intel Core i5-7400T/4GB/1TB');
+INSERT INTO product VALUES ('780741675','Desktop All-in-One ASUS ETOP Z240IEGK-77D05DB4',1,1199.99,1190.99,4.78,1026, 'i7-7700T/8GB/1TB+256GB');
+INSERT INTO product VALUES ('410469648','Desktop All-in-One 21.5'' ASUS V221ICUK-37DHDPB1',1,649.99,600.99,1.18,929, 'i3-7100U/4GB/1TB');
+INSERT INTO product VALUES ('901889798','Desktop All-in-One LENOVO Ideacentre 510-23ISH',1,799.99,700.99,4.22,1138, 'i5-7400T/4GB/1TB');
+INSERT INTO product VALUES ('171093287','Desktop All-in-One ASUS ZEN PRO Z240IEGK-77D05DB3',1,2249.99,2240.99,3.75,451,'i7-7700T/16GB/1TB HDD+512GB SSD');
+INSERT INTO product VALUES ('278925974','Desktop Gaming MSI Nightblade MIB VR7RC-243EU',1,1299.99,7.27,1.02,290, 'Intel Core i7/16GB/1TB+128GB');
+INSERT INTO product VALUES ('000000001','Dell Enterprise Desktop',1,7195.11,6.39,0,200,'Intel Core i5/8GB/1TB+128GB');
+INSERT INTO product VALUES ('000000002','HP Enterprise Desktop',1,500.10,null,0,500, 'Intel Core i3/16GB/1TB+128GB');
+
+INSERT INTO product VALUES ('901896832','Apple MacBook Air 13'' i5-1,8GHz | 8GB | 128GB',2,1129,1029,1.86,245, 'i7 2.5GHz/16GB/1TB/Iris Pro Graphics');
+INSERT INTO product VALUES ('672442768','Portátil Asus VivoBook A542UR-58A93CB1',2,699.99,600.99,1.88,965,'Intel Core i7-7200U/4GB/128GB');
+INSERT INTO product VALUES ('186596482','Apple MacBook Pro 13'' Retina i5-2,3GHz | 16GB | 256GB | Intel Iris Plus 640',2,1729.99,1700.99,4.66,800,'i7 5GHz/16GB/1TB/Iris Pro Graphics');
+INSERT INTO product VALUES ('556397271','Portátil Lenovo Legion Y520-15IKBN-951',2,999.99,950.99,2.27,935, 'Intel Core i5-6800U/4GB/128GB');
+INSERT INTO product VALUES ('696296971','Portátil HP Pavilion 15-ck017np',2,999.99,950.99,1.19,454, 'Intel Core i5-7200U/4GB/500GB');
+INSERT INTO product VALUES ('000000003','Portátil Híbrido 13'' LENOVO Yoga 720-13IKB-804 e Pen 2',2,1499.99,1400.99,4.66,800, 'Intel Core i7-8550U/8GB/512GB SSD/Intel UHD Graphics 620');
+INSERT INTO product VALUES ('000000004','MacBook 12'' APPLE I7 MNYK2 Gold',2,2089.99,950.99,2.27,935,'i7 2.5GHz/32GB/1TB/Iris Pro Graphics');
+INSERT INTO product VALUES ('914510007','MICROSOFT Surface Laptop 13.5'' Platina',2,899.99,850.99,1.19,454, 'Intel Core i5-7200U/4GB/128GB');
+
+INSERT INTO product VALUES ('542291350','Smartphone SAMSUNG Galaxy A3 2017 16GB Golden',3,299.99,290.02,3.78,1401,'iOS 10/4''/A9');
+INSERT INTO product VALUES ('000000005','Smartphone APPLE iPhone SE 128GB Pink Golden',3,393.99,null,0,125,'iOS 10/4''/A9');
+INSERT INTO product VALUES ('000000006','Smartphone XIAOMI Redmi 5 Plus 64GB Black',3,199.99,190.99,0,75, 'Android 7.0/5.9''/Octa-core 4x2.36 + 4x1.7GHz/4GB RAM/Dual SIM');
+INSERT INTO product VALUES ('000000019','Smartphone NOS HUAWEI P9 32GB Black and Grey',3,299.00,209.99,0,75,'Android 6.0/5.9''/Octa-core 4x2.36 + 4x1.7GHz/4GB RAM/Dual SIM');
+INSERT INTO product VALUES ('000000020','Smartphone MEO SAMSUNG Galaxy J3 2016 8GB Golden',3,159.99,140.00,0,75,'Android 6.0/5.9''/Octa-core 4x2.36 + 4x1.7GHz/4GB RAM/Dual SIM');
+INSERT INTO product VALUES ('000000021','Smartphone SONY Xperia XA2 32GB Black',3,318.99,null,0,75, 'Android 8.0/5.2''/Octa-core 2.2GHz/4GB RAM');
+
+INSERT INTO product VALUES ('000000022','Cabo Componentes WOXTER WII U / WII',4,18.5,null,3.78,1401,'WII/WII U');
+INSERT INTO product VALUES ('000000023','Cabo GEFEN VGA/Componente Preto',4,24.99,null,0,125,'VGA/Macho-Macho');
+INSERT INTO product VALUES ('000000024','Placa Gráfica MSI GF GTX1080 SEA HAWK EK X 8GB DDR5',4,680.99,null,0,75, 'NVIDIA/GTX1080');
+INSERT INTO product VALUES ('000000025','Router ASUS RT-AC68U AiMesh AC1900 Dual-Band Gigabit WiFi',4,158.99,150.99,0,75,'Dual-Band/1900Mbps');
+
+INSERT INTO product VALUES ('000000026','Cabo MUVIT USB Load and Storage',5,59.95,null,0,75,'USB');
+INSERT INTO product VALUES ('000000027','Hub SATECHI Type-C Multi-Port Ethernet V2 em Cinzento sideral',5,94.99,null,0,75,'PC/Mac USB-C');
+INSERT INTO product VALUES ('000000028','Hub SATECHI Aluminum Type-C Pro Grey',5,92.99,null,0,75,'PC/Mac USB-C');
+INSERT INTO product VALUES ('000000029','Hub HYPERDRIVE Solo 7-em-1 USB-C Grey',5,199.99,null,0,75,'7 Gates PC/Mac');
+
+INSERT INTO product VALUES ('000000009','Rato Gaming DRAGON WAR Prog 4 Phantom 4.1',6,79.99,null,0,75,'Wired');
+INSERT INTO product VALUES ('000000010','Rato Gaming LOGITECH G403 Prodigy',6,99.99,null,0,75,'Wired');
+INSERT INTO product VALUES ('000000030','Rato Gaming RAZER Mamba 16000',6,139.99,null,0,75,'Wired');
+
+INSERT INTO product VALUES ('000000011','Camera CANON EOS M50 + EF-M 15-45 White',7,799.99,null,0,75,'24.1MP');
+INSERT INTO product VALUES ('000000012','Camera SONY Alpha A7II 24-70mm Black',7,3559.00,null,0,75,'24.3 MP/ISO:50-25600');
+INSERT INTO product VALUES ('000000008','Camera SONY RX100 III',7,1175.00,null,0,75,'20.1 MP/ISO:50-25600');
+INSERT INTO product VALUES ('000000007','Camera FUJIFILM XP130 Sky Blue',7,219.00,null,0,75,'16.4 MP/ISO:100-6400');
+
+INSERT INTO product VALUES ('000000013','Video Camera SONY FDR-AX33',8,699.99,690.99,0,75,'4K/Optical zoom:10x');
+INSERT INTO product VALUES ('000000014','Video Camera DJI Osmo Plus',8,749.99,null,0,75,'4K/Optical zoom:10x');
+INSERT INTO product VALUES ('083108184','Video Camera PANASONIC V180-EC',8,229.99,220.49,4.93,964,'2.51 MP/Optcal zoom:50x');
+
+INSERT INTO product VALUES ('000000015','Leitor Networks MARANTZ NA-6005 SG',9,699.99,null,0,75,'35 W/Bluetooth, WiFi');
+INSERT INTO product VALUES ('000000016','Leitor Audio Network MARANTZ Na-11s1 Bk',9,4499.00,4400.99,0,75,'30 W');
+
+INSERT INTO product VALUES ('000000017','Windows 10 HomeEdition',10,11.99,null,0,75, 'Permanent,Authorized,Global Key, For 1 PC');
+INSERT INTO product VALUES ('000000018','Kaspersky protection System 2 years package',10,499.99,null,0,75, 'Permanent,Authorized,Global Key, For 1 PC');
+INSERT INTO product VALUES ('891931229','Kaspersky protection System 1 years package',10,390.99,null,0,75, 'Permanent,Authorized,Global Key, For 1 PC');
+
 
 SELECT setval(pg_get_serial_sequence('product', 'sku'), 18) FROM product;
 
@@ -530,48 +553,111 @@ INSERT INTO attribute VALUES (8,'Dual-Band');
 INSERT INTO attribute VALUES (9,'Usability_Time');
 
 --ATTRIBUTE_PRODUCT
-INSERT INTO attribute_product VALUES (5,'901896832', 'diam');
-INSERT INTO attribute_product VALUES (2,'672442768', 'diam');
-INSERT INTO attribute_product VALUES (4,'186596482', 'diam');
-INSERT INTO attribute_product VALUES (5,'186596482', 'diam');
-INSERT INTO attribute_product VALUES (4,'556397271', 'diam');
-INSERT INTO attribute_product VALUES (5,'696296971', 'diam');
-INSERT INTO attribute_product VALUES (1,'841341724', 'diam');
-INSERT INTO attribute_product VALUES (2,'780741675', 'diam');
-INSERT INTO attribute_product VALUES (3,'410469648', 'diam');
-INSERT INTO attribute_product VALUES (4,'901889798', 'diam');
-INSERT INTO attribute_product VALUES (5,'171093287', 'diam');
-INSERT INTO attribute_product VALUES (1,'083108184', 'diam');
-INSERT INTO attribute_product VALUES (2,'914510007', 'diam');
-INSERT INTO attribute_product VALUES (3,'542291350', 'diam');
-INSERT INTO attribute_product VALUES (4,'891931229', 'diam');
-INSERT INTO attribute_product VALUES (5,'278925974', 'diam');
+
+--COMPUTERS
 INSERT INTO attribute_product VALUES (1,'000000001', 'Intel i7');
-INSERT INTO attribute_product VALUES (2,'000000001', '');
+INSERT INTO attribute_product VALUES (2,'000000001', '8GB');
 INSERT INTO attribute_product VALUES (3,'000000001', '1TB');
 INSERT INTO attribute_product VALUES (1,'000000002', 'Amd Ryzen 7');
 INSERT INTO attribute_product VALUES (2,'000000002', '2*8GB');
 INSERT INTO attribute_product VALUES (3,'000000002', '3TB');
+INSERT INTO attribute_product VALUES (1,'841341724', 'Amd Ryzen 7');
+INSERT INTO attribute_product VALUES (2,'841341724', '2*8GB');
+INSERT INTO attribute_product VALUES (3,'841341724', '3TB');
+INSERT INTO attribute_product VALUES (1,'780741675', 'Amd Ryzen 7');
+INSERT INTO attribute_product VALUES (2,'780741675', '2*8GB');
+INSERT INTO attribute_product VALUES (3,'780741675', '3TB');
+INSERT INTO attribute_product VALUES (1,'410469648', 'Amd Ryzen 7');
+INSERT INTO attribute_product VALUES (2,'410469648', '2*8GB');
+INSERT INTO attribute_product VALUES (3,'410469648', '3TB');
+INSERT INTO attribute_product VALUES (1,'901889798', 'Amd Ryzen 7');
+INSERT INTO attribute_product VALUES (2,'901889798', '2*8GB');
+INSERT INTO attribute_product VALUES (3,'901889798', '3TB');
+INSERT INTO attribute_product VALUES (1,'171093287', 'Amd Ryzen 7');
+INSERT INTO attribute_product VALUES (2,'171093287', '2*8GB');
+INSERT INTO attribute_product VALUES (3,'171093287', '3TB');
+INSERT INTO attribute_product VALUES (1,'278925974', 'Amd Ryzen 7');
+INSERT INTO attribute_product VALUES (2,'278925974', '2*8GB');
+INSERT INTO attribute_product VALUES (3,'278925974', '3TB');
+
+--LAPTOPS
 INSERT INTO attribute_product VALUES (1,'000000003', 'Intel i7');
 INSERT INTO attribute_product VALUES (2,'000000003', '16GB');
 INSERT INTO attribute_product VALUES (3,'000000003', '256GB');
 INSERT INTO attribute_product VALUES (1,'000000004', 'Intel i5');
 INSERT INTO attribute_product VALUES (2,'000000004', '8GB');
 INSERT INTO attribute_product VALUES (3,'000000004', '500GB');
+INSERT INTO attribute_product VALUES (1,'901896832', 'Intel i5');
+INSERT INTO attribute_product VALUES (2,'901896832', '8GB');
+INSERT INTO attribute_product VALUES (3,'901896832', '500GB');
+INSERT INTO attribute_product VALUES (1,'672442768', 'Intel i5');
+INSERT INTO attribute_product VALUES (2,'672442768', '8GB');
+INSERT INTO attribute_product VALUES (3,'672442768', '500GB');
+INSERT INTO attribute_product VALUES (1,'186596482', 'Intel i5');
+INSERT INTO attribute_product VALUES (2,'186596482', '8GB');
+INSERT INTO attribute_product VALUES (3,'186596482', '500GB');
+INSERT INTO attribute_product VALUES (1,'556397271', 'Intel i5');
+INSERT INTO attribute_product VALUES (2,'556397271', '8GB');
+INSERT INTO attribute_product VALUES (3,'556397271', '500GB');
+INSERT INTO attribute_product VALUES (1,'696296971', 'Intel i5');
+INSERT INTO attribute_product VALUES (2,'696296971', '8GB');
+INSERT INTO attribute_product VALUES (3,'696296971', '500GB');
+INSERT INTO attribute_product VALUES (1,'914510007', 'Intel i5');
+INSERT INTO attribute_product VALUES (2,'914510007', '8GB');
+INSERT INTO attribute_product VALUES (3,'914510007', '500GB');
+
+--MOBILE
+INSERT INTO attribute_product VALUES (4,'542291350', '5.6\"');
 INSERT INTO attribute_product VALUES (4,'000000005', '5.6\"');
-INSERT INTO attribute_product VALUES (4,'000000006', '5.6\"');
-INSERT INTO attribute_product VALUES (5,'000000007', '7200');
-INSERT INTO attribute_product VALUES (5,'000000008', '7200');
+INSERT INTO attribute_product VALUES (4,'000000006', '14.4');
+INSERT INTO attribute_product VALUES (4,'000000019', '14.4');
+INSERT INTO attribute_product VALUES (4,'000000020', '14.4');
+INSERT INTO attribute_product VALUES (4,'000000021', '14.4');
+
+--COMPONENTS
+INSERT INTO attribute_product VALUES (4,'000000022', '5.6\"');
+INSERT INTO attribute_product VALUES (4,'000000023', '5.6\"');
+INSERT INTO attribute_product VALUES (4,'000000024', '5.6\"');
+INSERT INTO attribute_product VALUES (4,'000000025', '5.6\"');
+
+--STORAGE
+INSERT INTO attribute_product VALUES (5,'000000026', '7200');
+INSERT INTO attribute_product VALUES (6,'000000026', 'Yes');
+INSERT INTO attribute_product VALUES (7,'000000026', '20.4');
+INSERT INTO attribute_product VALUES (5,'000000027', '7200');
+INSERT INTO attribute_product VALUES (6,'000000027', 'Yes');
+INSERT INTO attribute_product VALUES (7,'000000027', '20.4');
+INSERT INTO attribute_product VALUES (5,'000000028', '7200');
+INSERT INTO attribute_product VALUES (6,'000000028', 'Yes');
+INSERT INTO attribute_product VALUES (7,'000000028', '14.4');
+INSERT INTO attribute_product VALUES (5,'000000029', '7200');
+INSERT INTO attribute_product VALUES (6,'000000029', 'Yes');
+INSERT INTO attribute_product VALUES (7,'000000029', '14.4');
+
+--PERIPHERALS
 INSERT INTO attribute_product VALUES (6,'000000009', 'Yes');
 INSERT INTO attribute_product VALUES (6,'000000010', 'Yes');
-INSERT INTO attribute_product VALUES (7,'000000011', '20.4');
+INSERT INTO attribute_product VALUES (6,'000000030', 'Yes');
+
+--PHOTO
+INSERT INTO attribute_product VALUES (7,'000000011', '14.4');
 INSERT INTO attribute_product VALUES (7,'000000012', '14.4');
-INSERT INTO attribute_product VALUES (4,'000000013', '14.4');
-INSERT INTO attribute_product VALUES (4,'000000014', '14.4');
+INSERT INTO attribute_product VALUES (7,'000000008', '14.4');
+INSERT INTO attribute_product VALUES (7,'000000007', '14.4');
+
+--VIDEO
+INSERT INTO attribute_product VALUES (4,'000000013', '5.6\"');
+INSERT INTO attribute_product VALUES (4,'000000014', '5.6\"');
+INSERT INTO attribute_product VALUES (4,'083108184', '5.6\"');
+
+--NETWORK
 INSERT INTO attribute_product VALUES (8,'000000015', 'No');
 INSERT INTO attribute_product VALUES (8,'000000016', 'Yes');
+
+--SOFTWARE
 INSERT INTO attribute_product VALUES (9,'000000017', 'Lifetime');
 INSERT INTO attribute_product VALUES (9,'000000018', '2 Years');
+INSERT INTO attribute_product VALUES (9,'891931229', '2 Years');
 
 --CATEGORY_ATTRIBUTE
 INSERT INTO category_attribute VALUES (1,1);
@@ -581,6 +667,7 @@ INSERT INTO category_attribute VALUES (1,2);
 INSERT INTO category_attribute VALUES (2,2);
 INSERT INTO category_attribute VALUES (3,2);
 INSERT INTO category_attribute VALUES (4,3);
+INSERT INTO category_attribute VALUES (4,4);
 INSERT INTO category_attribute VALUES (5,5);
 INSERT INTO category_attribute VALUES (6,6);
 INSERT INTO category_attribute VALUES (7,7);

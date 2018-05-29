@@ -14,7 +14,7 @@
           </li>
 
           <li class="list-inline-item">
-            <a href="{{route('404')}}">Contact</a>
+            <a href="{{route('contact')}}">Contact</a>
           </li>
 
           <li class="list-inline-item">

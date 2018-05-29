@@ -977,7 +977,7 @@ function addToCompare(event){
         let newCompareProd = document.createElement("DIV");
         console.log(banner.children[3]);
         newCompareProd.innerHTML = `
-          <span class="compareItemRemove" data-sku="${sku}"><i class="fas fa-times"></i></span>
+          <span class="compareItemRemove" onclick="removeFromCompare" data-sku="${sku}"><i class="fas fa-times"></i></span>
           <img src="${image}" alt="Image for title" class="img-fluid">
           <p>${title}</p>
         `;
@@ -993,14 +993,38 @@ function addToCompare(event){
         banner.children[0].hidden = true;
         return;
       }else{
-        alert('Cannot add products with different category');
+        //alert('Cannot add products with different category');
+        swal({
+           toast: true,
+           position: 'top-end',
+           showConfirmButton: false,
+           timer: 3000,
+           type: 'error',
+           title: "Cannot compare products with different categories"
+         });
         event.target.checked = false;
       }
     }else{
-      alert('Products already in comparable products');
+      //alert('Products already in comparable products');
+      swal({
+         toast: true,
+         position: 'top-end',
+         showConfirmButton: false,
+         timer: 3000,
+         type: 'error',
+         title: "Products already in comparable products"
+       });
     }
   }else{
-    alert('Cannot compare any more products');
+    //alert('Cannot compare any more products');
+    swal({
+       toast: true,
+       position: 'top-end',
+       showConfirmButton: false,
+       timer: 3000,
+       type: 'error',
+       title: "Cannot compare any more products, the max is 4"
+     });
     event.target.checked = false;
   }
 }
@@ -1092,9 +1116,9 @@ function addRemoveFromComparatorListener() {
 }
 
 
-setTimeout(addCloseListener,200);
-setTimeout(addMinimizeListener,200);
-setTimeout(addRemoveFromComparatorListener,200);
+setTimeout(addCloseListener,500);
+setTimeout(addMinimizeListener,500);
+setTimeout(addRemoveFromComparatorListener,500);
 addRemoveFromCompareListener();
 addCompareToggleListener();
 adminSearchProduct();

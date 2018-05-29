@@ -9,7 +9,7 @@
     </div>
     <div class="comment-content col-md-11 col-sm-10 col-12">
       <h6 class="small comment-meta">
-        <span style="color:#007bff" class="disabled">
+        <span style="color:#36a0c9" class="disabled">
           @if($comment->user == null)
             Deleted Account
           @else

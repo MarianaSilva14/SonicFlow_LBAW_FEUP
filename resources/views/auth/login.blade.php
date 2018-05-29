@@ -34,7 +34,7 @@
         <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
         <a href="{{ route('register') }}" class="btn btn-lg btn-primary btn-block btn-register" >Register</a>
       </form>
-      <a href="#" class="forgot-password">
+      <a href="{{ route('recoverPasswordConfirmation') }}" class="forgot-password">
           Forgot the password?
       </a>
   </div>

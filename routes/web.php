@@ -91,10 +91,5 @@ Route::get('api/discounts', 'ProductController@getDiscounted')->name('api_discou
 Route::get('api/bestsellers', 'ProductController@getBestSellers')->name('api_bestsellers')->middleware('api');
 Route::get('api/recommendations', 'ProductController@getRecommendations')->name('api_recommendations')->middleware('api');
 
-
-Route::get('testEmail', function (){
-    $data = ['message' => 'This is a test!'];
-
-    Mail::to('lbaw1723@gmail.com')->send(new TestEmail($data));
-
-}) ->name("testEmail");
+Route::view('resetPassword','auth.recoverPassword')->name('recoverPasswordConfirmation');
+Route::post('resetPasswordPost','Auth\LoginController@resetPassword')->name('recoverPassword');

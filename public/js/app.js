@@ -1092,9 +1092,9 @@ function addRemoveFromComparatorListener() {
 }
 
 
-setTimeout(addCloseListener,200);
-setTimeout(addMinimizeListener,200);
-setTimeout(addRemoveFromComparatorListener,200);
+setTimeout(addCloseListener,500);
+setTimeout(addMinimizeListener,500);
+setTimeout(addRemoveFromComparatorListener,500);
 addRemoveFromCompareListener();
 addCompareToggleListener();
 adminSearchProduct();

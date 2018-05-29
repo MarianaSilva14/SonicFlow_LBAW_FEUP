@@ -109,14 +109,14 @@
       <div class="row">
         <div class="col-md-3 mb-3">
           <label for="cc-expiration">Expiration</label>
-          <input type="text" class="form-control" id="cc-expiration" placeholder="" pattern="^(0[1-9]|1[0-2])\/?([0-9]{4}|[0-9]{2})$" required>
+          <input type="text" class="form-control" id="cc-expiration" placeholder="MM/YY" pattern="^(0[1-9]|1[0-2])\/?([0-9]{4}|[0-9]{2})$" required>
           <div class="invalid-feedback">
             Expiration date required
           </div>
         </div>
         <div class="col-md-3 mb-3">
           <label for="cc-expiration">CVV</label>
-          <input type="text" class="form-control" id="cc-cvv" placeholder="" pattern="[1-9]{3}" required>
+          <input type="text" class="form-control" id="cc-cvv" placeholder="Three numbers" pattern="[1-9]{3}" required>
           <div class="invalid-feedback">
             Security code required
           </div>

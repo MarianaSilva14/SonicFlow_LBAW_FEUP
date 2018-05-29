@@ -31,13 +31,13 @@
                 <input type="checkbox" value="remember-me"> Remember me
             </label>
         </div>
-            <div class="g-signin2" data-onsuccess="onSignIn"></div>
         <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
         <a href="{{ route('register') }}" class="btn btn-lg btn-primary btn-block btn-register" >Register</a>
       </form>
       <a href="{{ route('recoverPasswordConfirmation') }}" class="forgot-password">
           Forgot the password?
       </a>
+      <div class="g-signin2" data-onsuccess="onSignIn"></div>
   </div>
 </div>
 @endsection

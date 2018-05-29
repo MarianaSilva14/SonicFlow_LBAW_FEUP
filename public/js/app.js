@@ -1199,6 +1199,30 @@ function googleRegisterHandler(){
 
 }
 
+function checkFormPasswords(event){
+  let x = document.forms[event.target.name]['oldPassword'].value;
+  let y = document.forms[event.target.name]['password'].value;
+  let z = document.forms[event.target.name]['password_confirmation'].value;
+
+  if(x=="" && y=="" && z==""){
+    return true;
+  }else{
+    if(y!="" && z!="" && x==""){
+      alert("You need to provide your old password to change it");
+      return false;
+    }
+    if(x=="" || y=="" || z==""){
+      alert("You need to fill all 3 password fileds to change it");
+      return false;
+    }
+    if(y!="" && z!="" && y!=z){
+      alert("To change the password and password confirmation must match");
+      return false;
+    }
+    return true;
+  }
+}
+
 setTimeout(addCloseListener,500);
 setTimeout(addMinimizeListener,500);
 setTimeout(addRemoveFromComparatorListener,500);

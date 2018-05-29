@@ -312,17 +312,23 @@ CREATE INDEX customer_purchases ON purchase USING hash(customer_username);
 
 --USER
 INSERT INTO "user" VALUES ('xavirt','$2y$10$3U/Uo5OTfiKohXC0f06TIu51gaGw8qFeaOR3KRZ66GHC/WQYdKFm6','xfontes42@gmail.com','2018-04-06 18:30:24','ADMIN');
-INSERT INTO "user" VALUES ('ana','$2y$10$3U/Uo5OTfiKohXC0f06TIu51gaGw8qFeaOR3KRZ66GHC/WQYdKFm6','anaezes@gmail.com','2018-04-07 23:59:44','ADMIN');
+INSERT INTO "user" VALUES ('ana','$2y$10$3U/Uo5OTfiKohXC0f06TIu51gaGw8qFeaOR3KRZ66GHC/WQYdKFm6','anaezes2@gmail.com','2018-04-07 23:59:44','ADMIN');
 INSERT INTO "user" VALUES ('mariana','$2y$10$3U/Uo5OTfiKohXC0f06TIu51gaGw8qFeaOR3KRZ66GHC/WQYdKFm6','marianals@gmail.com','2018-04-08 02:28:28','ADMIN');
 INSERT INTO "user" VALUES ('eduardo','$2y$10$3U/Uo5OTfiKohXC0f06TIu51gaGw8qFeaOR3KRZ66GHC/WQYdKFm6','edu.swimming@gmail.com','2018-04-06 15:52:45','ADMIN');
 INSERT INTO "user" VALUES ('jcl','$2y$10$g841JOLd/Oh.1y2qt8QCUu8ZuXM9HlVn2O.0gMmu4l4pf5jbRnQHG','jcl@gmail.com','2018-04-04 01:47:20','MOD');
-INSERT INTO "user" VALUES ('xavi123', '$2y$10$ov5gkUSHX79k6Gnhl.izP.fYWS4B8wARqpYVvaPcEAOU.xA0RYu7q', 'xfontes@lol.com', '2018-04-14 15:15:40.431337');
-INSERT INTO "user" VALUES ('edu123', '$2y$10$L6r7FmhS30ehMpxoSjqkxeuCcMkN167VdcJxWXYu7AsbdKCPtczna', 'edu@edu.com', '2018-04-14 15:37:32.106099','ADMIN');
-INSERT INTO "user" VALUES ('antonio', '$2y$10$ov5gkUSHX79k6Gnhl.izP.fYWS4B8wARqpYVvaPcEAOU.xA0RYu7q', 'antonio@lol.com', '2018-04-03 15:15:40.431337');
+INSERT INTO "user" VALUES ('xavi123', '$2y$10$ov5gkUSHX79k6Gnhl.izP.fYWS4B8wARqpYVvaPcEAOU.xA0RYu7q', 'xfontes@gmail.com', '2018-04-14 15:15:40.431337');
+INSERT INTO "user" VALUES ('edu123', '$2y$10$L6r7FmhS30ehMpxoSjqkxeuCcMkN167VdcJxWXYu7AsbdKCPtczna', 'edu@gmail.com', '2018-04-14 15:37:32.106099','ADMIN');
+INSERT INTO "user" VALUES ('antonio', '$2y$10$ov5gkUSHX79k6Gnhl.izP.fYWS4B8wARqpYVvaPcEAOU.xA0RYu7q', 'antonio@gmail.com', '2018-04-03 15:15:40.431337');
+INSERT INTO "user" VALUES ('lbaw1723', '$2y$10$DRJc1fH6vmyYwHReyIfs2urU8MSOv0/u9MCUR5c/HC5J6Wms9YmbW', 'lbaw1723@gmail.com', '2018-04-03 15:16:40.431337');
+INSERT INTO "user" VALUES ('ana123','$2y$10$s/6g9B2CPEpUEmFfGI8AyO/6FAsuJZ7pJCXmdOxxUfibKsKEgsLYm','anaezes@gmail.com','2018-07-08 23:59:44');
+
 
 --CUSTOMER
 INSERT INTO customer VALUES ('xavi123', 'Xavier Fontes', 'lole stree', 1200, 'TRUE', 'FALSE');
 INSERT INTO customer VALUES ('antonio', 'Antonio Faria', 'flower street', 1200, 'TRUE', 'FALSE');
+INSERT INTO customer VALUES ('lbaw1723', 'Lbaw Group', 'flower street n105', 1200, 'TRUE', 'FALSE');
+INSERT INTO customer VALUES ('ana123', 'Ana Santos', 'flower street n105', 1200, 'TRUE', 'FALSE');
+
 
 --MODERATOR
 INSERT INTO moderator VALUES ('jcl');

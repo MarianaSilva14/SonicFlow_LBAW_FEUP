@@ -11,7 +11,7 @@
 |
 */
 
-use App\Mail\TestEmail;
+use App\Mail\NewsletterEmail;
 use Illuminate\Support\Facades\Mail;
 
 Route::get('/', function () {
@@ -76,6 +76,8 @@ Route::post('register', 'Auth\RegisterController@register');
 Route::get('administration', 'AdministratorController@show')->name('administration');
 Route::get('moderator/create','ModeratorController@create')->name('moderator_create');
 Route::post('moderator/create','ModeratorController@createModerator')->name('moderator_create_post');
+Route::post('newsletter', 'AdministratorController@sendNewsletter')->name('sendNewsletter');
+
 
 // Moderation
 Route::get('moderation', 'ModeratorController@show')->name('moderation');

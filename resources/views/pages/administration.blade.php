@@ -39,15 +39,18 @@
       </div>
       <div class="modal-body">
 
-        <form>
+        <form action="{{route('sendNewsletter')}}" method="post">
+          {{csrf_field()}}
           <div class="form-group">
             <label for="title-name" class="col-form-label">Title:</label>
-            <input type="text" class="form-control" id="title-name">
+            <input type="text" name="title" class="form-control" id="title-name">
           </div>
           <div class="form-group">
             <label for="message-text" class="col-form-label">Message:</label>
-            <textarea class="form-control" id="message-text"></textarea>
+            <textarea class="form-control" name="message" id="message-text"></textarea>
           </div>
+
+          <button type="submit" class="btn btn-primary">Send</button>
         </form>
 
 

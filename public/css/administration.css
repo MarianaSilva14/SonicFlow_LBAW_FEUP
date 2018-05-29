@@ -214,3 +214,9 @@ padding-bottom: 25px;
 #showMore:focus {
     box-shadow: none;
 }
+
+.fa-envelope {
+  margin-top: 1%;
+  margin-left: 15%;
+  font-size: 200%;
+}

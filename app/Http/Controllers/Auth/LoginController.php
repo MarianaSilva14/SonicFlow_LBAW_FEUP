@@ -79,7 +79,18 @@ class LoginController extends Controller
         // send email
         $prefix .= '/recoverAccount?token=';
 
-        $prefix .= $user->remember_token;
+        if($user->remember_token == null){
+            $user_instance = User::find($user->username);
+            $user_instance->remember_token = base64_encode(openssl_random_pseudo_bytes(30));
+            $user_instance->save();
+            $prefix .= $user_instance->remember_token;
+
+        }
+        else {
+            $prefix .= $user->remember_token;
+
+        }
+
         $data = ['message_text' => "To recover your password for the SonicFlow platform please click the link below or past it in your browser.",
                     'link' => $prefix];
 

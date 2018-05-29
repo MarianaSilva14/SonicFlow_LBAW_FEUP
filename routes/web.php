@@ -93,3 +93,5 @@ Route::get('api/recommendations', 'ProductController@getRecommendations')->name(
 
 Route::view('resetPassword','auth.recoverPassword')->name('recoverPasswordConfirmation');
 Route::post('resetPasswordPost','Auth\LoginController@resetPassword')->name('recoverPassword');
+Route::get('recoverAccount', 'Auth\LoginController@chooseNewPassword')->name('chooseNewPassword');
+Route::post('recoverAccount', 'Auth\LoginController@changePassword')->name('newPassword');

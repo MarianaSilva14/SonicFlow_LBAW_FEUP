@@ -33,7 +33,7 @@
   </td>
   <td>{{$price}}</td>
   <td>{{$date}}</td>
-  <td class="panel panel-default panel-help" href="#{{$id_purchase}}" data-toggle="collapse">
+  <td class="panel panel-default panel-help" onclick="setTimeout(checkOverflow,500)" href="#{{$id_purchase}}" data-toggle="collapse">
     <i class="fas fa-minus"></i>
     <i class="fas fa-minus"></i>
   </td>

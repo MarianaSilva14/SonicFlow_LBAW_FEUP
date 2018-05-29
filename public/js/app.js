@@ -70,6 +70,24 @@ var limit = 5;
 var cartItemAmount;
 var currentProducts = [];
 
+function checkOverflow(){
+    var container = document.getElementById ("content-wrapper");
+    let footer = document.getElementsByTagName('footer');
+    if(container.clientHeight == container.scrollHeight){
+      console.log(container);
+      footer[0].style.position = "absolute";
+      footer[0].style.width = "100%";
+      footer[0].style.bottom = "0";
+      footer[0].style.left = "5%";
+    }else{
+      console.log("here");
+      footer[0].style.position = "relative";
+      footer[0].style.width = "auto";
+      footer[0].style.bottom = "auto";
+      footer[0].style.left = "auto";
+    }
+}
+
 function docOnLoad(){
   locArray = window.location.href.split("/");
   console.log(locArray);
@@ -78,6 +96,8 @@ function docOnLoad(){
     homepagePromotions();
     homepageBestSellers();
     homepageRecommendations();
+  }else{
+    checkOverflow();
   }
   if(currPage.includes('administration')){
     adminLoadProducts();
@@ -711,6 +731,7 @@ function retreivePurchaseHistoryHandler() {
       table.children[0].innerHTML += "<tr><td colspan='4'>No registered purchases available</td></tr>"
     }
   }
+  checkOverflow();
 }
 function retreivePurchaseHistoryAction(){
   let table = document.getElementById('purchaseTable').children[0]
@@ -719,6 +740,7 @@ function retreivePurchaseHistoryAction(){
     sendAjaxRequest('GET','/users/'+userId+'/purchasehistory',null,retreivePurchaseHistoryHandler);
   }else{
     console.log("No need to load");
+    setTimeout(checkOverflow,500);
   }
 }
 function retreivePurchaseHistory(){
@@ -751,6 +773,7 @@ function retreiveFavoritesHandler() {
       row.children[0].innerHTML = "<tr><td colspan='4'>No favorite products available</td></tr>"
     }
   }
+  setTimeout(checkOverflow,200);
 }
 function retreiveFavoritesAction(){
   let row = document.getElementById('favorites').children[0]
@@ -758,9 +781,8 @@ function retreiveFavoritesAction(){
     let userId = document.querySelector("input[name='username']").value;
     sendAjaxRequest('GET','/users/'+userId+'/favorites',null,retreiveFavoritesHandler);
   }else{
-
     console.log("No need to load");
-
+    setTimeout(checkOverflow,200);
   }
 }
 function retreiveFavorites(){

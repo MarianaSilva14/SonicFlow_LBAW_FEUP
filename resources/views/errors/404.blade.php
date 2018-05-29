@@ -25,7 +25,7 @@
       <title>404 Not Found</title>
   </head>
   <body>
-		<h1 class="display-1">4<i class="fa  fa-spin fa-cog fa-3x"></i> 4</h1>
+		<h1 class="display-1">4<i class="fa  fa-spin fa-cog fa-3x"></i>4</h1>
 		<h1 class="display-3">ERROR</h1>
     <br> <br>
     @foreach($errors as $message)

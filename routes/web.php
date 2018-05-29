@@ -95,3 +95,5 @@ Route::view('resetPassword','auth.recoverPassword')->name('recoverPasswordConfir
 Route::post('resetPasswordPost','Auth\LoginController@resetPassword')->name('recoverPassword');
 Route::get('recoverAccount', 'Auth\LoginController@chooseNewPassword')->name('chooseNewPassword');
 Route::post('recoverAccount', 'Auth\LoginController@changePassword')->name('newPassword');
+
+Route::post('googleLogin', 'Auth\RegisterController@googleRegister');

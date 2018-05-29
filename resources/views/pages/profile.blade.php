@@ -40,7 +40,11 @@
                 @if ($infoUser->getPicture() == "")
                   <img alt="Profile Picture" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" id="profile-image1" class="img-fluid">
                 @else
-                  <img alt="Profile Picture" src="{{ Storage::url(Auth::User()->getPicture()) }}" id="profile-image1" class="img-fluid">
+                  @if(preg_match('/https:\//',Auth::User()->getPicture(), $matches, PREG_OFFSET_CAPTURE))
+                    <img id="profile_picture" alt="Profile Image" src="{{Auth::User()->getPicture()}}" class="img-fluid">
+                  @else
+                    <img alt="Profile Picture" src="{{ Storage::url(Auth::User()->getPicture()) }}" id="profile-image1" class="img-fluid">
+                  @endif
                 @endif
               </div>
             </div>

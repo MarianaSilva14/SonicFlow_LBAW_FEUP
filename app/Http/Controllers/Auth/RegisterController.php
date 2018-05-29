@@ -9,6 +9,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
+use Google_Client;
+use GuzzleHttp;
 
 class RegisterController extends Controller
 {
@@ -99,5 +102,55 @@ class RegisterController extends Controller
 
         Auth::setUser($user);
         return $user;
+    }
+
+    public function googleRegister(Request $request){
+      $user = User::where('email',$request->email)->first();
+
+      if($user==null){
+          $names = explode(" ", $request->input('name'));
+
+
+          // Get $id_token via HTTPS POST.
+
+          $id_token = $request->id;
+          $CLIENT_ID ='227893815992-vbk634sqvav8fmvir99bgdj31k1cgdm8.apps.googleusercontent.com';
+          $client = new Google_Client(['client_id' => $CLIENT_ID]);  // Specify the CLIENT_ID of the app that accesses the backend
+          $client->setHttpClient(new GuzzleHttp\Client(['verify'=>false]));
+          $payload = $client->verifyIdToken($id_token);
+
+          if ($payload) {
+          $userid = $payload['sub'];
+          // If request specified a G Suite domain:
+          //$domain = $payload['hd'];
+          } else {
+              return null;
+          }
+          $user = User::create([
+              'username' => $request->input('name'),
+              'password' => $userid,
+              'email' => $request->email,
+              'role' => 'CUST',
+              'picture' => $request->photo,
+
+          ]);
+          echo $request->photo;
+          $user->save();
+
+          $customer = Customer::create([
+              'user_username' => $request->input('name'),
+              'name' =>  $request->input('name'),
+              'loyaltypoints' => 0,
+              'newsletter' => true,
+              'inactive' => false
+          ]);
+          $customer->save();
+
+          Auth::login($user);
+      }
+      else{
+          Auth::login($user);
+      }
+      return $user;
     }
 }

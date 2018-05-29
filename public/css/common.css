@@ -26,6 +26,7 @@ body{
   padding-left: 15px;
   padding-right: 15px;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 #sidebar-wrapper {
@@ -97,15 +98,14 @@ nav{
   left: -5px;
 }
 
-#sidebar-wrapper:hover::-webkit-scrollbar,
-#content-wrapper:hover::-webkit-scrollbar-thumb
- {
+#sidebar-wrapper::-webkit-scrollbar,
+#content-wrapper::-webkit-scrollbar-thumb{
   background-color: #65768e;
   border-radius: 20px;
 }
 
-#sidebar-wrapper:hover::-webkit-scrollbar-thumb,
-#content-wrapper:hover::-webkit-scrollbar{
+#sidebar-wrapper::-webkit-scrollbar-thumb,
+#content-wrapper::-webkit-scrollbar{
     background: #b6bdce;
     border-radius: 20px;
 }
@@ -124,6 +124,7 @@ footer{
   padding-top: 1.2%;
   margin-top: 2%;
   position: relative;
+  left:7.5%;
 }
 
 footer a{

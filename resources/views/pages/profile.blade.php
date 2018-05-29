@@ -15,7 +15,7 @@
     <div class="secondary">
       <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item">
-          <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="home" aria-selected="true"> <h4> User Profile </h4></a>
+          <a class="nav-link active" id="profile-tab" onclick="setTimeout(checkOverflow,200)"data-toggle="tab" href="#profile" role="tab" aria-controls="home" aria-selected="true"> <h4> User Profile </h4></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" id="purchaseHistory-tab" data-toggle="tab" href="#purchaseHistory" role="tab" aria-controls="profile" aria-selected="false"> <h4>

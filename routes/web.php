@@ -60,7 +60,8 @@ Route::post('checkout','PurchaseController@payCheckout')->name('purchase');
 Route::view('about','pages.about')->name('about');
 Route::view('contact','pages.contact')->name('contact');
 Route::view('faq','pages.faq')->name('faq');
-Route::view('404','errors.404')->name('404');
+Route::view('404','errors.404',['errors' => ['Webpage not found!Please try to refresh or verify the url!','Maybe the page is under maintenance']])->name('404');
+Route::view('401','errors.401',['errors' => ['You currently don\'t have authorization to acces this page!','If you think you should have access to this page, log in and try again']])->name('401');
 Route::get('configurator','ConfiguratorController@show')->name('configurator');
 Route::get('comparator','ProductController@compare')->name('comparator');
 

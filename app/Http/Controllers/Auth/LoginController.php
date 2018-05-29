@@ -68,23 +68,62 @@ class LoginController extends Controller
         $user = DB::table('user')->where([
             ['username', '=', $username],
             ['email', '=', $email]
-            ])->get();
+            ])->first();
 
         if($user == null)
             return view("auth.recoveredPassword", ['error' => true ]);
 
 
+        // http://lbaw1723.lbaw-prod.fe.up.pt/
+        $prefix = 'http://127.0.0.1:8000';
         // send email
+        $prefix .= '/recoverAccount?token=';
+
+        $prefix .= $user->remember_token;
         $data = ['message_text' => "To recover your password for the SonicFlow platform please click the link below or past it in your browser.",
-                    'link' => "google.com"];
+                    'link' => $prefix];
+
 
         try {
             Mail::to($email)->send(new ResetPasswordEmail($data));
 
         } catch(\Exception $e){
-            return view("auth.recoveredPassword", ['error' => true ]);
+            return view("auth.recoveredPassword", ['error' => true , 'ex' => $e ]);
         }
         return view("auth.recoveredPassword", ['error' => false ]);
+    }
+
+    public function chooseNewPassword(Request $request){
+
+        return view('auth.chooseNewPassword', ['token' => $request->input('token')]);
+    }
+
+    public function changePassword(Request $request){
+
+        $token = $request->input(['token']);
+
+//        print_r($token);
+
+        // TODO VALIDATE PASSWORD
+        $password = $request->input('password');
+
+
+        $user = DB::table('user')->where([
+            ['remember_token', '=', $token],
+        ])->first();
+
+//        print_r($user);
+
+
+        $user = User::find($user->username);
+
+//        print_r($user);
+
+
+        $user->password = bcrypt($password);
+        $user->save();
+
+        return redirect('homepage');
     }
 
 }

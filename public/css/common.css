@@ -304,3 +304,7 @@ box-shadow: none;
 .text-danger{
   font-weight: bold;
 }
+
+#colorFontFooter{
+  color: #64768e;
+}

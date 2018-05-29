@@ -1173,6 +1173,31 @@ function addRemoveFromComparatorListener() {
   }
 }
 
+function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+  var id_token = googleUser.getAuthResponse().id_token;
+    sendAjaxRequest('post', '/googleLogin' ,{id: id_token,name: profile.getName(), photo: profile.getImageUrl(), email: profile.getEmail()}, googleRegisterHandler);
+}
+
+function googleRegisterHandler(){
+
+  console.log(this.responseText);
+
+  if (this.status != 200) window.location = '/';
+
+    gapi.load('auth2',function(){
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function(){
+            console.log('User signed out .');
+            document.getElementById("logo_nav").click();
+        });
+    });
+
+}
 
 setTimeout(addCloseListener,500);
 setTimeout(addMinimizeListener,500);

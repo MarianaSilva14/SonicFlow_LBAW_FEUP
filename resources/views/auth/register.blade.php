@@ -56,6 +56,7 @@
       <br>
 
       <button class="btn btn-lg btn-primary btn-block btn-register" >Register</button>
+      <div class="g-signin2" data-onsuccess="onSignIn"></div>
     </form>
   </div>
 </div>

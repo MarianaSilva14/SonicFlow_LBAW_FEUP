@@ -25,6 +25,41 @@
         <input type="hidden" name="search_param" value="" id="search_param">
         <input type="text" class="form-control" name="x" placeholder="Search...">
         <button id="searchBtn" class="btn btn-outline-success my-2 my-sm-0 adminSearchBtn" type="submit"><i class="fas fa-search"></i></button>
+
+        <i class="fas fa-envelope breadcrumb-item active" data-target="#exampleModalCenter" data-toggle="modal"></i>
+
+ <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Newsletter</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <form>
+          <div class="form-group">
+            <label for="title-name" class="col-form-label">Title:</label>
+            <input type="text" class="form-control" id="title-name">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Message:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Send</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+
         <hr>
       </div>
     </div>
@@ -63,15 +98,12 @@
   <div class="panel panel-primary">
     <table class="table table-hover table-bordered">
       <tr class="info" style="color:#65768e">
-        <th>Delete</th>
         <th>Username</th>
         <th>Email</th>
         <th>Join Date</th>
       </tr>
 
     @foreach($moderators as $moderator)
-      {{--TODO: put here to go delete moderators--}}
-        <td class='delete_cart'><i class='far fa-trash-alt fa-2x'></i></td>
         <td>{{$moderator->user_username}}</td>
         <td>{{$moderator->email}}</td>
         <td>{{$moderator->joindate}}</td>

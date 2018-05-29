@@ -40,7 +40,11 @@
                 @if ($infoUser->getPicture() == "")
                   <img alt="Profile Picture" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" id="profile-image1" class="img-fluid">
                 @else
-                  <img alt="Profile Picture" src="{{ Storage::url(Auth::User()->getPicture()) }}" id="profile-image1" class="img-fluid">
+                  @if(preg_match('/https:\//',Auth::User()->getPicture(), $matches, PREG_OFFSET_CAPTURE))
+                    <img id="profile_picture" alt="Profile Image" src="{{Auth::User()->getPicture()}}" class="img-fluid">
+                  @else
+                    <img alt="Profile Picture" src="{{ Storage::url(Auth::User()->getPicture()) }}" id="profile-image1" class="img-fluid">
+                  @endif
                 @endif
               </div>
             </div>
@@ -57,7 +61,7 @@
               <form method="post" action="{{route('profile',['id' => Auth::user()->username])}}" class="form-horizontal" role="form" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="form-group">
-                  <label class="col-md-3 control-label">Username:</label>
+                  <label for="Username" class="col-md-3 control-label">Username:</label>
                   <div class="col-md-8">
                     <input class="form-control" name="username" type="text" value="{{$infoUser->username}}" readonly>
                   </div>
@@ -67,7 +71,7 @@
                 @else
                   <div class="form-group" hidden>
                 @endif
-                  <label class="col-lg-3 control-label">Profile Picture:</label>
+                  <label for="Profile Picture" class="col-lg-3 control-label">Profile Picture:</label>
                   <div class="col-lg-8">
                     <input type="file" name="picture" class="form-control">
                   </div>
@@ -78,7 +82,7 @@
                   @endif
                 </div>
                 <div class="form-group">
-                  <label class="col-lg-3 control-label">First name:</label>
+                  <label for="First name:" class="col-lg-3 control-label">First name:</label>
                   <div class="col-lg-8">
                     @if($editable)
                       <input class="form-control" name="firstName" type="text" pattern="[a-zA-Z]+" value="{{$infoCustomer->firstName()}}">
@@ -93,7 +97,7 @@
                   @endif
                 </div>
                 <div class="form-group">
-                  <label class="col-lg-3 control-label">Last name:</label>
+                  <label for="Last name:" class="col-lg-3 control-label">Last name:</label>
                   <div class="col-lg-8">
                     @if($editable)
                       <input class="form-control" name="lastName" type="text" pattern="[a-zA-Z]+( [a-zA-Z]+)*" value="{{$infoCustomer->lastName()}}">
@@ -108,7 +112,7 @@
                   @endif
                 </div>
                 <div class="form-group">
-                  <label class="col-lg-3 control-label">Email:</label>
+                  <label for="Email:" class="col-lg-3 control-label">Email:</label>
                   <div class="col-lg-8">
                     @if($editable)
                       <input class="form-control" name="email" type="email" value="{{$infoUser->email}}">
@@ -124,19 +128,19 @@
                 </div>
                 @if($editable)
                   <div class="form-group">
-                    <label class="col-md-3 control-label">Old Password:</label>
+                    <label for="Old Password:" class="col-md-3 control-label">Old Password:</label>
                     <div class="col-md-8">
                       <input class="form-control" name="oldPassword" type="password" value="">
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="col-md-3 control-label">Password:</label>
+                    <label for="Password:" class="col-md-3 control-label">Password:</label>
                     <div class="col-md-8">
                       <input class="form-control" name="password" type="password" value="">
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="col-md-3 control-label">Confirm password:</label>
+                    <label for="Confirm password:" class="col-md-3 control-label">Confirm password:</label>
                     <div class="col-md-8">
                       <input class="form-control" name="password_confirmation" type="password" value="">
                     </div>

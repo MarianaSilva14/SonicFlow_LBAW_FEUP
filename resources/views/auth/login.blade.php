@@ -27,7 +27,7 @@
             </span>
         @endif
         <div id="remember" class="checkbox">
-            <label>
+            <label for="Remember me">
                 <input type="checkbox" value="remember-me"> Remember me
             </label>
         </div>
@@ -37,6 +37,7 @@
       <a href="{{ route('recoverPasswordConfirmation') }}" class="forgot-password">
           Forgot the password?
       </a>
+      <div class="g-signin2" data-onsuccess="onSignIn"></div>
   </div>
 </div>
 @endsection

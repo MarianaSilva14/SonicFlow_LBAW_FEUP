@@ -6,7 +6,7 @@
 
  @if ( $currPage == 'My Profile')
  <i id="help" class="fas fa-question-circle breadcrumb-item active" data-target="#exampleModalCenter" data-toggle="modal"></i>
- <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+ <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -32,7 +32,7 @@
 </div>
 @elseif( $currPage == 'Homepage')
 <i id="help" class="fas fa-question-circle breadcrumb-item active" data-target="#exampleModalCenter" data-toggle="modal"></i>
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -44,7 +44,7 @@
       <div class="modal-body">
         <p>Home</p>
         <p>Homepage for the "Sonic Flow" online store. Here you can buy various technological products, compare products and even build your own pc suited to your needs. </p>
-      At the beginning we highlight the products on sale. We have other options available in the left side menu: </p>
+      <p>At the beginning we highlight the products on sale. We have other options available in the left side menu: </p>
       <p>a) In the configurator customize your own pc.</p>
       <p>b) See the products of each category.</p>
       <p>For more information or if you notice any irregularities please  <a href="{{route('contact')}}">Contact us</a>. </p>
@@ -57,7 +57,7 @@
 @elseif( $currPage == 'List Products')
 
 <i id="help" class="fas fa-question-circle breadcrumb-item active" data-target="#exampleModalCenter" data-toggle="modal"></i>
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">

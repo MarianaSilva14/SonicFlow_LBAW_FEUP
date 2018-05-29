@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-xl navbar-light fixed-top bg-white">
   <!-- logo -->
   <a class="navbar-brand" href="{{route('homepage')}}">
-    <img src="{{asset('images/logo.png')}}" height="64" alt="Logo">
+    <img src="{{asset('images/logo.png')}}" id="logo_nav" height="64" alt="Logo">
   </a>
   <!-- toggle button -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -61,7 +61,11 @@
             @if( Auth::user()->picture == "")
               <img id="profile_picture" alt="Profile Image" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" class="img-fluid">
             @else
+              @if(preg_match('/https:\//',Auth::User()->getPicture(), $matches, PREG_OFFSET_CAPTURE))
+              <img id="profile_picture" alt="Profile Image" src="{{Auth::User()->getPicture()}}" class="img-fluid">
+              @else
               <img id="profile_picture" alt="Profile Image" src="{{ \Illuminate\Support\Facades\Storage::url(Auth::User()->getPicture()) }}" class="img-fluid">
+              @endif
             @endif
             {{Auth::user()->getName()}}
           </a>

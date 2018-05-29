@@ -6,28 +6,40 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Support\Facades\Mail;
 
 class TestEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    /**
-     * Create a new message instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    public $data;
+
+    public function __construct($data)
     {
-        //
+        $this->data = $data;
     }
 
-    /**
-     * Build the message.
-     *
-     * @return $this
-     */
     public function build()
     {
-        return $this->view('view.name');
+        global $data;
+
+        $address = 'janeexampexample@example.com';
+        $subject = 'This is a demo!';
+        $name = 'Jane Doe';
+
+        return $this->view('emails.test')
+            ->from($address, $name)
+            ->cc($address, $name)
+            ->bcc($address, $name)
+            ->replyTo($address, $name)
+            ->subject($subject)
+            ->with([ 'message' => $data['message'] ]);
+    }
+
+    public function send_stuff(){
+
+        $data = ['message' => 'This is a test!'];
+
+        Mail::to('lbaw1723@gmail.com')->send(new TestEmail($data));
     }
 }

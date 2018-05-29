@@ -10,13 +10,12 @@
 @section('content')
 @include('common.breadcrumb', ['currPage' => 'About Us'])
 <h1 class="header-title">About Sonic Flow</h1>
-<h3> <span>OUR STORY </span></h3>
-<p class="text_about"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-  the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled
-  it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic
-  typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets
-  containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including
-  versions of Lorem Ipsum.
+<h3> <span>OUR BRAND </span></h3>
+<p class="text_about" style="text-align:center"> More than presenting variety and innovation, Sonic Flow has been
+  offering the best prices for more than a decade.
+  We are betting on a strong promotional component, precisely to meet the expectations of the consumer, for whom the
+  act of buying is increasingly weighted. In fact, the Sonic Flow customer expects a strong and distinctive
+  communication that will make him continue to choose the brand.
 </p>
 <h3><span>OUR PURPOSE</span></h3>
 <p style="text-align:center"><b>To provide the best technological products</b></p>

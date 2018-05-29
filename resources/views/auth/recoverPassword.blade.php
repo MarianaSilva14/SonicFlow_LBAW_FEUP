@@ -12,12 +12,10 @@
 
             <form action="{{route('recoverPassword')}}" method="post">
                 {{ csrf_field() }}
-
-                <input type="email" name="email" placeholder="Email" required>
-                <input type="text" name="username" placeholder="Username" required>
-                <button type="submit" class="btn btn-info">Recover</button>
+                <input type="email" name="email" placeholder="Email" class="recover" required>
+                <input type="text" name="username" placeholder="Username" class="recover" pattern="[a-zA-Z0-9]+" required>
+                <button type="submit" class="btn btn-info" id="recover" >Recover</button>
             </form>
-
         </div>
     </div>
 @endsection

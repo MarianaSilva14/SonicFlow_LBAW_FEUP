@@ -136,3 +136,12 @@ a.btn-register{
 .form-signin input:required {
   border-left-color: red;
 }
+
+#recover{
+    margin-top: 5%;
+    margin-left: 40%;
+}
+.recover{
+    padding-right: 45%;
+    margin-bottom: 5%;
+}

@@ -7,14 +7,14 @@
 @endsection
 
 @section('content')
-    <div class="container">
+    <div class="form-group">
         <div class="card card-container">
 
             <form action="{{route('recoverPassword')}}" method="post">
                 {{ csrf_field() }}
-                <input type="email" name="email" placeholder="Email" class="recover" required>
-                <input type="text" name="username" placeholder="Username" class="recover" pattern="[a-zA-Z0-9]+" required>
-                <button type="submit" class="btn btn-info" id="recover" >Recover</button>
+                <input type="email" name="email" placeholder="Email" class="recover form-control" required>
+                <input type="text" name="username" placeholder="Username" class="recover form-control" pattern="[a-zA-Z0-9]+" required>
+                <button type="submit" class="btn btn-primary" id="recover" >Recover</button>
             </form>
         </div>
     </div>

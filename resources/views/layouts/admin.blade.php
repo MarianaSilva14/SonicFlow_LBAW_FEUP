@@ -61,42 +61,17 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link mobileNav" href="configurator.html"><span class="sub_icon"><i class="fas fa-cogs fa-lg"></i></span>Configurator</a>
+          <a class="nav-link mobileNav" href="{{route('configurator')}}"><span class="sub_icon"><i class="fas fa-cogs fa-lg"></i></span>Configurator</a>
         </li>
 
         <!-- SEPARATOR -->
         <hr class="mobileNav w-100 my-1"></hr>
 
-        <li class="nav-item">
-          <a class="nav-link mobileNav" href="productsListpage.html?cat=Computers"><span class="sub_icon"><i class="fas fa-desktop fa-lg"></i></span>Computers</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link mobileNav" href="productsListpage.html?cat=Laptops"><span class="sub_icon"><i class="fas fa-laptop fa-lg"></i></span>Laptops</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link mobileNav" href="productsListpage.html?cat=Mobile"><span class="sub_icon" id="mobile"><i class="fas fa-mobile-alt fa-lg"></i></span>Mobile</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link mobileNav" href="productsListpage.html?cat=Components"><span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span>Components</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link mobileNav" href="productsListpage.html?cat=Storage"><span class="sub_icon"><i class="fas fa-hdd fa-lg"></i></span>Storage</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link mobileNav" href="productsListpage.html?cat=Periferals"><span class="sub_icon"><i class="fas fa-keyboard fa-lg"></i></span>Periferals</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link mobileNav" href="productsListpage.html?cat=Photo"><span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span>Photo</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link mobileNav" href="productsListpage.html?cat=Video"><span class="sub_icon"><i class="fas fa-camera-retro fa-lg"></i></span>Video</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link mobileNav" href="productsListpage.html?cat=Network"><span class="sub_icon"><i class="fas fa-rss fa-lg"></i></span>Network</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link mobileNav" href="productsListpage.html?cat=Software"><span class="sub_icon"><i class="far fa-window-maximize fa-lg"></i></span>Software</a>
-        </li>
+        @foreach($categories as $category)
+          <li class="nav-item">
+            <a class="nav-link mobileNav" href="{{route('products')}}?categoryID={{$category->id}}"><span class="sub_icon"><i class="{{$category->icon}} fa-lg"></i></span>{{$category->name}}</a>
+          </li>
+        @endforeach
       </ul>
 
     </div>

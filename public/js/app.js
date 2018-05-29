@@ -75,18 +75,18 @@ function checkOverflow(){
     let footer = document.getElementsByTagName('footer');
     if(container == null || footer.length == 0)
       return;
+    console.log("client HEIGTH:"+container.clientHeight);
+    console.log("window HEIGTH:"+container.scrollHeight);
     if(container.clientHeight == container.scrollHeight){
-      console.log(container);
       footer[0].style.position = "absolute";
       footer[0].style.width = "100%";
       footer[0].style.bottom = "0";
       footer[0].style.left = "5%";
     }else{
-      console.log("here");
       footer[0].style.position = "relative";
       footer[0].style.width = "auto";
       footer[0].style.bottom = "auto";
-      footer[0].style.left = "auto";
+      footer[0].style.left = "2%";
     }
 }
 
@@ -119,6 +119,10 @@ function docOnLoad(){
     $(icon).attr('data-before',"("+cartItemAmount+")");
   }
 }
+
+window.onresize = function(event) {
+  checkOverflow();
+};
 
 document.onload = docOnLoad();
 

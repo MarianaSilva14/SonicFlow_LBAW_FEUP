@@ -57,6 +57,11 @@ $(document).ready(function(e){
 	});
 });
 
+if(getCookie('purchased')!=""){
+  removeCookie('shoppingCart','/');
+  removeCookie('purchased','/');
+}
+
 if(getCookie('shoppingCart') == ""){
   setCookie('shoppingCart',JSON.stringify({}),1);
 }

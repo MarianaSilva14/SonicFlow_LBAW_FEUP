@@ -130,7 +130,7 @@
 
       <hr class="mb-4">
 
-      <button class="btn btn-primary btn-lg btn-block" type="submit">Purchase</button>
+      <button class="btn btn-primary btn-lg btn-block" onclick="setCookie('purchased','true',1)" type="submit">Purchase</button>
 
     </form>
   </div>

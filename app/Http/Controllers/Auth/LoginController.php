@@ -75,7 +75,8 @@ class LoginController extends Controller
 
 
         // http://lbaw1723.lbaw-prod.fe.up.pt/
-        $prefix = 'http://127.0.0.1:8000';
+        $prefix = 'http://lbaw1723.lbaw-prod.fe.up.pt';
+//        $prefix = 'http://127.0.0.1:8000';
         // send email
         $prefix .= '/recoverAccount?token=';
 

@@ -463,6 +463,14 @@ function showAdminProduct(product) {
 function allProductLoadHandler() {
   if(this.status != 200){
     alert('Error: '+this.status);
+    swal({
+       toast: true,
+       position: 'top-end',
+       showConfirmButton: false,
+       timer: 3000,
+       type: 'error',
+       title: this.status
+     });
     return;
   }
   console.log(this);
@@ -1062,7 +1070,6 @@ function addToCompare(event){
         banner.children[0].hidden = true;
         return;
       }else{
-        //alert('Cannot add products with different category');
         swal({
            toast: true,
            position: 'top-end',
@@ -1074,7 +1081,6 @@ function addToCompare(event){
         event.target.checked = false;
       }
     }else{
-      //alert('Products already in comparable products');
       swal({
          toast: true,
          position: 'top-end',
@@ -1085,7 +1091,6 @@ function addToCompare(event){
        });
     }
   }else{
-    //alert('Cannot compare any more products');
     swal({
        toast: true,
        position: 'top-end',
@@ -1165,7 +1170,14 @@ function addMinimizeListener() {
 
 function removeFromComparator(event) {
   if(event.target.closest('.compareHeader').childElementCount == 2){
-    alert('You must comare at least one product');
+    swal({
+       toast: true,
+       position: 'top-end',
+       showConfirmButton: false,
+       timer: 3000,
+       type: 'info',
+       title: "You must compare at least one product"
+     });
     return;
   }
   let sku = event.target.closest(".thumbnails").dataset.sku;
@@ -1219,15 +1231,36 @@ function checkFormPasswords(event){
     return true;
   }else{
     if(y!="" && z!="" && x==""){
-      alert("You need to provide your old password to change it");
+      swal({
+         toast: true,
+         position: 'top-end',
+         showConfirmButton: false,
+         timer: 3000,
+         type: 'error',
+         title: "You need to provide your old password to change it"
+       });
       return false;
     }
     if(x=="" || y=="" || z==""){
-      alert("You need to fill all 3 password fileds to change it");
+      swal({
+         toast: true,
+         position: 'top-end',
+         showConfirmButton: false,
+         timer: 3000,
+         type: 'error',
+         title: "You need to fill all 3 password fileds to change it"
+       });
       return false;
     }
     if(y!="" && z!="" && y!=z){
-      alert("To change the password and password confirmation must match");
+      swal({
+         toast: true,
+         position: 'top-end',
+         showConfirmButton: false,
+         timer: 3000,
+         type: 'error',
+         title: "To change the password and password confirmation must match"
+       });
       return false;
     }
     return true;

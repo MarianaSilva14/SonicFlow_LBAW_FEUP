@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Comment;
 use App\Customer;
+use App\Moderator;
+
 
 class ModeratorController extends Controller
 {
@@ -33,7 +35,32 @@ class ModeratorController extends Controller
   }
 
   // post here to insert into db
-    public function createModerator(){
+    public function createModerator(Request $request){
 
+        $user = null;
+
+        try{
+            DB::beginTransaction();
+
+            $user = User::create([
+                'username' => $request->input('username'),
+                'password' => bcrypt($request->input('password')),
+                'email' => $request->input('email'),
+                'role' => 'MOD'
+
+            ]);
+
+            $moderator = Moderator::create([
+                'user_username' => $user['username'],
+            ]);
+            $moderator->save();
+
+            DB::commit();
+
+        } catch(\Exception $e){
+            DB::rollBack();
+        }
+
+        return redirect(route('moderation'));
     }
 }

@@ -106,9 +106,11 @@
       </tr>
 
     @foreach($moderators as $moderator)
+        <tr>
         <td>{{$moderator->user_username}}</td>
         <td>{{$moderator->email}}</td>
         <td>{{$moderator->joindate}}</td>
+        </tr>
       @endforeach
     </table>
   </div>

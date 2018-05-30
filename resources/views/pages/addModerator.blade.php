@@ -25,6 +25,6 @@
         <input class="form-control" id="email" name="email" placeholder="Moderator Email" >
 
         <br>
-        <button class="btn" style="vertical-align:middle">Add Moderator</button>
+        <button type="submit" class="btn" style="vertical-align:middle">Add Moderator</button>
     </form>
 @endsection

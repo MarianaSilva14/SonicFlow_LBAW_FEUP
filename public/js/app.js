@@ -767,7 +767,7 @@ function retreivePurchaseHistoryHandler() {
       table.children[0].innerHTML += "<tr><td colspan='4'>No registered purchases available</td></tr>"
     }
   }
-  checkOverflow();
+  setTimeout(checkOverflow,300);
 }
 function retreivePurchaseHistoryAction(){
   let table = document.getElementById('purchaseTable').children[0]
@@ -805,6 +805,7 @@ function retreiveFavoritesHandler() {
         row.children[0].innerHTML += favorite;
       }
       removeFavoritesButton();
+      addProductToCart();
     }else{
       row.children[0].innerHTML = "<tr><td colspan='4'>No favorite products available</td></tr>"
     }
@@ -849,6 +850,16 @@ function addProductToCartAction(){
   }else{
     productArray[id]+=amount;
   }
+
+  swal({
+     toast: true,
+     position: 'top-end',
+     showConfirmButton: false,
+     timer: 3000,
+     type: 'success',
+     title: "Product was successfully added to cart"
+   });
+
   setCookie('shoppingCart',JSON.stringify(productArray));
 }
 function addProductToCart(){
@@ -1197,6 +1208,30 @@ function googleRegisterHandler(){
         });
     });
 
+}
+
+function checkFormPasswords(event){
+  let x = document.forms[event.target.name]['oldPassword'].value;
+  let y = document.forms[event.target.name]['password'].value;
+  let z = document.forms[event.target.name]['password_confirmation'].value;
+
+  if(x=="" && y=="" && z==""){
+    return true;
+  }else{
+    if(y!="" && z!="" && x==""){
+      alert("You need to provide your old password to change it");
+      return false;
+    }
+    if(x=="" || y=="" || z==""){
+      alert("You need to fill all 3 password fileds to change it");
+      return false;
+    }
+    if(y!="" && z!="" && y!=z){
+      alert("To change the password and password confirmation must match");
+      return false;
+    }
+    return true;
+  }
 }
 
 setTimeout(addCloseListener,500);

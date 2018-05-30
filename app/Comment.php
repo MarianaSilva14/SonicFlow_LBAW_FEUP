@@ -81,4 +81,21 @@ class Comment extends Model
   public function answers(){
     return $this->hasManyThrough('App\Comment','App\Answer','comment_idparent','id','id','comment_idchild');
   }
+
+  public static function getNumberOffenses(){
+
+      $query = DB::table('comment');
+
+      $query = $query->selectRaw('user_username, COUNT(user_username) as numberFlagged');
+      $query = $query->join('flagged', 'comment.id', '=', 'flagged.comment_idcomment');
+      $query = $query->groupBy('user_username');
+      $results = $query->get();
+
+      $return_value = [];
+      foreach ($results as $res){
+          $return_value[$res->user_username] = $res->numberflagged;
+      }
+
+      return $return_value;
+  }
 }

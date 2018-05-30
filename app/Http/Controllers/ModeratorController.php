@@ -22,7 +22,7 @@ class ModeratorController extends Controller
     $user = Auth::user();
 
     if ($user->role === 'MOD')
-      return view('pages.moderation',['comments'=>Comment::getModView(), 'banned'=>Customer::getUsersBanned()]);
+      return view('pages.moderation',['comments'=>Comment::getModView(), 'numberOffenses' => Comment::getNumberOffenses(), 'banned'=>Customer::getUsersBanned()]);
     else
       return redirect(url('homepage'));
   }

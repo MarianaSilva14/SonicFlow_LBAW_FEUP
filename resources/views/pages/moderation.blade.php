@@ -25,7 +25,7 @@
       <td>{{$comment->username}}</td>
       <td>{{$comment->commentary}}</td>
       <td>{{$comment->flagsno}}</td>
-      <td>TODO</td>
+      <td>{{$numberOffenses[$comment->username]}}</td>
       <td class="edit_cart ignore" onclick="approveCommentAction({{$comment->id}})"><i class="far fa-thumbs-up fa-2x"></i></td>
       <td class="edit_cart offense" data-id={{$comment->id}}><i class="far fa-thumbs-down fa-2x"></i></td>
       <td class="edit_cart ban" data-id={{$comment->username}}><i class="fas fa-lock fa-2x"></i></td>
@@ -46,7 +46,7 @@
   </tr>
   @foreach($banned as $ban)
   <tr>
-    @if($comment->picture=="")
+    @if($ban->picture=="")
       <td class="productImg"><img src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" alt="User Picture" style="max-width:70px" class="img-fluid"/></td>
     @else
       <td class="productImg"><img src="{{Storage::url($comment->picture)}}" alt="User Picture" style="max-width:70px" class="img-fluid"/></td>

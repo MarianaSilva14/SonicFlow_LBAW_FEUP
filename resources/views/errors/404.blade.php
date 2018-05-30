@@ -4,7 +4,7 @@
       <!-- Required meta tags -->
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <link rel="icon" type="image/png" href="resources/images/icon_2.png" sizes="16x16">
+      <link rel="icon" type="image/png" href="https://i.imgur.com/vEXu5O8.png">
       <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
       <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
 

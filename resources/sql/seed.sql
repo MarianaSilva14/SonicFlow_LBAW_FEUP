@@ -418,7 +418,7 @@ SELECT setval(pg_get_serial_sequence('product', 'sku'), 18) FROM product;
 
 --COMMENT
 INSERT INTO comment VALUES (11,'xavi123', '2012-05-18 13:36:38','i want this computer', 0, FALSE, '186596482');
-INSERT INTO comment VALUES (12,'xavi123', '2012-05-18 13:36:50','i want this computer now!', 0, FALSE, '186596482');
+INSERT INTO comment VALUES (12,'xavi123', '2012-05-18 13:36:50','i want this computer now!', 1, FALSE, '186596482');
 
 
 SELECT setval(pg_get_serial_sequence('comment', 'id'), max(id)) FROM comment;

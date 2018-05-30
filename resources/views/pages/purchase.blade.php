@@ -100,7 +100,7 @@
         </div>
         <div class="col-md-6 mb-3">
           <label for="cc-number">Credit card number</label>
-          <input type="text" class="form-control" id="cc-number" placeholder="" required>
+          <input type="text" class="form-control" id="cc-number" placeholder="" pattern="^([0-9]{16})$" required><small class="text-muted"> Sixteen numbers are required </small>
           <div class="invalid-feedback">
             Credit card number is required
           </div>
@@ -125,7 +125,7 @@
 
       <div class="input-group">
 
-        <input id="loyaltyPointsInput" name="loyaltyPoints" type="number" min="0" max="{{  min([$customer->loyaltypoints, intval($total)*100]) }}" onchange="updatePriceLoyaltyPoints(event)" step="100" class="form-control" placeholder="For Each 100 LP you get 1 € discount.">
+        <input id="loyaltyPointsInput" name="loyaltyPoints" type="number" min="0" max="{{  min([$customer->loyaltypoints, intval($total)*100]) }}" onchange="updatePriceLoyaltyPoints(event)" step="100" class="form-control" placeholder="For Each 100 LP you get 1 € discount." required>
       </div>
 
       <hr class="mb-4">

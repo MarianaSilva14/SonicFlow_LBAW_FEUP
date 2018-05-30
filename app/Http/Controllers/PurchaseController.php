@@ -157,13 +157,6 @@ class PurchaseController extends Controller
             $products[$i]->save();
         }
 
-
-        // DELETE CART COOKIE
-//        unset($_COOKIE['shoppingCart']);     // this did not work
-
-
-
-
         return view('pages.profile', ['editable'=> FALSE, 'alert' => '', 'infoCustomer' => $customer,'infoUser' => Auth::user()]);
 
     }

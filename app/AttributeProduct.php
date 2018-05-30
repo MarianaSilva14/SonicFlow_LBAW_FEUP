@@ -16,8 +16,6 @@ class AttributeProduct extends Model
 
     protected $primaryKey = null; // or null
 
-    //public $incrementing = false;
-
     public $timestamps = false;
 
     /**

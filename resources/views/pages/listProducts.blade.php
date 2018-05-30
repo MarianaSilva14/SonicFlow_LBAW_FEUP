@@ -57,7 +57,5 @@
         @include('partials.product_mini', ['product' => $product])
       @endforeach
     </div>
-    <!-- //<div class="mr-auto"> -->
       {{ $products->links() }}
-    <!-- </div> -->
 @endsection

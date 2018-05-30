@@ -63,11 +63,6 @@ class Product extends Model
   }
 
   public function getTopComments(){
-    // $comments =
-    // DB::table('comment')
-    //   ->where('comment.product_idproduct','=',$this->sku)
-    //   ->whereRaw('comment.id NOT IN (SELECT comment_idchild FROM answer)')
-    //   ->get();
 
     $comments =
     Comment::where('comment.product_idproduct','=',$this->sku)
@@ -102,7 +97,6 @@ class Product extends Model
     $maxPrice = floatval($request->input('maxPrice'));
     if ( $minPrice !== null && $maxPrice !== null && ($minPrice < $maxPrice)){
       $query = $query->whereRaw("((discountprice IS NULL AND price BETWEEN $minPrice AND $maxPrice) OR (discountprice IS NOT NULL AND discountprice BETWEEN $minPrice AND $maxPrice))");
-      //$query = $query->whereBetween('price', [$minPrice, $maxPrice]);
     }
 
     $available = $request->input('productAvailability');
@@ -114,10 +108,6 @@ class Product extends Model
             $query = $query->where('stock', '=', 0);
         }
     }
-
-     // select * from product
-     // where search @@ (plainto_tsquery('english','router') || plainto_tsquery('english','d') )
-     // order by ts_rank(search,  plainto_tsquery('english','router') || plainto_tsquery('english','d')) DESC
 
       $titles = $request->input('title');
       $titles_result = [];
@@ -131,7 +121,7 @@ class Product extends Model
           $query = $query
               ->whereRaw('search @@ (' . $titles_result . ')')
               ->orderByRaw('ts_rank(search, ' . $titles_result .' ) DESC');
-      } // TODO: maybe not order by ts_rank but only allow items with ts_rank bigger than X
+      }
 
       $sortByChoice = $request->input('sortBy');
       switch ($sortByChoice){
@@ -156,14 +146,6 @@ class Product extends Model
           default:
               break;
       }
-
-
-   // $title = $request->input('title');
-   // if ($title != null){
-   //     $query = $query
-   //         ->whereRaw('search @@ plainto_tsquery(\'english\',?)', [$title])
-   //         ->orderByRaw('ts_rank(search,  plainto_tsquery(\'english\',?)) DESC',[$title]);
-   // }
 
     $limit = intval($request->input('limit'));
     if ($limit != null){
